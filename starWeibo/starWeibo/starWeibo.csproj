@@ -80,6 +80,11 @@
     <Content Include="css\zan.css" />
     <Content Include="focus.aspx" />
     <Content Include="homePage.aspx" />
+    <Content Include="images\starweibo\bg_line.png" />
+    <Content Include="images\starweibo\bg_nav.png" />
+    <Content Include="images\starweibo\footer.png" />
+    <Content Include="images\starweibo\footer_bg.png" />
+    <Content Include="images\starweibo\icon.png" />
     <Content Include="js\adminLogin.js" />
     <Content Include="js\adminManage.js" />
     <Content Include="js\box.js" />
@@ -98,6 +103,12 @@
     <Content Include="notesboard.aspx" />
     <Content Include="personalCenter.aspx" />
     <Content Include="register.aspx" />
+    <Content Include="skin\css\change1.css" />
+    <Content Include="skin\css\change2.css" />
+    <Content Include="skin\images\change1\bg_nav.png" />
+    <Content Include="skin\images\change1\body_bg.jpg" />
+    <Content Include="skin\images\change2\bg_nav.png" />
+    <Content Include="skin\images\change2\body_bg.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -220,6 +231,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="starweibo.Master" />
+    <Content Include="skin\images\change2\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -239,8 +251,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\photos\" />
-    <Folder Include="skin\css\" />
-    <Folder Include="skin\images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

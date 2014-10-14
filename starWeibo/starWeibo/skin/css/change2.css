@@ -1,0 +1,11 @@
+*{margin: 0;padding: 0;}
+img{border: 0;}
+a{text-decoration: none;}
+li{list-style: none;}
+
+body{background-image: url("../images/change2/body_bg.jpg");background-repeat: no-repeat;background-color: #f7f0e0;background-position: center 0;}
+.maintitle{background-image: url("../images/change2/bg_nav.png");}
+
+.gn_name:hover{background-color: #a57d66;}
+.bianhei:hover{background-color: #a57d66;}
+.current{background-color:#a57d66;color: #fff; }

@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>星空微博后台管理</title>
-    <link rel="stylesheet" type="text/css" href="css/adminManage.css">
+    <link rel="stylesheet" type="text/css" href="css/adminManage.css"/>
 	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="js/adminManage.js"></script>
 	<meta charset="utf-8"/>
@@ -188,13 +188,13 @@
 						</div>
 						<div class="tool_right">
 							<div class="button">搜索</div>
-							<input class="searchInput" type="text" placeholder="用户名">
+							<input class="searchInput" type="text" placeholder="用户名"/>
 						</div>
 					</div>
 					<table cellspaceing="0" cellpadding="0" class="t">
 						<tr>
 							<td class="t1">
-								<input type="checkbox" title="选中/取消选中" class="selectAll">
+								<input type="checkbox" title="选中/取消选中" class="selectAll"/>
 							</td>
 							<td class="t2">
 								<a href="###">用户名</a>
@@ -232,7 +232,7 @@
 						<table cellspaceing="0" cellpadding="0" class="t">
 							<tr>
 								<td class="t1">
-									<input type="checkbox" title="选中/取消选中"class="selectOne">
+									<input type="checkbox" title="选中/取消选中"class="selectOne"/>
 								</td>
 								<td class="t2">
 									<a href="###">张三</a>
@@ -241,28 +241,28 @@
 									<a href="###">1635232389@qq.com</a>
 								</td>
 								<td class="t4">
-									<input type="checkbox" title="选中/取消选中"class="select">
+									<input type="checkbox" title="选中/取消选中"class="select"/>
 								</td>
 								<td class="t5">
-									<input type="checkbox" title="选中/取消选中"class="select">
+									<input type="checkbox" title="选中/取消选中"class="select"/>
 								</td>
 								<td class="t6">
-									<input type="checkbox" title="选中/取消选中"class="select">
+									<input type="checkbox" title="选中/取消选中"class="select"/>
 								</td>
 								<td class="t7">
-									<input type="checkbox" title="选中/取消选中"class="select">
+									<input type="checkbox" title="选中/取消选中"class="select"/>
 								</td>
 								<td class="t8">
-									<input type="checkbox" title="选中/取消选中"class="select">
+									<input type="checkbox" title="选中/取消选中"class="select"/>
 								</td>
 								<td class="t9">
-									<input type="checkbox" title="选中/取消选中"class="select">
+									<input type="checkbox" title="选中/取消选中"class="select"/>
 								</td>
 								<td class="t10">
-									<input type="checkbox" title="选中/取消选中"class="select">
+									<input type="checkbox" title="选中/取消选中"class="select"/>
 								</td>
 								<td class="t11">
-									<input type="checkbox" title="选中/取消选中"class="select">
+									<input type="checkbox" title="选中/取消选中"class="select"/>
 								</td>
 							</tr>
 						</table>
@@ -284,7 +284,7 @@
 				<a class="S_func1" href="###">网站地图</a>　
 				<a class="S_func1" href="###">京ICP备12002058号</a>　
 				<a class="S_func1" href="###">京网文[2011]0398-130号</a>　
-				<a class="S_func1" href="###" target="__blank">royal小组</a>　
+				<a class="S_func1" href="###">ROYAL小组</a>　
 			</div>
 		</div>
 	</div>

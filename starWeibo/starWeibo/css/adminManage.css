@@ -4,13 +4,13 @@ a{text-decoration: none;}
 img{border: 0;}
 
 .Content{width: 100%;height: 100%;position: absolute;}
-.ContentT{width: 100%;height: 12%;background-image: url("images/title.jpg");background-size: 100% 100%;background-repeat: no-repeat;}
+.ContentT{width: 100%;height: 12%;background-image: url("../images/adminimg/title.jpg");background-size: 100% 100%;background-repeat: no-repeat;}
 .ContentD{width: 100%;height: 82%;}
 .footer{width: 100%;height: 6%;background-color: #F6F6F6;}
 .help_link{margin-left: 450px;}
 .footer a{color: #CDCDCD;font-size: 12px;line-height: 38px;}
 .footer a:hover{text-decoration: underline;}
-.Left{width: 17%;height: 100%;float: left;background-image: url("images/left.jpg");}
+.Left{width: 17%;height: 100%;float: left;background-image: url("../images/adminimg/left.jpg");}
 .Right1{width:83%;height: 100%;float: left;}
 .Right2{width:83%;height: 100%;float: left;display: none;}
 .Right3{width:83%;height: 100%;float: left;display: none;}

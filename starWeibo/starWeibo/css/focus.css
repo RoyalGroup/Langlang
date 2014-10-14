@@ -85,6 +85,9 @@
 .FansInfoli{display:inline-block;}
 .FansInfoliL{ font-size: 12px;}
 .FansInfoliR{font-size: 14px;color:#0a8cd2; cursor: pointer;}
-.FansLiRBot{width: 100px;height: 30px; font-size: 12px;color:#0a8cd2; cursor: pointer;}
+.FansLiRBot{width: 100px;height: 30px; font-size: 12px;color:#0a8cd2; cursor: pointer; line-height:30px;}
 .FansLiRTopR{width: 400px;height: 30px; float:right;}
-.BtnFocusFans{width: 100px;height:25px; border:1px solid #ccc; display: block;}
+.BtnFocusFans{width:60px;height:20px; border:1px solid #ccc; display:inline-block; font-size:12px; background-color:#f1f1f1;text-align:center; line-height:20px; border-radius:3px;cursor:pointer;}
+.BtnFocusFans:hover{background-color:rgb(255, 162, 16);color:#fff;}
+.DeleFans{ width:60px;height:20px; font-size:12px;line-height:20px; display:inline-block;color:#0a8cd2;cursor:pointer; border-right:1px solid #ddd;margin-left:20px;}
+.DeleFans:hover { text-decoration:underline; }

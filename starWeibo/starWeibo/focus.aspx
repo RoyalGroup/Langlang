@@ -47,7 +47,7 @@
 					<div class="FocusCard">
 						<div class="FocusCardS">
 							<div class="HeadImg">
-								<img src="images/focusimg/headpic/1.jpg">
+								<img src="images/focusimg/headpic/1.jpg" />
 							</div>
 							<div class="FCardinfo">
 								<span class="FCardName">hollis</span>
@@ -93,7 +93,7 @@
 					<div class="FansLi">
 						<div class="FansLiL">
 							<div class="FansHeadImg">
-							    <img src="images/focusimg/headpic/2.jpg">
+							    <img src="images/focusimg/headpic/2.jpg" />
 							</div>
 						</div>
 						<div class="FansLiR">
@@ -103,7 +103,8 @@
 									<span class="FansAddress">河南</span>
 								</div>
 								<div class="FansLiRTopR">
-									<span class="BtnFocusFans"></span>
+									<span class="BtnFocusFans">关注</span>
+                                    <span class="DeleFans">移除粉丝</span>
 								</div>
 							</div>
 							<div class="FansLiRMid">

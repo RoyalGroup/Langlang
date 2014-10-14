@@ -85,6 +85,7 @@
     <Content Include="js\box.js" />
     <Content Include="js\focus.js" />
     <Content Include="js\homePage.js" />
+    <Content Include="js\jquery-1.9.1.min.js" />
     <Content Include="js\login.js" />
     <Content Include="js\message.js" />
     <Content Include="js\notesboard.js" />

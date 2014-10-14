@@ -10,7 +10,7 @@
 namespace starWeibo {
     
     
-    public partial class starweibo {
+    public partial class starweiboM {
         
         /// <summary>
         /// head 控件。

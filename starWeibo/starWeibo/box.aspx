@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/starweibo.Master" AutoEventWireup="true" CodeBehind="box.aspx.cs" Inherits="starWeibo.box" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/starweiboM.Master" AutoEventWireup="true" CodeBehind="box.aspx.cs" Inherits="starWeibo.box" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/box.css" rel="stylesheet"/>
 </asp:Content>

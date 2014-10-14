@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="starweibo.master.cs" Inherits="starWeibo.starweibo" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="starweiboM.master.cs" Inherits="starWeibo.starweiboM" %>
 
 <!DOCTYPE html>
 
@@ -6,16 +6,16 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>STAR微博</title>
-    <link rel="stylesheet" type="text/css" href="css/starweibo.css">
-	<link rel="stylesheet" type="text/css" href="skin/css/change1.css">
+    <link rel="stylesheet" type="text/css" href="css/starweibo.css"/>
+	<link rel="stylesheet" type="text/css" href="skin/css/change1.css"/>
 	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="js/starweibo.js"></script>
-	<meta charset="utf-8">
+	<meta charset="utf-8"/>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
- <body>
-	<div class="maintitle">
+<body>
+    <div class="maintitle">
 		<div class="gn_header">
 			<div class="gn_logo_v2">
 				<div class="box">
@@ -246,11 +246,5 @@
 			</div>
 		</div>
 	</div>
-</body>   
-        
-        
-  
-    
-
-
+</body>
 </html>

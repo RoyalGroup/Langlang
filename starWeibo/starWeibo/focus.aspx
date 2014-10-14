@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/starweibo.Master" AutoEventWireup="true" CodeBehind="focus.aspx.cs" Inherits="starWeibo.focus" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/starweiboM.Master" AutoEventWireup="true" CodeBehind="focus.aspx.cs" Inherits="starWeibo.focus" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="css/focus.css" />
 	<script type="text/javascript" src="js/focus.js"></script>

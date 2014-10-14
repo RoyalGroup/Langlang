@@ -80,6 +80,13 @@
     <Content Include="css\zan.css" />
     <Content Include="focus.aspx" />
     <Content Include="homePage.aspx" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\icon.png" />
+    <Content Include="images\icon2.png" />
+    <Content Include="images\left_nav_border.png" />
+    <Content Include="images\msg_icon.png" />
+    <Content Include="images\pic_at.png" />
+    <Content Include="images\repeat_bg_y.png" />
     <Content Include="images\starweibo\bg_line.png" />
     <Content Include="images\starweibo\bg_nav.png" />
     <Content Include="images\starweibo\footer.png" />

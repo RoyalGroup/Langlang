@@ -98,7 +98,7 @@ i{font-style: normal;font-weight: normal;}
 
 
 
-.W_main{width: 980px;height: 100px;margin: 0 auto;border: 1px solid #ccc;background-color: #ccc;display: block;background-color: transparent;}
+.W_main{width: 980px;padding-top:60px; margin: 0 auto;display: block;}
 
 
 

@@ -67,9 +67,11 @@
     <Content Include="css\adminLogin.css" />
     <Content Include="css\adminManage.css" />
     <Content Include="css\box.css" />
-    <Content Include="css\foucs.css" />
+    <Content Include="css\focus.css" />
     <Content Include="css\homePage.css" />
     <Content Include="css\images\all_iconbtn.png" />
+    <Content Include="css\images\focusimg\icon.png" />
+    <Content Include="css\images\focusimg\icon1.png" />
     <Content Include="css\images\icon.png" />
     <Content Include="css\login.css" />
     <Content Include="css\message.css" />
@@ -81,6 +83,12 @@
     <Content Include="focus.aspx" />
     <Content Include="homePage.aspx" />
     <Content Include="images\1.jpg" />
+    <Content Include="images\focusimg\headpic\1.jpg" />
+    <Content Include="images\focusimg\headpic\2.gif" />
+    <Content Include="images\focusimg\headpic\2.jpg" />
+    <Content Include="images\focusimg\headpic\3.jpg" />
+    <Content Include="images\focusimg\headpic\4.jpg" />
+    <Content Include="images\focusimg\headpic\5.jpg" />
     <Content Include="images\icon.png" />
     <Content Include="images\icon2.png" />
     <Content Include="images\left_nav_border.png" />
@@ -239,6 +247,8 @@
   <ItemGroup>
     <Content Include="starweibo.Master" />
     <Content Include="skin\images\change2\Thumbs.db" />
+    <Content Include="css\images\focusimg\Thumbs.db" />
+    <Content Include="images\focusimg\headpic\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

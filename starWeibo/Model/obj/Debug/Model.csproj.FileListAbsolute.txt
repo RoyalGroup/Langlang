@@ -1,0 +1,9 @@
+D:\visual studio 2013\Projects\starWeibo\starWeibo\Model\bin\Debug\Model.dll
+D:\visual studio 2013\Projects\starWeibo\starWeibo\Model\bin\Debug\Model.pdb
+D:\visual studio 2013\Projects\starWeibo\starWeibo\Model\obj\Debug\Model.dll
+D:\visual studio 2013\Projects\starWeibo\starWeibo\Model\obj\Debug\Model.pdb
+D:\visual studio 2013\Projects\starWeibo\Model\bin\Debug\Model.dll
+D:\visual studio 2013\Projects\starWeibo\Model\bin\Debug\Model.pdb
+D:\visual studio 2013\Projects\starWeibo\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\visual studio 2013\Projects\starWeibo\Model\obj\Debug\Model.dll
+D:\visual studio 2013\Projects\starWeibo\Model\obj\Debug\Model.pdb

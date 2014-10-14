@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA85ACC9-C461-48BB-9D6A-733E28FC9A40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="adminInfo.cs" />
+    <Compile Include="atV.cs" />
+    <Compile Include="blogInfo.cs" />
+    <Compile Include="chatInfo.cs" />
+    <Compile Include="chatV.cs" />
+    <Compile Include="CollectionV.cs" />
+    <Compile Include="focusV.cs" />
+    <Compile Include="messageInfo.cs" />
+    <Compile Include="photoGroupInfo.cs" />
+    <Compile Include="photos.cs" />
+    <Compile Include="powerInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="relationGroupInfo.cs" />
+    <Compile Include="relationInfo.cs" />
+    <Compile Include="replyV.cs" />
+    <Compile Include="reportV.cs" />
+    <Compile Include="typeDic.cs" />
+    <Compile Include="userInfo.cs" />
+    <Compile Include="zanV.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBhelperSQL\starweibo.DBUtility.csproj">
+      <Project>{625cc5e7-00c6-4b48-b2ca-2b41dad94f66}</Project>
+      <Name>starweibo.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\starweibo.Model.csproj">
+      <Project>{1ad05548-de5b-47a7-a6e9-5792d7e19cde}</Project>
+      <Name>starweibo.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,9 @@
+D:\visual studio 2013\Projects\starWeibo\starWeibo\DAL\bin\Debug\DAL.dll
+D:\visual studio 2013\Projects\starWeibo\starWeibo\DAL\bin\Debug\DAL.pdb
+D:\visual studio 2013\Projects\starWeibo\starWeibo\DAL\bin\Debug\DBhelperSQL.dll
+D:\visual studio 2013\Projects\starWeibo\starWeibo\DAL\bin\Debug\Model.dll
+D:\visual studio 2013\Projects\starWeibo\starWeibo\DAL\bin\Debug\DBhelperSQL.pdb
+D:\visual studio 2013\Projects\starWeibo\starWeibo\DAL\bin\Debug\Model.pdb
+D:\visual studio 2013\Projects\starWeibo\starWeibo\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\visual studio 2013\Projects\starWeibo\starWeibo\DAL\obj\Debug\DAL.dll
+D:\visual studio 2013\Projects\starWeibo\starWeibo\DAL\obj\Debug\DAL.pdb

@@ -1,0 +1,5 @@
+D:\visual studio 2013\Projects\starWeibo\starWeibo\DBhelperSQL\bin\Debug\DBhelperSQL.dll
+D:\visual studio 2013\Projects\starWeibo\starWeibo\DBhelperSQL\bin\Debug\DBhelperSQL.pdb
+D:\visual studio 2013\Projects\starWeibo\starWeibo\DBhelperSQL\obj\Debug\DBUtility.csprojResolveAssemblyReference.cache
+D:\visual studio 2013\Projects\starWeibo\starWeibo\DBhelperSQL\obj\Debug\DBhelperSQL.dll
+D:\visual studio 2013\Projects\starWeibo\starWeibo\DBhelperSQL\obj\Debug\DBhelperSQL.pdb

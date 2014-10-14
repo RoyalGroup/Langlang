@@ -83,6 +83,9 @@
     <Content Include="focus.aspx" />
     <Content Include="homePage.aspx" />
     <Content Include="images\1.jpg" />
+    <Content Include="images\adminimg\biaoti.jpg" />
+    <Content Include="images\adminimg\left.jpg" />
+    <Content Include="images\adminimg\title.jpg" />
     <Content Include="images\focusimg\headpic\1.jpg" />
     <Content Include="images\focusimg\headpic\2.gif" />
     <Content Include="images\focusimg\headpic\2.jpg" />

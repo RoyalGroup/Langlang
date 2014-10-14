@@ -64,8 +64,34 @@
     <Content Include="box.aspx" />
     <Content Include="comment\inbox.aspx" />
     <Content Include="comment\outbox.aspx" />
+    <Content Include="css\adminLogin.css" />
+    <Content Include="css\adminManage.css" />
+    <Content Include="css\box.css" />
+    <Content Include="css\foucs.css" />
+    <Content Include="css\homePage.css" />
+    <Content Include="css\images\all_iconbtn.png" />
+    <Content Include="css\images\icon.png" />
+    <Content Include="css\login.css" />
+    <Content Include="css\message.css" />
+    <Content Include="css\notesboard.css" />
+    <Content Include="css\personalCenter.css" />
+    <Content Include="css\register.css" />
+    <Content Include="css\starweibo.css" />
+    <Content Include="css\zan.css" />
     <Content Include="focus.aspx" />
     <Content Include="homePage.aspx" />
+    <Content Include="js\adminLogin.js" />
+    <Content Include="js\adminManage.js" />
+    <Content Include="js\box.js" />
+    <Content Include="js\focus.js" />
+    <Content Include="js\homePage.js" />
+    <Content Include="js\login.js" />
+    <Content Include="js\message.js" />
+    <Content Include="js\notesboard.js" />
+    <Content Include="js\personalCenter.js" />
+    <Content Include="js\register.js" />
+    <Content Include="js\starweibo.js" />
+    <Content Include="js\zan.js" />
     <Content Include="login.aspx" />
     <Content Include="message.aspx" />
     <Content Include="notesboard.aspx" />
@@ -211,9 +237,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="css\" />
     <Folder Include="images\photos\" />
-    <Folder Include="js\" />
+    <Folder Include="skin\css\" />
+    <Folder Include="skin\images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

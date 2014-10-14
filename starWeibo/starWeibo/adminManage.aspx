@@ -188,7 +188,7 @@
 						</div>
 						<div class="tool_right">
 							<div class="button">搜索</div>
-							<input class="searchInput" type="text" placeholder="用户名">
+							<input class="searchInput" type="text" placeholder="用户名"/>
 						</div>
 					</div>
 					<table cellspaceing="0" cellpadding="0" class="t">
@@ -284,7 +284,7 @@
 				<a class="S_func1" href="###">网站地图</a>　
 				<a class="S_func1" href="###">京ICP备12002058号</a>　
 				<a class="S_func1" href="###">京网文[2011]0398-130号</a>　
-				<a class="S_func1" href="###" target="__blank">royal小组</a>　
+				<a class="S_func1" href="###">ROYAL小组</a>　
 			</div>
 		</div>
 	</div>

@@ -30,9 +30,11 @@
     });
     $(".SetNoteCardMidR").focus(function () {
         $(this).val("");
+        $(this).css("color", "#222");
     });
     $(".SetNoteCardMidR").blur(function () {
         $(this).val("请输入备注名");
+        $(this).css("color", "#ccc");
     });
     //取消关注
     $(".CancelFocus").click(function () {
@@ -49,5 +51,15 @@
         $(".FocusArea").hide();
         $(".FansArea").show();
         $(this).css("background-color", "#fff");
+        $(".Fotitle").css("background-color", "#f1f1f1");
+    });
+    $(".DeleFans").click(function () {
+        $(this).parent().find(".EnsureDeleFans").show();
+    });
+    $(".EnsDeleFansBotBtn1").click(function (){
+        $(this).parent().parent().hide();
+    });
+    $(".EnsDeleFansBotBtn2").click(function () {
+        $(this).parent().parent().hide();
     });
 });

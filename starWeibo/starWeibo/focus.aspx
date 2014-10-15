@@ -12,7 +12,7 @@
 					<div class="LeftTopIn">关注中心</div>
 				</div>
 				<div class="Focus">
-					<div class="FocusIn">
+					<ul class="FocusIn">
 						<li class="FocusLi Fotitle">关注</li>
 						<li class="FocusLi FoAll">
 							<div class="FoAllL">全部关注</div>
@@ -22,16 +22,16 @@
 							<div class="FocusLiL">未分组</div>
 							<div class="FocusLiR">(17)</div>
 						</li>
-					</div>
+					</ul>
 						<div class="CreateGroup">创建分组</div>
 				</div>
-				<div class="Fans">
-					<li class="FocusLi Fotitle Fanstitle">粉丝</li>
+				<ul class="Fans">
+					<li class="FocusLi  Fanstitle">粉丝</li>
 					<li class="FocusLi FoAll">
 						<div class="FoAllL">全部粉丝</div>
 						<div class="FoAllR">(13)</div>
 					</li>
-				</div>
+				</ul>
 			</div>
 			<div class="MainRight">
 		<!-- 关注 -->
@@ -55,7 +55,7 @@
 								<span class="FCardGroup">未分组</span>
 								<div class="GroupCard">
 									<div class="GroupCardT">请选择分组:</div>
-									<div class="GroupCardM">
+									<ul class="GroupCardM">
 										<li class="GroupCardMLi">
 											<input type="checkbox" class="GroupCheck"/>
 											<div class="GroupName">特别关注</div>
@@ -68,8 +68,7 @@
 											<input type="checkbox" class="GroupCheck"/>
 											<div class="GroupName">家人</div>
 										</li>
-									</div>
-							<!-- 		<div class="BtnSureGroup">确定</div> -->
+									</ul>
 									<div class="GroupCardB">创建新分组</div>
 								</div>
 							</div>
@@ -104,10 +103,18 @@
 								</div>
 								<div class="FansLiRTopR">
 									<span class="BtnFocusFans">关注</span>
-                                    <span class="DeleFans">移除粉丝</span>
+                                    <span class="DeleFans">移除粉丝 </span>
+                                    <span class="ReportFans">举报</span>
+                                    <div class="EnsureDeleFans">
+                                        <div class="EnsDeleFansTop">确认要移除萝莉蓓蓓啊?</div>
+                                        <div class="EnsDeleFansBot">
+					                        <div class="EnsDeleFansBotBtn1">确定</div>
+					                        <div class="EnsDeleFansBotBtn2">取消</div>
+				                        </div>
+                                    </div>
 								</div>
 							</div>
-							<div class="FansLiRMid">
+							<ul class="FansLiRMid">
 								<li class="FansInfoli">
 									<span class="FansInfoliL">关注</span>
 									<span class="FansInfoliR">14</span>
@@ -116,7 +123,7 @@
 									<span class="FansInfoliL">粉丝</span>
 									<span class="FansInfoliR">36</span>
 								</li>
-							</div>
+							</ul>
 							<div class="FansLiRBot">更多</div>
 						</div>
 					</div>

@@ -16,11 +16,29 @@
 						<li class="FocusLi Fotitle">关注</li>
 						<li class="FocusLi FoAll">
 							<div class="FoAllL">全部关注</div>
-							<div class="FoAllR">(17)</div>
+							<div class="FoAllR">
+                                <%
+                                    string FocusAllCount="("+focuscount.ToString()+")";
+                                    Response.Write(FocusAllCount);
+                                     %>
+							</div>
 						</li>
+                           <%
+                               int i = 0;
+                               foreach (starweibo.Model.relationGroupInfo groupinfo in MgroupInfo)
+                               {
+                                   string html = "<li class='FocusLi'> <div class='FocusLiL'>" + groupinfo.groupName + "</div> <div class='FocusLiR'>(" + groupcount[i] + ")</div></li>";
+                                    Response.Write(html);
+                                    i++;
+                                }
+                                    %>
 						<li class="FocusLi">
 							<div class="FocusLiL">未分组</div>
-							<div class="FocusLiR">(17)</div>
+							<div class="FocusLiR">
+                                <%
+                                    Response.Write("("+notgroupcount+")");
+                                    %>
+							</div>
 						</li>
 					</ul>
 						<div class="CreateGroup">创建分组</div>
@@ -29,7 +47,8 @@
 					<li class="FocusLi  Fanstitle">粉丝</li>
 					<li class="FocusLi FoAll">
 						<div class="FoAllL">全部粉丝</div>
-						<div class="FoAllR">(13)</div>
+						<div class="FoAllR">
+						</div>
 					</li>
 				</ul>
 			</div>
@@ -38,7 +57,9 @@
 			<div class="FocusArea">
 				<div class="RightTop">
 					<div class="RTopLeft">全部关注</div>
-					<div class="RTopRight">(17)</div>
+					<div class="RTopRight">
+                        <% Response.Write(FocusAllCount); %>
+					</div>
 				</div>
 				<div class="RTopMenu">
 					<div class=""></div>
@@ -69,6 +90,9 @@
 											<div class="GroupName">家人</div>
 										</li>
 									</ul>
+                                    <div class="BtnSureGroup">
+                                        <div class="BtnSureGroupIn">确定</div>
+                                    </div>
 									<div class="GroupCardB">创建新分组</div>
 								</div>
 							</div>

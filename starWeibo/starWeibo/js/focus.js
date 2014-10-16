@@ -17,6 +17,10 @@
             $($(this).parent().find(".GroupCard")).hide();
             $($(this).parent().find(".GroupCard")).attr("isclick", "no");
         }
+        $(".BtnSureGroupIn").click(function () {
+            $(this).parent().parent().hide();
+            $(this).parent().parent().attr("isclick", "no");
+        });
     });
     //设置备注
     $(".SetNote").click(function () {

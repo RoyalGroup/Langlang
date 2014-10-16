@@ -9,13 +9,13 @@
 .LeftTopIn{width: 60px; height:20px;  font-size: 12px; color: #aaa; font-weight: bold; position: absolute; bottom: -13px; left: 10px;text-align: center; background-color:#f1f1f1;}
 .Focus{width: 150px;display: inline-block;padding-top: 20px; padding-bottom: 10px;border-bottom: 1px solid #bbb;}
 .FocusIn{width: 150px;display: inline-block;padding-top: 20px; padding-bottom: 10px;}
-.FocusLi{width: 150px;height: 30px; display: block; cursor: pointer; color: #333;}
+.FocusLi{width: 150px;height: 30px; display: block; cursor: pointer; color: #333; text-align:center; line-height:30px; font-size:12px;}
 .FocusLi:hover{ background-color:#e6e6e6;}
 .Fotitle{text-align: center; font-weight: bold;line-height: 30px; font-size: 14px; background-color:#fff;}
 .Fanstitle{text-align: center; font-weight: bold;line-height: 30px; font-size: 14px;}
 .FoAllL{width:60px; font-size: 12px;font-weight: bold;line-height: 30px;float: left;padding-left: 20px;}
 .FoAllR{width: 30px; font-size: 12px;text-align: center; font-weight: bold;line-height: 30px;float: left;}
-.FocusLiL{font-size: 12px;text-align:left; line-height: 30px;float: left; padding-left: 20px; display: inline-block;}
+.FocusLiL{font-size: 12px;text-align:left; line-height: 30px;float: left; padding-left:40px; display: inline-block;}
 .CreateGroup{width:80px; font-size: 12px;line-height: 20px;float: left;border: 1px solid #ccc; height: 20px; text-align: center; margin-left:20px;cursor: pointer;}
 .FocusLiR{width: 30px; font-size: 12px;text-align: center;line-height: 30px;float: left;}
 .Fans{width: 150px;min-height: 100px;  display: inline-block;padding-bottom: 10px;}
@@ -28,13 +28,14 @@
 .FocusList{width: 770px;display:inline-block;min-height: 30px; padding-top: 20px;}
 .FocusCard{ width: 230px; height: 100px; border: 2px solid #f3f3f3; border-radius: 3px; cursor: pointer; padding: 8px; float: left; margin-right: 6px; margin-top: 10px; box-shadow: 1px 1px 1px 1px #ddd; position: relative;}
 .FocusCard:hover{ border: 2px solid #f48c12;}
-.GroupCard{display: none;width: 300px;border: 1px solid #ccc; border-radius: 3px; background-color:#fff; position: absolute; top: 60px;padding: 10px;}
+.GroupCard{display: none;width: 300px;border: 1px solid #ccc; border-radius: 3px; background-color:#fff; position: absolute; top: 60px;padding: 10px; padding-bottom:20px;}
 .GroupCardT{width: 300px;height: 20px; font-size: 12px;}
 .GroupCardM{width: 300px;display: inline-block;}
 .GroupCardMLi{width: 140px; height: 20px;display: block;float: left; margin-top: 5px;}
 .GroupCheck{ float: left; display: block; cursor: pointer;}
 .GroupName{width: 100px;height: 20px; font-size: 12px; float: left; padding-left: 10px; color: #999;}
-.BtnSureGroup{width: 60px;height: 30px; float: left; font-size: 14px; line-height: 30px; border-radius: 2px; border:1px solid #eee; text-align: center; cursor: pointer; background-color:rgb(255, 162, 16); }
+.BtnSureGroup {width:200px; height:30px;}
+.BtnSureGroupIn{width:80px;height: 30px; float:right; font-size: 14px; line-height: 30px; border-radius: 2px; border:1px solid #eee; text-align: center; cursor: pointer; background-color:rgb(255, 162, 16);}
 .GroupCardB{width: 80px; height: 20px; font-size: 12px;color:#0a8cd2;}
 .FocusCardS{ width: 230px;height:60px; }
 .HeadImg{width: 50px; height: 50px; float: left;}

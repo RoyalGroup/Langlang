@@ -3,13 +3,6 @@
     <link rel="stylesheet" type="text/css" href="css/homePage.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
- <link rel="stylesheet" type="text/css" href="css/homePage.css" />
-	<title>无标题</title>
-</head>
-<body>
  <div class="wmaina">
 	    <div id="boxcenter" class="wmainc">
 		    <div id="pltoprecom"></div>
@@ -230,6 +223,4 @@
 	       
         </div>
     </div>
-</body>
-</html>
 </asp:Content>

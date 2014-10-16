@@ -47,8 +47,7 @@
 					<li class="FocusLi  Fanstitle">粉丝</li>
 					<li class="FocusLi FoAll">
 						<div class="FoAllL">全部粉丝</div>
-						<div class="FoAllR">
-						</div>
+						<div class="FoAllR"><% Response.Write("("+fanscount+")"); %></div>
 					</li>
 				</ul>
 			</div>
@@ -65,47 +64,51 @@
 					<div class=""></div>
 				</div>
 				<div class="FocusList">
-					<div class="FocusCard">
-						<div class="FocusCardS">
-							<div class="HeadImg">
-								<img src="images/focusimg/headpic/1.jpg" />
-							</div>
-							<div class="FCardinfo">
-								<span class="FCardName">hollis</span>
-								<span class="FCardRelation">已关注</span>
-								<span class="FCardGroup">未分组</span>
-								<div class="GroupCard">
-									<div class="GroupCardT">请选择分组:</div>
-									<ul class="GroupCardM">
-										<li class="GroupCardMLi">
-											<input type="checkbox" class="GroupCheck"/>
-											<div class="GroupName">特别关注</div>
-										</li>
-										<li class="GroupCardMLi">
-											<input type="checkbox" class="GroupCheck"/>
-											<div class="GroupName">同学</div>
-										</li>
-										<li class="GroupCardMLi">
-											<input type="checkbox" class="GroupCheck"/>
-											<div class="GroupName">家人</div>
-										</li>
-									</ul>
-                                    <div class="BtnSureGroup">
-                                        <div class="BtnSureGroupIn">确定</div>
-                                    </div>
-									<div class="GroupCardB">创建新分组</div>
-								</div>
-							</div>
-						</div>
-						<div class="FocusCardX">
-							<div class="OwnActions">
-								<span class="SetNote">设置备注</span>
-								<span>|</span>
-								<span class="CancelFocus">取消关注</span>
-							</div>
-							<div class="personalInfo">暂无个人简介。</div>
-						</div>
-					</div>
+                    <asp:DataList runat="server" ID="focusInfo" RepeatColumns ="3" RepeatLayout ="Table" RepeatDirection ="Horizontal">
+                    <ItemTemplate>
+					    <div class="FocusCard">
+						    <div class="FocusCardS">
+							    <div class="HeadImg">
+								    <img src="images/focusimg/headpic/1.jpg" />
+							    </div>
+							    <div class="FCardinfo">
+								    <span class="FCardName"><%# Eval("FriendNoteName") %></span>
+								    <span class="FCardRelation">已关注</span>
+								    <span class="FCardGroup"><%# Eval("groupName") %></span>
+								    <div class="GroupCard">
+									    <div class="GroupCardT">请选择分组:</div>
+									    <ul class="GroupCardM">
+										    <li class="GroupCardMLi">
+											    <input type="checkbox" class="GroupCheck"/>
+											    <div class="GroupName">特别关注</div>
+										    </li>
+										    <li class="GroupCardMLi">
+											    <input type="checkbox" class="GroupCheck"/>
+											    <div class="GroupName">同学</div>
+										    </li>
+										    <li class="GroupCardMLi">
+											    <input type="checkbox" class="GroupCheck"/>
+											    <div class="GroupName">家人</div>
+										    </li>
+									    </ul>
+                                        <div class="BtnSureGroup">
+                                            <div class="BtnSureGroupIn">确定</div>
+                                        </div>
+									    <div class="GroupCardB">创建新分组</div>
+								    </div>
+							    </div>
+						    </div>
+						    <div class="FocusCardX">
+							    <div class="OwnActions">
+								    <span class="SetNote">设置备注</span>
+								    <span>|</span>
+								    <span class="CancelFocus">取消关注</span>
+							    </div>
+							    <div class="personalInfo">暂无个人简介。</div>
+						    </div>
+					    </div>
+                    </ItemTemplate>
+                    </asp:DataList>
 				</div>
 			</div>
 		<!-- 粉丝 -->
@@ -113,44 +116,48 @@
 				<div class="FansRightTop">已有3人关注了你</div>
 				<div class="RTopMenu"></div>
 				<div class="FansList">
-					<div class="FansLi">
-						<div class="FansLiL">
-							<div class="FansHeadImg">
-							    <img src="images/focusimg/headpic/2.jpg" />
-							</div>
-						</div>
-						<div class="FansLiR">
-							<div class="FansLiRTop">
-								<div class="FansLiRTopL">
-									<span class="FansName">萝莉蓓蓓你啊</span>
-									<span class="FansAddress">河南</span>
-								</div>
-								<div class="FansLiRTopR">
-									<span class="BtnFocusFans">关注</span>
-                                    <span class="DeleFans">移除粉丝 </span>
-                                    <span class="ReportFans">举报</span>
-                                    <div class="EnsureDeleFans">
-                                        <div class="EnsDeleFansTop">确认要移除萝莉蓓蓓啊?</div>
-                                        <div class="EnsDeleFansBot">
-					                        <div class="EnsDeleFansBotBtn1">确定</div>
-					                        <div class="EnsDeleFansBotBtn2">取消</div>
-				                        </div>
-                                    </div>
-								</div>
-							</div>
-							<ul class="FansLiRMid">
-								<li class="FansInfoli">
-									<span class="FansInfoliL">关注</span>
-									<span class="FansInfoliR">14</span>
-								</li>
-								<li class="FansInfoli">
-									<span class="FansInfoliL">粉丝</span>
-									<span class="FansInfoliR">36</span>
-								</li>
-							</ul>
-							<div class="FansLiRBot">更多</div>
-						</div>
-					</div>
+<%--                    <asp:DataList runat="server" ID="fansInfo" RepeatColumns="1" RepeatLayout="Table " RepeatDirection ="Horizontal" >
+                    <ItemTemplate>--%>
+					    <div class="FansLi">
+						    <div class="FansLiL">
+							    <div class="FansHeadImg">
+							        <img src="images/focusimg/headpic/2.jpg" />
+							    </div>
+						    </div>
+						    <div class="FansLiR">
+							    <div class="FansLiRTop">
+								    <div class="FansLiRTopL">
+									    <span class="FansName">萝莉蓓蓓你啊</span>
+									    <span class="FansAddress">河南</span>
+								    </div>
+								    <div class="FansLiRTopR">
+									    <span class="BtnFocusFans">关注</span>
+                                        <span class="DeleFans">移除粉丝 </span>
+                                        <span class="ReportFans">举报</span>
+                                        <div class="EnsureDeleFans">
+                                            <div class="EnsDeleFansTop">确认要移除萝莉蓓蓓啊?</div>
+                                            <div class="EnsDeleFansBot">
+					                            <div class="EnsDeleFansBotBtn1">确定</div>
+					                            <div class="EnsDeleFansBotBtn2">取消</div>
+				                            </div>
+                                        </div>
+								    </div>
+							    </div>
+							    <ul class="FansLiRMid">
+								    <li class="FansInfoli">
+									    <span class="FansInfoliL">关注</span>
+									    <span class="FansInfoliR">14</span>
+								    </li>
+								    <li class="FansInfoli">
+									    <span class="FansInfoliL">粉丝</span>
+									    <span class="FansInfoliR">36</span>
+								    </li>
+							    </ul>
+							    <div class="FansLiRBot">更多</div>
+						    </div>
+					    </div>
+<%--                    </ItemTemplate>
+                    </asp:DataList>--%>
 				</div>
 			</div>
 			</div>

@@ -27,7 +27,7 @@
                                int i = 0;
                                foreach (starweibo.Model.relationGroupInfo groupinfo in MgroupInfo)
                                {
-                                   string html = "<li class='FocusLi'> <div class='FocusLiL'>" + groupinfo.groupName + "</div> <div class='FocusLiR'>(" + groupcount[i] + ")</div></li>";
+                                    string html = "<li class='FocusLi'> <div class='FocusLiL'>" + groupinfo.groupName + "</div> <div class='FocusLiR'>(" + groupcount[i] + ")</div></li>";
                                     Response.Write(html);
                                     i++;
                                 }

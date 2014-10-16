@@ -23,7 +23,7 @@
 					    </div>
 				    </div>
 				    <div class="input">
-					    <textarea phototag="1" class="inputdetail"></textarea>
+					    <textarea phototag="1" class="inputdetail" id="fabu_input"></textarea>
 					    <span class="arrow"></span>
 				     </div>
 				    <div class="funcarea clearfix">
@@ -151,79 +151,78 @@
 							<a class="wico12 iconchoose"></a>
 						</div>
                         <asp:DataList runat="server" ID="wbList">
-                            <ItemTemplate>
-                                <div class="wbfeeddetail line2 clearfix">
-							        <div class="wbface">
-								        <a href="#" class="wfaceradius">
-									        <img src="<%# Eval("userHeadimage") %>" />
-								        </a>
-							        </div>
-							        <div class="wbdetail">
-								        <div class="wbinfo">
-									        <a class="wbname func1"><%# Eval("userName") %></a>
-									        <a href="#">
-										        <i class="wico16 approveco"></i>
-									        </a>
-								        </div>
-								        <div class="wbtext">
-									       <%# Eval("blogContent") %>
-								        </div>
-								        <div class="wbfunc clearfix">
-									        <div class="wbhandle">
-										        <a class="zan" ifzan="0">
-											        <em class="wico20 iconpraised"></em>(<span>0</span>)
-										        </a>
-										        <i class="txt3">|</i>
-										        <a class="zf">转发</a>
-										        <i class="txt3">|</i>
-										        <a href="#">收藏</a>
-										        <i class="txt3">|</i>
-										        <a class="pl" pindex="1" isopen="no" ifc="0">评论(0)</a>
-									        </div>
-									        <div class="wbfrom">
-										        <a href="#" class="link2 wbtime"><%# Eval("blogPubTime") %></a>
-										        <em class="txt2">来自</em>
-										        <a href="#" class="link2">weibo</a>
-										        <span class="hoverr">
-											        <em class="txt2">|</em>&nbsp;
-											        <a href="#" class="jubao">举报</a>
-										        </span>
-									        </div>
-								        </div>
+                                <ItemTemplate>
+                                    <div class="wbfeeddetail line2 clearfix">
+							            <div class="wbface">
+								            <a href="#" class="wfaceradius">
+									            <img src="<%# Eval("userHeadimage") %>" />
+								            </a>
+							            </div>
+							            <div class="wbdetail">
+								            <div class="wbinfo">
+									            <a class="wbname func1"><%# Eval("userName") %></a>
+									            <a href="#">
+										            <i class="wico16 approveco"></i>
+									            </a>
+								            </div>
+								            <div class="wbtext">
+									           <%# Eval("blogContent") %>
+								            </div>
+								            <div class="wbfunc clearfix">
+									            <div class="wbhandle">
+										            <a class="zan" ifzan="0">
+											            <em class="wico20 iconpraised"></em>(<span>0</span>)
+										            </a>
+										            <i class="txt3">|</i>
+										            <a class="zf">转发</a>
+										            <i class="txt3">|</i>
+										            <a href="#">收藏</a>
+										            <i class="txt3">|</i>
+										            <a class="pl" pindex="1" isopen="no" ifc="0">评论(0)</a>
+									            </div>
+									            <div class="wbfrom">
+										            <a href="#" class="link2 wbtime"><%# Eval("blogPubTime") %></a>
+										            <em class="txt2">来自</em>
+										            <a href="#" class="link2">weibo</a>
+										            <span class="hoverr">
+											            <em class="txt2">|</em>&nbsp;
+											            <a href="#" class="jubao">举报</a>
+										            </span>
+									            </div>
+								            </div>
 
-								        <div class="dahuifu1"></div>
+								            <div class="dahuifu1"></div>
 							
-								        <div class="contrans">
-									        <div class="contranstop">
-										        <span class="conttxt ">转发微博</span>
-										        <span class="contclose"></span>
-									        </div>
-									        <div class="contransbom">
-										        <div class="contmyan">
-											        <a href="" class="conttxt conttxtlink"></a>
-											        <span class="contgeyan"></span>
-										        </div>
-										        <div class="conttebox">
-											        <textarea class="contte"></textarea>
-										        </div>
-										        <div class="contbom">
-											        <div class="concwbrplbleft">
-												        <span class="concwbrplbbq"></span>
-												        <input type="checkbox" class="concwbrplbcheck" />
-												        <span class="concwbrplbtxt">同时转发到我的微博                
-												        </span>
-											        </div>
-											        <div class="concwbrzfbtn">转发</div>
-										        </div>
-									        </div>
-								        </div>
+								            <div class="contrans">
+									            <div class="contranstop">
+										            <span class="conttxt ">转发微博</span>
+										            <span class="contclose"></span>
+									            </div>
+									            <div class="contransbom">
+										            <div class="contmyan">
+											            <a href="" class="conttxt conttxtlink"></a>
+											            <span class="contgeyan"></span>
+										            </div>
+										            <div class="conttebox">
+											            <textarea class="contte"></textarea>
+										            </div>
+										            <div class="contbom">
+											            <div class="concwbrplbleft">
+												            <span class="concwbrplbbq"></span>
+												            <input type="checkbox" class="concwbrplbcheck" />
+												            <span class="concwbrplbtxt">同时转发到我的微博                
+												            </span>
+											            </div>
+											            <div class="concwbrzfbtn">转发</div>
+										            </div>
+									            </div>
+								            </div>
 
 
-							        </div>
-						        </div>
-                            </ItemTemplate>
-                        </asp:DataList>
-						
+							            </div>
+						            </div>
+                                </ItemTemplate>
+                            </asp:DataList>
 					</div>
 				</div>
 		    </div>

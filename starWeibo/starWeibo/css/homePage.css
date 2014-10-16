@@ -9,7 +9,7 @@ legend{margin:0; display: block;-webkit-padding-start: 2px;-webkit-padding-end: 
 textarea{resize:none;}
 p{display: block;-webkit-margin-before: 1em;-webkit-margin-after: 1em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;}
 
-body{color: #333; background-color: #bee1f5;background-image: url("images/body.png");background-repeat: repeat-x;font: 12px/1.125 Arial,Helvetica,sans-serif;position: relative;}
+body{color: #333;font: 12px/1.125 Arial,Helvetica,sans-serif;}
 
 #wmain{background-image: url("images/wmain.png");background-repeat: repeat-y;margin: 0 auto;width: 980px;display: block;}
 .wmainbg{background-image: none;padding: 0 0 20px;}

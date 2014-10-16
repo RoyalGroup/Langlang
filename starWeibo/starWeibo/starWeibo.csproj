@@ -122,6 +122,10 @@
     <Content Include="images\repeat_bg_y.png" />
     <Content Include="images\starweibo\bg_line.png" />
     <Content Include="images\starweibo\bg_nav.png" />
+    <Content Include="images\starweibo\cover_s.png" />
+    <Content Include="images\starweibo\cover_s1.png" />
+    <Content Include="images\starweibo\cover_s2.png" />
+    <Content Include="images\starweibo\cover_s3.png" />
     <Content Include="images\starweibo\footer.png" />
     <Content Include="images\starweibo\footer_bg.png" />
     <Content Include="images\starweibo\icon.png" />
@@ -148,10 +152,16 @@
     <Content Include="register.aspx" />
     <Content Include="skin\css\change1.css" />
     <Content Include="skin\css\change2.css" />
+    <Content Include="skin\css\change3.css" />
+    <Content Include="skin\css\change4.css" />
     <Content Include="skin\images\change1\bg_nav.png" />
     <Content Include="skin\images\change1\body_bg.jpg" />
     <Content Include="skin\images\change2\bg_nav.png" />
     <Content Include="skin\images\change2\body_bg.jpg" />
+    <Content Include="skin\images\change3\bg_nav.png" />
+    <Content Include="skin\images\change3\body_bg.jpg" />
+    <Content Include="skin\images\change4\bg_nav.png" />
+    <Content Include="skin\images\change4\body_bg.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -285,6 +295,9 @@
     <Content Include="images\focusimg\headpic\Thumbs.db" />
     <Content Include="starweiboM.Master" />
     <Content Include="css\images\personalCenterimages\Thumbs.db" />
+    <Content Include="images\starweibo\Thumbs.db" />
+    <Content Include="skin\images\change3\Thumbs.db" />
+    <Content Include="skin\images\change4\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -11,19 +11,20 @@ font: 12px/1.125 Arial,Helvetica,sans-serif;}
 body{background-color: #bee1f5;}
 
 
-.maintitle{width: 100%;height: 39px;position: fixed;background-repeat: repeat-x;box-shadow: 0px 1px 3px 0px #000;border-bottom: 3px solid red;}
+.maintitle{z-index:9999;height:39px;position: fixed;background-repeat: repeat-x;box-shadow: 0px 1px 3px 0px #000;border-bottom: 3px solid red;width:100%;}
 .gn_header{position: relative;width: 980px;margin: 0 auto;display: block;}
 .gn_logo_v2{position: absolute;left: 0;top: 0;width: 190px;height: 39px;margin: 0px 0 0 -27px;}
 
 /***************图标************/
 .box{width: 100%;height: 100%;overflow: hidden;display: block;}
-.logo{background-image: url("../images/starweibo/bg_line.png");background-repeat: no-repeat;display:block;background-position: -548px -4px;height: 39px;}
+.logo{background-repeat: no-repeat;display:block;background-position: -548px -4px;height: 39px;background-image:url("../images/starweibo/bg_line.png");}
 
 /***************首页************/
 .gn_nav{float: left;margin: 0 0 0 150px;display: block;}
 .gn_title{position: relative;float: left;font-size: 14px;display: inline-block;}
 .gn_tab{cursor: pointer;line-height: 16px;color: #fff;font-size: 14px;position: relative;}
 .gn_tab i{display: inline-block;padding: 11px 19px 11px 20px;}
+.gn_title:hover{background-color:#a57d66;}
 
 .WB_global_nav .gn_title .gn_tab .W_arrow {position: absolute;top: 17px;margin: 0 0 0 4px;}
 .WB_global_nav .W_arrow {border-width: 4px 4px 0px 4px;border-style: solid;border-color:#fff transparent;}
@@ -74,7 +75,9 @@ line-height: 37px;
 white-space: nowrap;
 text-overflow: ellipsis;
 color: #fff;
-font-size: 14px;}
+font-size: 14px;
+overflow:hidden;
+}
 
 
 .gn_setting .gn_tab .ico{display: block;width: 16px;height: 16px;background-image: url("../images/starweibo/bg_line.png");background-repeat: no-repeat;overflow: hidden;}
@@ -98,7 +101,7 @@ i{font-style: normal;font-weight: normal;}
 
 
 
-.W_main{width: 980px;padding-top:60px; margin: 0 auto;display: block;}
+.W_main{width: 980px;margin: 0 auto;background-color: #ccc;display: block;background-color: transparent;padding-top:50px;}
 
 
 
@@ -138,7 +141,7 @@ p a{font-size: 12px;color: #333;margin-left: 10px;}
 .tonghua{margin-left: 11px;}
 .S_txt2{color: #808080;}
 
-.W_ico16 {display: inline-block;width: 16px;height: 16px;background-image: url("../images/starweibo/icon.png");background-repeat: no-repeat;padding-left: 5px;}
+.W_ico16 {display: inline-block;width: 16px;height: 16px;background-image: url("../images/icon.png");background-repeat: no-repeat;padding-left: 5px;}
 .ico_weibo{background-position: -350px -123px;}
 
 
@@ -152,11 +155,15 @@ p a{font-size: 12px;color: #333;margin-left: 10px;}
 	background: #fff;
 	font-size: 12px;
 	color: #333;
+    z-index:999;
 	}
+.gn_topmenulist li span{float:right;margin-right:10px;font-weight:bold;line-height:16px;font-size:12px;margin-top:5px;}
+
+
 
 .gn_topmenulist_notice{
 	display: none;
-	width: 150px;top: 39px;
+	width: 150px;
 	border-radius: 0 2px 2px 2px;
 	box-shadow: 0 2px 2px rgba(0,0,0,0.2);
 	left: -111px;
@@ -206,6 +213,49 @@ p a{font-size: 12px;color: #333;margin-left: 10px;}
 	left: -111px;}
 
 .member:hover .gn_topmenulist_member{display: block;}
+
+/************************************/
+.gn_text_list li:hover{background-color:#ccc;}
+
+
+
+/******************皮肤*********************/
+.skin{width:440px;z-index:999;height:269px;padding:29px 0 0 28px;display:none;}
+.dress-topic{font-size:12px;line-height:1.334;}
+.topic-link{color:#6d6d6d;vertical-align:2px;}
+.sep-line{margin: 0 12px;height: 14px;display: inline-block;border-right: 1px solid #cacaca;}
+.current1{font-weight:bold;color:#404040;}
+
+.dress-list1{overflow: hidden;margin: 5px 0 0 -5px;border:1px solid #ccc;width:400px;height:230px;}
+.pifu1{width:190px;float:left;height:105px;border:1px solid #ccc;margin:4px;}
+
+.dress-list2{overflow: hidden;margin: 5px 0 0 -5px;border:1px solid #ccc;width:400px;height:230px;display:none;}
+
+.dress-list3{overflow: hidden;margin: 5px 0 0 -5px;border:1px solid #ccc;width:400px;height:230px;display:none;}
+
+.dress-list4{overflow: hidden;margin: 5px 0 0 -5px;border:1px solid #ccc;width:400px;height:230px;display:none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

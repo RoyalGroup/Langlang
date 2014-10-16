@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>STAR微博</title>
     <link rel="stylesheet" type="text/css" href="css/starweibo.css"/>
-	<link rel="stylesheet" type="text/css" href="skin/css/change1.css"/>
+	<link rel="stylesheet" type="text/css" href="skin/css/change1.css"class="yangshi" />
 	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="js/starweibo.js"></script>
 	<meta charset="utf-8"/>
@@ -15,7 +15,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <div class="maintitle">
+	<div class="maintitle">
 		<div class="gn_header">
 			<div class="gn_logo_v2">
 				<div class="box">
@@ -40,20 +40,59 @@
 						</i>
 					</a>
 				</div>
-				<div class="gn_title">
+				<div class="gn_title skinlist">
 					<a href="#" class="gn_tab">
-						<i>游戏
+						<i>皮肤
 						</i>
 					</a>
+                    <div class="gn_topmenulist skin">
+                        <div class="dress-topic">
+                            <a class="topic-link current1">假日回忆</a>
+                            <span class="sep-line"></span>
+                            <a class="topic-link ">假日回忆</a>
+                            <span class="sep-line"></span>
+                            <a class="topic-link ">假日回忆</a>
+                            <span class="sep-line"></span>
+                            <a class="topic-link ">假日回忆</a>
+                        </div>
+                        <div class="dress-list1">
+                            <div class="pifu1" id="3">
+                                <img src="images/starweibo/cover_s.png" />
+                            </div>
+                            <div class="pifu1" id="2">
+                                <img src="images/starweibo/cover_s1.png" />
+                            </div>
+                            <div class="pifu1" id="4">
+                                <img src="images/starweibo/cover_s2.png" />
+                            </div>
+                            <div class="pifu1" id="1">
+                                <img src="images/starweibo/cover_s3.png" />
+                            </div>
+                        </div>
+                        <div class="dress-list2">
+                            <div class="pifu1">
+                                <img src="images/starweibo/cover_s.png" />
+                            </div>
+                            <div class="pifu1">
+                                <img src="images/starweibo/cover_s1.png" />
+                            </div>
+                            <div class="pifu1">
+                                <img src="images/starweibo/cover_s2.png" />
+                            </div>
+                            <div class="pifu1">
+                                <img src="images/starweibo/cover_s3.png" />
+                            </div>
+                        </div>
+                    </div>
 				</div>
 			</div>
 			<div class="gn_search">
-				<input type="text" class="gn_input" placeholder="火锅外送">
+				<input type="text" class="gn_input" placeholder="火锅外送"/>
 				<a class="gn_btn"></a>
 			</div>
 			<div class="gn_person">
 				<div class="gn_setting">
-					<a href="#" class="gn_name">大神</a>
+					<a href="#" class="gn_name"><%= Session["username"] %></a>
 				</div>
 				<div class="bianhei gn_setting">
 					<a href="#" class="gn_tab gn_write" title="快速写微博">
@@ -67,31 +106,31 @@
 					<div class="gn_topmenulist gn_topmenulist_notice">
 						<ul class="gn_text_list">
 							<li>
-								<a target="_top" suda-data="key=info_box&amp;value=comment" action-type="bp-link" href="http://weibo.com/comment/inbox?topnav=1&amp;wvr=5&amp;f=1"><span></span>查看评论</a>
+								<a target="_top" href="http://weibo.com/comment/inbox?topnav=1&amp;wvr=5&amp;f=1">查看评论<span></span></a>
 							</li>
 							<li>
-								<a target="_top" suda-data="key=info_box&amp;value=atme" action-type="bp-link" href="http://weibo.com/at/weibo?topnav=1&amp;wvr=5"><span></span>查看@我</a>
+								<a target="_top"  href="http://weibo.com/at/weibo?topnav=1&amp;wvr=5"><span></span>查看@我</a>
 							</li>
 							<li>
-								<a target="_top" suda-data="key=info_box&amp;value=privacy_letter" action-type="bp-link" action-data="goMsg=stop" href="http://weibo.com/messages?topnav=1&amp;wvr=5">查看新私信</a>
+								<a target="_top" href="http://weibo.com/messages?topnav=1&amp;wvr=5"><span><% =unreadCount %></span>查看新私信</a>
 								</li>
 							<li>
-								<a suda-data="key=info_box&amp;value=unattention_privacy_letter" target="_top" href="http://weibo.com/notesboard?topnav=1&amp;wvr=5"><span></span>查看未关注人私信</a>
+								<a  target="_top" href="http://weibo.com/notesboard?topnav=1&amp;wvr=5"><span></span>查看未关注人私信</a>
 							</li>
 							<li>
 								<a target="_top" href="http://weibo.com/5138858580/fans?topnav=1&amp;wvr=5">查看新粉丝</a>
 							</li>
 							<li>
-								<a target="_top" action-type="bp-link" href="http://weibo.com/friends?topnav=1&amp;wvr=5&amp;isfriends=1"><span></span>查看好友圈微博</a>
+								<a target="_top"  href="http://weibo.com/friends?topnav=1&amp;wvr=5&amp;isfriends=1"><span></span>查看好友圈微博</a>
 							</li>
 							<li>
-								<a target="_top" action-type="bp-link" href="http://weibo.com/direct/tome?topnav=1&amp;wvr=5&amp;f=1"><span></span>查看发给我的</a>
+								<a target="_top"  href="http://weibo.com/direct/tome?topnav=1&amp;wvr=5&amp;f=1"><span></span>查看发给我的</a>
 							</li>
 							<li class="yingyong">
-								<a href="_top" action-type="bp-link" href="http://weibo.com/direct/tome?topnav=1&amp;wvr=5&amp;f=1"><span></span>应用消息</a>
+								<a target="_top" href="http://weibo.com/direct/tome?topnav=1&amp;wvr=5&amp;f=1"><span></span>应用消息</a>
 							</li>
 							<li class="tixing">
-								<a target="_top" action-type="bp-link" href="http://weibo.com/direct/tome?topnav=1&amp;wvr=5&amp;f=1"><span></span>提醒设置</a>
+								<a target="_top" href="http://weibo.com/direct/tome?topnav=1&amp;wvr=5&amp;f=1"><span></span>提醒设置</a>
 							</li>
 						</ul>
 					</div>
@@ -103,7 +142,7 @@
 					<div class="gn_topmenulist gn_topmenulist_set">
 						<ul class="gn_text_list">
 							<li>
-								<a target="_top" suda-uatrack="key=account_setup&amp;value=account_setup" href="http://account.weibo.com/set/index?topnav=1&amp;wvr=5#personalInfo_personalData">帐号设置</a>
+								<a target="_top"  href="http://account.weibo.com/set/index?topnav=1&amp;wvr=5#personalInfo_personalData">帐号设置</a>
 							</li>
 							<li>
 								<a target="_top" href="http://skin.vip.weibo.com/list?topnav=1&amp;wvr=5">模板设置</a>
@@ -112,7 +151,7 @@
 								<a target="_top" href="http://badge.weibo.com/5138858580?topnav=1&amp;wvr=5">勋章</a>
 							</li>
 							<li class="yingyong">
-								<a target="_top" suda-uatrack="key=account_setup&amp;value=vuser_authen" href="http://verified.weibo.com/verify?topnav=1&amp;wvr=5">V认证</a>
+								<a target="_top" href="http://verified.weibo.com/verify?topnav=1&amp;wvr=5">V认证</a>
 							</li>
 							<li>
 								<a target="_top" href="http://club.weibo.com?topnav=1&amp;wvr=5">达人</a>
@@ -130,7 +169,7 @@
 								<a target="_top" href="http://app.weibo.com/tool?topnav=1&amp;wvr=5">我的工具</a>
 							</li>
 							<li class="gn_func yingyong">
-								<a suda-uatrack="key=account_setup&amp;value=quit" target="_top" href="http://weibo.com/logout.php?backurl=%2F">退出</a>
+								<a target="_top" href="http://weibo.com/logout.php?backurl=%2F">退出</a>
 							</li>
 						</ul>
 					</div>

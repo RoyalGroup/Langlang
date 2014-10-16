@@ -8,4 +8,5 @@ body{background-image: url("../images/change2/body_bg.jpg");background-repeat: n
 
 .gn_name:hover{background-color: #a57d66;}
 .bianhei:hover{background-color: #a57d66;}
+.gn_title:hover{background-color:#a57d66;}
 .current{background-color:#a57d66;color: #fff; }

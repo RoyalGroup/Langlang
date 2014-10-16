@@ -68,11 +68,20 @@
     <Content Include="css\adminManage.css" />
     <Content Include="css\box.css" />
     <Content Include="css\focus.css" />
+    <Content Include="css\forgetpwd.css" />
     <Content Include="css\homePage.css" />
     <Content Include="css\images\all_iconbtn.png" />
     <Content Include="css\images\focusimg\icon.png" />
     <Content Include="css\images\focusimg\icon1.png" />
     <Content Include="css\images\icon.png" />
+    <Content Include="css\images\personalCenterimages\bg_line.png" />
+    <Content Include="css\images\personalCenterimages\body_bg.png" />
+    <Content Include="css\images\personalCenterimages\body_repeat.png" />
+    <Content Include="css\images\personalCenterimages\footer.png" />
+    <Content Include="css\images\personalCenterimages\headerTopPic.jpg" />
+    <Content Include="css\images\personalCenterimages\headimage.jpg" />
+    <Content Include="css\images\personalCenterimages\icon.png" />
+    <Content Include="css\images\personalCenterimages\ico_warn.png" />
     <Content Include="css\login.css" />
     <Content Include="css\message.css" />
     <Content Include="css\notesboard.css" />
@@ -81,6 +90,7 @@
     <Content Include="css\starweibo.css" />
     <Content Include="css\zan.css" />
     <Content Include="focus.aspx" />
+    <Content Include="forgetpwd.aspx" />
     <Content Include="homePage.aspx" />
     <Content Include="images\1.jpg" />
     <Content Include="images\adminimg\biaoti.jpg" />
@@ -95,6 +105,18 @@
     <Content Include="images\icon.png" />
     <Content Include="images\icon2.png" />
     <Content Include="images\left_nav_border.png" />
+    <Content Include="images\login\11sd.jpg" />
+    <Content Include="images\login\pin %281%29.png" />
+    <Content Include="images\login\pin %282%29.png" />
+    <Content Include="images\login\pin %283%29.png" />
+    <Content Include="images\login\pin %284%29.png" />
+    <Content Include="images\login\pin %285%29.png" />
+    <Content Include="images\login\pin %286%29.png" />
+    <Content Include="images\login\pin %287%29.png" />
+    <Content Include="images\login\pin %288%29.png" />
+    <Content Include="images\login\pin %289%29.png" />
+    <Content Include="images\login\sdnkfdsajff.png" />
+    <Content Include="images\login\shoulashou.jpg" />
     <Content Include="images\msg_icon.png" />
     <Content Include="images\pic_at.png" />
     <Content Include="images\repeat_bg_y.png" />
@@ -107,8 +129,11 @@
     <Content Include="js\adminManage.js" />
     <Content Include="js\box.js" />
     <Content Include="js\focus.js" />
+    <Content Include="js\forgetpwd.js" />
     <Content Include="js\homePage.js" />
     <Content Include="js\jquery-1.9.1.min.js" />
+    <Content Include="js\jquery.jSelectDate.js" />
+    <Content Include="js\jsAddress.js" />
     <Content Include="js\login.js" />
     <Content Include="js\message.js" />
     <Content Include="js\notesboard.js" />
@@ -189,6 +214,13 @@
     <Compile Include="focus.aspx.designer.cs">
       <DependentUpon>focus.aspx</DependentUpon>
     </Compile>
+    <Compile Include="forgetpwd.aspx.cs">
+      <DependentUpon>forgetpwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgetpwd.aspx.designer.cs">
+      <DependentUpon>forgetpwd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="homePage.aspx.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -252,6 +284,7 @@
     <Content Include="css\images\focusimg\Thumbs.db" />
     <Content Include="images\focusimg\headpic\Thumbs.db" />
     <Content Include="starweiboM.Master" />
+    <Content Include="css\images\personalCenterimages\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,11 +1,12 @@
-﻿*{margin: 0; padding: 0;}
+*{margin: 0; padding: 0;}
 body{ width: 100%; text-align: left; color: #333; font-size: 12px; font-family: Arial, Helvetica, sans-serif;}
 img{ border: 0px; }
 a{ text-decoration: none; cursor: pointer; color: #0a8cd2;}
 ul,li{ list-style: none; list-style-position: outside; }
 
-.maintitle{ z-index:9999;}
-.W_main{ padding-top:0;}
+.S_profile{ background-color: #bee1f5; background-image: url("images/body_repeat.png"); background-repeat: repeat-x;}
+.W_miniblog { min-width: 980px; min-height: 300px; background-repeat: no-repeat; background-position: center 0; background-image: url("images/body_bg.png");}
+#pl_common_top{ width: 100%; height: 41px; background-color: #666; text-align: center; line-height: 41px; color: #fff; font-weight: bold; font-size: 30px; z-index: 9999; position: fixed;}
 #main{ width: 980px; margin: 0 auto; padding-top: 40px; background-color: #ffffff;}
 
 /************header区*************/

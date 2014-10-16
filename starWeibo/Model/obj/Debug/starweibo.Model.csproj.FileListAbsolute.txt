@@ -3,3 +3,7 @@ D:\visual studio 2013\Projects\starWeibo\Model\bin\Debug\Model.pdb
 D:\visual studio 2013\Projects\starWeibo\Model\obj\Debug\starweibo.Model.csprojResolveAssemblyReference.cache
 D:\visual studio 2013\Projects\starWeibo\Model\obj\Debug\Model.dll
 D:\visual studio 2013\Projects\starWeibo\Model\obj\Debug\Model.pdb
+F:\Langlang\starWeibo\Model\bin\Debug\Model.dll
+F:\Langlang\starWeibo\Model\bin\Debug\Model.pdb
+F:\Langlang\starWeibo\Model\obj\Debug\Model.dll
+F:\Langlang\starWeibo\Model\obj\Debug\Model.pdb

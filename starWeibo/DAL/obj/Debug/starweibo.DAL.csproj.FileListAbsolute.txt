@@ -7,3 +7,12 @@ D:\visual studio 2013\Projects\starWeibo\DAL\bin\Debug\Model.pdb
 D:\visual studio 2013\Projects\starWeibo\DAL\obj\Debug\starweibo.DAL.csprojResolveAssemblyReference.cache
 D:\visual studio 2013\Projects\starWeibo\DAL\obj\Debug\DAL.dll
 D:\visual studio 2013\Projects\starWeibo\DAL\obj\Debug\DAL.pdb
+F:\Langlang\starWeibo\DAL\bin\Debug\DAL.dll
+F:\Langlang\starWeibo\DAL\bin\Debug\DAL.pdb
+F:\Langlang\starWeibo\DAL\bin\Debug\DBhelperSQL.dll
+F:\Langlang\starWeibo\DAL\bin\Debug\Model.dll
+F:\Langlang\starWeibo\DAL\bin\Debug\DBhelperSQL.pdb
+F:\Langlang\starWeibo\DAL\bin\Debug\Model.pdb
+F:\Langlang\starWeibo\DAL\obj\Debug\starweibo.DAL.csprojResolveAssemblyReference.cache
+F:\Langlang\starWeibo\DAL\obj\Debug\DAL.dll
+F:\Langlang\starWeibo\DAL\obj\Debug\DAL.pdb

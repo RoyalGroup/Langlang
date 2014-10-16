@@ -1,12 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/starweiboM.Master" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="starWeibo.homePage" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" type="text/css" href="css/homePage.css" />
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
  <link rel="stylesheet" type="text/css" href="css/homePage.css" />
+ <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+ <script type="text/javascript" src="js/homePage.js"></script>
 	<title>无标题</title>
 </head>
 <body>
@@ -83,7 +80,7 @@
 		    	<div class="groupread clearfix">
 					<div class="clearfix">
 						<ul class="sort clearfix">
-							<li class="item homePageCurrent">
+							<li class="item current">
 								<a  class="itemlink func1">微博</a>
 								<div class="wtabarrow bg4"></div>
 							</li>
@@ -232,4 +229,3 @@
     </div>
 </body>
 </html>
-</asp:Content>

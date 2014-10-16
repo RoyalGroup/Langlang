@@ -32,3 +32,17 @@ D:\visual studio 2013\Projects\starWeibo\starWeibo\bin\DBhelperSQL.pdb
 D:\visual studio 2013\Projects\starWeibo\starWeibo\obj\Debug\starWeibo.csprojResolveAssemblyReference.cache
 D:\visual studio 2013\Projects\starWeibo\starWeibo\obj\Debug\starWeibo.dll
 D:\visual studio 2013\Projects\starWeibo\starWeibo\obj\Debug\starWeibo.pdb
+F:\Langlang\starWeibo\starWeibo\bin\starWeibo.dll.config
+F:\Langlang\starWeibo\starWeibo\bin\starWeibo.dll
+F:\Langlang\starWeibo\starWeibo\bin\starWeibo.pdb
+F:\Langlang\starWeibo\starWeibo\bin\BLL.dll
+F:\Langlang\starWeibo\starWeibo\bin\Model.dll
+F:\Langlang\starWeibo\starWeibo\bin\DAL.dll
+F:\Langlang\starWeibo\starWeibo\bin\DBhelperSQL.dll
+F:\Langlang\starWeibo\starWeibo\bin\BLL.pdb
+F:\Langlang\starWeibo\starWeibo\bin\Model.pdb
+F:\Langlang\starWeibo\starWeibo\bin\DAL.pdb
+F:\Langlang\starWeibo\starWeibo\bin\DBhelperSQL.pdb
+F:\Langlang\starWeibo\starWeibo\obj\Debug\starWeibo.csprojResolveAssemblyReference.cache
+F:\Langlang\starWeibo\starWeibo\obj\Debug\starWeibo.dll
+F:\Langlang\starWeibo\starWeibo\obj\Debug\starWeibo.pdb

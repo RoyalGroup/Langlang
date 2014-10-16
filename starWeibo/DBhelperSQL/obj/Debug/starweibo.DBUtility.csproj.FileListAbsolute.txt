@@ -3,3 +3,8 @@ D:\visual studio 2013\Projects\starWeibo\DBhelperSQL\bin\Debug\DBhelperSQL.pdb
 D:\visual studio 2013\Projects\starWeibo\DBhelperSQL\obj\Debug\starweibo.DBUtility.csprojResolveAssemblyReference.cache
 D:\visual studio 2013\Projects\starWeibo\DBhelperSQL\obj\Debug\DBhelperSQL.dll
 D:\visual studio 2013\Projects\starWeibo\DBhelperSQL\obj\Debug\DBhelperSQL.pdb
+F:\Langlang\starWeibo\DBhelperSQL\bin\Debug\DBhelperSQL.dll
+F:\Langlang\starWeibo\DBhelperSQL\bin\Debug\DBhelperSQL.pdb
+F:\Langlang\starWeibo\DBhelperSQL\obj\Debug\starweibo.DBUtility.csprojResolveAssemblyReference.cache
+F:\Langlang\starWeibo\DBhelperSQL\obj\Debug\DBhelperSQL.dll
+F:\Langlang\starWeibo\DBhelperSQL\obj\Debug\DBhelperSQL.pdb

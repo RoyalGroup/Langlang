@@ -9,3 +9,14 @@ D:\visual studio 2013\Projects\starWeibo\BLL\bin\Debug\DBhelperSQL.pdb
 D:\visual studio 2013\Projects\starWeibo\BLL\obj\Debug\starweibo.BLL.csprojResolveAssemblyReference.cache
 D:\visual studio 2013\Projects\starWeibo\BLL\obj\Debug\BLL.dll
 D:\visual studio 2013\Projects\starWeibo\BLL\obj\Debug\BLL.pdb
+F:\Langlang\starWeibo\BLL\bin\Debug\BLL.dll
+F:\Langlang\starWeibo\BLL\bin\Debug\BLL.pdb
+F:\Langlang\starWeibo\BLL\bin\Debug\DAL.dll
+F:\Langlang\starWeibo\BLL\bin\Debug\Model.dll
+F:\Langlang\starWeibo\BLL\bin\Debug\DBhelperSQL.dll
+F:\Langlang\starWeibo\BLL\bin\Debug\DAL.pdb
+F:\Langlang\starWeibo\BLL\bin\Debug\Model.pdb
+F:\Langlang\starWeibo\BLL\bin\Debug\DBhelperSQL.pdb
+F:\Langlang\starWeibo\BLL\obj\Debug\starweibo.BLL.csprojResolveAssemblyReference.cache
+F:\Langlang\starWeibo\BLL\obj\Debug\BLL.dll
+F:\Langlang\starWeibo\BLL\obj\Debug\BLL.pdb

@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/starweiboM.Master" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="starWeibo.homePage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="css/homePage.css" />
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/homePage.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  <div class="wmaina">
@@ -148,75 +150,80 @@
 						<div class="wbscreen">
 							<a class="wico12 iconchoose"></a>
 						</div>
-						<div class="wbfeeddetail line2 clearfix">
-							<div class="wbface">
-								<a href="#" class="wfaceradius">
-									<img src="C:\Users\just\Desktop\手机壁纸\1.jpg" />
-								</a>
-							</div>
-							<div class="wbdetail">
-								<div class="wbinfo">
-									<a class="wbname func1">平安荆楚</a>
-									<a href="#">
-										<i class="wico16 approveco"></i>
-									</a>
-								</div>
-								<div class="wbtext">
-									【英山“记仇大妈”雇凶伤人落法网】8月4日，英山城区农发行门口发生一起故意伤害案，一中年妇女被戴口罩的两名男子持钢管打伤。案发后，警方展开侦查发现，这几名男子是该县福利院一名大妈花8万元雇来的，雇凶伤人的原因，竟是因她20年前到银行取钱未果，一直记恨当时的营业员进而采取偏激措施。
-								</div>
-								<div class="wbfunc clearfix">
-									<div class="wbhandle">
-										<a class="zan" ifzan="0">
-											<em class="wico20 iconpraised"></em>(<span>3</span>)
-										</a>
-										<i class="txt3">|</i>
-										<a class="zf">转发</a>
-										<i class="txt3">|</i>
-										<a href="#">收藏</a>
-										<i class="txt3">|</i>
-										<a class="pl" pindex="1" isopen="no" ifc="0">评论(2)</a>
-									</div>
-									<div class="wbfrom">
-										<a href="#" class="link2 wbtime">55分钟前</a>
-										<em class="txt2">来自</em>
-										<a href="#" class="link2">360安全浏览器</a>
-										<span class="hoverr">
-											<em class="txt2">|</em>&nbsp;
-											<a href="#" class="jubao">举报</a>
-										</span>
-									</div>
-								</div>
+                        <asp:DataList runat="server" ID="wbList">
+                            <ItemTemplate>
+                                <div class="wbfeeddetail line2 clearfix">
+							        <div class="wbface">
+								        <a href="#" class="wfaceradius">
+									        <img src="<%# Eval("userHeadimage") %>" />
+								        </a>
+							        </div>
+							        <div class="wbdetail">
+								        <div class="wbinfo">
+									        <a class="wbname func1"><%# Eval("userName") %></a>
+									        <a href="#">
+										        <i class="wico16 approveco"></i>
+									        </a>
+								        </div>
+								        <div class="wbtext">
+									       <%# Eval("blogContent") %>
+								        </div>
+								        <div class="wbfunc clearfix">
+									        <div class="wbhandle">
+										        <a class="zan" ifzan="0">
+											        <em class="wico20 iconpraised"></em>(<span>0</span>)
+										        </a>
+										        <i class="txt3">|</i>
+										        <a class="zf">转发</a>
+										        <i class="txt3">|</i>
+										        <a href="#">收藏</a>
+										        <i class="txt3">|</i>
+										        <a class="pl" pindex="1" isopen="no" ifc="0">评论(0)</a>
+									        </div>
+									        <div class="wbfrom">
+										        <a href="#" class="link2 wbtime"><%# Eval("blogPubTime") %></a>
+										        <em class="txt2">来自</em>
+										        <a href="#" class="link2">weibo</a>
+										        <span class="hoverr">
+											        <em class="txt2">|</em>&nbsp;
+											        <a href="#" class="jubao">举报</a>
+										        </span>
+									        </div>
+								        </div>
 
-								<div class="dahuifu1"></div>
+								        <div class="dahuifu1"></div>
 							
-								<div class="contrans">
-									<div class="contranstop">
-										<span class="conttxt ">转发微博</span>
-										<span class="contclose"></span>
-									</div>
-									<div class="contransbom">
-										<div class="contmyan">
-											<a href="" class="conttxt conttxtlink"></a>
-											<span class="contgeyan"></span>
-										</div>
-										<div class="conttebox">
-											<textarea class="contte"></textarea>
-										</div>
-										<div class="contbom">
-											<div class="concwbrplbleft">
-												<span class="concwbrplbbq"></span>
-												<input type="checkbox" class="concwbrplbcheck" />
-												<span class="concwbrplbtxt">同时转发到我的微博                
-												</span>
-											</div>
-											<div class="concwbrzfbtn">转发</div>
-										</div>
-									</div>
-								</div>
+								        <div class="contrans">
+									        <div class="contranstop">
+										        <span class="conttxt ">转发微博</span>
+										        <span class="contclose"></span>
+									        </div>
+									        <div class="contransbom">
+										        <div class="contmyan">
+											        <a href="" class="conttxt conttxtlink"></a>
+											        <span class="contgeyan"></span>
+										        </div>
+										        <div class="conttebox">
+											        <textarea class="contte"></textarea>
+										        </div>
+										        <div class="contbom">
+											        <div class="concwbrplbleft">
+												        <span class="concwbrplbbq"></span>
+												        <input type="checkbox" class="concwbrplbcheck" />
+												        <span class="concwbrplbtxt">同时转发到我的微博                
+												        </span>
+											        </div>
+											        <div class="concwbrzfbtn">转发</div>
+										        </div>
+									        </div>
+								        </div>
 
 
-							</div>
-						</div>
+							        </div>
+						        </div>
+                            </ItemTemplate>
+                        </asp:DataList>
+						
 					</div>
 				</div>
 		    </div>

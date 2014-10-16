@@ -1,2 +1,19 @@
-﻿body {
-}
+﻿body {width:99%;height:100%;font-size:15px;color:#111;font-family:Arial;background-image:url("images/login/11sd.jpg"); font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";}
+*{margin:0;padding:0;}
+ul,li{list-style:none;}
+img{border:0;}
+
+
+.getpwd{width: 900px;height: 550px;border: 1px solid #ccc;margin: 70px auto;background-color: white;border-radius: 8px;}
+.registerTop{background-color:#fafafa;width:870px;height: 30px;color: #333;padding: 17px 0 17px 30px;line-height: 33px;font-size: 22px;border-bottom: 1px solid #ddd;border-top-left-radius: 8px;border-top-right-radius: 8px;font-family: "Microsoft Yahei"; }
+.zhaohui{width: 500px;height: 300px;border:1px solid #ddd;margin: 40px auto;}
+.zhaohui ul{width: 500px;height: 150px;}
+.zhaohui li{width: 450px;height: 40px;margin: 20px 0 20px 20px;font-size: 15px;}
+
+.zhaohuiyouxiang{width: 120px;text-align: right;float: left;}
+.zhaohui_input{float: left;margin-left: 10px;height: 30px;outline: none;}
+.btn_sub{width: 160px;height: 25px;text-align: center;background-color:orange; margin-left: 60px;padding:10px 0 10px 0;}
+.btn_sub a{color:white;font-size:16px;text-decoration:none;}
+.validate_code{float: left; width: 80px;height: 30px;margin-left: 10px; border:1px solid #ccc;float: left;color: rgb(153,153,153);font-size: 14px;outline: none;*padding-top:8px;}
+.image_code{width:100px;height: 38px;margin-left: 5px;background-image: url("images/pin (1).png");float: left;background-repeat: no-repeat;margin-top: -5px;}
+.link_notice{color: #0a8cd2;text-decoration: none;color: 12px;width: 60px;}

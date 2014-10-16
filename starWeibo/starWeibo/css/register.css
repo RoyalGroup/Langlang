@@ -1,2 +1,36 @@
-﻿body {
-}
+﻿@import url('register.css');
+body {width:99%;height:100%;font-size:15px;color:#111;font-family:Arial;background-image:url("images/login/11sd.jpg"); font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";}
+*{margin:0;padding:0;}
+ul,li{list-style:none;}
+img{border:0;}
+
+
+/*用户注册页面*/
+.registerA,.getpwd{width: 900px;height: 550px;border: 1px solid #ccc;margin: 70px auto;background-color: white;border-radius: 8px;}
+.registerTop{background-color:#fafafa;width:870px;height: 30px;color: #333;padding: 17px 0 17px 30px;line-height: 33px;font-size: 22px;border-bottom: 1px solid #ddd;border-top-left-radius: 8px;border-top-right-radius: 8px;font-family: "Microsoft Yahei"; }
+.register-form{width: 480px;height: 424px;margin-left: 40px;float: left;}
+.register-form ul{width:480px;height: 320px;}
+.register-form li{width: 480px;height: 40px;padding-top: 20px;position: relative;}
+.name1{text-align: right;width: 80px;height: 38px;float: left;color: #111;font-size: 14px;padding-top: 10px;}
+.text_input{width: 180px;height: 34px;border:1px solid #ccc;float: left; color: rgb(153,153,153);outline: none;margin-left: 20px; *padding-top:8px;}
+
+/*.image_code{width:110px;height: 36px;margin-left: 5px;background-image: url("images/imgcode (1).png");float: left;}*/
+
+.check{width: 350px;height: 23px;margin-left: 80px;display: block;}
+.check1{width:242px;height: 51px; background-image: url("images/btn_register.png");background-repeat: no-repeat;margin-left: 80px;cursor: pointer;}
+.tishi{display:none; height: 50px;width: 160px; font-size: 14px;color: red; padding-top: 5px;padding-left: 10px;float: left;}
+.finishzhuce{width: 200px;height:45px;background-color: orange;text-align: center;line-height: 40px;margin: 20px 0 0 80px;}
+.finishzhuce a{color: white;font-size: 22px;text-decoration: none;}
+
+.register-know{width: 310px;height: 450px;border-left: 1px solid #ddd;float: right; }
+.direct-login{margin: 10px 0 0 20px;border-bottom: 1px dotted #ccc;padding-bottom: 10px;width: 200px;}
+.direct-login a{color:#0a8cd2;text-decoration:none;font-size: 14px;line-height: 22px;}
+.direct-login a:hover{text-decoration: underline;}
+p{padding: 10px 0 10px 20px;}
+.reg_help{width: 190px;margin-left: 20px;}
+.reg_help li{margin-bottom: 10px;}
+.reg_help a{width: 175px;text-decoration: none;line-height: 25px;color: #0a8cd2;font-size: 12px;}
+.reg_help a:hover{text-decoration: underline;}
+.help_more {margin:16px 0 0 25px;width: 55px;height: 22px;}
+
+

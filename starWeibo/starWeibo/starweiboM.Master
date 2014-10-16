@@ -112,7 +112,7 @@
 								<a target="_top"  href="http://weibo.com/at/weibo?topnav=1&amp;wvr=5"><span></span>查看@我</a>
 							</li>
 							<li>
-								<a target="_top" href="http://weibo.com/messages?topnav=1&amp;wvr=5"><span><% =unreadCount %></span>查看新私信</a>
+								<a target="_top" href="http://weibo.com/messages?topnav=1&amp;wvr=5"><span><%=unreadCount %></span>查看新私信</a>
 								</li>
 							<li>
 								<a  target="_top" href="http://weibo.com/notesboard?topnav=1&amp;wvr=5"><span></span>查看未关注人私信</a>

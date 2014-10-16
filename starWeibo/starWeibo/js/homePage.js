@@ -14,7 +14,7 @@
         html += '</div>';
         html += '<div class="wbdetail">';
         html += '<div class="wbinfo">';
-        html += '<a class="wbname func1">平安荆楚</a>';
+        html += '<a class="wbname func1">十二</a>';
         html += '<a href="#">';
         html += '<i class="wico16 approveco"></i>';
         html += '</a>';
@@ -25,17 +25,17 @@
         html += '<div class="wbfunc clearfix">';
         html += '<div class="wbhandle">';
         html += '<a class="zan" ifzan="0">';
-        html += '<em class="wico20 iconpraised"></em>(<span>3</span>)';
+        html += '<em class="wico20 iconpraised"></em>(<span>0</span>)';
         html += '</a>';
         html += '<i class="txt3">|</i>';
         html += '<a class="zf">转发</a>';
         html += '<i class="txt3">|</i>';
         html += '<a href="#">收藏</a>';
         html += '<i class="txt3">|</i>';
-        html += '<a class="pl" pindex="1" isopen="no" ifc="0">评论(2)</a>';
+        html += '<a class="pl" pindex="1" isopen="no" ifc="0">评论(0)</a>';
         html += '</div>';
         html += '<div class="wbfrom">';
-        html += '<a href="#" class="link2 wbtime">55分钟前</a>';
+        html += '<a href="#" class="link2 wbtime">1分钟前</a>';
         html += '<em class="txt2">来自</em>';
         html += '<a href="#" class="link2">360安全浏览器</a>';
         html += '<span class="hoverr">';
@@ -71,6 +71,6 @@
         // 	url:"";
         // 	data{content:content,id:"1"}
         // });
-        $("#wbBody").prepend(html);
+        $(".wbfeed").prepend(html);
     });
 });

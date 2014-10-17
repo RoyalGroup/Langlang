@@ -9,7 +9,7 @@ namespace starWeibo
 {
     public partial class personalCenter : System.Web.UI.Page
     {
-        private string userid = "1";
+        private string userid = "2";
         private starweibo.BLL.userInfo user = new starweibo.BLL.userInfo();
         private starweibo.BLL.blogInfo blog = new starweibo.BLL.blogInfo();
         private starweibo.BLL.relationInfo relation = new starweibo.BLL.relationInfo();
@@ -130,7 +130,7 @@ namespace starWeibo
         {
             if (isheader == true)
             {
-                return sex == null || sex == "" ? "性别保密" : "<em class='W_ico12 male' title='sex'></em>";
+                return sex == null || sex == "" ? "性别保密" : "<em class='W_ico12 male' title='"+sex+"'></em>";
             }
             else
             {

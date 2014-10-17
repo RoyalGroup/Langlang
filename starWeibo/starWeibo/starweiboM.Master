@@ -24,7 +24,7 @@
 			</div>
 			<div class="gn_nav">
 				<div class="gn_title current">
-					<a href="#" class="gn_tab">
+					<a href="homepage.aspx" class="gn_tab">
 						<i>首页</i>
 					</a>
 				</div>

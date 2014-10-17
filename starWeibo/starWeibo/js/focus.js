@@ -83,7 +83,9 @@
     });
 
     $(".leftbtn").click(function () {
-        $(".leftbtn").css("background-color", "");
-        $(this).css("background-color","#ccc");
+        $(".leftbtn").css("box-shadow", "");
+        $(this).css("box-shadow", "1px 2px 2px 1px #ccc");
+        $(".leftbtn").css("color", "");
+        $(this).css("color","#000");
     });
 });

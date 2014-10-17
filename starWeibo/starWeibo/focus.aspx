@@ -13,8 +13,8 @@
 				</div>
 				<div class="Focus">
 					<ul class="FocusIn">
-						<li class="FocusLi Fotitle">关注</li>
-						<li class="FocusLi FoAll">
+						<li class="leftbtn Fotitle">关注</li>
+						<li class="leftbtn FoAll">
 							<div class="FoAllL">全部关注</div>
 							<div class="FoAllR">
                                 <%
@@ -27,12 +27,12 @@
                                int i = 0;
                                foreach (starweibo.Model.relationGroupInfo groupinfo in MgroupInfo)
                                {
-                                    string html = "<li class='FocusLi'> <div class='FocusLiL'>" + groupinfo.groupName + "</div> <div class='FocusLiR'>(" + groupcount[i] + ")</div></li>";
+                                   string html = "<li class='leftbtn FocusLi' groupname='" + groupinfo.groupName + "'> <div class='FocusLiL'>" + groupinfo.groupName + "</div> <div class='FocusLiR'>(" + groupcount[i] + ")</div></li>";
                                     Response.Write(html);
                                     i++;
                                 }
                                     %>
-						<li class="FocusLi">
+						<li class="leftbtn FocusLi" groupname="未分组">
 							<div class="FocusLiL">未分组</div>
 							<div class="FocusLiR">
                                 <%
@@ -44,9 +44,9 @@
 						<div class="CreateGroup">创建分组</div>
 				</div>
 				<ul class="Fans">
-					<li class="FocusLi  Fanstitle">粉丝</li>
-					<li class="FocusLi FoAll">
-						<div class="FoAllL">全部粉丝</div>
+					<li class="leftbtn FocusLi  Fanstitle">粉丝</li>
+					<li class="FansAll">
+						<div class="leftbtn FoAllL">全部粉丝</div>
 						<div class="FoAllR"><% Response.Write("("+fanscount+")"); %></div>
 					</li>
 				</ul>
@@ -66,7 +66,7 @@
 				<div class="FocusList">
                     <asp:DataList runat="server" ID="focusInfo" RepeatColumns ="3" RepeatLayout ="Table" RepeatDirection ="Horizontal">
                     <ItemTemplate>
-					    <div class="FocusCard">
+					    <div class="FocusCard" fcardname="<%# Eval("groupName") %>">
 						    <div class="FocusCardS">
 							    <div class="HeadImg">
 								    <img src="images/focusimg/headpic/1.jpg" />
@@ -77,7 +77,6 @@
 								    <span class="FCardGroup"><%# Eval("groupName") %></span>
 								    <div class="GroupCard">
 									    <div class="GroupCardT">请选择分组:</div>
-									    <ul class="GroupCardM">
 										    <li class="GroupCardMLi">
 											    <input type="checkbox" class="GroupCheck"/>
 											    <div class="GroupName">特别关注</div>
@@ -116,8 +115,6 @@
 				<div class="FansRightTop">已有3人关注了你</div>
 				<div class="RTopMenu"></div>
 				<div class="FansList">
-<%--                    <asp:DataList runat="server" ID="fansInfo" RepeatColumns="1" RepeatLayout="Table " RepeatDirection ="Horizontal" >
-                    <ItemTemplate>--%>
 					    <div class="FansLi">
 						    <div class="FansLiL">
 							    <div class="FansHeadImg">
@@ -156,8 +153,6 @@
 							    <div class="FansLiRBot">更多</div>
 						    </div>
 					    </div>
-<%--                    </ItemTemplate>
-                    </asp:DataList>--%>
 				</div>
 			</div>
 			</div>

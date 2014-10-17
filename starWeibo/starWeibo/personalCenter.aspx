@@ -52,23 +52,23 @@
 				<div class="pf_head S_bg4 S_line1">
 					<div>
 						<div class="pf_head_pic">
-							<img src="css/images/personalCenterimages/headimage.jpg">
+							<img src="<% =(curUser.userHeadimage==null?"css/images/personalCenterimages/headimage.jpg":curUser.userHeadimage) %>">
 						</div>
 						<ul class="user_atten clearfix user_atten_l">
 							<li class="S_line1">
-								<a class="S_func1" href="javascript:void(0);">
+								<a class="S_func1" href="focus.aspx">
 									<strong node-type="follow"><% =focusCountd %></strong>
 									<span>关注 </span>
 								</a>
 							</li>
 							<li class="follower S_line1">
-								<a class="S_func1" name="place" href="javascript:void(0);">
+								<a class="S_func1" name="place" href="focus.aspx">
 									<strong node-type="fans"><% =fansCount %></strong>
 									<span>粉丝</span>
 								</a>
 							</li>
 							<li class="W_no_border">
-								<a class="S_func1" name="profile_tab" href="javascript:void(0);">
+								<a class="S_func1" name="profile_tab" href="homePage.aspx">
 									<strong node-type="weibo"><% =blogCount %></strong>
 									<span>微博</span>
 								</a>
@@ -127,7 +127,7 @@
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2"> 性&nbsp;&nbsp;别</div>
-									<div class="con" node-type="sex_view"><% =getUserSex(curUser.userSex,true) %></div>
+									<div class="con" node-type="sex_view"><% =getUserSex(curUser.userSex,false) %></div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">感情状况</div>

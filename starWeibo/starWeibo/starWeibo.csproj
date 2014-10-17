@@ -59,11 +59,11 @@
   <ItemGroup>
     <Content Include="adminLogin.aspx" />
     <Content Include="adminManage.aspx" />
-    <Content Include="at\comment.aspx" />
-    <Content Include="at\weibo.aspx" />
+    <Content Include="comment.aspx" />
+    <Content Include="weibo.aspx" />
     <Content Include="box.aspx" />
-    <Content Include="comment\inbox.aspx" />
-    <Content Include="comment\outbox.aspx" />
+    <Content Include="inbox.aspx" />
+    <Content Include="outbox.aspx" />
     <Content Include="css\adminLogin.css" />
     <Content Include="css\adminManage.css" />
     <Content Include="css\box.css" />
@@ -300,18 +300,18 @@
     <Compile Include="adminManage.aspx.designer.cs">
       <DependentUpon>adminManage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="at\comment.aspx.cs">
+    <Compile Include="comment.aspx.cs">
       <DependentUpon>comment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="at\comment.aspx.designer.cs">
+    <Compile Include="comment.aspx.designer.cs">
       <DependentUpon>comment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="at\weibo.aspx.cs">
+    <Compile Include="weibo.aspx.cs">
       <DependentUpon>weibo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="at\weibo.aspx.designer.cs">
+    <Compile Include="weibo.aspx.designer.cs">
       <DependentUpon>weibo.aspx</DependentUpon>
     </Compile>
     <Compile Include="box.aspx.cs">
@@ -321,18 +321,18 @@
     <Compile Include="box.aspx.designer.cs">
       <DependentUpon>box.aspx</DependentUpon>
     </Compile>
-    <Compile Include="comment\inbox.aspx.cs">
+    <Compile Include="inbox.aspx.cs">
       <DependentUpon>inbox.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="comment\inbox.aspx.designer.cs">
+    <Compile Include="inbox.aspx.designer.cs">
       <DependentUpon>inbox.aspx</DependentUpon>
     </Compile>
-    <Compile Include="comment\outbox.aspx.cs">
+    <Compile Include="outbox.aspx.cs">
       <DependentUpon>outbox.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="comment\outbox.aspx.designer.cs">
+    <Compile Include="outbox.aspx.designer.cs">
       <DependentUpon>outbox.aspx</DependentUpon>
     </Compile>
     <Compile Include="focus.aspx.cs">

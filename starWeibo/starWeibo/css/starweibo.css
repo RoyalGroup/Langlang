@@ -220,7 +220,7 @@ p a{font-size: 12px;color: #333;margin-left: 10px;}
 
 
 /******************皮肤*********************/
-.skin{width:440px;z-index:999;height:269px;padding:29px 0 0 28px;display:none;}
+.skin{width:440px;z-index:999;height:269px;padding:29px 0 0 28px;display:none;cursor:pointer;}
 .dress-topic{font-size:12px;line-height:1.334;}
 .topic-link{color:#6d6d6d;vertical-align:2px;}
 .sep-line{margin: 0 12px;height: 14px;display: inline-block;border-right: 1px solid #cacaca;}

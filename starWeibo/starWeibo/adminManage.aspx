@@ -15,7 +15,7 @@
 <div class="Content">
 		<div class="ContentT">
 			<span class="welcome">欢迎您：</span>
-			<span class="user">Admin1</span>
+			<span class="user"></span>
 			<span class="zhuxiao">注销</span>
 			<span></span>
 		</div>
@@ -28,136 +28,36 @@
 			<div class="Right1">
 				<div class="Title">举报列表</div>
 				<div class="ReportMain">
-					<div class="ReportOne">
-						<div class="ReportTitle">
-							<div class="Reporter">
-								<span>举报人：</span>
-								<span>hello</span>
-							</div>
-							<div class="BReporter">
-								<span>被举报人：</span>
-								<span>haha</span>
-							</div>
-							<div class="ReportTime">
-								<span>举报时间：</span>
-								<span>2014-10-13 11:26</span>
-							</div>
-							<div class="Reason">
-								<span>举报原因：</span>
-								<span>不健康。</span>
-							</div>
-						</div>
-						<div class="ReportContent"></div>
-						<div class="ReportManage">
-							<div class="hulue">忽略</div>
-							<div class="Delete">删除</div>
-							<div class="jinyan">禁言</div>
-						</div>
-					</div>
-					<div class="ReportOne">
-						<div class="ReportTitle">
-							<div class="Reporter">
-								<span>举报人：</span>
-								<span>hello</span>
-							</div>
-							<div class="BReporter">
-								<span>被举报人：</span>
-								<span>haha</span>
-							</div>
-							<div class="ReportTime">
-								<span>举报时间：</span>
-								<span>2014-10-13 11:26</span>
-							</div>
-							<div class="Reason">
-								<span>举报原因：</span>
-								<span>不健康。</span>
-							</div>
-						</div>
-						<div class="ReportContent"></div>
-						<div class="ReportManage">
-							<div class="hulue">忽略</div>
-							<div class="Delete">删除</div>
-							<div class="jinyan">禁言</div>
-						</div>
-					</div>
-					<div class="ReportOne">
-						<div class="ReportTitle">
-							<div class="Reporter">
-								<span>举报人：</span>
-								<span>hello</span>
-							</div>
-							<div class="BReporter">
-								<span>被举报人：</span>
-								<span>haha</span>
-							</div>
-							<div class="ReportTime">
-								<span>举报时间：</span>
-								<span>2014-10-13 11:26</span>
-							</div>
-							<div class="Reason">
-								<span>举报原因：</span>
-								<span>不健康。</span>
-							</div>
-						</div>
-						<div class="ReportContent"></div>
-						<div class="ReportManage">
-							<div class="hulue">忽略</div>
-							<div class="Delete">删除</div>
-							<div class="jinyan">禁言</div>
-						</div>
-					</div>
-					<div class="ReportOne">
-						<div class="ReportTitle">
-							<div class="Reporter">
-								<span>举报人：</span>
-								<span>hello</span>
-							</div>
-							<div class="BReporter">
-								<span>被举报人：</span>
-								<span>haha</span>
-							</div>
-							<div class="ReportTime">
-								<span>举报时间：</span>
-								<span>2014-10-13 11:26</span>
-							</div>
-							<div class="Reason">
-								<span>举报原因：</span>
-								<span>不健康。</span>
-							</div>
-						</div>
-						<div class="ReportContent"></div>
-						<div class="ReportManage">
-							<div class="hulue">忽略</div>
-							<div class="Delete">删除</div>
-							<div class="jinyan">禁言</div>
-						</div>
-					</div>
-					<div class="ReportOne">
-						<div class="ReportTitle">
-							<div class="Reporter">
-								<span>举报人：</span>
-								<span>hello</span>
-							</div>
-							<div class="BReporter">
-								<span>被举报人：</span>
-								<span>haha</span>
-							</div>
-							<div class="ReportTime">
-								<span>举报时间：</span>
-								<span>2014-10-13 11:26</span>
-							</div>
-							<div class="Reason">
-								<span>举报原因：</span>
-								<span>不健康。</span>
-							</div>
-						</div>
-						<div class="ReportContent"></div>
-						<div class="ReportManage">
-							<div class="hulue">忽略</div>
-							<div class="Delete">删除</div>
-							<div class="jinyan">禁言</div>
-						</div>
-					</div>
+					<asp:Repeater runat="server" ID="rtpreportVList">
+                        <ItemTemplate>
+					        <div class="ReportOne">
+						        <div class="ReportTitle">
+							        <div class="Reporter">
+								        <span>举报人：</span>
+								        <span><%#Eval("userName") %></span>
+							        </div>
+							        <div class="BReporter">
+								        <span>被举报人：</span>
+								        <span><%#Eval("bloguserName") %></span>
+							        </div>
+							        <div class="ReportTime">
+								        <span>举报时间：</span>
+								        <span><%#Eval("pubTime") %></span>
+							        </div>
+							        <div class="Reason">
+								        <span>举报原因：</span>
+								        <span><%#Eval("msgContent") %></span>
+							        </div>
+						        </div>
+						        <div class="ReportContent"><%#Eval("blogContent") %></div>
+						        <div class="ReportManage">
+							        <div class="hulue">忽略</div>
+							        <div class="Delete">删除</div>
+							        <div class="jinyan">禁言</div>
+						        </div>
+					        </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
 				</div>
 			</div>
 			<div class="Right2">
@@ -229,43 +129,47 @@
 						</tr>
 					</table>
 					<div class="UserManagesContent">
-						<table cellspaceing="0" cellpadding="0" class="t">
-							<tr>
-								<td class="t1">
-									<input type="checkbox" title="选中/取消选中"class="selectOne"/>
-								</td>
-								<td class="t2">
-									<a href="###">张三</a>
-								</td>
-								<td class="t3">
-									<a href="###">1635232389@qq.com</a>
-								</td>
-								<td class="t4">
-									<input type="checkbox" title="选中/取消选中"class="select"/>
-								</td>
-								<td class="t5">
-									<input type="checkbox" title="选中/取消选中"class="select"/>
-								</td>
-								<td class="t6">
-									<input type="checkbox" title="选中/取消选中"class="select"/>
-								</td>
-								<td class="t7">
-									<input type="checkbox" title="选中/取消选中"class="select"/>
-								</td>
-								<td class="t8">
-									<input type="checkbox" title="选中/取消选中"class="select"/>
-								</td>
-								<td class="t9">
-									<input type="checkbox" title="选中/取消选中"class="select"/>
-								</td>
-								<td class="t10">
-									<input type="checkbox" title="选中/取消选中"class="select"/>
-								</td>
-								<td class="t11">
-									<input type="checkbox" title="选中/取消选中"class="select"/>
-								</td>
-							</tr>
-						</table>
+						<asp:Repeater runat="server" ID="rptpowerInfoList" >
+                            <ItemTemplate>
+						        <table cellspaceing="0" cellpadding="0" class="t">
+							        <tr>
+								        <td class="t1">
+									        <input type="checkbox" title="选中/取消选中"class="selectOne"/>
+								        </td>
+								        <td class="t2">
+							                <a href="###"><%# Eval("userId") %></a>
+								        </td>
+								        <td class="t3">
+									        <a href="###"><%# Eval("userId") %></a>
+								        </td>
+								        <td class="t4">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("zan") %>"/>
+								        </td>
+								        <td class="t5">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("pinglun") %>"/>
+								        </td>
+								        <td class="t6">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("at") %>"/>
+								        </td>
+								        <td class="t7">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("guanzhu") %>"/>
+								        </td>
+								        <td class="t8">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("jubao") %>"/>
+								        </td>
+								        <td class="t9">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("zhuanfa") %>"/>
+								        </td>
+								        <td class="t10">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("shoucang") %>"/>
+								        </td>
+								        <td class="t11">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("fasong") %>"/>
+								        </td>     
+							        </tr>
+						        </table>
+                            </ItemTemplate>
+                        </asp:Repeater>
 					</div>
 				</div>
 			</div>

@@ -45,8 +45,8 @@
 				</div>
 				<ul class="Fans">
 					<li class="leftbtn FocusLi  Fanstitle">粉丝</li>
-					<li class="FansAll">
-						<div class="leftbtn FoAllL">全部粉丝</div>
+					<li class="leftbtn FansAll">
+						<div class="FoAllL">全部粉丝</div>
 						<div class="FoAllR"><% Response.Write("("+fanscount+")"); %></div>
 					</li>
 				</ul>
@@ -115,16 +115,18 @@
 				<div class="FansRightTop">已有3人关注了你</div>
 				<div class="RTopMenu"></div>
 				<div class="FansList">
+                      <asp:DataList runat="server" ID="fansinfomation" RepeatColumns="1" RepeatLayout="table">
+                      <ItemTemplate>
 					    <div class="FansLi">
 						    <div class="FansLiL">
 							    <div class="FansHeadImg">
-							        <img src="images/focusimg/headpic/2.jpg" />
+							        <img src="<%# Eval("fansHeadimage") %>" />
 							    </div>
 						    </div>
 						    <div class="FansLiR">
 							    <div class="FansLiRTop">
 								    <div class="FansLiRTopL">
-									    <span class="FansName">萝莉蓓蓓你啊</span>
+									    <span class="FansName"><%# Eval("fansName") %></span>
 									    <span class="FansAddress">河南</span>
 								    </div>
 								    <div class="FansLiRTopR">
@@ -153,6 +155,8 @@
 							    <div class="FansLiRBot">更多</div>
 						    </div>
 					    </div>
+                   </ItemTemplate>
+                   </asp:DataList>
 				</div>
 			</div>
 			</div>

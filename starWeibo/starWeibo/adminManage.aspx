@@ -12,11 +12,12 @@
 	<meta charset="utf-8"/>
 </head>
 <body>
+<form runat="server">
 <div class="Content">
 		<div class="ContentT">
 			<span class="welcome">欢迎您：</span>
-			<span class="user"></span>
-			<span class="zhuxiao">注销</span>
+			<span class="user"><%=Session["adminName"].ToString() %></span>
+            <asp:Button ID="btnadminzhuxiao" runat="server" Text="注销" class="zhuxiao" Onclick="btnadminzhuxiao_Click"/>
 			<span></span>
 		</div>
 		<div class="ContentD">
@@ -31,6 +32,7 @@
 					<asp:Repeater runat="server" ID="rtpreportVList">
                         <ItemTemplate>
 					        <div class="ReportOne">
+                                <%--<span runat="server" class="yincang"><%#Eval("messageId") %></span>--%>
 						        <div class="ReportTitle">
 							        <div class="Reporter">
 								        <span>举报人：</span>
@@ -51,9 +53,12 @@
 						        </div>
 						        <div class="ReportContent"><%#Eval("blogContent") %></div>
 						        <div class="ReportManage">
-							        <div class="hulue">忽略</div>
-							        <div class="Delete">删除</div>
-							        <div class="jinyan">禁言</div>
+                                    <%--<asp:Button ID="btnHulue" runat="server" Text="忽略" class="hulue" OnClick="btnHulue_Click"/>
+                                    <asp:Button ID="btnDelete" runat="server" Text="删除" class="Delete" OnClick="btnDelete_Click"/>
+                                    <asp:Button ID="btnJinyan" runat="server" Text="禁言" class="jinyan" OnClick="btnJinyan_Click"/>--%>
+                                    <div class="hulue" msgID="<%#Eval("messageId") %>">忽略</div>
+							        <div class="Delete" blogID="<%#Eval("blogId") %>">删除</div>
+							        <div class="jinyan" userID="<%#Eval("userId") %>">禁言</div>
 						        </div>
 					        </div>
                         </ItemTemplate>
@@ -137,10 +142,10 @@
 									        <input type="checkbox" title="选中/取消选中"class="selectOne"/>
 								        </td>
 								        <td class="t2">
-							                <a href="###"><%# Eval("userId") %></a>
+							                <a href="###"><%# Eval("userName") %></a>
 								        </td>
 								        <td class="t3">
-									        <a href="###"><%# Eval("userId") %></a>
+									        <a href="###"><%# Eval("userMail") %></a>
 								        </td>
 								        <td class="t4">
 									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("zan") %>"/>
@@ -192,5 +197,6 @@
 			</div>
 		</div>
 	</div>
+</form>
 </body>
 </html>

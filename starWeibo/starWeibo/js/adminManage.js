@@ -27,4 +27,28 @@
             $(".selectOne").prop("checked", false);
         }
     });
+
+    //举报管理
+    $(".hulue").click(function () {
+        var messageID = $(this).attr("msgID");
+        alert(messageID);
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "webservice/wspersonal.asmx",
+    //        data: { flag: '' },
+    //        success: function () {
+               
+    //        }
+    //    });
+    });
+
+    $(".Delete").click(function () {
+        var blogID = $(this).attr("blogID");
+        alert(blogID);
+    });
+
+    $(".jinyan").click(function () {
+        var userID = $(this).attr("userID");
+        alert(userID);
+    });
 });

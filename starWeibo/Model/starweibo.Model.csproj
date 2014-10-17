@@ -42,6 +42,7 @@
     <Compile Include="adminInfo.cs" />
     <Compile Include="atV.cs" />
     <Compile Include="blogInfo.cs" />
+    <Compile Include="blogInfoV.cs" />
     <Compile Include="chatInfo.cs" />
     <Compile Include="chatV.cs" />
     <Compile Include="CollectionV.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="photoGroupInfo.cs" />
     <Compile Include="photos.cs" />
     <Compile Include="powerInfo.cs" />
+    <Compile Include="powerV.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="relationGroupInfo.cs" />
     <Compile Include="relationInfo.cs" />

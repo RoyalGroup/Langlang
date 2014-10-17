@@ -17,12 +17,14 @@ namespace starWeibo
 
         protected void btnlogin_Click(object sender, EventArgs e)
         {
-            string cusername = (this.username.Value == "邮箱" ? null : this.username.Value);
+            string cusername = (this.username.Value == "用户名/邮箱" ? null : this.username.Value);
             string cuserpwd = (this.userpwd.Value == "请输入密码" ? null : this.userpwd.Value);
             if (cusername != null && cuserpwd != null)
             {
                 starweibo.BLL.userInfo curuser = new userInfo();
                 List<starweibo.Model.userInfo> curuserinfo = curuser.GetModelList("userName='" + cusername + "'");
+                //starweibo.Model.userInfo oneuser = curuser.GetModelList("userName='" + cusername + "'")[0];
+                //starweibo.Model.userInfo oneusern = curuser.GetModel(2);
                 //Response.Write(curuserinfo.Count.ToString());
                 if (curuserinfo[0].userPwd == userpwd.Value)
                 {

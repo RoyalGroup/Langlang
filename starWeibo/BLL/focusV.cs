@@ -16,9 +16,9 @@ namespace starweibo.BLL
         /// <summary>
         /// 是否存在该记录
         /// </summary>
-        public bool Exists(int userId, string groupName, int friendId, int groupId, string userName, string userHeadimage, string friendNoteName)
+        public bool Exists(int userId, string groupName, int friendId, int groupId, string userName, string userHeadimage, string friendNoteName, string userAddress, string userBirthday, string userMail, string userSex, string userEdu, string userDes, string QQnumber, string userTell, string userMarry, string fansName, string fansMail, string fansHeadimage, string fansSex, string fansBirthday, string fansAddress, string fansEdu, string fansTell, string fansQQ, string fansDes, string fansMarry)
         {
-            return dal.Exists(userId, groupName, friendId, groupId, userName, userHeadimage, friendNoteName);
+            return dal.Exists(userId, groupName, friendId, groupId, userName, userHeadimage, friendNoteName, userAddress, userBirthday, userMail, userSex, userEdu, userDes, QQnumber, userTell, userMarry, fansName, fansMail, fansHeadimage, fansSex, fansBirthday, fansAddress, fansEdu, fansTell, fansQQ, fansDes, fansMarry);
         }
 
         /// <summary>
@@ -40,34 +40,34 @@ namespace starweibo.BLL
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        public bool Delete(int userId, string groupName, int friendId, int groupId, string userName, string userHeadimage, string friendNoteName)
+        public bool Delete(int userId, string groupName, int friendId, int groupId, string userName, string userHeadimage, string friendNoteName, string userAddress, string userBirthday, string userMail, string userSex, string userEdu, string userDes, string QQnumber, string userTell, string userMarry, string fansName, string fansMail, string fansHeadimage, string fansSex, string fansBirthday, string fansAddress, string fansEdu, string fansTell, string fansQQ, string fansDes, string fansMarry)
         {
 
-            return dal.Delete(userId, groupName, friendId, groupId, userName, userHeadimage, friendNoteName);
+            return dal.Delete(userId, groupName, friendId, groupId, userName, userHeadimage, friendNoteName, userAddress, userBirthday, userMail, userSex, userEdu, userDes, QQnumber, userTell, userMarry, fansName, fansMail, fansHeadimage, fansSex, fansBirthday, fansAddress, fansEdu, fansTell, fansQQ, fansDes, fansMarry);
         }
 
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public starweibo.Model.focusV GetModel(int userId, string groupName, int friendId, int groupId, string userName, string userHeadimage, string friendNoteName)
+        public starweibo.Model.focusV GetModel(int userId, string groupName, int friendId, int groupId, string userName, string userHeadimage, string friendNoteName, string userAddress, string userBirthday, string userMail, string userSex, string userEdu, string userDes, string QQnumber, string userTell, string userMarry, string fansName, string fansMail, string fansHeadimage, string fansSex, string fansBirthday, string fansAddress, string fansEdu, string fansTell, string fansQQ, string fansDes, string fansMarry)
         {
 
-            return dal.GetModel(userId, groupName, friendId, groupId, userName, userHeadimage, friendNoteName);
+            return dal.GetModel(userId, groupName, friendId, groupId, userName, userHeadimage, friendNoteName, userAddress, userBirthday, userMail, userSex, userEdu, userDes, QQnumber, userTell, userMarry, fansName, fansMail, fansHeadimage, fansSex, fansBirthday, fansAddress, fansEdu, fansTell, fansQQ, fansDes, fansMarry);
         }
 
         ///// <summary>
         ///// 得到一个对象实体，从缓存中
         ///// </summary>
-        //public starweibo.Model.focusV GetModelByCache(int userId, string groupName, int friendId, int groupId, string userName, string userHeadimage, string friendNoteName)
+        //public starweibo.Model.focusV GetModelByCache(int userId, string groupName, int friendId, int groupId, string userName, string userHeadimage, string friendNoteName, string userAddress, string userBirthday, string userMail, string userSex, string userEdu, string userDes, string QQnumber, string userTell, string userMarry, string fansName, string fansMail, string fansHeadimage, string fansSex, string fansBirthday, string fansAddress, string fansEdu, string fansTell, string fansQQ, string fansDes, string fansMarry)
         //{
 
-        //    string CacheKey = "focusVModel-" + userId + groupName + friendId + groupId + userName + userHeadimage + friendNoteName;
+        //    string CacheKey = "focusVModel-" + userId + groupName + friendId + groupId + userName + userHeadimage + friendNoteName + userAddress + userBirthday + userMail + userSex + userEdu + userDes + QQnumber + userTell + userMarry + fansName + fansMail + fansHeadimage + fansSex + fansBirthday + fansAddress + fansEdu + fansTell + fansQQ + fansDes + fansMarry;
         //    object objModel = starweibo.Common.DataCache.GetCache(CacheKey);
         //    if (objModel == null)
         //    {
         //        try
         //        {
-        //            objModel = dal.GetModel(userId, groupName, friendId, groupId, userName, userHeadimage, friendNoteName);
+        //            objModel = dal.GetModel(userId, groupName, friendId, groupId, userName, userHeadimage, friendNoteName, userAddress, userBirthday, userMail, userSex, userEdu, userDes, QQnumber, userTell, userMarry, fansName, fansMail, fansHeadimage, fansSex, fansBirthday, fansAddress, fansEdu, fansTell, fansQQ, fansDes, fansMarry);
         //            if (objModel != null)
         //            {
         //                int ModelCache = starweibo.Common.ConfigHelper.GetConfigInt("ModelCache");

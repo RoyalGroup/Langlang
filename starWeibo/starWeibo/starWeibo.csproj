@@ -67,6 +67,7 @@
     <Content Include="css\adminLogin.css" />
     <Content Include="css\adminManage.css" />
     <Content Include="css\box.css" />
+    <Content Include="css\comment.css" />
     <Content Include="css\focus.css" />
     <Content Include="css\forgetpwd.css" />
     <Content Include="css\homePage.css" />
@@ -82,12 +83,15 @@
     <Content Include="css\images\personalCenterimages\headimage.jpg" />
     <Content Include="css\images\personalCenterimages\icon.png" />
     <Content Include="css\images\personalCenterimages\ico_warn.png" />
+    <Content Include="css\inbox.css" />
     <Content Include="css\login.css" />
     <Content Include="css\message.css" />
     <Content Include="css\notesboard.css" />
+    <Content Include="css\outbox.css" />
     <Content Include="css\personalCenter.css" />
     <Content Include="css\register.css" />
     <Content Include="css\starweibo.css" />
+    <Content Include="css\weibo.css" />
     <Content Include="css\zan.css" />
     <Content Include="focus.aspx" />
     <Content Include="forgetpwd.aspx" />
@@ -129,21 +133,29 @@
     <Content Include="images\starweibo\footer.png" />
     <Content Include="images\starweibo\footer_bg.png" />
     <Content Include="images\starweibo\icon.png" />
+    <Content Include="images\type\pic_at.png" />
+    <Content Include="images\type\pic_comm.png" />
+    <Content Include="images\type\pic_leave.png" />
+    <Content Include="images\type\pic_like.png" />
     <Content Include="js\adminLogin.js" />
     <Content Include="js\adminManage.js" />
     <Content Include="js\box.js" />
+    <Content Include="js\comment.js" />
     <Content Include="js\focus.js" />
     <Content Include="js\forgetpwd.js" />
     <Content Include="js\homePage.js" />
+    <Content Include="js\inbox.js" />
     <Content Include="js\jquery-1.9.1.min.js" />
     <Content Include="js\jquery.jSelectDate.js" />
     <Content Include="js\jsAddress.js" />
     <Content Include="js\login.js" />
     <Content Include="js\message.js" />
     <Content Include="js\notesboard.js" />
+    <Content Include="js\outbox.js" />
     <Content Include="js\personalCenter.js" />
     <Content Include="js\register.js" />
     <Content Include="js\starweibo.js" />
+    <Content Include="js\weibo.js" />
     <Content Include="js\zan.js" />
     <Content Include="login.aspx" />
     <Content Include="message.aspx" />
@@ -298,6 +310,7 @@
     <Content Include="images\starweibo\Thumbs.db" />
     <Content Include="skin\images\change3\Thumbs.db" />
     <Content Include="skin\images\change4\Thumbs.db" />
+    <Content Include="images\type\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

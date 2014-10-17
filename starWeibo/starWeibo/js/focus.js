@@ -3,8 +3,7 @@
     $(".Fotitle").click(function () {
         $(".FocusArea").show();
         $(".FansArea").hide();
-        $(this).css("background-color", "#fff");
-        $(".Fanstitle").css("background-color", "");
+        $(".FocusCard").show();
     });
     // 分组
     $(".GroupCard").attr("isclick", "no");
@@ -54,8 +53,6 @@
     $(".Fanstitle").click(function () {
         $(".FocusArea").hide();
         $(".FansArea").show();
-        $(this).css("background-color", "#fff");
-        $(".Fotitle").css("background-color", "#f1f1f1");
     });
     $(".DeleFans").click(function () {
         $(this).parent().find(".EnsureDeleFans").show();
@@ -65,5 +62,28 @@
     });
     $(".EnsDeleFansBotBtn2").click(function () {
         $(this).parent().parent().hide();
+    });
+    
+    $(".FocusLi").click(function(){
+        var groupname = $(this).attr("groupname");
+        $(".FocusCard").show();
+        $(".FocusCard[fcardname!=" + groupname + "]").hide();
+
+    });
+
+    $(".FocusIn").click(function () {
+        $(".FocusArea").show();
+        $(".FansArea").hide();
+    });
+
+    $(".FoAll").click(function () {
+        $(".FocusArea").show();
+        $(".FansArea").hide();
+        $(".FocusCard").show();
+    });
+
+    $(".leftbtn").click(function () {
+        $(".leftbtn").css("background-color", "");
+        $(this).css("background-color","#ccc");
     });
 });

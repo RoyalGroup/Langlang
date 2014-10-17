@@ -26,16 +26,16 @@
 					<div class="pf_info_left">
 						<div>
 							<div class="pf_name bsp">
-								<span class="name">子胥吾有</span>
+								<span class="name"><% =curUser.userName %></span>
 							</div>
 							<div class="pf_intro bsp">
-								<a href="javascript:void(0);">一句话介绍一下自己吧，让别人更了解你</a>
+								<a href="javascript:void(0);"><% =getUserDes(curUser.userDes,true) %></a>
 							</div>
 							<div class="pf_tags bsp" node-type="info" style="position:relative">
 								<div class="tags">
-									<a href="javascript:void(0);"><em class="W_ico12 male" title="男"></em></a>
+									<a href="javascript:void(0);"><% =getUserSex(curUser.userSex,true) %></a>
 									<span class="W_vline S_line1_c">|</span>
-									<a href="javascript:void(0);" class="city" title="江苏 淮安">江苏 淮安</a>
+									<a href="javascript:void(0);" class="city" title="<% =getUserAddress(curUser.userAddress,true) %>"><% =getUserAddress(curUser.userAddress,true) %></a>
 									<span class="W_vline S_line1_c">|</span>
 								</div>
 							</div>
@@ -52,24 +52,24 @@
 				<div class="pf_head S_bg4 S_line1">
 					<div>
 						<div class="pf_head_pic">
-							<img src="css/images/headimage.jpg">
+							<img src="css/images/personalCenterimages/headimage.jpg">
 						</div>
 						<ul class="user_atten clearfix user_atten_l">
 							<li class="S_line1">
 								<a class="S_func1" href="javascript:void(0);">
-									<strong node-type="follow">2</strong>
+									<strong node-type="follow"><% =focusCountd %></strong>
 									<span>关注 </span>
 								</a>
 							</li>
 							<li class="follower S_line1">
 								<a class="S_func1" name="place" href="javascript:void(0);">
-									<strong node-type="fans">16</strong>
+									<strong node-type="fans"><% =fansCount %></strong>
 									<span>粉丝</span>
 								</a>
 							</li>
 							<li class="W_no_border">
 								<a class="S_func1" name="profile_tab" href="javascript:void(0);">
-									<strong node-type="weibo">1</strong>
+									<strong node-type="weibo"><% =blogCount %></strong>
 									<span>微博</span>
 								</a>
 							</li>
@@ -115,47 +115,51 @@
 							<div node-type="base_view" >
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">登录名</div>
-									<div class="con">10***42@qq.com <a href="javascript:void(0);">修改密码</a></div>
+									<div class="con"><% =curUser.userName%><a href="javascript:void(0);">&nbsp;&nbsp;修改密码</a></div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">昵&nbsp;&nbsp;称</div>
-									<div class="con" node-type="nickname_view">吾有子胥</div>
+									<div class="con" node-type="nickname_view"><% =curUser.userName%></div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">所在地</div>
-									<div class="con" node-type="city_view">江苏 淮安</div>
+									<div class="con" node-type="city_view"><% =getUserAddress(curUser.userAddress,false)%></div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2"> 性&nbsp;&nbsp;别</div>
-									<div class="con" node-type="sex_view">男</div>
+									<div class="con" node-type="sex_view"><% =getUserSex(curUser.userSex,true) %></div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">感情状况</div>
 									<div class="con" node-type="love_view">
-										<a href="javascript:void(0)" action-data="type=love" action-type="quickedit" belong="baseInfo"><i class="W_ico16 icon_edit"></i>马上填写</a>自己的感情状况,让更多的人了解你	 		 
+										<% =getUserLoveInfo(curUser.userMarry) %>
 									</div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">生日</div>
-									<div class="con" node-type="birth_view"><a href="javascript:void(0)" action-data="type=birth" action-type="quickedit" belong="baseInfo"><i class="W_ico16 icon_edit"></i>马上填写</a>自己的生日,可以收到更多的生日祝福哦</div>
+									<div class="con" node-type="birth_view">
+                                        <% =getUserBirthday(curUser.userBirthday) %>
+									</div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">简介</div>
-									<div class="con" node-type="desc_view"><a href="javascript:void(0)" action-data="type=desc" action-type="quickedit" belong="baseInfo"><i class="W_ico16 icon_edit"></i>马上填写</a>自己的个人介绍,让大家快速了解真实的你</div>
+									<div class="con" node-type="desc_view">
+                                        <% =getUserDes(curUser.userDes,false) %>
+									</div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">注册时间</div>
-									<div class="con" node-type="desc_view">2014-10-10</div>
+									<div class="con" node-type="reg_view"><%= getshortTime(curUser.registTime)%></div>
 								</div>
 							</div>
 							<div node-type="base" style="display:none">
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">登录名</div>
-									<div class="con">10***42@qq.com <a href="javascript:void(0);">修改密码</a></div>
+									<div class="con"><% =curUser.userName%><a href="javascript:void(0);">&nbsp;&nbsp;修改密码</a></div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2"><span class="W_error">*</span>昵&nbsp;&nbsp;称</div>
-									<div class="con"><input node-type="nickname" action-type="text_copy" action-data="text=请输入昵称" name="nickname" class="W_input " value="吾有子胥"></div>
+									<div class="con"><input node-type="nickname" action-type="text_copy" action-data="text=请输入昵称" name="nickname" class="W_input " value="<% =curUser.userName%>"></div>
 									<div class="status" node-type="nickname_tip">
 										<div style="display:none" class="W_tips clearfix">
 											<p class="icon"><span class="icon_succS"></span></p>
@@ -185,8 +189,8 @@
 									<div class="label S_txt2" node-type="love_label">感情状况</div>
 									<div class="con">
 										<div class="input_sel">
-											<select name="love" node-type="love" init_value="0">
-												<option selected value="0">保密</option>
+											<select name="love" node-type="love" init_value="0" aria-valuemax="<% =curUser.userMarry%>">
+												<option value="0">保密</option>
 												<option value="1">单身</option>
 												<option value="2">求交往</option>
 												<option value="3">暗恋中</option>
@@ -205,7 +209,7 @@
 									<div class="label S_txt2" node-type="birth_label">生日</div>
 									<div class="con">
 										<div class="input_sel">
-											<input type="text" id="birth_sel" class="birth_date" value="1992-1-1" />
+											<input type="text" id="birth_sel" class="birth_date" value="<% =curUser.userBirthday%>" />
 										</div>
 									</div>
 									<div class="status" node-type="birthday_tip">
@@ -216,7 +220,7 @@
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2" node-type="desc_label">简介</div>
-									<div class="con"><textarea name="mydesc" node-type="desc" action-type="text_copy" placeHolder="请输入个人简介" action-data="text=请输入个人简介&amp;must=false" cols="30" rows="10" class="W_input"></textarea></div>
+									<div class="con"><textarea name="mydesc" node-type="desc" action-type="text_copy" placeHolder="请输入个人简介" action-data="text=请输入个人简介&amp;must=false" cols="30" rows="10" class="W_input"><% =curUser.userDes%></textarea></div>
 									<div class="status" node-type="desc_tip"><div class="W_tips tips_del clearfix" style="display: none;"></div></div>
 								</div>
 							</div>
@@ -233,7 +237,9 @@
 							<div node-type="com_view">
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">邮箱</div>
-									<div class="con" node-type="email_view">1075737942@qq.com</div>
+									<div class="con" node-type="email_view">
+                                        <p><% =getUserEmail(curUser.userMail) %></p>
+									</div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">QQ</div>
@@ -244,7 +250,7 @@
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">Tel</div>
 									<div class="con" node-type="Tel_view">
-									<p><a href="javascript:void(0)" action-type="quickedit" belong="comInfo" action-data="type=tel"><i class="W_ico16 icon_edit"></i>马上填写</a>你的电话号码</p>
+									    <p><% =getUserTel(curUser.userTell) %></p>
 									</div>
 								</div>
 							</div>
@@ -252,18 +258,18 @@
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">邮箱</div>
 									<div class="con" node-type="email_view">
-										<input type="" name="email" node-type="email" action-type="text_copy" placeHoleder="请输入邮箱地址" action-data="text=请输入邮箱地址&amp;must=false" class="W_input" value="1075737942@qq.com">
+										<input type="" name="email" node-type="email" action-type="text_copy" placeHoleder="请输入邮箱地址" action-data="text=请输入邮箱地址&amp;must=false" class="W_input" value="<% =curUser.userMail %>">
 									</div>
 									<div class="status" node-type="email_tip"><div style="display:none" class="W_tips tips_del clearfix"></div></div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">QQ</div>
-									<div class="con"><input type="" name="qq" node-type="qq" action-type="text_copy" placeHolder="请输入QQ号" action-data="text=请输入QQ号&amp;must=false" class="W_input" value=""></div>
+									<div class="con"><input type="" name="qq" node-type="qq" action-type="text_copy" placeHolder="请输入QQ号" action-data="text=请输入QQ号&amp;must=false" class="W_input" value="<% =curUser.QQnumber %>"></div>
 									<div class="status" node-type="qq_tip"><div style="display:none" class="W_tips tips_del clearfix"></div></div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">Tel</div>
-									<div class="con"><input name="tel" node-type="tel" action-type="text_copy" placeHolder="请输入手机号码" action-data="text=请输入手机号码&amp;must=false" class="W_input " value=""></div>
+									<div class="con"><input name="tel" node-type="tel" action-type="text_copy" placeHolder="请输入手机号码" action-data="text=请输入手机号码&amp;must=false" class="W_input " value="<% =curUser.userTell %>"></div>
 									<div class="status" node-type="tel_tip"><div style="display:none" class="W_tips tips_del clearfix"></div></div>
 								</div>
 							</div>
@@ -278,19 +284,20 @@
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">学校</div>
 									<div class="con" node-type="school_view">
-									<p><a href="javascript:void(0)" action-type="quickedit" belong="eduInfo" action-data="type=msn"><i class="W_ico16 icon_edit"></i>马上填写</a>你的学校信息</p>
+									<p><% =getUserEduinfo(curUser.userEdu) %></p>
 									</div>
 								</div>
 							</div>
 							<div node-type="edu" style="display:none">
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">学校</div>
-									<div class="con"><input name="school" node-type="school" action-type="text_copy" placeHolder="请输入您毕业的院校" action-data="text=请输入您毕业的院校&amp;must=false" class="W_input " value=""></div>
+									<div class="con"><input name="school" node-type="school" action-type="text_copy" placeHolder="请输入您毕业的院校" action-data="text=请输入您毕业的院校&amp;must=false" class="W_input " value="<% =curUser.userEdu %>"/></div>
 									<div class="status" node-type="school_tip"><div style="display:none" class="W_tips tips_del clearfix"></div></div>
 								</div>
 							</div>
 						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>

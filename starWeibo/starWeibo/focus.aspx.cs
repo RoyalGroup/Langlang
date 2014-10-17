@@ -13,6 +13,7 @@ namespace starWeibo
     public partial class focus : System.Web.UI.Page
     {
         public List<starweibo.Model.relationGroupInfo> MgroupInfo = new List<starweibo.Model.relationGroupInfo>();
+        public List<starweibo.Model.focusV> friendInfo = new List<starweibo.Model.focusV>();
         public int focuscount = 0;
         public int fanscount = 0;
         public int[] groupcount =new int[50];
@@ -29,35 +30,12 @@ namespace starWeibo
                 i++;
             }
             focuscount = BLLfocusInfo.GetRecordCount("userId=2");
+            friendInfo = BLLfocusInfo.GetModelList("userId=2");
             fanscount = BLLfocusInfo.GetRecordCount("friendId=2");
             notgroupcount = BLLfocusInfo.GetRecordCount("userId=2 and groupName=''");
 
-
-
-
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["starconstr"].ConnectionString))
-            {
-                using (SqlDataAdapter sda = new SqlDataAdapter("select * from focusV where userId=2", conn))
-                {
-                    using (DataTable dt = new DataTable())
-                    {
-                        sda.Fill(dt);
-                        this.focusInfo.DataSource = dt;
-                        this.focusInfo.DataBind();
-                    }
-                }
-
-            //using (SqlDataAdapter sda1 = new SqlDataAdapter("select * from focusV where friendId=2", c4onn))
-            //{
-            //    using (DataTable dt1 = new DataTable())
-            //    {
-            //        sda1.Fill(dt1);
-            //        this.fansInfo.DataSource = dt1;
-            //        this.fansInfo.DataBind();
-            //    }
-            //}
-
-            }
+            this.focusInfo.DataSource = friendInfo;
+            this.focusInfo.DataBind();
         }
 
     }

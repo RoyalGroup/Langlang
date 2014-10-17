@@ -14,6 +14,7 @@ namespace starWeibo
     {
         public List<starweibo.Model.relationGroupInfo> MgroupInfo = new List<starweibo.Model.relationGroupInfo>();
         public List<starweibo.Model.focusV> friendInfo = new List<starweibo.Model.focusV>();
+        public List<starweibo.Model.focusV> fansInfo = new List<starweibo.Model.focusV>();
         public int focuscount = 0;
         public int fanscount = 0;
         public int[] groupcount =new int[50];
@@ -32,10 +33,14 @@ namespace starWeibo
             focuscount = BLLfocusInfo.GetRecordCount("userId=2");
             friendInfo = BLLfocusInfo.GetModelList("userId=2");
             fanscount = BLLfocusInfo.GetRecordCount("friendId=2");
+            fansInfo = BLLfocusInfo.GetModelList("friendId=2");
             notgroupcount = BLLfocusInfo.GetRecordCount("userId=2 and groupName=''");
 
             this.focusInfo.DataSource = friendInfo;
             this.focusInfo.DataBind();
+
+            this.fansinfomation.DataSource = fansInfo;
+            this.fansinfomation.DataBind();
         }
 
     }

@@ -12,7 +12,20 @@ namespace starWeibo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            //starweibo.BLL.userInfo blluserInfo = new userInfo();
+            //List<starweibo.Model.userInfo> userInfos = blluserInfo.GetModelList("1=1");
+            //this.rptuserInfoList.DataSource = userInfos;
+            //this.rptuserInfoList.DataBind();
+
+            starweibo.BLL.powerInfo bllpowerInfo = new powerInfo();
+            List<starweibo.Model.powerInfo> powerInfos = bllpowerInfo.GetModelList("1=1");
+            this.rptpowerInfoList.DataSource = powerInfos;
+            this.rptpowerInfoList.DataBind();
+
+            starweibo.BLL.reportV bllreportV = new reportV();
+            List<starweibo.Model.reportV> reportVs = bllreportV.GetModelList("1=1");
+            this.rtpreportVList.DataSource = reportVs;
+            this.rtpreportVList.DataBind();            
         }
     }
 }

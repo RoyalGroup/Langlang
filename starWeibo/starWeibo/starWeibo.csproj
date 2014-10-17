@@ -177,6 +177,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="webservice\wspersonal.asmx" />
     <Content Include="zan.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -292,6 +293,10 @@
     </Compile>
     <Compile Include="starweiboM.Master.designer.cs">
       <DependentUpon>starweiboM.Master</DependentUpon>
+    </Compile>
+    <Compile Include="webservice\wspersonal.asmx.cs">
+      <DependentUpon>wspersonal.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="zan.aspx.cs">
       <DependentUpon>zan.aspx</DependentUpon>

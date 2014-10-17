@@ -69,7 +69,7 @@
 					    <div class="FocusCard" fcardname="<%# Eval("groupName") %>">
 						    <div class="FocusCardS">
 							    <div class="HeadImg">
-								    <img src="images/focusimg/headpic/1.jpg" />
+								   <img src="<%# Eval("userHeadimage") %>" class="fanimg"/>
 							    </div>
 							    <div class="FCardinfo">
 								    <span class="FCardName"><%# Eval("FriendNoteName") %></span>
@@ -77,19 +77,10 @@
 								    <span class="FCardGroup"><%# Eval("groupName") %></span>
 								    <div class="GroupCard">
 									    <div class="GroupCardT">请选择分组:</div>
-										    <li class="GroupCardMLi">
+                                             <li class="GroupCardMLi">
 											    <input type="checkbox" class="GroupCheck"/>
 											    <div class="GroupName">特别关注</div>
 										    </li>
-										    <li class="GroupCardMLi">
-											    <input type="checkbox" class="GroupCheck"/>
-											    <div class="GroupName">同学</div>
-										    </li>
-										    <li class="GroupCardMLi">
-											    <input type="checkbox" class="GroupCheck"/>
-											    <div class="GroupName">家人</div>
-										    </li>
-									    </ul>
                                         <div class="BtnSureGroup">
                                             <div class="BtnSureGroupIn">确定</div>
                                         </div>
@@ -103,7 +94,7 @@
 								    <span>|</span>
 								    <span class="CancelFocus">取消关注</span>
 							    </div>
-							    <div class="personalInfo">暂无个人简介。</div>
+							    <div class="personalInfo"><%# Eval("userDes") %></div>
 						    </div>
 					    </div>
                     </ItemTemplate>
@@ -120,14 +111,14 @@
 					    <div class="FansLi">
 						    <div class="FansLiL">
 							    <div class="FansHeadImg">
-							        <img src="<%# Eval("fansHeadimage") %>" />
+							        <img src="<%# Eval("fansHeadimage") %>" class="fanimg"/>
 							    </div>
 						    </div>
 						    <div class="FansLiR">
 							    <div class="FansLiRTop">
 								    <div class="FansLiRTopL">
 									    <span class="FansName"><%# Eval("fansName") %></span>
-									    <span class="FansAddress">河南</span>
+									    <span class="FansAddress"><%# Eval("fansAddress")%></span>
 								    </div>
 								    <div class="FansLiRTopR">
 									    <span class="BtnFocusFans">关注</span>
@@ -178,7 +169,7 @@
 	<div class="CancelFocusMeng">
 			<div class="CancelFocusCard">
 				<div class="CancelFocusCardTop">取消关注</div>
-				<div class="CancelFocusCardMid">确认要取消对华晨宇yu的关注吗？</div>
+				<div class="CancelFocusCardMid">确认要取消对华晨宇yu的关注？</div>
 				<div class="CancelFocusCardBot">
 					<div class="CancelFocusCardBtn1">确定</div>
 					<div class="CancelFocusCardBtn2">取消</div>

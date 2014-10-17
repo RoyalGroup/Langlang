@@ -9,6 +9,8 @@
     $(".GroupCard").attr("isclick", "no");
     $(".FCardGroup").click(function () {
         if ($(this).parent().find(".GroupCard").attr("isclick") == "no") {
+            $(".GroupCard").hide();
+            $(".GroupCard").attr("isclick", "no");
             $($(this).parent().find(".GroupCard")).show();
             $($(this).parent().find(".GroupCard")).attr("isclick", "yes");
         }

@@ -36,7 +36,7 @@ img{border: 0;}
 .ReportTime{width: 260px;height: 30px;line-height: 30px;padding-left: 10px;float: left;}
 .Reason{height: 30px;line-height: 30px;padding-left: 10px;float: left;}
 
-.ReportContent{height: 50px;background-color: #DAEAFA;}
+.ReportContent{height: 50px;background-color: #DAEAFA;line-height:23px;margin-top:2px;text-indent:2em;overflow-y:auto;}
 .ReportManage{height: 35px;}
 .hulue{float: right;height: 35px;line-height: 35px;padding-right: 10px;cursor: pointer;color: #5A98DE;font-weight: bold;}
 .Delete{float: right;height: 35px;line-height: 35px;padding-right: 10px;cursor: pointer;color: #5A98DE;font-weight: bold;}

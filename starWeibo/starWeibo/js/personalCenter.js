@@ -1,4 +1,5 @@
-$(function(){
+$(function () {
+    
 	//个人中心头部封面图hover事件
 	$(".headerPic").hover(function(){
 		$(".pf_use_num").addClass("pf_use_num_display");
@@ -23,7 +24,7 @@ $(function(){
 	});
 	
 	//初始化所在地区
-	addressInit('cmbProvince', 'cmbCity', 'cmbArea', '未设置', '未设置', '未设置');
+    addressInit('cmbProvince', 'cmbCity', 'cmbArea', '未设置', '未设置', '未设置');
 	//应用方法
 	$("input.birth_date").jSelectDate({
 		css:"birth_date",
@@ -72,6 +73,16 @@ $(function(){
 			$("div[node-type='edu_view']").css("display","block");
 			$("div[node-type='edu']").css("display","none");
 			$(this).text("编辑");
+			$.ajax({
+			    type: "POST",   //访问WebService使用Post方式请求
+			    contentType: "application/json", //WebService 会返回Json类型
+			    url: "wspersonal.asmx/HelloWorld", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+			    data: "{}",         //这里是要传递的参数，格式为 data: "{paraName:paraValue}",下面将会看到       
+			    dataType: 'json',
+			    success: function (result) {     //回调函数，result，返回值
+			        alert(result.d);
+			    }
+			});
 		}
 	});
 	//快速编辑

@@ -28,6 +28,7 @@ namespace starWeibo
                 //Response.Write(curuserinfo.Count.ToString());
                 if (curuserinfo[0].userPwd == userpwd.Value)
                 {
+                    Session["userid"] = curuserinfo[0].id;
                     Session["username"] = cusername;
                     Session["userpwd"] = cuserpwd;
                     Response.Redirect("~/homePage.aspx");//~/zhujiemian.aspx

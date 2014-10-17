@@ -21,6 +21,7 @@
 					<a class="enter" href="javascript:void(0);" title="模板设置"></a>
 				</div>
 			</div>
+            <myflag id="userid" style="display:none"><% =curUser.id %></myflag>
 			<div class="profile_top">
 				<div class="pf_info clearfix">
 					<div class="pf_info_left">

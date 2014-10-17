@@ -45,6 +45,28 @@ $(function () {
 			$("div[node-type='base_view']").css("display","block");
 			$("div[node-type='base']").css("display","none");
 			$(this).text("编辑");
+			
+			var id, userName, userAddress, userSex, userMarry, userBirthday, userDes;
+			id = $("#userid").text();
+			userName = $("input[node-type='nickname']").val();
+			userAddress = $("#cmbProvince").val() + '-' + $("#cmbCity").val() + '-' + $("#cmbArea").val();
+			userSex = $("input[checked='checked']").parent().text();
+			userMarry = $("select[node-type='love']").val();
+			userBirthday = $("#birth_sel").val();
+			userDes = $("textarea[name='mydesc']").val();
+			//alert(id + '   ' + userName + '   ' + userAddress);
+			$.ajax({
+			    type: "POST",   //访问WebService使用Post方式请求
+			    contentType: "application/json", //WebService 会返回Json类型
+			    url: "webservice/wspersonal.asmx/updateUserBaseinfo", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+			    data: "{ id:'" + id + "',userName:'" + userName + "',userAddress:'" + userAddress + "',userSex:'" + userSex + "',userMarry:'" + userMarry + "',userBirthday:'" + userBirthday + "',userDes:'" + userDes + "'}",
+			    dataType: 'json',
+			    success: function (result) {     //回调函数，result，返回值
+			        if (result.d == 'true') {
+			            alert(保存成功！);
+			        }
+			    }
+			});
 		}
 	});
 	//编辑保存联系信息
@@ -73,16 +95,6 @@ $(function () {
 			$("div[node-type='edu_view']").css("display","block");
 			$("div[node-type='edu']").css("display","none");
 			$(this).text("编辑");
-			$.ajax({
-			    type: "POST",   //访问WebService使用Post方式请求
-			    contentType: "application/json", //WebService 会返回Json类型
-			    url: "webservice/wspersonal.asmx/HelloWorld", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
-			    data: "{}",         //这里是要传递的参数，格式为 data: "{paraName:paraValue}",下面将会看到       
-			    dataType: 'json',
-			    success: function (result) {     //回调函数，result，返回值
-			        alert(result.d);
-			    }
-			});
 		}
 	});
 	//快速编辑

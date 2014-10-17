@@ -32,6 +32,9 @@ namespace starWeibo
             fanscount = BLLfocusInfo.GetRecordCount("friendId=2");
             notgroupcount = BLLfocusInfo.GetRecordCount("userId=2 and groupName=''");
 
+
+
+
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["starconstr"].ConnectionString))
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter("select * from focusV where userId=2", conn))
@@ -44,15 +47,15 @@ namespace starWeibo
                     }
                 }
 
-                //using (SqlDataAdapter sda1 = new SqlDataAdapter("select * from focusV where friendId=2", conn))
-                //{
-                //    using (DataTable dt1 = new DataTable())
-                //    {
-                //        sda1.Fill(dt1);
-                //        this.fansInfo.DataSource = dt1;
-                //        this.fansInfo.DataBind();
-                //    }
-                //}
+            //using (SqlDataAdapter sda1 = new SqlDataAdapter("select * from focusV where friendId=2", c4onn))
+            //{
+            //    using (DataTable dt1 = new DataTable())
+            //    {
+            //        sda1.Fill(dt1);
+            //        this.fansInfo.DataSource = dt1;
+            //        this.fansInfo.DataBind();
+            //    }
+            //}
 
             }
         }

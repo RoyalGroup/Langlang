@@ -16,19 +16,19 @@
                     </a>
                 </div>
                 <div class="lev lev-curr">
-                    <a href="#">
+                    <a href="homePage.aspx">
                         <i class="ico20 ico_home"></i>
                         首页
                     </a>
                 </div>
                 <div class="lev">
-                    <a href="#">
+                    <a href="box.aspx">
                         <i class="ico20 ico_msg"></i>
                         消息
                     </a>
                 </div>
                 <div class="lev2">
-                    <a href="#">
+                    <a href="weibo.aspx">
                         <i class="ico20 ico_at"></i>
                         提到我的
                     </a>

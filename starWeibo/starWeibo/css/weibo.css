@@ -30,7 +30,7 @@ a{text-decoration: none;color: #333;}
 
 /*左侧导航栏*/
 .lev{cursor: pointer;}
-.lev a{height: 35px;line-height: 35px;padding-left: 20px;font-size: 14px;}
+.lev a{height: 35px;line-height: 35px;padding-left: 20px;font-size: 14px;display:block;}
 .ico20{vertical-align: -5px; width: 20px;height: 20px;display: block;margin-right: 5px;display: inline-block;background-image: url("../images/icon2.png");}
 .ico_guide{background-position: 0 -223px;background-image: url("../images/icon.png");}
 .ico_home{background-position: 0 0;}

@@ -35,7 +35,7 @@
         $.ajax({
             type: "POST",   //访问WebService使用Post方式请求
             contentType: "application/json", //WebService 会返回Json类型
-            url: "webservice/adminWS.asmx/hulueReport", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+            url: "webservice/wsadmin.asmx/hulueReport", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
             data: "{messageId:" + messageID + "}",
             dataType: 'json',
             success: function (result) {     //回调函数，result，返回值
@@ -53,7 +53,7 @@
         //$.ajax({
         //    type: "POST",   //访问WebService使用Post方式请求
         //    contentType: "application/json", //WebService 会返回Json类型
-        //    url: "webservice/adminWS.asmx/Delete", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+        //    url: "webservice/wsadmin.asmx/Delete", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
         //    data: "{blogId:" + blogID + "}",
         //    dataType: 'json',
         //    success: function (result) {     //回调函数，result，返回值
@@ -71,7 +71,7 @@
         $.ajax({
             type: "POST",   //访问WebService使用Post方式请求
             contentType: "application/json", //WebService 会返回Json类型
-            url: "webservice/adminWS.asmx/jinyan", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+            url: "webservice/wsadmin.asmx/jinyan", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
             data: "{userId:" + userID + ",messageId:" + messageID + "}",
             dataType: 'json',
             success: function (result) {     //回调函数，result，返回值
@@ -83,20 +83,44 @@
     });
 
     //发送公告
-    $(".SendButton").click(function () {
-        var msgContent = $(this).prev().val();
-        $(this).prev().val("");
-        $.ajax({
-            type: "POST",   //访问WebService使用Post方式请求
-            contentType: "application/json", //WebService 会返回Json类型
-            url: "webservice/adminWS.asmx/SendSysMsg", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
-            data: "{msgContent:" + msgContent + "}",
-            dataType: 'json',
-            success: function (result) {     //回调函数，result，返回值
-                if (result.d == "true") {
-                    alert("发送成功！");
-                }
-            }
-        });
+    //$(".SendButton").click(function () {
+    //    var msgContent = $(this).prev().val();
+    //    $(this).prev().val("");
+    //    $.ajax({
+    //        type: "POST",   //访问WebService使用Post方式请求
+    //        contentType: "application/json", //WebService 会返回Json类型
+    //        url: "webservice/wsadmin.asmx/SendSysMsg", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+    //        data: "{msgContent:" + msgContent + "}",
+    //        dataType: 'json',
+    //        success: function (result) {     //回调函数，result，返回值
+    //            if (result.d == "true") {
+    //                alert("发送成功！");
+    //            }
+    //        }
+    //    });
+    //});
+
+    //用户权限管理
+    $(".select").click(function () {
+        var userID = $(this).parent().parent().attr("id");
+        var content = $(this).attr("content");
+        var fuzhi = $(this).attr("fuzhi");
+        //$.ajax({
+        //    type: "POST",   //访问WebService使用Post方式请求
+        //    contentType: "application/json", //WebService 会返回Json类型
+        //    url: "webservice/wsadmin.asmx/quanxian", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+        //    data: "{userId:" + userID + ",type:" + content + ",fuzhi:" + fuzhi + "}",
+        //    dataType: 'json',
+        //    success: function (result) {     //回调函数，result，返回值
+        //        if (result.d == true) {
+        //            alert("操作成功！");
+        //        }
+        //    }
+        //});
+        if (fuzhi == "0") {
+            $(this).attr("fuzhi","1");
+        } else {
+            $(this).attr("fuzhi", "0");
+        }
     });
 });

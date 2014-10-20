@@ -90,3 +90,4 @@ ul,li{ list-style: none; list-style-position: outside; }
 .W_radio { vertical-align: -2px; _vertical-align: -3px; margin-right: 3px; }
 textarea.W_input { height: 44px; line-height: 22px; overflow-y: auto; overflow-x: hidden; padding: 5px 0 0 2px; border: 1px solid #ccc; border-radius: 2px; vertical-align: middle; color: #808080; -webkit-box-shadow: 0px 1px 1px 0px #eaeaea inset; -moz-box-shadow: 0px 1px 1px 0px #eaeaea inset; box-shadow: 0px 1px 1px 0px #eaeaea inset; resize: none;}
 .con a{ color:#0a8cd2; vertical-align: middle;}
+.con p{ padding:0; line-height:30px;}

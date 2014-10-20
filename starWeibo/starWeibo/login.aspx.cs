@@ -26,6 +26,7 @@ namespace starWeibo
                 //starweibo.Model.userInfo oneuser = curuser.GetModelList("userName='" + cusername + "'")[0];
                 //starweibo.Model.userInfo oneusern = curuser.GetModel(2);
                 //Response.Write(curuserinfo.Count.ToString());
+                Session["user"] = curuserinfo[0];
                 if (curuserinfo[0].userPwd == userpwd.Value)
                 {
                     Session["userid"] = curuserinfo[0].id;

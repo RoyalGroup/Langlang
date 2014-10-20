@@ -60,6 +60,8 @@
     <Content Include="adminLogin.aspx" />
     <Content Include="adminManage.aspx" />
     <Content Include="comment.aspx" />
+    <Content Include="webservice\wsadmin.asmx" />
+    <Content Include="webservice\wshomepage.asmx" />
     <Content Include="weibo.aspx" />
     <Content Include="box.aspx" />
     <Content Include="inbox.aspx" />
@@ -306,6 +308,14 @@
     </Compile>
     <Compile Include="comment.aspx.designer.cs">
       <DependentUpon>comment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webservice\wsadmin.asmx.cs">
+      <DependentUpon>wsadmin.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="webservice\wshomepage.asmx.cs">
+      <DependentUpon>wshomepage.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="weibo.aspx.cs">
       <DependentUpon>weibo.aspx</DependentUpon>

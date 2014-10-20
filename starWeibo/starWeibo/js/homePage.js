@@ -9,12 +9,12 @@
         html += '<div class="wbfeeddetail line2 clearfix">';
         html += '<div class="wbface">';
         html += '<a href="#" class="wfaceradius">';
-        html += '<img src="C:\\Users\\just\\Desktop\\手机壁纸\\1.jpg" />';
+        html += '<img src="' + $("#info").attr("headimg") + '" />';
         html += '</a>';
         html += '</div>';
         html += '<div class="wbdetail">';
         html += '<div class="wbinfo">';
-        html += '<a class="wbname func1">十二</a>';
+        html += '<a class="wbname func1">'+$("#info").attr("name")+'</a>';
         html += '<a href="#">';
         html += '<i class="wico16 approveco"></i>';
         html += '</a>';
@@ -67,10 +67,21 @@
         html += '</div>';
         html += '<div class="concwbrzfbtn">转发</div>';
         html += '</div></div></div></div></div></div>';
-        // $.ajax({
-        // 	url:"";
-        // 	data{content:content,id:"1"}
-        // });
+
+        var userid = $("#info").attr("userid");
+        $.ajax({
+            type: "POST",   //访问WebService使用Post方式请求
+            contentType: "application/json", //WebService 会返回Json类型
+            url: "webservice/wshomepage.asmx/publish", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+            data: "{userId:'" + userid + "',content:'" + content + "'}",         //这里是要传递的参数，格式为 data: "{paraName:paraValue}",下面将会看到       
+            dataType: 'json',
+            success: function (result) {     //回调函数，result，返回值
+                //if (result.d == 'true') {
+                //    alert(保存成功！);
+                //}
+                alert("asdasd");
+            }
+        });
         $(".wbfeed").prepend(html);
     });
 });

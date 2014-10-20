@@ -21,7 +21,15 @@
 					<a class="enter" href="javascript:void(0);" title="模板设置"></a>
 				</div>
 			</div>
-            <myflag id="userid" style="display:none"><% =curUser.id %></myflag>
+            <div style="display:none">
+                <myflag id="userid"><% =curUser.id %></myflag>
+                <myflag id="Province"><% =userAddress[0] %></myflag>
+                <myflag id="City"><% =userAddress[1] %></myflag>
+                <myflag id="Area"><% =userAddress[2] %></myflag>
+                <myflag id="userSex"><% =curUser.userSex %></myflag>
+                <myflag id="userLove"><% =curUser.userMarry %></myflag>
+            </div>
+            
 			<div class="profile_top">
 				<div class="pf_info clearfix">
 					<div class="pf_info_left">
@@ -116,7 +124,7 @@
 							<div node-type="base_view" >
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">登录名</div>
-									<div class="con"><% =curUser.userName%><a href="javascript:void(0);">&nbsp;&nbsp;修改密码</a></div>
+									<div class="con" node-type="username_view"><% =curUser.userName%><a href="javascript:void(0);">&nbsp;&nbsp;修改密码</a></div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">昵&nbsp;&nbsp;称</div>
@@ -184,24 +192,29 @@
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2"><span class="W_error">*</span>性&nbsp;&nbsp;别</div>
-									<div class="con"><div class="input_check"><span class="rsp"><label for="man_radio"><input id="man_radio" name="gender" type="radio" value="m" class="W_radio" checked="checked">男</label></span><span class="rsp"><label for="woman_radio"><input id="woman_radio" name="gender" type="radio" value="f" class="W_radio">女</label></span></div></div>
+									<div class="con">
+                                        <div class="input_check">
+                                            <span class="rsp"><label for="man_radio"><input id="man_radio" name="gender" type="radio" value="男" groupname="Sex" state="1" class="W_radio" checked>男</label></span>
+                                            <span class="rsp"><label for="woman_radio"><input id="woman_radio" name="gender" type="radio" value="女" groupname="Sex" state="0" class="W_radio">女</label></span>
+                                        </div>
+									</div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2" node-type="love_label">感情状况</div>
 									<div class="con">
 										<div class="input_sel">
-											<select name="love" node-type="love" init_value="0" aria-valuemax="<% =curUser.userMarry%>">
-												<option value="0">保密</option>
-												<option value="1">单身</option>
-												<option value="2">求交往</option>
-												<option value="3">暗恋中</option>
-												<option value="4">暧昧中</option>
-												<option value="5">恋爱中</option>
-												<option value="6">订婚</option>
-												<option value="7">已婚</option>
-												<option value="8">分居</option>
-												<option value="9">离异</option>
-												<option value="10">丧偶</option>
+											<select name="love" node-type="love" aria-valuemax="<% =curUser.userMarry%>">
+												<option value="保密">保密</option>
+												<option value="单身">单身</option>
+												<option value="求交往">求交往</option>
+												<option value="暗恋中">暗恋中</option>
+												<option value="暧昧中">暧昧中</option>
+												<option value="恋爱中">恋爱中</option>
+												<option value="订婚">订婚</option>
+												<option value="已婚">已婚</option>
+												<option value="分居">分居</option>
+												<option value="离异">离异</option>
+												<option value="丧偶">丧偶</option>
 											</select>&nbsp;
 										</div>
 									</div>
@@ -245,7 +258,7 @@
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">QQ</div>
 									<div class="con" node-type="qq_view">
-									<p><a href="javascript:void(0)" action-type="quickedit" belong="comInfo" action-data="type=qq"><i class="W_ico16 icon_edit"></i>马上填写</a>你的QQ信息</p>
+									<p><% =getUserQQ(curUser.QQnumber) %></p>
 									</div>
 								</div>
 								<div class="pf_item clearfix">
@@ -259,7 +272,7 @@
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">邮箱</div>
 									<div class="con" node-type="email_view">
-										<input type="" name="email" node-type="email" action-type="text_copy" placeHoleder="请输入邮箱地址" action-data="text=请输入邮箱地址&amp;must=false" class="W_input" value="<% =curUser.userMail %>">
+										<input type="" name="email" node-type="email" action-type="text_copy" placeHoleder="请输入邮箱地址" action-data="text=请输入邮箱地址&amp;must=false" readonly="true" class="W_input" value="<% =curUser.userMail %>">
 									</div>
 									<div class="status" node-type="email_tip"><div style="display:none" class="W_tips tips_del clearfix"></div></div>
 								</div>

@@ -86,7 +86,7 @@
 							<div class="WB_msg_type">
 								<div class="msg_list_node clearfix">
 									<div class="id_avatar">
-										<img src="css/images/pic_at.png">
+										<img src="images/type/pic_at.png">
 									</div>
 									<div class="msg_main">
 										<div class="msg_title">提到我的</div>

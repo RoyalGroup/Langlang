@@ -18,13 +18,7 @@ namespace starWeibo.webservice
     {
         private starweibo.BLL.userInfo user = new starweibo.BLL.userInfo();
         public starweibo.Model.userInfo curUser = new starweibo.Model.userInfo();
-        
-        [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
-
+                
         [WebMethod]
         //更新用户基本信息
         public string updateUserBaseinfo(string id, string userName, string userAddress, string userSex, string userMarry, string userBirthday, string userDes)
@@ -38,6 +32,25 @@ namespace starWeibo.webservice
             curUser.userDes = userDes;
             return user.Update(curUser).ToString();
         }
-        
+
+        [WebMethod]
+        //更新用户联系信息
+        public string updateUserCominfo(string id, string userMail, string QQnumber, string userTell)
+        {
+            curUser = user.GetModel(Convert.ToInt32(id));
+            curUser.userMail = userMail;
+            curUser.QQnumber = QQnumber;
+            curUser.userTell = userTell;
+            return user.Update(curUser).ToString();
+        }
+
+        [WebMethod]
+        //更新用户教育信息
+        public string updateUserEduinfo(string id, string userEdu)
+        {
+            curUser = user.GetModel(Convert.ToInt32(id));
+            curUser.userEdu = userEdu;
+            return user.Update(curUser).ToString();
+        }
     }
 }

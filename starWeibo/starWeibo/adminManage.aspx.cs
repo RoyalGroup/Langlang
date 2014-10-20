@@ -32,7 +32,7 @@ namespace starWeibo
             this.rptpowerInfoList.DataBind();
 
             starweibo.BLL.reportV bllreportV = new reportV();
-            List<starweibo.Model.reportV> reportVs = bllreportV.GetModelList("1=1");
+            List<starweibo.Model.reportV> reportVs = bllreportV.GetModelList("msgState='noread'");
             this.rtpreportVList.DataSource = reportVs;
             this.rtpreportVList.DataBind();            
         }

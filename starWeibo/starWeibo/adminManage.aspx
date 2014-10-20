@@ -58,7 +58,7 @@
                                     <asp:Button ID="btnJinyan" runat="server" Text="禁言" class="jinyan" OnClick="btnJinyan_Click"/>--%>
                                     <div class="hulue" msgID="<%#Eval("messageId") %>">忽略</div>
 							        <div class="Delete" blogID="<%#Eval("blogId") %>">删除</div>
-							        <div class="jinyan" userID="<%#Eval("userId") %>">禁言</div>
+							        <div class="jinyan" userID="<%#Eval("blogAuthorId") %>">禁言</div>
 						        </div>
 					        </div>
                         </ItemTemplate>
@@ -136,8 +136,8 @@
 					<div class="UserManagesContent">
 						<asp:Repeater runat="server" ID="rptpowerInfoList" >
                             <ItemTemplate>
-						        <table cellspaceing="0" cellpadding="0" class="t">
-							        <tr>
+						        <table cellspacing="0" cellpadding="0" class="t">
+							        <tr id="<%# Eval("userId") %>">
 								        <td class="t1">
 									        <input type="checkbox" title="选中/取消选中"class="selectOne"/>
 								        </td>
@@ -148,28 +148,28 @@
 									        <a href="###"><%# Eval("userMail") %></a>
 								        </td>
 								        <td class="t4">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("zan") %>"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("zan") %>" content="zan"/>
 								        </td>
 								        <td class="t5">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("pinglun") %>"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("pinglun") %>" content="pinglun"/>
 								        </td>
 								        <td class="t6">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("at") %>"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("at") %>" content="at"/>
 								        </td>
 								        <td class="t7">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("guanzhu") %>"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("guanzhu") %>" content="guanzhu"/>
 								        </td>
 								        <td class="t8">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("jubao") %>"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("jubao") %>" content="jubao"/>
 								        </td>
 								        <td class="t9">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("zhuanfa") %>"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("zhuanfa") %>" content="zhuanfa"/>
 								        </td>
 								        <td class="t10">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("shoucang") %>"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("shoucang") %>" content="shoucang"/>
 								        </td>
 								        <td class="t11">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("fasong") %>"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("fasong") %>" content="fasong"/>
 								        </td>     
 							        </tr>
 						        </table>
@@ -187,8 +187,7 @@
 			</div>
 		</div>
 		<div class="footer">
-			<div class="help_link">
-				<a href="###" class="S_func1"></a>　
+			<div class="help_link">　
 				<a class="S_func1" href="###">友情链接</a>　
 				<a class="S_func1" href="###">网站地图</a>　
 				<a class="S_func1" href="###">京ICP备12002058号</a>　

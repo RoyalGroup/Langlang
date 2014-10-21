@@ -87,20 +87,41 @@ namespace starWeibo.webservice
         //}
 
         //用户权限
-        //[WebMethod]
-        ////用户权限更改
-        //public bool quanxian(int userId, string type,int fuzhi)
-        //{
-        //    starweibo.Model.powerInfo usp = new powerInfo();
-        //    starweibo.BLL.powerInfo bllusp = new starweibo.BLL.powerInfo();
-        //    usp = bllusp.GetModel(userId);
-        //    if(fuzhi==0){
-        //        usp.="1";
-        //    }
-        //    else{
-        //        usp.= "0";
-        //    }
-        //    return pow.Update(usp);
-        //}
+        [WebMethod]
+        //用户权限更改
+        public bool quanxian(int userId, string type, string fuzhi)
+        {
+            starweibo.Model.powerInfo usp = new powerInfo();
+            starweibo.BLL.powerInfo bllusp = new starweibo.BLL.powerInfo();
+            usp = bllusp.GetModel(userId);
+            switch (type)
+            {
+                case "zan":
+                    usp.zan = fuzhi;
+                    break;
+                case "pinglun":
+                    usp.pinglun = fuzhi;
+                    break;
+                case "at":
+                    usp.at = fuzhi;
+                    break;
+                case "guanzhu":
+                    usp.guanzhu = fuzhi;
+                    break;
+                case "jubao":
+                    usp.jubao = fuzhi;
+                    break;
+                case "zhuanfa":
+                    usp.zhuanfa = fuzhi;
+                    break;
+                case "shoucang":
+                    usp.shoucang = fuzhi;
+                    break;
+                case "fasong":
+                    usp.fasong = fuzhi;
+                    break;
+            }
+            return pow.Update(usp);
+        }
     }
 }

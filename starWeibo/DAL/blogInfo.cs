@@ -281,7 +281,7 @@ namespace starweibo.DAL
             {
                 strSql.Append("order by T.blogId desc");
             }
-            strSql.Append(")AS Row, T.*  from blogInfo T ");
+            strSql.Append(")AS Row, T.*,U.*  from blogInfo T,userInfo U ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 strSql.Append(" WHERE " + strWhere);

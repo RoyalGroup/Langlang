@@ -179,7 +179,7 @@
                                                             </span>
                                                         </a>
                                                     </div>
-                                                    <input class="noborder inputdefault" type="text" value="查找我关注人的微博">
+                                                    <input class="noborder inputdefault" type="text" value="查找我关注人的微博"/>
                                                     <a class="btn"></a>
                                                 </form>
                                             </div>

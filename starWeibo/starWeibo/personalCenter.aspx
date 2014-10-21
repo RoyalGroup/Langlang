@@ -62,7 +62,12 @@
 					<div>
 						<div class="pf_head_pic">
 							<img src="<% =(curUser.userHeadimage==null?"css/images/personalCenterimages/headimage.jpg":curUser.userHeadimage) %>">
-						</div>
+						    <div class="change_btn_div">
+			                    <a href="javascript:void(0);" class="W_btn_c">
+				                    <span>更换头像</span>
+			                    </a>
+		                    </div>
+                        </div>
 						<ul class="user_atten clearfix user_atten_l">
 							<li class="S_line1">
 								<a class="S_func1" href="focus.aspx">
@@ -271,20 +276,20 @@
 							<div node-type="com" style="display:none">
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">邮箱</div>
-									<div class="con" node-type="email_view">
+									<div class="con">
 										<input type="" name="email" node-type="email" action-type="text_copy" placeHoleder="请输入邮箱地址" action-data="text=请输入邮箱地址&amp;must=false" readonly="true" class="W_input" value="<% =curUser.userMail %>">
 									</div>
-									<div class="status" node-type="email_tip"><div style="display:none" class="W_tips tips_del clearfix"></div></div>
+									<div class="status" node-type="email_tip"></div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">QQ</div>
 									<div class="con"><input type="" name="qq" node-type="qq" action-type="text_copy" placeHolder="请输入QQ号" action-data="text=请输入QQ号&amp;must=false" class="W_input" value="<% =curUser.QQnumber %>"></div>
-									<div class="status" node-type="qq_tip"><div style="display:none" class="W_tips tips_del clearfix"></div></div>
+									<div class="status" node-type="qq_tip"></div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">Tel</div>
 									<div class="con"><input name="tel" node-type="tel" action-type="text_copy" placeHolder="请输入手机号码" action-data="text=请输入手机号码&amp;must=false" class="W_input " value="<% =curUser.userTell %>"></div>
-									<div class="status" node-type="tel_tip"><div style="display:none" class="W_tips tips_del clearfix"></div></div>
+									<div class="status" node-type="tel_tip"></div>
 								</div>
 							</div>
 						</div>
@@ -313,6 +318,14 @@
 					</div>
 
 				</div>
+                <div class="saveInfo">
+                    <div class='W_tips clearfix'>
+                        <p class='icon'>
+                            <span class='icon_succS'></span>
+                        </p>
+                        <span class='txt'>保存成功！</span>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>

@@ -9,7 +9,7 @@ namespace starWeibo
 {
     public partial class personalCenter : System.Web.UI.Page
     {
-        private string userid;
+        private string userid="2";
         private starweibo.BLL.userInfo user = new starweibo.BLL.userInfo();
         private starweibo.BLL.blogInfo blog = new starweibo.BLL.blogInfo();
         private starweibo.BLL.relationInfo relation = new starweibo.BLL.relationInfo();
@@ -20,11 +20,15 @@ namespace starWeibo
         public string[] userAddress = new string[3];//用户所在地
         protected void Page_Load(object sender, EventArgs e)
         {
-            userid = Session["userid"].ToString();
+            //userid = Session["userid"].ToString();
             curUser = user.GetModel(Convert.ToInt32(userid));//获得当前用户对象
-            if (curUser.userAddress != null || curUser.userAddress != "")
+            if (curUser.userAddress != null && curUser.userAddress != "")
             {
                 userAddress = curUser.userAddress.Split('-');
+            }
+            else
+            {
+                userAddress = new string[] { "未设置", "未设置", "未设置" };
             }
             focusCountd = relation.GetRecordCount("userId=" + curUser.id.ToString());
             fansCount = relation.GetRecordCount("friendId=" + curUser.id.ToString());
@@ -55,7 +59,7 @@ namespace starWeibo
         public string getUserAddress(string address, bool isheader)
         {
             if (isheader == true)
-                return address == null || address == "未设置-未设置-未设置" ? "未设置所在地" : address.Replace("-", " ");
+                return address == "" || address == "未设置-未设置-未设置" ? "未设置所在地" : address.Replace("-", " ");
             else
             {
                 string html = "";

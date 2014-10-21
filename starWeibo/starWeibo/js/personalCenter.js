@@ -7,6 +7,13 @@ $(function () {
 		$(".pf_use_num").removeClass("pf_use_num_display");
 	});
 
+    //修改头像
+	$(".pf_head_pic").hover(function () {
+	    $(".change_btn_div").css("display","block");
+	}, function () {
+	    $(".change_btn_div").css("display", "none");
+	});
+
 	//内容区导航栏切换
 	$(".pftb_itm").click(function(){
 		$(".pftb_itm").removeClass("pftb_itm_A");
@@ -45,10 +52,6 @@ $(function () {
 			getUserLove();
 		}
 		if(state=='保存'){
-			$("div[node-type='base_view']").css("display","block");
-			$("div[node-type='base']").css("display","none");
-			$(this).text("编辑");
-			
 			id = $("#userid").text();
 			userName = $("input[node-type='nickname']").val();
 			userAddress = $("#cmbProvince").val() + '-' + $("#cmbCity").val() + '-' + $("#cmbArea").val();
@@ -65,8 +68,13 @@ $(function () {
 			    dataType: 'json',
 			    success: function (result) {     //回调函数，result，返回值
 			        if (result.d == 'True') {
+                        //基本信息资料同步
 			            syncUserBaseInfo();
-			            alert("保存成功");
+			            //状态切换，从保存状态变为编辑状态
+			            $("div[node-type='base_view']").css("display", "block");
+			            $("div[node-type='base']").css("display", "none");
+			            $("#baseInfo .editBtn").text("编辑");
+			            $(".saveInfo").fadeIn(1000).fadeOut(1000);
 			        }
 			    }
 			});
@@ -81,30 +89,39 @@ $(function () {
 			$(this).text("保存");
 		}
 		if(state=='保存'){
-			$("div[node-type='com_view']").css("display","block");
-			$("div[node-type='com']").css("display","none");
-			$(this).text("编辑");
-
 			var id, userMail, QQnumber, userTell;
 			id = $("#userid").text();
 			userMail = $("input[node-type='email']").val();
 			QQnumber = $("input[node-type='qq']").val();
 			userTell = $("input[node-type='tel']").val();
-			$.ajax({
-			    type: "POST",   //访问WebService使用Post方式请求
-			    contentType: "application/json", //WebService 会返回Json类型
-			    url: "webservice/wspersonal.asmx/updateUserCominfo", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
-			    data: "{ id:'" + id + "',userMail:'" + userMail + "',QQnumber:'" + QQnumber + "',userTell:'" + userTell + "'}",
-			    dataType: 'json',
-			    success: function (result) {     //回调函数，result，返回值
-			        if (result.d == 'True') {
-			            $(".con[node-type='email_view']").text(userMail);
-			            $(".con[node-type='qq_view']").text(QQnumber);
-			            $(".con[node-type='Tel_view']").text(userTell);
-			            alert("保存成功");
-			        }
+			if (qqIsRight) {
+			    if (telIsRight) {
+			        $.ajax({
+			            type: "POST",   //访问WebService使用Post方式请求
+			            contentType: "application/json", //WebService 会返回Json类型
+			            url: "webservice/wspersonal.asmx/updateUserCominfo", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+			            data: "{ id:'" + id + "',userMail:'" + userMail + "',QQnumber:'" + QQnumber + "',userTell:'" + userTell + "'}",
+			            dataType: 'json',
+			            success: function (result) {     //回调函数，result，返回值
+			                if (result.d == 'True') {
+                                //联系信息资料同步
+			                    $(".con[node-type='email_view']").text(userMail);
+			                    $(".con[node-type='qq_view']").text(QQnumber);
+			                    $(".con[node-type='Tel_view']").text(userTell);
+                                //状态切换，从保存状态变为编辑状态
+			                    $("div[node-type='com_view']").css("display", "block");
+			                    $("div[node-type='com']").css("display", "none");
+			                    $("#comInfo .editBtn").text("编辑");
+			                    $(".saveInfo").fadeIn(1000).fadeOut(1000);
+			                }
+			            }
+			        });
+			    } else {
+			        alert("手机号输入不合法，请重试！")
 			    }
-			});
+			} else {
+                alert("QQ号输入不合法，请重试！")
+			}
 		}
 	});
 	//编辑保存教育信息
@@ -132,7 +149,7 @@ $(function () {
 			    success: function (result) {     //回调函数，result，返回值
 			        if (result.d == 'True') {
 			            $(".con[node-type='school_view']").text(userEdu);
-			            alert("保存成功");
+			            $(".saveInfo").fadeIn(1000).fadeOut(1000);
 			        }
 			    }
 			});
@@ -149,9 +166,30 @@ $(function () {
 	    $(".W_radio").attr('state', '0');
 	    $(this).attr('state', '1');
 	});
-});
 
+    //输入QQ号时检测其合法性
+	$("input[node-type='qq']").keyup(function(){
+	    qqIsRight = checkQQNumber($(this).val());
+	    if (qqIsRight) {
+	        $("[node-type='qq_tip']").html("<div class='W_tips clearfix'><p class='icon'><span class='icon_succS'></span></p></div>");
+	    } else {
+	        $("[node-type='qq_tip']").html("<div class='W_tips tips_del clearfix'><p class='icon'><span class='icon_delS'></span></p><span class='txt'>请输入正确的QQ号</span></div>");
+	    }
+	});
+    //输入手机号时检测其合法性
+	$("input[node-type='tel']").keyup(function () {
+	    telIsRight = checkTelNumber($(this).val());
+	    if (telIsRight) {
+	        $("[node-type='tel_tip']").html("<div class='W_tips clearfix'><p class='icon'><span class='icon_succS'></span></p></div>");
+	    } else {
+	        $("[node-type='tel_tip']").html("<div class='W_tips tips_del clearfix'><p class='icon'><span class='icon_delS'></span></p><span class='txt'>请输入正确的手机号</span></div>");
+	    }
+	});
+});
+//定义变量
 var id, userName, userAddress, userSex, userMarry, userBirthday, userDes;
+var qqIsRight = true, telIsRight = true;
+//同步用户基本信息
 function syncUserBaseInfo() {
     $(".name").text(userName);
     $(".con[node-type='username_view']").text(userName);
@@ -161,7 +199,7 @@ function syncUserBaseInfo() {
     $(".con[node-type='love_view']").text(userMarry);
     $(".con[node-type='birth_view']").text(userBirthday);
     $(".con[node-type='desc_view']").text(userDes);
-    $(".pf_intro").text(userDes);
+    $(".pf_intro a").text(userDes);
     $(".city").text(cityinfo);
     $(".city").attr("title", cityinfo);
 }
@@ -181,10 +219,23 @@ function getUsersex() {
     }
 }
 function getUserLove() {
-    $("select[name='love']").val() = $("#userLove").text();
+    $("select[node-type='love']").val($("#userLove").text());
 }
-
+//验证QQ号码输入的合法性
 function checkQQNumber(qqnumber) {
-    var patt1 = new RegExp("[0-9]{6,13}|''");
-    return patt1.test(qqnumber);
+    if (qqnumber.length == 0) {
+        return true;
+    } else {
+        var patt1 = /^[1-9]\d{5,12}$/;;
+        return patt1.test(qqnumber);
+    }
+}
+//验证手机号码输入的合法性
+function checkTelNumber(telnumber) {
+    if (telnumber.length == 0) {
+        return true;
+    } else {
+        var patt2 = /^1[3|4|5|8][0-9]\d{8}$/;
+        return patt2.test(telnumber);
+    }
 }

@@ -71,7 +71,7 @@
                         <div class="group_read">
                             <a href="#" class="currA">@我的微博</a>
                             <span>|</span>
-                            <a href="#">@我的评论</a>
+                            <a href="#" class="comA">@我的评论</a>
                         </div>
                         <asp:DataList runat="server" ID="weiboDL">
                             <ItemTemplate>

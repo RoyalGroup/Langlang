@@ -35,7 +35,7 @@
                     </a>
                 </div>
                 <div class="lev2">
-                    <a href="#">
+                    <a href="comment.aspx">
                         <i class="ico20 ico_comment"></i>
                         评论
                     </a>

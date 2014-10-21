@@ -44,7 +44,7 @@
                     </a>
                 </div>
                 <div class="lev2">
-                    <a href="#">
+                    <a href="message.aspx">
                         <i class="ico20 ico_letter"></i>
                         私信
                     </a>
@@ -76,7 +76,7 @@
                         <div class="comment_list">
                             <asp:DataList runat="server" ID="commentDL">
                                 <ItemTemplate>
-                                    <div class="comment_feed clearfix">
+                                   <div class="comment_feed clearfix">
                                         <div class="face">
                                             <a href="#">
                                                 <img src="<%# Eval("userHeadimage") %>" />
@@ -85,7 +85,7 @@
                                         <div class="comment">
                                             <div class="comm_box">
                                                 <p>
-                                                    <a href="#"><%# Eval("userName") %>:</a>
+                                                    <a href="#"><%# Eval("userName") %></a>
                                                     <span><%# Eval("msgContent") %></span>
                                                 </p>
                                                 <p>
@@ -101,7 +101,6 @@
                                     </div>
                                 </ItemTemplate>
                             </asp:DataList>
-
                         </div>
                     </div>
                 </div>

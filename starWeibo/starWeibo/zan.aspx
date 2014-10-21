@@ -44,7 +44,7 @@
                     </a>
                 </div>
                 <div class="lev2">
-                    <a href="#">
+                    <a href="message.aspx">
                         <i class="ico20 ico_letter"></i>
                         私信
                     </a>

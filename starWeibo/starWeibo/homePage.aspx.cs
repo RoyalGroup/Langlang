@@ -18,7 +18,7 @@ namespace starWeibo
                 Response.Redirect("login.aspx");
             }
             List<starweibo.Model.blogInfo> bloginfo = new List<starweibo.Model.blogInfo>();
-            this.wbList.DataSource = bll.GetListByPage("T.blogAuthorId=U.id and U.id in (select friendId from relationInfo where userId=" + Session["userid"] + ")", "blogPubTime", 0, 20);
+            this.wbList.DataSource = bll.GetListByPage("T.blogAuthorId=U.id","blogPubTime", 0, 20);//and U.id in (select friendId from relationInfo where userId=" + Session["userid"] + ")
             this.wbList.DataBind();
         }
     }

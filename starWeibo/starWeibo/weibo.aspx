@@ -32,19 +32,19 @@
                     </a>
                 </div>
                 <div class="lev2">
-                    <a href="#">
+                    <a href="comment.aspx">
                         <i class="ico20 ico_comment"></i>
                         评论
                     </a>
                 </div>
                 <div class="lev2">
-                    <a href="#">
+                    <a href="zan.aspx">
                         <i class="ico20 ico_zan"></i>
                         赞
                     </a>
                 </div>
                 <div class="lev2">
-                    <a href="#">
+                    <a href="message.aspx">
                         <i class="ico20 ico_letter"></i>
                         私信
                     </a>
@@ -71,7 +71,7 @@
                         <div class="group_read">
                             <a href="#" class="currA">@我的微博</a>
                             <span>|</span>
-                            <a href="#">@我的评论</a>
+                            <a href="#" class="comA">@我的评论</a>
                         </div>
                         <asp:DataList runat="server" ID="weiboDL">
                             <ItemTemplate>

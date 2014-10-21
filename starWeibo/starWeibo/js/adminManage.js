@@ -40,28 +40,28 @@
             dataType: 'json',
             success: function (result) {     //回调函数，result，返回值
                 if (result.d == true) {
-                    alert("忽略成功！");
+                    //alert("忽略成功！");
                 }
             }
         });
     });
 
     $(".Delete").click(function () {
-        var messageID = $(this).prev().prev().attr("msgID");
+        var messageID = $(this).prev().attr("msgID");
         var blogID = $(this).attr("blogID");
         $(this).parent().parent().remove();
-        //$.ajax({
-        //    type: "POST",   //访问WebService使用Post方式请求
-        //    contentType: "application/json", //WebService 会返回Json类型
-        //    url: "webservice/wsadmin.asmx/Delete", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
-        //    data: "{blogId:" + blogID + "}",
-        //    dataType: 'json',
-        //    success: function (result) {     //回调函数，result，返回值
-        //        if (result.d == true) {
-        //            alert("删除成功！");
-        //        }
-        //    }
-        //});
+        $.ajax({
+            type: "POST",   //访问WebService使用Post方式请求
+            contentType: "application/json", //WebService 会返回Json类型
+            url: "webservice/wsadmin.asmx/Delete", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+            data: "{blogId:" + blogID + ",messageId:" + messageID + "}",
+            dataType: 'json',
+            success: function (result) {     //回调函数，result，返回值
+                if (result.d == true) {
+                    //alert("删除成功！");
+                }
+            }
+        });
     });
 
     $(".jinyan").click(function () {
@@ -102,25 +102,167 @@
 
     //用户权限管理
     $(".select").click(function () {
-        var userID = $(this).parent().parent().attr("id");
-        var content = $(this).attr("content");
-        var fuzhi = $(this).attr("fuzhi");
-        //$.ajax({
-        //    type: "POST",   //访问WebService使用Post方式请求
-        //    contentType: "application/json", //WebService 会返回Json类型
-        //    url: "webservice/wsadmin.asmx/quanxian", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
-        //    data: "{userId:" + userID + ",type:" + content + ",fuzhi:" + fuzhi + "}",
-        //    dataType: 'json',
-        //    success: function (result) {     //回调函数，result，返回值
-        //        if (result.d == true) {
-        //            alert("操作成功！");
-        //        }
-        //    }
-        //});
-        if (fuzhi == "0") {
-            $(this).attr("fuzhi","1");
-        } else {
-            $(this).attr("fuzhi", "0");
-        }
+        var con = $(this).parent().parent().attr("id");
+        var userID = con.substring(1);
+        var id = $(this).attr("id");
+        //var fuzhi = $(this).attr("fuzhi");
+        //if (fuzhi == "0") {
+        //    $(this).attr("fuzhi", "1");
+        //} else {
+        //    $(this).attr("fuzhi", "0");
+        //}
+        //fuzhi = $(this).attr("fuzhi");
+        var fuzhi = ($(this).prop("checked") == false) ? 1 : 0;
+        $.ajax({
+            type: "POST",   //访问WebService使用Post方式请求
+            contentType: "application/json", //WebService 会返回Json类型
+            url: "webservice/wsadmin.asmx/quanxian", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+            data: "{userId:" + userID + ",type:'" + id + "',fuzhi:'" + fuzhi + "'}",
+            dataType: 'json',
+            success: function (result) {     //回调函数，result，返回值
+                if (result.d == true) {
+                    //alert("操作成功！");
+                }
+            }
+        });
+    });
+
+    $(".quan").click(function () {
+        //var userID = $(".selectOne:checked").parent().parent().attr("id");
+        $(".selectOne:checked").parent().nextAll().find("input").prop("checked", true);
+        
+        var a = new Array();
+
+        var checkBoxes = document.getElementsByName("selectO");
+        for (var i = 1; i <=checkBoxes.length+1; i++) {
+            if ($("#s" + i).find(".selectOne").prop("checked") == true)
+            {
+                a[i] = i;
+            }
+            
+        };
+        
+        for (var i = 1; i <= checkBoxes.length+1; i++) {
+            if (a[i] != null);
+            {
+                $.ajax({
+                    type: "POST",   //访问WebService使用Post方式请求
+                    contentType: "application/json", //WebService 会返回Json类型
+                    url: "webservice/wsadmin.asmx/quan", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+                    data: "{userId:" + a[i] + "}",
+                    dataType: 'json',
+                    success: function (result) {     //回调函数，result，返回值
+                        if (result.d == true) {
+                            //alert("操作成功！");
+                        }
+                    }
+                });
+            }
+        };
+        
+    });
+    $(".kquan").click(function () {
+        //var userID = $(".selectOne:checked").parent().parent().attr("id");
+        $(".selectOne:checked").parent().nextAll().find("input").prop("checked", false);
+        var a = new Array();
+
+        var checkBoxes = document.getElementsByName("selectO");
+        for (var i = 1; i <= checkBoxes.length + 1; i++) {
+            if ($("#s" + i).find(".selectOne").prop("checked") == true) {
+                a[i] = i;
+            }
+
+        };
+
+        for (var i = 1; i <= checkBoxes.length + 1; i++) {
+            if (a[i] != null);
+            {
+                $.ajax({
+                    type: "POST",   //访问WebService使用Post方式请求
+                    contentType: "application/json", //WebService 会返回Json类型
+                    url: "webservice/wsadmin.asmx/kquan", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+                    data: "{userId:" + a[i] + "}",
+                    dataType: 'json',
+                    success: function (result) {     //回调函数，result，返回值
+                        if (result.d == true) {
+                            //alert("操作成功！");
+                        }
+                    }
+                });
+            }
+        };
+    });
+
+    //quanxian
+    $(".fa").click(function () {
+        var type = $(this).attr("id");
+        $(".selectOne:checked").parent().nextAll().find('input[id="' + type + '"]').prop("checked", true);
+
+        var a = new Array();
+
+        var checkBoxes = document.getElementsByName("selectO");
+        for (var i = 1; i <= checkBoxes.length + 1; i++) {
+            if ($("#s" + i).find(".selectOne").prop("checked") == true) {
+                a[i] = i;
+            }
+
+        };
+
+        for (var i = 1; i <= checkBoxes.length + 1; i++) {
+            if (a[i] != null);
+            {
+                $.ajax({
+                    type: "POST",   //访问WebService使用Post方式请求
+                    contentType: "application/json", //WebService 会返回Json类型
+                    url: "webservice/wsadmin.asmx/xuanze", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+                    data: "{userId:" + a[i] + ",type:'"+ type +"'}",
+                    dataType: 'json',
+                    success: function (result) {     //回调函数，result，返回值
+                        if (result.d == true) {
+                            //alert("操作成功！");
+                        }
+                    }
+                });
+            }
+        };
+    });
+
+    $(".jie").click(function () {
+        var con = $(this).attr("id");
+        var type = con.substring(1);
+        $(".selectOne:checked").parent().nextAll().find('input[id="' + type + '"]').prop("checked", false);
+        var a = new Array();
+
+        var checkBoxes = document.getElementsByName("selectO");
+        for (var i = 1; i <= checkBoxes.length + 1; i++) {
+            if ($("#s" + i).find(".selectOne").prop("checked") == true) {
+                a[i] = i;
+            }
+
+        };
+
+        for (var i = 1; i <= checkBoxes.length + 1; i++) {
+            if (a[i] != null);
+            {
+                $.ajax({
+                    type: "POST",   //访问WebService使用Post方式请求
+                    contentType: "application/json", //WebService 会返回Json类型
+                    url: "webservice/wsadmin.asmx/xuanzek", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+                    data: "{userId:" + a[i] + ",type:'" + type + "'}",
+                    dataType: 'json',
+                    success: function (result) {     //回调函数，result，返回值
+                        if (result.d == true) {
+                            alert("操作成功！");
+                        }
+                    }
+                });
+            }
+        };
+    });
+
+    //搜索
+    $(".button").click(function () {
+        $(".UserManagesContentS").show();
+        $(".UserManagesContent").hide();
     });
 });

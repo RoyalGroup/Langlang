@@ -71,25 +71,25 @@
 					<div class="tool">
 						<div class="tool_left">
 							<a href="###" class="quan">全禁</a>
-							<a href="###" class="fasong">发微博</a>
-							<a href="###" class="zan">赞</a>
-							<a href="###" class="pinglun">评论</a>
-							<a href="###" class="at">@</a>
-							<a href="###" class="guanzhu">关注</a>
-							<a href="###" class="jubao">举报</a>
-							<a href="###" class="zhuanfa">转发</a>
-							<a href="###" class="shoucang">收藏</a>
+							<a href="###" id="fasong" class="fa">发微博</a>
+							<a href="###" id="zan" class="fa">赞</a>
+							<a href="###" id="pinglun" class="fa">评论</a>
+							<a href="###" id="at" class="fa">@</a>
+							<a href="###" id="guanzhu" class="fa">关注</a>
+							<a href="###" id="jubao" class="fa">举报</a>
+							<a href="###" id="zhuanfa" class="fa">转发</a>
+							<a href="###" id="shoucang" class="fa">收藏</a>
 						</div>
 						<div class="tool_center">
 							<a href="###" class="kquan">全解</a>
-							<a href="###" class="kfasong">解发微博</a>
-							<a href="###" class="kzan">解赞</a>
-							<a href="###" class="kpinglun">评论</a>
-							<a href="###" class="kat">解@</a>
-							<a href="###" class="kguanzhu">解关注</a>
-							<a href="###" class="kjubao">解举报</a>
-							<a href="###" class="kzhuanfa">解转发</a>
-							<a href="###" class="kshoucang">解收藏</a>
+							<a href="###" id="kfasong" class="jie">解发微博</a>
+							<a href="###" id="kzan" class="jie">解赞</a>
+							<a href="###" id="kpinglun" class="jie">评论</a>
+							<a href="###" id="kat" class="jie">解@</a>
+							<a href="###" id="kguanzhu" class="jie">解关注</a>
+							<a href="###" id="kjubao" class="jie">解举报</a>
+							<a href="###" id="kzhuanfa" class="jie">解转发</a>
+							<a href="###" id="kshoucang" class="jie">解收藏</a>
 						</div>
 						<div class="tool_right">
 							<div class="button">搜索</div>
@@ -137,9 +137,9 @@
 						<asp:Repeater runat="server" ID="rptpowerInfoList" >
                             <ItemTemplate>
 						        <table cellspacing="0" cellpadding="0" class="t">
-							        <tr id="<%# Eval("userId") %>">
+							        <tr id="s<%# Eval("userId") %>">
 								        <td class="t1">
-									        <input type="checkbox" title="选中/取消选中"class="selectOne"/>
+									        <input type="checkbox" title="选中/取消选中"class="selectOne" name="selectO"/>
 								        </td>
 								        <td class="t2">
 							                <a href="###"><%# Eval("userName") %></a>
@@ -148,28 +148,71 @@
 									        <a href="###"><%# Eval("userMail") %></a>
 								        </td>
 								        <td class="t4">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("zan") %>" content="zan"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("zan") %>" id="zan"/>
 								        </td>
 								        <td class="t5">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("pinglun") %>" content="pinglun"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("pinglun") %>" id="pinglun"/>
 								        </td>
 								        <td class="t6">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("at") %>" content="at"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("at") %>" id="at"/>
 								        </td>
 								        <td class="t7">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("guanzhu") %>" content="guanzhu"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("guanzhu") %>" id="guanzhu"/>
 								        </td>
 								        <td class="t8">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("jubao") %>" content="jubao"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("jubao") %>" id="jubao"/>
 								        </td>
 								        <td class="t9">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("zhuanfa") %>" content="zhuanfa"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("zhuanfa") %>" id="zhuanfa"/>
 								        </td>
 								        <td class="t10">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("shoucang") %>" content="shoucang"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("shoucang") %>" id="shoucang"/>
 								        </td>
 								        <td class="t11">
-									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("fasong") %>" content="fasong"/>
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("fasong") %>" id="fasong"/>
+								        </td>     
+							        </tr>
+						        </table>
+                            </ItemTemplate>
+                        </asp:Repeater>
+					</div>
+                    <div class="UserManagesContentS">
+						<asp:Repeater runat="server" ID="Repeater1" >
+                            <ItemTemplate>
+						        <table cellspacing="0" cellpadding="0" class="t">
+							        <tr id="s<%# Eval("userId") %>">
+								        <td class="t1">
+									        <input type="checkbox" title="选中/取消选中"class="selectOne" name="selectO"/>
+								        </td>
+								        <td class="t2">
+							                <a href="###"><%# Eval("userName") %></a>
+								        </td>
+								        <td class="t3">
+									        <a href="###"><%# Eval("userMail") %></a>
+								        </td>
+								        <td class="t4">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("zan") %>" id="zan"/>
+								        </td>
+								        <td class="t5">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("pinglun") %>" id="pinglun"/>
+								        </td>
+								        <td class="t6">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("at") %>" id="at"/>
+								        </td>
+								        <td class="t7">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("guanzhu") %>" id="guanzhu"/>
+								        </td>
+								        <td class="t8">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("jubao") %>" id="jubao"/>
+								        </td>
+								        <td class="t9">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("zhuanfa") %>" id="zhuanfa"/>
+								        </td>
+								        <td class="t10">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("shoucang") %>" id="shoucang"/>
+								        </td>
+								        <td class="t11">
+									        <input type="checkbox" title="选中/取消选中"class="select" fuzhi="<%#Eval("fasong") %>" id="fasong"/>
 								        </td>     
 							        </tr>
 						        </table>

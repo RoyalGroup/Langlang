@@ -41,21 +41,5 @@ namespace starWeibo
         {
             Response.Redirect("adminLogin.aspx");
         }
-
-        //protected void btnHulue_Click(object sender, EventArgs e)
-        //{
-        //    starweibo.BLL.messageInfo msgD = new messageInfo();
-        //    //msgD.Delete();
-        //}
-
-        //protected void btnDelete_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //protected void btnJinyan_Click(object sender, EventArgs e)
-        //{
-
-        //}
     }
 }

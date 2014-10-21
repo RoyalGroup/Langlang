@@ -15,6 +15,7 @@ namespace starweibo.Model
         private int _blogauthorid;
         private DateTime _blogpubtime = DateTime.Now;
         private int? _atid;
+        private string _blogstate = "0";
         /// <summary>
         /// 
         /// </summary>
@@ -54,6 +55,14 @@ namespace starweibo.Model
         {
             set { _atid = value; }
             get { return _atid; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string blogState
+        {
+            set { _blogstate = value; }
+            get { return _blogstate; }
         }
         #endregion Model
 

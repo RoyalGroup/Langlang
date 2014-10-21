@@ -12,12 +12,17 @@ namespace starWeibo.at
         starweibo.BLL.atV atInfo = new starweibo.BLL.atV();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"]==null||Session["username"].ToString()=="")
+            if (Session["userid"]==null||Session["userid"].ToString()=="")
             {
-                //Response.Redirect("login.aspx"); 
+                Response.Redirect("login.aspx"); 
             }
-            this.weiboDL.DataSource = atInfo.GetListByPage("1=1","blogPubTime",0,10);
-            this.weiboDL.DataBind();
+            else
+            {
+                int userid = (int)Session["userid"]; 
+                this.weiboDL.DataSource = atInfo.GetListByPage("atId = "+userid+"","blogPubTime",0,10);
+                this.weiboDL.DataBind();
+            }
+           
         }
     }
 }

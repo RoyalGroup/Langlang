@@ -31,19 +31,19 @@
 					</a>
 				</div>
 				<div class="lev2">
-					<a href="#">
+					<a href="comment.aspx">
 						<i class="ico20 ico_comment"></i>
 						评论
 					</a>
 				</div>
 				<div class="lev2">
-					<a href="#">
+					<a href="zan.aspx">
 						<i class="ico20 ico_zan"></i>
 						赞
 					</a>
 				</div>
 				<div class="lev2">
-					<a href="#">
+					<a href="message.aspx">
 						<i class="ico20 ico_letter"></i>
 						私信
 					</a>
@@ -86,7 +86,7 @@
 							<div class="WB_msg_type">
 								<div class="msg_list_node clearfix">
 									<div class="id_avatar">
-										<img src="css/images/pic_at.png">
+										<img src="images/type/pic_at.png">
 									</div>
 									<div class="msg_main">
 										<div class="msg_title">提到我的</div>

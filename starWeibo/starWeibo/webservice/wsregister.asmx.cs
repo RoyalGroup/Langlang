@@ -30,6 +30,7 @@ namespace starWeibo.webservice
             shengqing.userName = userName;
             shengqing.userPwd = userPwd;
             shengqing.userMail = userMail;
+            shengqing.userHeadimage = "css/images/personalCenterimages/headimage.jpg";
             return oneshenqing.Add(shengqing).ToString();
 
         }

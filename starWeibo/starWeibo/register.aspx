@@ -27,7 +27,7 @@
 								<div class="tishi ts2">请输入常用邮箱名</div>
 						</li>
                         <li class="yincang">
-								<div class="yanzheng">请进行邮箱验证</div>
+								<div class="yanzheng">进行邮箱验证</div>
 						</li>
 						<li>
 								<div class="name1">密码：</div>
@@ -46,7 +46,7 @@
 						</li>
 					</ul>
 					<div class="check">
-							<input type="checkbox" name="use_active_code"/>
+							<input type="checkbox" checked="checked"  name="use_active_code"/>
 							<span>我阅读并接受《星空微博服务协议条款》</span>
 					</div>
 					<div class="finishzhuce">

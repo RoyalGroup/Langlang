@@ -70,6 +70,23 @@
     $(document).click(function () {
         $(".ts5").hide();
     });
+    $(".youxiang").click(function () {
+        var b = $(this).attr("a")
+        if (b == 1) {
+            $(".yincang").css("display", "block");
+            $(this).attr("a", "0");
+        }
+        else {
+            $(".yincang").css("display", "none");
+            $(this).attr("a", "1");
+        }
+    });
+
+    $(document).on("click", ".yanzheng", function () {
+        var c = $(".youxiang").val();
+        checkmcail(c);
+    });
+
     $(".finishzhuce").click(function () {
         var nicheng = $(".nicheng").val();
         var youxiang = $(".youxiang").val();
@@ -96,15 +113,11 @@
 
 
     });
-    $(".youxiang").click(function () {
-        var b = $(this).attr("a")
-        if (b == 1) {
-            $(".yincang").css("display", "block");
-            $(this).attr("a", "0");
-        }
-        else {
-            $(".yincang").css("display", "none");
-            $(this).attr("a", "1");
-        }
-    });
+ 
 });
+function checkmcail(control)
+{
+    var d=new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");
+    if(!d.test(control))
+        alert("请输入正确邮箱");
+};

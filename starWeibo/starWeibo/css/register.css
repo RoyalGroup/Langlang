@@ -12,7 +12,7 @@ img{border:0;}
 .register-form ul{width:480px;height: 320px;}
 .register-form li{width: 480px;height: 40px;padding-top: 20px;position: relative;}
 .name1{text-align: right;width: 80px;height: 38px;float: left;color: #111;font-size: 14px;padding-top: 10px;}
-.text_input{width: 180px;height: 34px;border:1px solid #ccc;float: left; color: rgb(153,153,153);outline: none;margin-left: 20px; *padding-top:8px;}
+.text_input{width: 180px;height: 34px;border:1px solid #ccc;float: left; color: rgb(153,153,153);outline: none;margin-left: 20px; *padding-top:8px;border-radius:5px;}
 
 /*.image_code{width:110px;height: 36px;margin-left: 5px;background-image: url("images/imgcode (1).png");float: left;}*/
 

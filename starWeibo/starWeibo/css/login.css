@@ -17,7 +17,7 @@ img{border:0;}
 .header{width:320px;height:40px;float:left;}
 .left{color:#808080;font-size:15px;font-weight:bold;padding:10px 0 0 10px;float:left;line-height: 30px;padding-left: 60px;}
 .right{float: right;padding: 15px 10px 0 0;}
-.right a{color:#00a7ea;font-size:16px;font-weight:bold;float:right;text-decoration:none;}
+.right a{color:#00a7ea;font-size:15px;font-weight:bold;float:right;text-decoration:none;}
 .user{width:250px;height:40px;margin:60px 0 10px 60px;color:#111;}
 .userName,.pwd{float:left;width:60px;}
 .user-input,.pwd-input{float:left;outline: none;height: 25px;width: 160px;color:#808080;}

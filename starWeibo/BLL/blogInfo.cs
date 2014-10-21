@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Collections.Generic;
-
 using starweibo.Model;
 namespace starweibo.BLL
 {
@@ -14,15 +13,6 @@ namespace starweibo.BLL
         public blogInfo()
         { }
         #region  BasicMethod
-
-        /// <summary>
-        /// 得到最大ID
-        /// </summary>
-        public int GetMaxId()
-        {
-            return dal.GetMaxId();
-        }
-
         /// <summary>
         /// 是否存在该记录
         /// </summary>

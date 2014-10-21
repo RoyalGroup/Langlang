@@ -24,7 +24,6 @@ namespace starWeibo.webservice
             return "Hello World";
         }
 
-        private starweibo.BLL.messageInfo Msg = new starweibo.BLL.messageInfo();
         [WebMethod]
         //忽略举报信息
         public bool hulueReport(int messageId)
@@ -33,29 +32,29 @@ namespace starWeibo.webservice
             starweibo.BLL.messageInfo bllmsg = new starweibo.BLL.messageInfo();
             onemsg = bllmsg.GetModel(messageId);
             onemsg.msgState = "read";
-            return Msg.Update(onemsg);
+            return bllmsg.Update(onemsg);
         }
 
-        //private starweibo.BLL.blogInfo blog = new starweibo.BLL.blogInfo();
-        //[WebMethod]
-        ////被举报微博删除
-        //public bool Delete(int messageId, int blogId)
-        //{
-        //    starweibo.Model.messageInfo onemsg = new messageInfo();
-        //    starweibo.BLL.messageInfo bllmsg = new starweibo.BLL.messageInfo();
-        //    onemsg = bllmsg.GetModel(messageId);
-        //    onemsg.msgState = "read";
-        //    Msg.Update(onemsg);
+        
+        [WebMethod]
+        //被举报微博删除
+        public bool Delete(int messageId, int blogId)
+        {
+            starweibo.Model.messageInfo onemsg = new messageInfo();
+            starweibo.BLL.messageInfo bllmsg = new starweibo.BLL.messageInfo();
+            onemsg = bllmsg.GetModel(messageId);
+            onemsg.msgState = "read";
+            bllmsg.Update(onemsg);
 
-        //    starweibo.Model.blogInfo oneblog = new blogInfo();
-        //    starweibo.BLL.blogInfo bllmsgP = new starweibo.BLL.blogInfo();
-        //    oneblog = bllmsgP.GetModel(blogId);
-        //    oneblog.blogState = "delete";
+            starweibo.Model.blogInfo oneblog = new blogInfo();
+            starweibo.BLL.blogInfo bllmsgP = new starweibo.BLL.blogInfo();
+            oneblog = bllmsgP.GetModel(blogId);
+            oneblog.blogState = "1";
 
-        //    return blog.Update(oneblog);
-        //}
+            return bllmsgP.Update(oneblog);
+        }
 
-        private starweibo.BLL.powerInfo pow = new starweibo.BLL.powerInfo();
+        
         [WebMethod]
         //被举报用户禁言
         public bool jinyan(int messageId, int userId)
@@ -64,14 +63,14 @@ namespace starWeibo.webservice
             starweibo.BLL.messageInfo bllmsg = new starweibo.BLL.messageInfo();
             onemsg = bllmsg.GetModel(messageId);
             onemsg.msgState = "read";
-            Msg.Update(onemsg);
+            bllmsg.Update(onemsg);
 
             starweibo.Model.powerInfo onemsgP = new powerInfo();
             starweibo.BLL.powerInfo bllmsgP = new starweibo.BLL.powerInfo();
             onemsgP = bllmsgP.GetModel(userId);
             onemsgP.fasong = "0";
 
-            return pow.Update(onemsgP);
+            return bllmsgP.Update(onemsgP);
         }
 
         //private starweibo.BLL.chatInfo SysMsg = new starweibo.BLL.chatInfo();
@@ -121,7 +120,121 @@ namespace starWeibo.webservice
                     usp.fasong = fuzhi;
                     break;
             }
-            return pow.Update(usp);
+            return bllusp.Update(usp);
+        }
+
+        //用户权限全禁
+        [WebMethod]
+        //用户权限全禁
+        public bool quan(int userId)
+        {
+            starweibo.Model.powerInfo usp = new powerInfo();
+            starweibo.BLL.powerInfo bllusp = new starweibo.BLL.powerInfo();
+            usp = bllusp.GetModel(userId);
+
+            usp.zan = "0";
+            usp.pinglun = "0";
+            usp.at = "0";
+            usp.guanzhu = "0";
+            usp.jubao = "0";
+            usp.zhuanfa = "0";
+            usp.shoucang = "0";
+            usp.fasong = "0";
+
+            return bllusp.Update(usp);
+        }
+
+        [WebMethod]
+        //用户权限全解
+        public bool kquan(int userId)
+        {
+            starweibo.Model.powerInfo usp = new powerInfo();
+            starweibo.BLL.powerInfo bllusp = new starweibo.BLL.powerInfo();
+            usp = bllusp.GetModel(userId);
+
+            usp.zan = "1";
+            usp.pinglun = "1";
+            usp.at = "1";
+            usp.guanzhu = "1";
+            usp.jubao = "1";
+            usp.zhuanfa = "1";
+            usp.shoucang = "1";
+            usp.fasong = "1";
+
+            return bllusp.Update(usp);
+        }
+
+        [WebMethod]
+        //用户权选择更改
+        public bool xuanze(int userId, string type)
+        {
+            starweibo.Model.powerInfo usp = new powerInfo();
+            starweibo.BLL.powerInfo bllusp = new starweibo.BLL.powerInfo();
+            usp = bllusp.GetModel(userId);
+            switch (type)
+            {
+                case "zan":
+                    usp.zan = "0";
+                    break;
+                case "pinglun":
+                    usp.pinglun = "0";
+                    break;
+                case "at":
+                    usp.at = "0";
+                    break;
+                case "guanzhu":
+                    usp.guanzhu = "0";
+                    break;
+                case "jubao":
+                    usp.jubao = "0";
+                    break;
+                case "zhuanfa":
+                    usp.zhuanfa = "0";
+                    break;
+                case "shoucang":
+                    usp.shoucang = "0";
+                    break;
+                case "fasong":
+                    usp.fasong = "0";
+                    break;
+            }
+            return bllusp.Update(usp);
+        }
+        [WebMethod]
+        //用户权选择更改
+        public bool xuanzek(int userId, string type)
+        {
+            starweibo.Model.powerInfo usp = new powerInfo();
+            starweibo.BLL.powerInfo bllusp = new starweibo.BLL.powerInfo();
+            usp = bllusp.GetModel(userId);
+            switch (type)
+            {
+                case "zan":
+                    usp.zan = "1";
+                    break;
+                case "pinglun":
+                    usp.pinglun = "1";
+                    break;
+                case "at":
+                    usp.at = "1";
+                    break;
+                case "guanzhu":
+                    usp.guanzhu = "1";
+                    break;
+                case "jubao":
+                    usp.jubao = "1";
+                    break;
+                case "zhuanfa":
+                    usp.zhuanfa = "1";
+                    break;
+                case "shoucang":
+                    usp.shoucang = "1";
+                    break;
+                case "fasong":
+                    usp.fasong = "1";
+                    break;
+            }
+            return bllusp.Update(usp);
         }
     }
 }

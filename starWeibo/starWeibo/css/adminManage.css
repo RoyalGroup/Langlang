@@ -45,6 +45,7 @@ img{border: 0;}
 
 .UserManagesMain{height: 92%;background-color: #f2f4f6;position: relative;}
 .UserManagesContent{height: 89%;overflow-y: auto;}
+.UserManagesContentS{height: 89%;overflow-y: auto;display:none;}
 .tool{height: 24px;padding: 7px;border-bottom: 1px solid rgb(170, 193, 222);font-size: 13px;}
 .tool_left{height: 24px;float: left;margin-left: 15px;float: left;}
 .tool_left a{display: inline-block;border: 1px solid rgb(136, 136, 136);border-radius: 3px;background-color: #fff;color: #333;height: 22px;line-height: 22px;padding: 0 12px 0 12px;float: left;margin-left: 3px;}

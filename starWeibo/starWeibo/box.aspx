@@ -31,19 +31,19 @@
 					</a>
 				</div>
 				<div class="lev2">
-					<a href="#">
+					<a href="comment.aspx">
 						<i class="ico20 ico_comment"></i>
 						评论
 					</a>
 				</div>
 				<div class="lev2">
-					<a href="#">
+					<a href="zan.aspx">
 						<i class="ico20 ico_zan"></i>
 						赞
 					</a>
 				</div>
 				<div class="lev2">
-					<a href="#">
+					<a href="message.aspx">
 						<i class="ico20 ico_letter"></i>
 						私信
 					</a>

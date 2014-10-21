@@ -62,6 +62,7 @@
     <Content Include="comment.aspx" />
     <Content Include="webservice\wsadmin.asmx" />
     <Content Include="webservice\wshomepage.asmx" />
+    <Content Include="webservice\wsregister.asmx" />
     <Content Include="weibo.aspx" />
     <Content Include="box.aspx" />
     <Content Include="inbox.aspx" />
@@ -315,6 +316,10 @@
     </Compile>
     <Compile Include="webservice\wshomepage.asmx.cs">
       <DependentUpon>wshomepage.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="webservice\wsregister.asmx.cs">
+      <DependentUpon>wsregister.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="weibo.aspx.cs">

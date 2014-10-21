@@ -35,7 +35,7 @@
                     </a>
                 </div>
                 <div class="lev2">
-                    <a href="#">
+                    <a href="comment.aspx">
                         <i class="ico20 ico_comment"></i>
                         评论
                     </a>
@@ -47,7 +47,7 @@
                     </a>
                 </div>
                 <div class="lev2">
-                    <a href="#">
+                    <a href="message.aspx">
                         <i class="ico20 ico_letter"></i>
                         私信
                     </a>
@@ -179,7 +179,7 @@
                                                             </span>
                                                         </a>
                                                     </div>
-                                                    <input class="noborder inputdefault" type="text" value="查找我关注人的微博">
+                                                    <input class="noborder inputdefault" type="text" value="查找我关注人的微博"/>
                                                     <a class="btn"></a>
                                                 </form>
                                             </div>

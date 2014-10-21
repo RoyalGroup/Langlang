@@ -15,7 +15,7 @@ namespace starWeibo.webservice
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // 若要允许使用 ASP.NET AJAX 从脚本中调用此 Web 服务，请取消注释以下行。 
-    // [System.Web.Script.Services.ScriptService]
+    [System.Web.Script.Services.ScriptService]
     public class wshomepage : System.Web.Services.WebService
     {
 
@@ -26,13 +26,13 @@ namespace starWeibo.webservice
         }
 
         [WebMethod]
-        public string publish(int userId, string content)
+        public int publish(int userId, string content)
         {
             starweibo.Model.blogInfo oneblog = new starweibo.Model.blogInfo();
             starweibo.BLL.blogInfo bllblog = new starweibo.BLL.blogInfo();
             oneblog.blogAuthorId = userId;
             oneblog.blogContent = content;
-            return bllblog.Add(oneblog).ToString();
+            return bllblog.Add(oneblog);
         }
     }
 }

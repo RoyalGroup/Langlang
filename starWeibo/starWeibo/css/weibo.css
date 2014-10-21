@@ -9,7 +9,7 @@ a{text-decoration: none;color: #333;}
 .W_main_a{height: 872px;}
 .W_main_c{float: left;width: 600px;min-height: 800px;overflow: hidden;padding: 22px 0 50px;}
 .W_main_r{float: left;width: 230px;overflow: hidden;padding: 30px 0;}
-.group_read{width: 560px;height: 34px;margin: 0 auto;line-height: 34px;border-bottom: 2px solid #ea1429;font-weight: bold;font-size: 14px;}
+.group_read{width: 560px;height: 34px;margin: 0 auto;line-height: 34px;border-bottom: 2px solid #ea1429;font-weight: normal;font-size: 14px;}
 .tab_normal{width: 560px;height: 23px;padding: 10px 0 6px 0;margin: 0 auto;}
 .tab_normal_l{float: left;height: 23px;}
 .W_btn_a,.W_btn_b:hover{border: 1px solid #ff9b01;background-color:#ffa00a;color: #fff;border-radius: 2px;line-height: 22px;display: inline-block;vertical-align: bottom;margin-right: 10px;}
@@ -68,3 +68,4 @@ a{text-decoration: none;color: #333;}
 .main_inner {background:#fff url("../images/repeat_bg_y.png") repeat-y;}
 .lev2-curr {background-color:#ccc;}
 .wb_face img{width:50px;height:50px;}
+.currA{font-weight:bold;}

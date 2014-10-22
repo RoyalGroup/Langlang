@@ -32,14 +32,6 @@
                                     i++;
                                 }
                                     %>
-						<li class="leftbtn FocusLi" groupname="未分组">
-							<div class="FocusLiL">未分组</div>
-							<div class="FocusLiR">
-                                <%
-                                    Response.Write("("+notgroupcount+")");
-                                    %>
-							</div>
-						</li>
 					</ul>
 						<div class="CreateGroup">创建分组</div>
 				</div>
@@ -75,16 +67,25 @@
 								    <span class="FCardName"><%# Eval("FriendNoteName") %></span>
 								    <span class="FCardRelation">已关注</span>
 								    <span class="FCardGroup"><%# Eval("groupName") %></span>
+            
 								    <div class="GroupCard">
+                                       
 									    <div class="GroupCardT">请选择分组:</div>
-                                             <li class="GroupCardMLi">
-											    <input type="checkbox" class="GroupCheck"/>
-											    <div class="GroupName">特别关注</div>
-										    </li>
+                                        <div class="GroupCardM">
+                                            <% foreach (starweibo.Model.relationGroupInfo groupfocus in MgroupInfo) { 
+                                                string html="";
+                                                html += "<li class='GroupCardMLi'>";
+                                                html += "<input type='checkbox' class='GroupCheck'/>";
+                                                html += "<div class='GroupName'>"+groupfocus.groupName+"</div>";
+                                                html += " </li>";
+                                                Response.Write(html);
+                                            } %>
+                                        </div>
                                         <div class="BtnSureGroup">
+                                            <div class="GroupCardB">创建新分组</div>
                                             <div class="BtnSureGroupIn">确定</div>
                                         </div>
-									    <div class="GroupCardB">创建新分组</div>
+									    
 								    </div>
 							    </div>
 						    </div>

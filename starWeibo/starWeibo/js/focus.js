@@ -18,10 +18,33 @@
             $($(this).parent().find(".GroupCard")).hide();
             $($(this).parent().find(".GroupCard")).attr("isclick", "no");
         }
-        $(".BtnSureGroupIn").click(function () {
-            $(this).parent().parent().hide();
-            $(this).parent().parent().attr("isclick", "no");
-        });
+    });
+
+    $(".GroupCheck").attr("ischeck", "false");
+    $(".GroupCheck").click(function () {
+        $(".GroupCheck").prop("checked", false);
+        if ($(this).attr("ischeck") == "false") {
+            $(".GroupCheck").attr("ischeck", "false");
+            $(this).attr("ischeck", "true");
+            $(this).prop("checked", true);
+        }
+        else {
+            $(this).attr("ischeck", "false");
+            $(this).prop("checked", false);
+        }
+    });
+    $(".BtnSureGroupIn").click(function () {
+        $(this).parent().parent().hide();
+        $(this).parent().parent().attr("isclick", "no");
+        var addfgroup = null;
+        addfgroup = $(this).parent().parent().find(".GroupCardM").find(".GroupCardMLi").find(".GroupCheck[ischeck='true']").parent().find(".GroupName").html();
+        //if (addfgroup != null) {
+        //    $.ajax({
+        //        url:"focus.aspx",
+        //        type: "POST",
+        //        data: { flag: "getgroup" },
+        //    });
+        //}
     });
     //设置备注
     $(".SetNote").click(function () {

@@ -9,7 +9,7 @@ namespace starWeibo
 {
     public partial class personalCenter : System.Web.UI.Page
     {
-        private string userid="2";
+        private string userid;
         private starweibo.BLL.userInfo user = new starweibo.BLL.userInfo();
         private starweibo.BLL.blogInfo blog = new starweibo.BLL.blogInfo();
         private starweibo.BLL.relationInfo relation = new starweibo.BLL.relationInfo();
@@ -20,7 +20,7 @@ namespace starWeibo
         public string[] userAddress = new string[3];//用户所在地
         protected void Page_Load(object sender, EventArgs e)
         {
-            //userid = Session["userid"].ToString();
+            userid = Session["userid"].ToString();
             curUser = user.GetModel(Convert.ToInt32(userid));//获得当前用户对象
             if (curUser.userAddress != null && curUser.userAddress != "")
             {

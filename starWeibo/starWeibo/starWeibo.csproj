@@ -60,7 +60,9 @@
     <Content Include="adminLogin.aspx" />
     <Content Include="adminManage.aspx" />
     <Content Include="comment.aspx" />
+    <Content Include="images\loading.gif" />
     <Content Include="webservice\wsadmin.asmx" />
+    <Content Include="webservice\wsfocus.asmx" />
     <Content Include="webservice\wshomepage.asmx" />
     <Content Include="webservice\wsregister.asmx" />
     <Content Include="weibo.aspx" />
@@ -312,6 +314,10 @@
     </Compile>
     <Compile Include="webservice\wsadmin.asmx.cs">
       <DependentUpon>wsadmin.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="webservice\wsfocus.asmx.cs">
+      <DependentUpon>wsfocus.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="webservice\wshomepage.asmx.cs">

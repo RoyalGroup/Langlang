@@ -183,13 +183,13 @@ em{font-style: normal;font-weight: normal;}
 .tabnosep .tlk{display: block;line-height: 22px;padding: 0 10px;border-radius: 2px;}
 .bg2{background-color: #e6e6e6;}
 
-.wbfeed .wbfeedtype{margin: 0 20px 0;padding: 20px 0 0;zoom: 1;}
+.wbfeed .wbfeedtype{margin: 0 20px 0;padding: 0px 0 0;zoom: 1;}
 .line2{border-color: #e6e6e6;}
 .wbscreen{position: absolute;margin: -15px 0 0 544px;}
 .wbscreen .iconchoose{visibility: hidden;}
 .iconchoose{width: 16px;height: 16px;background-position: -75px -75px;}
 .wico12{display: inline-block;width: 12px;height: 12px;background-image: url("images/icon.png");background-repeat: no-repeat;}
-.wbfeeddetail{border-bottom-width: 1px;border-bottom-style: solid;padding: 0 0 11px;overflow: hidden;}
+.wbfeeddetail{border-bottom-width: 1px;border-bottom-style: solid;padding: 20px 0 11px;overflow: hidden;}
 .wbface{float: left;width: 50px;position: relative;}
 .wbface .wfaceradius{height: 50px;display: block;overflow: hidden;}
 .wfaceradius{border-radius: 2px;}
@@ -213,7 +213,12 @@ em{font-style: normal;font-weight: normal;}
 
 .wbhandle{float: right;}
 .wbhandle .wico20{position: relative;}
-.iconpraised{width: 13px;height: 14px;background-position: -75px 0;vertical-align: text-bottom;}
+.wbhandle i {padding:0 5px 0 5px;}
+.wbhandle a {color:#0a8cd2;}
+.wbhandle a:hover{text-decoration:underline; }
+.iconpraised{width: 13px;height: 14px;vertical-align: text-bottom;}
+.zan[ifzan="0"] .iconpraised {background-position: -75px 0;}
+.zan[ifzan="1"] .iconpraised {background-position: -100px 0;}
 .wbfrom .wbtime{margin:0 7px 0 0;}
 .link2{color: #6cbae4}
 .wbfrom .hover{visibility: hidden;}

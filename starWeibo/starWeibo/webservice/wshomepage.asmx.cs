@@ -25,8 +25,8 @@ namespace starWeibo.webservice
             return "Hello World";
         }
 
-        [WebMethod]
-        public int publish(int userId, string content)
+        [WebMethod (EnableSession = true)]
+        public int publishBlog(int userId, string content)
         {
             starweibo.Model.blogInfo oneblog = new starweibo.Model.blogInfo();
             starweibo.BLL.blogInfo bllblog = new starweibo.BLL.blogInfo();
@@ -34,5 +34,20 @@ namespace starWeibo.webservice
             oneblog.blogContent = content;
             return bllblog.Add(oneblog);
         }
+
+        [WebMethod (EnableSession = true)]
+        public int publishMessage(int blogid, string content, int typeid, int parentid)
+        {
+            starweibo.Model.messageInfo oneMsg = new starweibo.Model.messageInfo();
+            starweibo.BLL.messageInfo bllMsg = new starweibo.BLL.messageInfo();
+            oneMsg.userId = Convert.ToInt32(Session["userid"]);
+            oneMsg.blogId = blogid;
+            oneMsg.msgContent = content;
+            oneMsg.msgTypeId = typeid;
+            oneMsg.parentId = parentid;
+            return bllMsg.Add(oneMsg);
+        }
+
+        
     }
 }

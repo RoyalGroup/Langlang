@@ -73,17 +73,30 @@ namespace starWeibo.webservice
             return bllmsgP.Update(onemsgP);
         }
 
-        //private starweibo.BLL.chatInfo SysMsg = new starweibo.BLL.chatInfo();
-        //[WebMethod]
-        ////发送公告
-        //public string SendSysMsg(string msgContent)
-        //{
-        //    starweibo.Model.userInfo SSM = new userInfo();
-        //    starweibo.BLL.userInfo bllSSM = new starweibo.BLL.userInfo();
-        //    SSM = bllSSM.GetList();
 
-        //    return SysMsg.Add(msgContent);
-        //}
+        [WebMethod]
+        //发送公告
+        public void SendSysMsg(string msgContent)
+        {
+            starweibo.BLL.chatInfo SysMsg = new starweibo.BLL.chatInfo();
+            starweibo.Model.chatInfo molMsg = new starweibo.Model.chatInfo();
+
+            List<starweibo.Model.userInfo> SSM = new List<starweibo.Model.userInfo>();
+            starweibo.BLL.userInfo bllSSM = new starweibo.BLL.userInfo();
+            SSM = bllSSM.GetModelList("1=1");
+            foreach (starweibo.Model.userInfo onessm in SSM)
+            {
+                if (onessm.id!=44)
+                {
+                    molMsg.receiverId = onessm.id;
+                    molMsg.msgContent = msgContent;
+                    molMsg.senderId = 44;
+                    molMsg.msgState = "noread";
+                    SysMsg.Add(molMsg);
+                }
+                
+            }        
+        }
 
         //用户权限
         [WebMethod]

@@ -41,5 +41,14 @@ namespace starWeibo
         {
             Response.Redirect("adminLogin.aspx");
         }
+
+        protected void SearchButton_Click(object sender, EventArgs e)
+        {
+            //SearchButton.Attributes.Add("onClick", "return false");
+            starweibo.BLL.powerV bllpowerV = new powerV();
+            List<starweibo.Model.powerV> spVs = bllpowerV.GetModelList("userName='" + this.searchContent.Value + "'");
+            this.rptspInfoList.DataSource = spVs;
+            this.rptspInfoList.DataBind();
+        }
     }
 }

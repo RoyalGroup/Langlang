@@ -83,22 +83,23 @@
     });
 
     //发送公告
-    //$(".SendButton").click(function () {
-    //    var msgContent = $(this).prev().val();
-    //    $(this).prev().val("");
-    //    $.ajax({
-    //        type: "POST",   //访问WebService使用Post方式请求
-    //        contentType: "application/json", //WebService 会返回Json类型
-    //        url: "webservice/wsadmin.asmx/SendSysMsg", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
-    //        data: "{msgContent:" + msgContent + "}",
-    //        dataType: 'json',
-    //        success: function (result) {     //回调函数，result，返回值
-    //            if (result.d == "true") {
-    //                alert("发送成功！");
-    //            }
-    //        }
-    //    });
-    //});
+    $(".SendButton").click(function () {
+        var msgContent = $(this).prev().val();
+        $(this).prev().val("");
+        $.ajax({
+            type: "POST",   //访问WebService使用Post方式请求
+            contentType: "application/json", //WebService 会返回Json类型
+            url: "webservice/wsadmin.asmx/SendSysMsg", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+            data: "{msgContent:'" + msgContent + "'}",
+            dataType: 'json',
+            success: function (result) {     //回调函数，result，返回值
+                alert("发送成功！");
+                //if (result.d == "true") {
+                //    alert("发送成功！");
+                //}
+            }
+        });
+    });
 
     //用户权限管理
     $(".select").click(function () {
@@ -261,8 +262,12 @@
     });
 
     //搜索
+    $(".buttonS").click(function () {
+        $(".UserManagesContent").show();
+        $(".UserManagesContentS").hide();
+    });
     $(".button").click(function () {
         $(".UserManagesContentS").show();
-        $(".UserManagesContent").hide();
+        $(".UserManagesContent").hide();        
     });
 });

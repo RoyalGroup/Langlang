@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Services;
 using starweibo.Model;
 using starweibo.BLL;
+using System.Data;
 
 namespace starWeibo.webservice
 {
@@ -25,8 +26,8 @@ namespace starWeibo.webservice
             return "Hello World";
         }
 
-        [WebMethod]
-        public int publish(int userId, string content)
+        [WebMethod (EnableSession = true)]
+        public int publishBlog(int userId, string content)
         {
             starweibo.Model.blogInfo oneblog = new starweibo.Model.blogInfo();
             starweibo.BLL.blogInfo bllblog = new starweibo.BLL.blogInfo();
@@ -34,5 +35,28 @@ namespace starWeibo.webservice
             oneblog.blogContent = content;
             return bllblog.Add(oneblog);
         }
+
+        [WebMethod (EnableSession = true)]
+        public int publishMessage(int blogid, string content, int typeid, int parentid)
+        {
+            starweibo.Model.messageInfo oneMsg = new starweibo.Model.messageInfo();
+            starweibo.BLL.messageInfo bllMsg = new starweibo.BLL.messageInfo();
+            oneMsg.userId = Convert.ToInt32(Session["userid"]);
+            oneMsg.blogId = blogid;
+            oneMsg.msgContent = content;
+            oneMsg.msgTypeId = typeid;
+            oneMsg.parentId = parentid;
+            return bllMsg.Add(oneMsg);
+        }
+
+        [WebMethod(EnableSession = true)]
+        public int getPublishBlogId(int userid)
+        {
+            starweibo.BLL.blogInfo bllBlog = new starweibo.BLL.blogInfo();
+            DataSet ds = bllBlog.GetList(1, "blogAuthorId='" + userid + "'", "BlogId DESC");
+            int blogid= Convert.ToInt32(ds.Tables[0].Rows[0]["BlogId"]);
+            return blogid;
+        }
+        
     }
 }

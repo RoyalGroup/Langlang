@@ -210,12 +210,9 @@
                         </div>
                         <div class="wbfeed">
                             <div class="wbfeedtype swfun line2">
-                                <div class="wbscreen">
-                                    <a class="wico12 iconchoose"></a>
-                                </div>
                                 <asp:DataList runat="server" ID="wbList">
                                     <ItemTemplate>
-                                        <div class="wbfeeddetail line2 clearfix">
+                                        <div class="wbfeeddetail line2 clearfix" blogid="<%# Eval("blogId") %>">
                                             <div class="wbface">
                                                 <a href="#" class="wfaceradius">
                                                     <img src="<%# Eval("userHeadimage") %>" />
@@ -223,7 +220,7 @@
                                             </div>
                                             <div class="wbdetail">
                                                 <div class="wbinfo">
-                                                    <a class="wbname func1"><%# Eval("userName") %></a>
+                                                    <a class="wbname func1 userName"><%# Eval("userName") %></a>
                                                     <a href="#">
                                                         <i class="wico16 approveco"></i>
                                                     </a>
@@ -239,7 +236,7 @@
                                                         <i class="txt3">|</i>
                                                         <a class="zf">转发</a>
                                                         <i class="txt3">|</i>
-                                                        <a href="#">收藏</a>
+                                                        <a class="wbcollect" ifcollect="0">收藏</a>
                                                         <i class="txt3">|</i>
                                                         <a class="pl" pindex="1" isopen="no" ifc="0">评论(0)</a>
                                                     </div>
@@ -253,9 +250,6 @@
                                                         </span>
                                                     </div>
                                                 </div>
-
-                                                <div class="dahuifu1"></div>
-
                                                 <div class="contrans">
                                                     <div class="contranstop">
                                                         <span class="conttxt ">转发微博</span>
@@ -280,8 +274,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </ItemTemplate>

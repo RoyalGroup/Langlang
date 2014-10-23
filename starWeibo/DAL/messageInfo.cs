@@ -46,25 +46,21 @@ namespace starweibo.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into messageInfo(");
-            strSql.Append("blogId,userId,msgContent,msgTypeId,pubTime,msgState,parentId)");
+            strSql.Append("blogId,userId,msgContent,msgTypeId,parentId)");
             strSql.Append(" values (");
-            strSql.Append("@blogId,@userId,@msgContent,@msgTypeId,@pubTime,@msgState,@parentId)");
+            strSql.Append("@blogId,@userId,@msgContent,@msgTypeId,@parentId)");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
 					new SqlParameter("@blogId", SqlDbType.Int,4),
 					new SqlParameter("@userId", SqlDbType.Int,4),
 					new SqlParameter("@msgContent", SqlDbType.NVarChar,250),
 					new SqlParameter("@msgTypeId", SqlDbType.Int,4),
-					new SqlParameter("@pubTime", SqlDbType.DateTime),
-					new SqlParameter("@msgState", SqlDbType.NVarChar,10),
 					new SqlParameter("@parentId", SqlDbType.Int,4)};
             parameters[0].Value = model.blogId;
             parameters[1].Value = model.userId;
             parameters[2].Value = model.msgContent;
             parameters[3].Value = model.msgTypeId;
-            parameters[4].Value = model.pubTime;
-            parameters[5].Value = model.msgState;
-            parameters[6].Value = model.parentId;
+            parameters[4].Value = model.parentId;
 
             object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
             if (obj == null)

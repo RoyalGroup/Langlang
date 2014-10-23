@@ -27,19 +27,11 @@
                                int i = 0;
                                foreach (starweibo.Model.relationGroupInfo groupinfo in MgroupInfo)
                                {
-                                   string html = "<li class='leftbtn FocusLi' groupname='" + groupinfo.groupName + "'> <div class='FocusLiL'>" + groupinfo.groupName + "</div> <div class='FocusLiR'>(" + groupcount[i] + ")</div></li>";
+                                   string html = "<li class='leftbtn FocusLi' groupname='" +groupinfo.groupName + "'> <div class='FocusLiL'>" + groupinfo.groupName + "</div> <div class='FocusLiR'>(" + groupcount[i] + ")</div></li>";
                                     Response.Write(html);
                                     i++;
                                 }
                                     %>
-						<li class="leftbtn FocusLi" groupname="未分组">
-							<div class="FocusLiL">未分组</div>
-							<div class="FocusLiR">
-                                <%
-                                    Response.Write("("+notgroupcount+")");
-                                    %>
-							</div>
-						</li>
 					</ul>
 						<div class="CreateGroup">创建分组</div>
 				</div>
@@ -66,7 +58,7 @@
 				<div class="FocusList">
                     <asp:DataList runat="server" ID="focusInfo" RepeatColumns ="3" RepeatLayout ="Table" RepeatDirection ="Horizontal">
                     <ItemTemplate>
-					    <div class="FocusCard" fcardname="<%# Eval("groupName") %>">
+					    <div class="FocusCard" fcardname="<%# Eval("groupName") %>" friendId="<%# Eval("friendId") %>">
 						    <div class="FocusCardS">
 							    <div class="HeadImg">
 								   <img src="<%# Eval("userHeadimage") %>" class="fanimg"/>
@@ -75,16 +67,25 @@
 								    <span class="FCardName"><%# Eval("FriendNoteName") %></span>
 								    <span class="FCardRelation">已关注</span>
 								    <span class="FCardGroup"><%# Eval("groupName") %></span>
+            
 								    <div class="GroupCard">
+                                       
 									    <div class="GroupCardT">请选择分组:</div>
-                                             <li class="GroupCardMLi">
-											    <input type="checkbox" class="GroupCheck"/>
-											    <div class="GroupName">特别关注</div>
-										    </li>
+                                        <div class="GroupCardM">
+                                            <% foreach (starweibo.Model.relationGroupInfo groupfocus in MgroupInfo) { 
+                                                string html="";
+                                                html += "<li class='GroupCardMLi'>";
+                                                html += "<input type='checkbox' class='GroupCheck'groupid=" + groupfocus.id+ " />";
+                                                html += "<div class='GroupName'>"+groupfocus.groupName+"</div>";
+                                                html += " </li>";
+                                                Response.Write(html);
+                                            } %>
+                                        </div>
                                         <div class="BtnSureGroup">
+                                            <div class="GroupCardB">创建新分组</div>
                                             <div class="BtnSureGroupIn">确定</div>
                                         </div>
-									    <div class="GroupCardB">创建新分组</div>
+									    
 								    </div>
 							    </div>
 						    </div>

@@ -18,10 +18,44 @@
             $($(this).parent().find(".GroupCard")).hide();
             $($(this).parent().find(".GroupCard")).attr("isclick", "no");
         }
-        $(".BtnSureGroupIn").click(function () {
-            $(this).parent().parent().hide();
-            $(this).parent().parent().attr("isclick", "no");
-        });
+    });
+
+    $(".GroupCheck").attr("ischeck", "false");
+    $(".GroupCheck").click(function () {
+        $(".GroupCheck").prop("checked", false);
+        if ($(this).attr("ischeck") == "false") {
+            $(".GroupCheck").attr("ischeck", "false");
+            $(this).attr("ischeck", "true");
+            $(this).prop("checked", true);
+        }
+        else {
+            $(this).attr("ischeck", "false");
+            $(this).prop("checked", false);
+        }
+    });
+    $(".BtnSureGroupIn").click(function () {
+        $(this).parent().parent().hide();
+        $(this).parent().parent().attr("isclick", "no");
+        var addfgroup = null;
+        addfgroup = $(this).parent().parent().find(".GroupCardM").find(".GroupCardMLi").find(".GroupCheck[ischeck='true']").parent().find(".GroupName").html();
+        var friendId = $(this).parent().parent().parent().parent().parent().attr("friendId");
+        var newgroupId = $(this).parent().parent().find(".GroupCardM").find(".GroupCardMLi").find(".GroupCheck[ischeck='true']").attr("groupid");
+        if (addfgroup != null) {
+            $.ajax({
+                url: "webservice/wsfocus.asmx/getgroupId",
+                type: "POST",
+                contentType:"application/json",
+                dataType:'json',
+                data: "{ friendid:'" + friendId + "',newgroupId:'" + newgroupId + "'}",
+                success: function (res) {
+                    if (res.d == true)
+                    {
+                        location.reload();
+                    }
+                    
+                }
+            });
+        }
     });
     //设置备注
     $(".SetNote").click(function () {

@@ -92,8 +92,10 @@
 							<a href="###" id="kshoucang" class="jie">解收藏</a>
 						</div>
 						<div class="tool_right">
-							<div class="button">搜索</div>
-							<input class="searchInput" type="text" placeholder="用户名"/>
+                            <div class="buttonS">显示全部</div>
+							<%--<div class="button">搜索</div>--%>
+                            <asp:Button ID="SearchButton" class="button" runat="server" Text="搜索" OnClick="SearchButton_Click"/>
+							<input class="searchInput" type="text" placeholder="用户名" runat="server" id="searchContent"/>
 						</div>
 					</div>
 					<table cellspaceing="0" cellpadding="0" class="t">
@@ -177,7 +179,7 @@
                         </asp:Repeater>
 					</div>
                     <div class="UserManagesContentS">
-						<asp:Repeater runat="server" ID="Repeater1" >
+						<asp:Repeater runat="server" ID="rptspInfoList" >
                             <ItemTemplate>
 						        <table cellspacing="0" cellpadding="0" class="t">
 							        <tr id="s<%# Eval("userId") %>">
@@ -231,11 +233,11 @@
 		</div>
 		<div class="footer">
 			<div class="help_link">　
-				<a class="S_func1" href="###">友情链接</a>　
-				<a class="S_func1" href="###">网站地图</a>　
-				<a class="S_func1" href="###">京ICP备12002058号</a>　
-				<a class="S_func1" href="###">京网文[2011]0398-130号</a>　
-				<a class="S_func1" href="###">ROYAL小组</a>　
+				<a href="###">友情链接</a>　
+				<a href="###">网站地图</a>　
+				<a href="###">京ICP备12002058号</a>　
+				<a href="###">京网文[2011]0398-130号</a>　
+				<a href="###">ROYAL小组</a>　
 			</div>
 		</div>
 	</div>

@@ -27,7 +27,7 @@
                                int i = 0;
                                foreach (starweibo.Model.relationGroupInfo groupinfo in MgroupInfo)
                                {
-                                   string html = "<li class='leftbtn FocusLi' groupname='" + groupinfo.groupName + "'> <div class='FocusLiL'>" + groupinfo.groupName + "</div> <div class='FocusLiR'>(" + groupcount[i] + ")</div></li>";
+                                   string html = "<li class='leftbtn FocusLi' groupname='" +groupinfo.groupName + "'> <div class='FocusLiL'>" + groupinfo.groupName + "</div> <div class='FocusLiR'>(" + groupcount[i] + ")</div></li>";
                                     Response.Write(html);
                                     i++;
                                 }
@@ -58,7 +58,7 @@
 				<div class="FocusList">
                     <asp:DataList runat="server" ID="focusInfo" RepeatColumns ="3" RepeatLayout ="Table" RepeatDirection ="Horizontal">
                     <ItemTemplate>
-					    <div class="FocusCard" fcardname="<%# Eval("groupName") %>">
+					    <div class="FocusCard" fcardname="<%# Eval("groupName") %>" friendId="<%# Eval("friendId") %>">
 						    <div class="FocusCardS">
 							    <div class="HeadImg">
 								   <img src="<%# Eval("userHeadimage") %>" class="fanimg"/>
@@ -75,7 +75,7 @@
                                             <% foreach (starweibo.Model.relationGroupInfo groupfocus in MgroupInfo) { 
                                                 string html="";
                                                 html += "<li class='GroupCardMLi'>";
-                                                html += "<input type='checkbox' class='GroupCheck'/>";
+                                                html += "<input type='checkbox' class='GroupCheck'groupid=" + groupfocus.id+ " />";
                                                 html += "<div class='GroupName'>"+groupfocus.groupName+"</div>";
                                                 html += " </li>";
                                                 Response.Write(html);

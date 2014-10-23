@@ -38,13 +38,24 @@
         $(this).parent().parent().attr("isclick", "no");
         var addfgroup = null;
         addfgroup = $(this).parent().parent().find(".GroupCardM").find(".GroupCardMLi").find(".GroupCheck[ischeck='true']").parent().find(".GroupName").html();
-        //if (addfgroup != null) {
-        //    $.ajax({
-        //        url:"focus.aspx",
-        //        type: "POST",
-        //        data: { flag: "getgroup" },
-        //    });
-        //}
+        var friendId = $(this).parent().parent().parent().parent().parent().attr("friendId");
+        var newgroupId = $(this).parent().parent().find(".GroupCardM").find(".GroupCardMLi").find(".GroupCheck[ischeck='true']").attr("groupid");
+        if (addfgroup != null) {
+            $.ajax({
+                url: "webservice/wsfocus.asmx/getgroupId",
+                type: "POST",
+                contentType:"application/json",
+                dataType:'json',
+                data: "{ friendid:'" + friendId + "',newgroupId:'" + newgroupId + "'}",
+                success: function (res) {
+                    if (res.d == true)
+                    {
+                        location.reload();
+                    }
+                    
+                }
+            });
+        }
     });
     //设置备注
     $(".SetNote").click(function () {

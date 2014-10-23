@@ -220,7 +220,7 @@
                                             </div>
                                             <div class="wbdetail">
                                                 <div class="wbinfo">
-                                                    <a class="wbname func1"><%# Eval("userName") %></a>
+                                                    <a class="wbname func1 userName"><%# Eval("userName") %></a>
                                                     <a href="#">
                                                         <i class="wico16 approveco"></i>
                                                     </a>
@@ -250,9 +250,6 @@
                                                         </span>
                                                     </div>
                                                 </div>
-
-                                                <div class="dahuifu1"></div>
-
                                                 <div class="contrans">
                                                     <div class="contranstop">
                                                         <span class="conttxt ">转发微博</span>

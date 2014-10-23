@@ -228,7 +228,9 @@ em{font-style: normal;font-weight: normal;}
 .line1c{color: #d9d9d9;}
 .wbarrow span{margin: -11px 0 0;}
 .bg1c{color: #f2f2f2;}
-.wbname{font-size: 12px;line-height: 21px;}
+.wbname{font-size: 14px;line-height: 21px;}
+.userName {color:#0a8cd2;}
+.userName:hover{text-decoration:underline;}
 .func3{color: #333;text-decoration: none;}
 .wbmediaexpand .wbtext{font-size: 12px;line-height: 21px;padding: 4px 0 4px;}
 .wbtnc .wbtnicon{float: left;}

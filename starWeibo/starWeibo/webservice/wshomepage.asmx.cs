@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Services;
 using starweibo.Model;
 using starweibo.BLL;
+using System.Data;
 
 namespace starWeibo.webservice
 {
@@ -48,6 +49,14 @@ namespace starWeibo.webservice
             return bllMsg.Add(oneMsg);
         }
 
+        [WebMethod(EnableSession = true)]
+        public int getPublishBlogId(int userid)
+        {
+            starweibo.BLL.blogInfo bllBlog = new starweibo.BLL.blogInfo();
+            DataSet ds = bllBlog.GetList(1, "blogAuthorId='" + userid + "'", "BlogId DESC");
+            int blogid= Convert.ToInt32(ds.Tables[0].Rows[0]["BlogId"]);
+            return blogid;
+        }
         
     }
 }

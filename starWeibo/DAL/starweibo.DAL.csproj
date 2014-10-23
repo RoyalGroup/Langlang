@@ -48,6 +48,7 @@
     <Compile Include="CollectionV.cs" />
     <Compile Include="focusV.cs" />
     <Compile Include="messageInfo.cs" />
+    <Compile Include="messageV.cs" />
     <Compile Include="photoGroupInfo.cs" />
     <Compile Include="photos.cs" />
     <Compile Include="powerInfo.cs" />

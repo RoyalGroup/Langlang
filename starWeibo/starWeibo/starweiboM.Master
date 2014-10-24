@@ -92,7 +92,7 @@
 			</div>
 			<div class="gn_person">
 				<div class="gn_setting">
-					<a href="personalCenter.aspx" class="gn_name"><%= Session["username"] %></a>
+					<a href="personalCenter.aspx?Userid=<%= Session["userid"] %>" class="gn_name"><%= Session["username"] %></a>
 				</div>
 				<div class="bianhei gn_setting">
 					<a href="#" class="gn_tab gn_write" title="快速写微博">

@@ -10,7 +10,8 @@ namespace starWeibo
 {
     public partial class personalCenter : System.Web.UI.Page
     {
-        private string userid;
+        public string qsUserid;
+        public string loginUserid;
         private starweibo.BLL.userInfo user = new starweibo.BLL.userInfo();
         private starweibo.BLL.blogInfo blog = new starweibo.BLL.blogInfo();
         private starweibo.BLL.relationInfo relation = new starweibo.BLL.relationInfo();
@@ -21,8 +22,13 @@ namespace starWeibo
         public string[] userAddress = new string[3];//用户所在地
         protected void Page_Load(object sender, EventArgs e)
         {
-            userid = Session["userid"].ToString();
-            curUser = user.GetModel(Convert.ToInt32(userid));//获得当前用户对象
+            if (Session["userid"] == null || Session["userid"].ToString() == "")
+            {
+                Response.Redirect("login.aspx");
+            }
+            loginUserid = Session["userid"].ToString();
+            qsUserid = Request.QueryString["Userid"];
+            curUser = user.GetModel(Convert.ToInt32(qsUserid));//获得当前用户对象
             if (curUser.userAddress != null && curUser.userAddress != "")
             {
                 userAddress = curUser.userAddress.Split('-');
@@ -36,7 +42,7 @@ namespace starWeibo
             blogCount = blog.GetRecordCount("blogAuthorId=" + curUser.id.ToString());
 
         }
-       
+
         public string getshortTime(DateTime dt)
         {
             return dt.ToShortDateString();
@@ -133,11 +139,11 @@ namespace starWeibo
         }
 
         //获取用户性别
-        public string getUserSex(string sex,bool isheader)
+        public string getUserSex(string sex, bool isheader)
         {
             if (isheader == true)
             {
-                return sex == null || sex == "" ? "性别保密" : "<em class='W_ico12 male' title='"+sex+"'></em>";
+                return sex == null || sex == "" ? "性别保密" : (sex == "男" ? "<em class='W_ico12 male' title='男'></em>" : "<em class='W_ico12 female' title='女'></em>");
             }
             else
             {
@@ -148,6 +154,6 @@ namespace starWeibo
                 return sex == null || sex == "" ? html : sex;
             }
         }
-       
+
     }
 }

@@ -26,6 +26,7 @@ ul,li{ list-style: none; list-style-position: outside; }
 .pf_intro a:hover{ text-decoration: underline;}
 .W_ico12{ width: 13px; height: 15px; display: inline-block; vertical-align: -2px;}
 .male{ background-image: url("images/personalCenterimages/bg_line.png"); background-position: 0 -3px; background-repeat: no-repeat;}
+.female{ background-image: url("images/personalCenterimages/bg_line.png"); background-position: -25px -3px; background-repeat: no-repeat;}
 .W_vline{ margin: 0 9px 0 5px;}
 .S_line1_c{ color: #d9d9d9;}
 .city{ color: #0a8cd2;}

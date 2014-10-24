@@ -1,5 +1,19 @@
 $(function () {
-    
+    $("#originalImg").imgAreaSelect({
+        aspectRatio: '1:1',
+        handles: true,
+        onSelectChange: preview,
+        onSelectEnd: function (img, selection) {
+            var originalImg = new Image();
+            originalImg.src = $("#originalImg").attr("src");//定义一个和原图一样image对象，以此获取原图的真实宽高
+            var scaleX = originalImg.width / img.width;
+            var scaleY = originalImg.height / img.height;
+            x1 = Math.round(scaleX * selection.x1);
+            y1 = Math.round(scaleY * selection.y1);
+            selectwidth = Math.round(scaleX * selection.width);
+            selectheight = Math.round(scaleY * selection.height);
+        }
+    });
 	//个人中心头部封面图hover事件
 	$(".headerPic").hover(function(){
 		$(".pf_use_num").addClass("pf_use_num_display");
@@ -40,7 +54,33 @@ $(function () {
 		showLabel : false
 	});
 
-	
+	$("#uploadify").uploadify({
+	    'uploader': 'js/uploadify.swf',
+	    'script': 'uploadpage.aspx',
+	    'cancelImg': 'js/cancel.png',
+	    'folder': 'images/photos',
+	    'queueID': 'fileQueue',
+	    'fileTypeExts': '*.gif;*.jpg;*.png',
+	    'auto': false,
+	    'multi': false,
+	    onComplete: function (event, ID, fileObj, response, data) {
+	        var ext = fileObj.filePath.substring(fileObj.filePath.lastIndexOf('.')).toLowerCase();
+	        var extname = ".jpg|.png|.gif";
+	        if (extname.search(ext) != -1) {
+	            $("#originalImg").attr("src", fileObj.filePath);
+	            $("#previewImg").attr("src", fileObj.filePath);
+	        } else {
+	            alert("请上传[.jpg|.png|.gif]格式图片！");
+	        }
+	    }
+	});
+
+	$(".change_btn_div").click(function () {
+	    $(".menban").show();
+	});
+	$(".exitBtn").click(function () {
+	    $(".menban").hide();
+	});
 	//编辑保存基本信息
 	$("#baseInfo .editBtn").click(function(){
 		var state = $(this).text();
@@ -185,6 +225,39 @@ $(function () {
 	        $("[node-type='tel_tip']").html("<div class='W_tips tips_del clearfix'><p class='icon'><span class='icon_delS'></span></p><span class='txt'>请输入正确的手机号</span></div>");
 	    }
 	});
+    //确认裁剪头像，提交上传请求
+	$(".ensureBtn").click(function () {
+	    var originalImagePath = $("#originalImg").attr("src");
+	    var width = 150, height = 150;
+	    $.ajax({
+	        type: "POST",   //访问WebService使用Post方式请求
+	        contentType: "application/json", //WebService 会返回Json类型
+	        url: "webservice/wspersonal.asmx/MakeThumbnail", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+	        data: "{ originalImagePath:'" + originalImagePath + "',x1:'" + x1 + "',y1:'" + y1 + "',selectwidth:'" + selectwidth + "',selectheight:'" + selectheight + "',width:'" + width + "',height:'" + height + "'}",
+	        dataType: 'json',
+	        success: function (result) {     //上传成功则将新的头像更新至数据库
+	            if (result.d != "") {
+	                var id = $("#userid").text();
+	                var headImg = result.d;
+	                //alert(headImg);
+	                $.ajax({
+	                    type: "POST", 
+	                    contentType: "application/json",
+	                    url: "webservice/wspersonal.asmx/updateUserHeadImg",
+	                    data: "{ id:'" + id + "',headImg:'" + headImg + "'}",
+	                    dataType: 'json',
+	                    success: function (result) { 
+	                        location.reload();
+	                    }
+	                });
+	                
+	            }
+	        },
+	        error:function() {
+	            alert("操作出现异常！");
+	        }
+	    });
+	});
 });
 //定义变量
 var id, userName, userAddress, userSex, userMarry, userBirthday, userDes;
@@ -226,7 +299,7 @@ function checkQQNumber(qqnumber) {
     if (qqnumber.length == 0) {
         return true;
     } else {
-        var patt1 = /^[1-9]\d{5,12}$/;;
+        var patt1 = /^[1-9]\d{5,12}$/;
         return patt1.test(qqnumber);
     }
 }
@@ -239,3 +312,16 @@ function checkTelNumber(telnumber) {
         return patt2.test(telnumber);
     }
 }
+//裁剪图片预览
+function preview(img, selection) {
+    var scaleX = 150 / (selection.width || 1);
+    var scaleY = 150 / (selection.height || 1);
+    $("#previewImg").css({
+        "width": Math.round(scaleX * img.width) + 'px',
+        "height": Math.round(scaleY * img.height) + 'px',
+        "left": '-' + Math.round(scaleX * selection.x1) + 'px',
+        "top": '-' + Math.round(scaleY * selection.y1) + 'px'
+    });
+}
+//定义全局变量，保存真实裁剪的图片信息
+var x1 = 0, y1 = 0, selectwidth = 150, selectheight = 150;

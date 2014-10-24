@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -51,6 +52,68 @@ namespace starWeibo.webservice
             curUser = user.GetModel(Convert.ToInt32(id));
             curUser.userEdu = userEdu;
             return user.Update(curUser).ToString();
+        }
+        [WebMethod]
+        //更新用户用户头像
+        public string updateUserHeadImg(string id, string headImg)
+        {
+            curUser = user.GetModel(Convert.ToInt32(id));
+            curUser.userHeadimage = headImg;
+            return user.Update(curUser).ToString();
+        }
+        /// <summary>
+        /// 保存截图
+        /// </summary>
+        /// <param name="originalImagePath">原始图片路径</param>
+        /// <param name="x1">图片裁剪区域的左上角X坐标</param>
+        /// <param name="x2">图片裁剪区域的左上角Y坐标</param>
+        /// <param name="selectwidth">图片裁剪区域的宽度</param>
+        /// <param name="selectheight">图片区裁剪区域的高度</param>
+        /// <param name="width">欲生成的图片的宽度</param>
+        /// <param name="height">欲生成的图片的宽度</param>
+        [WebMethod]
+        public string MakeThumbnail(string originalImagePath,int x1,int y1,int selectwidth,int selectheight, int width, int height)
+        {
+            originalImagePath = Server.MapPath(originalImagePath);
+            originalImagePath = originalImagePath.Replace("\\webservice", "");
+            System.Drawing.Image originalImage = System.Drawing.Image.FromFile(originalImagePath);
+            int towidth = width;
+            int toheight = height;
+            int x = x1;
+            int y = y1;
+            int ow = originalImage.Width;
+            int oh = originalImage.Height;
+            System.Drawing.Image bitmap = new System.Drawing.Bitmap(towidth, toheight);
+            //新建一个画板
+            Graphics g = System.Drawing.Graphics.FromImage(bitmap);
+            //设置高质量插值法
+            g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.Half;
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.High;
+            //设置高质量,低速度呈现平滑程度
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            //清空画布并以透明背景色填充
+            g.Clear(Color.Transparent);
+            //在指定位置并且按指定大小绘制原图片的指定部分
+            g.DrawImage(originalImage, new Rectangle(0, 0, towidth, toheight), new Rectangle(x, y, selectwidth, selectheight), GraphicsUnit.Pixel);
+            try
+            {
+                string Path = "images/photos/" + DateTime.Now.ToString("yyyyMMddHHmmssffff") + ".jpg";
+                string savePath = Server.MapPath(Path);
+                savePath = savePath.Replace("\\webservice", "");
+                //以jpg格式保存缩略图
+                bitmap.Save(savePath, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return Path;
+            }
+            catch (System.Exception e)
+            {
+                return e.ToString();
+            }
+            finally
+            {
+                originalImage.Dispose();
+                bitmap.Dispose();
+                g.Dispose();
+            }
         }
     }
 }

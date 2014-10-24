@@ -4,12 +4,45 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="keywords" content="个人中心、资料、动态、相册"/>
 	<meta name="description" content="他的微博，他会在这里发布自己的心情、动态、照片，你可以与ta实时互动，给ta留言。快来加入微博，关注喜欢的明星，第一时间知道网络热点，随时随地分享身边的新鲜事儿。"/>
-	<link rel="stylesheet" type="text/css" href="css/personalCenter.css"/>
+	<link rel="Stylesheet" href="js/uploadify.css" />
+    <link rel="stylesheet" type="text/css" href="css/imgareaselect-default.css" />
+    <link rel="stylesheet" type="text/css" href="css/personalCenter.css"/>
 	<script type="text/javascript" src="js/jsAddress.js"></script>
 	<script type="text/javascript" src="js/jquery.jSelectDate.js"></script>
+    <script type="text/javascript" src="js/swfobject.js"></script>
+    <script type="text/javascript" src="js/jquery.imgareaselect.pack.js"></script>
+    <script type="text/javascript" src="js/jquery.uploadify.min.js"></script>
 	<script type="text/javascript" src="js/personalCenter.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="menban">
+        <div id="uploadSec">
+            <form id="form1" runat="server">
+                <input type="file" name="uploadify" id="uploadify" />
+                <a href="javascript:$('#uploadify').uploadifyUpload()" class="upload">上传</a><a href="javascript:$('#uploadify').uploadifyClearQueue()" class="upload"> 取消上传</a>
+                <div id="fileQueue" style="height:70px; overflow:auto;"></div>
+            </form>
+            <div class="exitBtn" title="关闭">×</div>
+            <%--<div id="uploadheader">
+                <span class="fileBtn">选择图片</span>
+                <input type="file" name="uploadify" id="uploadify" style="display:none;" />
+                <span class="upload">上传</span>
+                <div class="exitBtn" title="关闭">×</div>
+            </div>--%>
+            <div id="showImage" >
+                <div class="originalImageArea">
+                    <img id="originalImg" src="css/images/personalCenterimages/headimage.jpg" />
+                </div>
+                <div class="showImageRight">
+                    <p>截图预览</p>
+                    <div class="previewArea">
+                        <img id="previewImg" src="css/images/personalCenterimages/headimage.jpg" />
+                    </div>
+                    <span class="ensureBtn">确认裁剪</span>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="main">
 		<!-- 头部区 -->
 		<div class="header">
@@ -326,7 +359,9 @@
                         <span class='txt'>保存成功！</span>
                     </div>
                 </div>
+                
 			</div>
 		</div>
 	</div>
+    
 </asp:Content>

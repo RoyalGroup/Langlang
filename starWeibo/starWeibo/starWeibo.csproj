@@ -60,7 +60,15 @@
     <Content Include="adminLogin.aspx" />
     <Content Include="adminManage.aspx" />
     <Content Include="comment.aspx" />
+    <Content Include="css\imgareaselect-default.css" />
     <Content Include="images\loading.gif" />
+    <Content Include="js\cancel.png" />
+    <Content Include="js\jquery.imgareaselect.pack.js" />
+    <Content Include="js\jquery.uploadify.min.js" />
+    <Content Include="js\swfobject.js" />
+    <Content Include="js\uploadify.css" />
+    <Content Include="js\uploadify.swf" />
+    <Content Include="uploadpage.aspx" />
     <Content Include="webservice\wsadmin.asmx" />
     <Content Include="webservice\wsfocus.asmx" />
     <Content Include="webservice\wshomepage.asmx" />
@@ -311,6 +319,13 @@
     </Compile>
     <Compile Include="comment.aspx.designer.cs">
       <DependentUpon>comment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uploadpage.aspx.cs">
+      <DependentUpon>uploadpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uploadpage.aspx.designer.cs">
+      <DependentUpon>uploadpage.aspx</DependentUpon>
     </Compile>
     <Compile Include="webservice\wsadmin.asmx.cs">
       <DependentUpon>wsadmin.asmx</DependentUpon>

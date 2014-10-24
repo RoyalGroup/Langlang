@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -33,8 +34,9 @@ namespace starWeibo
             focusCountd = relation.GetRecordCount("userId=" + curUser.id.ToString());
             fansCount = relation.GetRecordCount("friendId=" + curUser.id.ToString());
             blogCount = blog.GetRecordCount("blogAuthorId=" + curUser.id.ToString());
-        }
 
+        }
+       
         public string getshortTime(DateTime dt)
         {
             return dt.ToShortDateString();
@@ -146,6 +148,6 @@ namespace starWeibo
                 return sex == null || sex == "" ? html : sex;
             }
         }
-
+       
     }
 }

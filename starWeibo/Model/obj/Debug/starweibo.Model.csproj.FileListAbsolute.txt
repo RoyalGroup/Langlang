@@ -7,3 +7,8 @@ F:\Langlang\starWeibo\Model\bin\Debug\Model.dll
 F:\Langlang\starWeibo\Model\bin\Debug\Model.pdb
 F:\Langlang\starWeibo\Model\obj\Debug\Model.dll
 F:\Langlang\starWeibo\Model\obj\Debug\Model.pdb
+E:\Langlang\starWeibo\Model\bin\Debug\Model.dll
+E:\Langlang\starWeibo\Model\bin\Debug\Model.pdb
+E:\Langlang\starWeibo\Model\obj\Debug\Model.dll
+E:\Langlang\starWeibo\Model\obj\Debug\Model.pdb
+E:\Langlang\starWeibo\Model\obj\Debug\starweibo.Model.csprojResolveAssemblyReference.cache

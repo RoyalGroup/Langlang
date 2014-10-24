@@ -58,7 +58,7 @@
 				<div class="FocusList">
                     <asp:DataList runat="server" ID="focusInfo" RepeatColumns ="3" RepeatLayout ="Table" RepeatDirection ="Horizontal">
                     <ItemTemplate>
-					    <div class="FocusCard" fcardname="<%# Eval("groupName") %>" friendId="<%# Eval("friendId") %>">
+					    <div class="FocusCard" fcardname="<%# Eval("groupName") %>" friendId="<%# Eval("friendId") %>" name="<%# Eval("FriendNoteName") %>">
 						    <div class="FocusCardS">
 							    <div class="HeadImg">
 								   <img src="<%# Eval("userHeadimage") %>" class="fanimg"/>
@@ -77,7 +77,7 @@
                                                 html += "<li class='GroupCardMLi'>";
                                                 html += "<input type='checkbox' class='GroupCheck'groupid=" + groupfocus.id+ " />";
                                                 html += "<div class='GroupName'>"+groupfocus.groupName+"</div>";
-                                                html += " </li>";
+                                                html += "</li>";
                                                 Response.Write(html);
                                             } %>
                                         </div>
@@ -122,9 +122,9 @@
 									    <span class="FansAddress"><%# Eval("fansAddress")%></span>
 								    </div>
 								    <div class="FansLiRTopR">
-									    <span class="BtnFocusFans">关注</span>
-                                        <span class="DeleFans">移除粉丝 </span>
-                                        <span class="ReportFans">举报</span>
+									    <span class="BtnFocusFans" userId="<%# Eval("userId") %>">关注</span>
+                                        <span class="DeleFans" userId="<%# Eval("userId") %>">移除粉丝 </span>
+                                        <span class="ReportFans" userId="<%# Eval("userId") %>">举报</span>
                                         <div class="EnsureDeleFans">
                                             <div class="EnsDeleFansTop">确认要移除萝莉蓓蓓啊?</div>
                                             <div class="EnsDeleFansBot">
@@ -170,7 +170,8 @@
 	<div class="CancelFocusMeng">
 			<div class="CancelFocusCard">
 				<div class="CancelFocusCardTop">取消关注</div>
-				<div class="CancelFocusCardMid">确认要取消对华晨宇yu的关注？</div>
+                <input class="CancelFocusCardMid" type="text"/>
+				<%--<div class="CancelFocusCardMid"></div>--%>
 				<div class="CancelFocusCardBot">
 					<div class="CancelFocusCardBtn1">确定</div>
 					<div class="CancelFocusCardBtn2">取消</div>

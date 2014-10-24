@@ -67,7 +67,7 @@
 .CancelFocusMeng{display: none; position: absolute;background-color:rgba(0,0,0,0.5); width: 100%; height:900px; z-index:1000; left: 0px;top: 0px;}
 .CancelFocusCard{width:300px; height: 140px; background-color: #fff; margin: auto; margin-top: 250px; border-radius: 3px; box-shadow:1px 1px 1px 1px #aaa;}
 .CancelFocusCardTop{width: 280px; height: 30px; background-color: #ddd;font-size: 12px; font-weight: bold; line-height: 30px; padding-left: 20px;}
-.CancelFocusCardMid{width: 282px;height:50px; line-height: 50px; text-align: center;}
+.CancelFocusCardMid{width: 282px;height:50px; line-height: 50px; text-align: center; border:none;outline:none;}
 .CancelFocusCardBtn1{width: 60px;height: 30px; float: left; font-size: 14px; line-height: 30px; border-radius: 2px; border:1px solid #eee; text-align: center;margin-right: 10px; margin-left:130px; cursor: pointer; background-color:rgb(255, 162, 16); }
 .CancelFocusCardBtn2{width: 60px;height: 30px; float: left; font-size: 14px; line-height: 30px; border-radius: 2px; border:1px solid #eee; text-align: center;cursor: pointer;}
 .CancelFocusCardBtn1:hover,.CancelFocusCardBtn2:hover{background-image: -webkit-linear-gradient(top, rgb(255, 184, 71) 0%, rgb(255, 162, 16) 100%);}

@@ -33,6 +33,7 @@
             $(this).prop("checked", false);
         }
     });
+    //分组
     $(".BtnSureGroupIn").click(function () {
         $(this).parent().parent().hide();
         $(this).parent().parent().attr("isclick", "no");
@@ -57,13 +58,36 @@
             });
         }
     });
+    //创建新分组
+    $(".GroupCardB").click(function () {
+        alert("1");
+    });
     //设置备注
     $(".SetNote").click(function () {
         $(".SetNoteMeng").show();
+        var friendId = $(this).parent().parent().parent().attr("friendid");
+        $(".SetNoteCardBtn1").click(function () {
+            $(".SetNoteMeng").hide();
+            var friendNoteName = $("*").find(".SetNoteCardMidR").val();
+            $.ajax({
+                type: "POST",   //访问WebService使用Post方式请求
+                contentType: "application/json", //WebService 会返回Json类型
+                url: "webservice/wsfocus.asmx/ChangeNoteName", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+                data: "{friendId:" + friendId + ",friendNoteName:'" + friendNoteName + "'}",
+                dataType: 'json',
+                success: function (result) {     //回调函数，result，返回值
+                    if (result.d == true) {
+                        alert("修改成功！");
+                    }
+                }
+            });
+        });
     });
-    $(".SetNoteCardBtn1").click(function () {
-        $(".SetNoteMeng").hide();
-    });
+    //$(".SetNoteCardBtn1").click(function () {
+    //    $(".SetNoteMeng").hide();
+    //    var friendNoteName = $("*").find(".SetNoteCardMidR").val();
+    //    alert(friendNoteName);
+    //});
     $(".SetNoteCardBtn2").click(function () {
         $(".SetNoteMeng").hide();
     });
@@ -72,16 +96,34 @@
         $(this).css("color", "#222");
     });
     $(".SetNoteCardMidR").blur(function () {
-        $(this).val("请输入备注名");
+        //$(this).val("请输入备注名");
         $(this).css("color", "#ccc");
     });
     //取消关注
     $(".CancelFocus").click(function () {
         $(".CancelFocusMeng").show();
+        var friendId = $(this).parent().parent().parent().attr("friendid");
+        var name = $(this).parent().parent().parent().attr("name");
+        $("*").find(".CancelFocusCardMid").val("确定取消对"+name+"的关注？");
+        $(".CancelFocusCardBtn1").click(function () {
+            $(".CancelFocusMeng").hide();
+            $.ajax({
+                type: "POST",   //访问WebService使用Post方式请求
+                contentType: "application/json", //WebService 会返回Json类型
+                url: "webservice/wsfocus.asmx/quxiaoguanzhu", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+                data: "{friendId:" + friendId + "}",
+                dataType: 'json',
+                success: function (result) {     //回调函数，result，返回值
+                    if (result.d == true) {
+                        alert("取消成功！");
+                    }
+                }
+            });
+        });
     });
-    $(".CancelFocusCardBtn1").click(function () {
-        $(".CancelFocusMeng").hide();
-    });
+    //$(".CancelFocusCardBtn1").click(function () {
+    //    $(".CancelFocusMeng").hide();
+    //});
     $(".CancelFocusCardBtn2").click(function () {
         $(".CancelFocusMeng").hide();
     });
@@ -123,5 +165,23 @@
         $(this).css("box-shadow", "1px 2px 2px 1px #ccc");
         $(".leftbtn").css("color", "");
         $(this).css("color","#000");
+    });
+
+    //关注
+    $(".BtnFocusFans").click(function () {
+        var friendId = $(this).attr("userId");
+        //$.ajax({
+        //    type: "POST",   //访问WebService使用Post方式请求
+        //    contentType: "application/json", //WebService 会返回Json类型
+        //    url: "webservice/wsfocus.asmx/guanzhu", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+        //    data: "{friendId:" + friendId + "}",
+        //    dataType: 'json',
+        //    success: function (result) {     //回调函数，result，返回值
+        //        alert("关注成功！");
+        //        //if (result.d == true) {
+        //        //    alert("关注成功！");
+        //        //}
+        //    }
+        //});
     });
 });

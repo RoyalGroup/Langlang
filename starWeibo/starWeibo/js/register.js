@@ -84,7 +84,7 @@
 
     $(document).on("click", ".yanzheng", function () {
         var c = $(".youxiang").val();
-        checkmcail(c);
+        checkmail(c);
     });
 
     $(".finishzhuce").click(function () {
@@ -101,7 +101,8 @@
                 dataType: 'json',
                 success: function (result) {
                     //回调函数，result，返回值
-                    if (result.d == 'true') {
+                    //alert(result.d);
+                    if (result.d != null) {
                         alert("注册成功！");
                     }
                 }
@@ -115,7 +116,7 @@
     });
  
 });
-function checkmcail(control)
+function checkmail(control)
 {
     var d=new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");
     if(!d.test(control))

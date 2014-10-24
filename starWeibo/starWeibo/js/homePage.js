@@ -431,7 +431,7 @@ function loading() {
         var startIndex = pages * 20 + 1;
         var endIndex = startIndex + 19;
 
-        if (scrolls > 1500) {
+        if (scrolls > 1700) {
             if (flag == true) {
                 $.ajax({
                     type: "POST",   //访问WebService使用Post方式请求

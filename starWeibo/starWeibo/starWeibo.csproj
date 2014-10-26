@@ -60,7 +60,9 @@
     <Content Include="adminLogin.aspx" />
     <Content Include="adminManage.aspx" />
     <Content Include="comment.aspx" />
+    <Content Include="css\detailmessage.css" />
     <Content Include="css\imgareaselect-default.css" />
+    <Content Include="detailmessage.aspx" />
     <Content Include="images\loading.gif" />
     <Content Include="js\cancel.png" />
     <Content Include="js\jquery.imgareaselect.pack.js" />
@@ -320,6 +322,13 @@
     <Compile Include="comment.aspx.designer.cs">
       <DependentUpon>comment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="detailmessage.aspx.cs">
+      <DependentUpon>detailmessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detailmessage.aspx.designer.cs">
+      <DependentUpon>detailmessage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="uploadpage.aspx.cs">
       <DependentUpon>uploadpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -458,6 +467,7 @@
     <Content Include="skin\images\change4\Thumbs.db" />
     <Content Include="images\type\Thumbs.db" />
     <Content Include="images\headimages\Thumbs.db" />
+    <None Include="Properties\PublishProfiles\myftp.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -313,7 +313,7 @@
         var parentid = 0;
         var typeid = 2;
         var d = "{blogid:" + blogid + ",content:'" + replyContent + "',typeid:" + typeid + ",parentid:" + parentid + "}";
-        if (replyContent != "") {
+        if (replyContent.length > 0 && replyContent.length < 141) {
             $.ajax({
                 url: "webservice/wshomepage.asmx/publishMessage",
                 type: "POST",
@@ -352,13 +352,17 @@
                             that.parent().parent().parent().parent().parent().parent().parent().parent().find(".commentlists1").prepend(replyList);
                             that.parent().parent().parent().parent().remove();
                         }
-                        
+
                     }
                 },
                 error: function () {
                     alert("fail");
                 }
             });
+        } else if (replyContent.length == 0) {
+            alert("评论内容不可为空！");
+        } else {
+            alert("评论内容请保持在140字以内！");
         }
     });
     //弹出对评论的评论对话框
@@ -401,14 +405,121 @@
         var blogid = that.parent().parent().parent().parent().attr("blogid");
         var blogAuthor = that.parent().parent().parent().find(".wbname").html();
         var blogContent = that.parent().parent().parent().find(".wbtext").html();
+        var blogAuthorUrl=that.parent().parent().parent().find(".wbname").attr("href");
+        $(".contrans").find(".contmyan a.conttxtlink").attr("href",blogAuthorUrl);
         $(".contrans").find(".contmyan a.conttxtlink").html("@" + blogAuthor);
         $(".contrans").find(".contmyan span.contgeyan").html(blogContent);
+        $(".contrans").attr("blogid", blogid);
         
     });
     //关闭转发窗口
     $(".contclose").click(function () {
         $(".mengban").hide();
         $(".contrans").hide();
+    });
+    //转发消息
+    $(".concwbrzfbtn").click(function () {
+        var that = $(this);
+        var blogid = $(".contrans").attr("blogid");
+        var content = that.parent().parent().find(".contte").val();
+        if(content.length==0){
+            content="转发微博";
+        }
+        var parentid = 0;
+        var typeid = 6;
+        var d = "{blogid:" + blogid + ",content:'" + content + "',typeid:" + typeid + ",parentid:" + parentid + "}";
+        if (content.length < 141) {
+            $.ajax({
+                url: "webservice/wshomepage.asmx/publishMessage",
+                type: "POST",
+                contentType: "application/json",
+                data: d,
+                dataType: "json",
+                success: function (res) {
+                    if (res.d != null) {
+                        that.parent().parent().find(".contte").val("转发成功！");
+                        that.parent().parent().find(".contte").animate({ "opacity": "0.9" }, 500, function () {
+                            $(".mengban").hide();
+                            $(".contrans").hide();
+                        });
+                        var html = '';
+                        var blogAuthorUrl=that.parent().parent().find(".contmyan a.conttxtlink").attr("href");
+                        var blogAuthorName=that.parent().parent().find(".contmyan a.conttxtlink").html().split("@")[1];
+                        var blogContent=that.parent().parent().find(".contgeyan").html();
+                        html += '<div class="wbfeedtype swfun line2">';
+                        html += '<div class="wbscreen">';
+                        html += '<a class="wico12 iconchoose"></a>';
+                        html += '</div>';
+                        html += '<div class="wbfeeddetail line2 clearfix">';
+                        html += '<div class="wbface">';
+                        html += '<a href="#" class="wfaceradius">';
+                        html += '<img src="' + $("#info").attr("headimg") + '" />';
+                        html += '</a>';
+                        html += '</div>';
+                        html += '<div class="wbdetail">';
+                        html += '<div class="wbinfo">';
+                        html += '<a class="wbname func1">' + $("#info").attr("name") + '</a>	';
+                        html += '<a href="#">';
+                        html += '	<i class="wico16 approveco"></i>';
+                        html += '</a>';
+                        html += '</div>';
+                        html += '	<div class="wbtext">';
+                        html += content;
+                        html += '</div>';
+                        html += '<div class="wbmediaexpand swfun2 line1 bg1">';
+                        html+='<div class="wbarrow">';
+                        html+='<em class="line1c">◆</em>';
+                        html+='<span class="bg4c">◆</span>';
+                        html+='</div>';
+                        html += '<div class="listcontent">';
+                        html += '<div class="wbinfo">';
+                        html += '<a href='+blogAuthorUrl+' class="wbname func3">'+blogAuthorName+'</a>';
+                        html += '</div>	';
+                        html += '<div class="wbtext">';
+                        html += '<em>';
+                        html += blogContent;
+                        html += '</em>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '<div class="wbfunc clearfix">';
+                        html += '<div class="wbhandle">	';
+                        html+='<a class="zan" ifzan="0">';
+                        html+='<em class="wico20 iconpraised"></em>';
+                        html+='(<span>';
+                        html+='0';
+                        html+='</span>)';
+                        html+='</a>';                    
+                        html += '<i class="txt3">|</i>';
+                        html += '<a class="zf">转发</a>';
+                        html += '<i class="txt3">|</i>';
+                        html += '<a href="#">收藏</a>';
+                        html += '<i class="txt3">|</i>';
+                        html += '<a class="pl" pindex="20" isopen="no" ifc="0">评论(0)</a>';
+                        html += '</div>';
+                        html += '<div class="wbfrom">';
+                        html += '<a href="#" class="link2 wbtime">一分钟前</a>';
+                        html += '<em class="txt2">来自</em>';
+                        html += '<a href="#" class="link2">weibo</a>';
+                        html += '<span class="hoverr">';
+                        html += '<em class="txt2">|</em>&nbsp;';
+                        html += '<a href="#" class="jubao">举报</a>';
+                        html += '</span>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '<div class="dahuifu20"></div>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '</div>';
+                        $(".wbfeed").prepend(html);
+                    }
+                    
+                }
+            });
+        } else {
+            alert("转发内容请保持在140字以内！");
+        }
+
     });
 
     //分页与加载相关

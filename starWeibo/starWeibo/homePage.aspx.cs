@@ -9,7 +9,7 @@ namespace starWeibo
 {
     public partial class homePage : System.Web.UI.Page
     {
-        starweibo.BLL.blogInfo bll = new starweibo.BLL.blogInfo();
+        starweibo.BLL.blogInfoV bll = new starweibo.BLL.blogInfoV();
         public starweibo.Model.userInfo curuser;
         public int pages;
         public int curpre;
@@ -22,14 +22,16 @@ namespace starWeibo
             {
                 Response.Redirect("login.aspx");
             }
-            List<starweibo.Model.blogInfo> bloginfo = new List<starweibo.Model.blogInfo>();
+            List<starweibo.Model.blogInfoV> bloginfo = new List<starweibo.Model.blogInfoV>();
             int count = bll.GetRecordCount("blogAuthorId in (select friendId from relationInfo where userId=" + Convert.ToInt32(Session["userid"]) + ") or blogAuthorId=" + Convert.ToInt32(Session["userid"]));
             pages = count / 40 + 1;
             pages = (pages <= 10) ? pages : 10;
             curpre = Convert.ToInt32(pre);
             int startindex = curpre * 40 + 1;
             int endindex = curpre * 40 + 20;
-            this.wbList.DataSource = bll.GetListByPage("T.blogAuthorId=U.id and (U.id in (select friendId from relationInfo where userId=" + Convert.ToInt32(Session["userid"]) + ")or U.id=" + Convert.ToInt32(Session["userid"]) + ")", "blogPubTime desc", startindex, endindex);//
+            string sql="T.blogAuthorId in (select friendId from relationInfo where userId="+ Convert.ToInt32(Session["userid"]) + ")";
+            sql+=" or T.blogAuthorId=" + Convert.ToInt32(Session["userid"]) + "";
+            this.wbList.DataSource = bll.GetListByPage(sql, "blogPubTime desc", startindex, endindex);
             this.wbList.DataBind();
 
         }

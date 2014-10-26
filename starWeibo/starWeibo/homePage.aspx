@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="mengban"></div>
-    <div class="contrans">
+    <div class="contrans" blogid="">
         <div class="contranstop">
             <span class="conttxt ">转发微博</span>
             <span class="contclose"></span>

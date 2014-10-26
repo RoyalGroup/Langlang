@@ -14,8 +14,10 @@ namespace starweibo.Model
         private string _blogcontent;
         private int _blogauthorid;
         private DateTime _blogpubtime = DateTime.Now;
-        private int? _atid;
+        private int? _parentid;
         private string _blogstate = "0";
+        private int _zannum = 0;
+        private int _plnum = 0;
         /// <summary>
         /// 
         /// </summary>
@@ -51,10 +53,10 @@ namespace starweibo.Model
         /// <summary>
         /// 
         /// </summary>
-        public int? atId
+        public int? parentId
         {
-            set { _atid = value; }
-            get { return _atid; }
+            set { _parentid = value; }
+            get { return _parentid; }
         }
         /// <summary>
         /// 
@@ -63,6 +65,22 @@ namespace starweibo.Model
         {
             set { _blogstate = value; }
             get { return _blogstate; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int zanNum
+        {
+            set { _zannum = value; }
+            get { return _zannum; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int plNum
+        {
+            set { _plnum = value; }
+            get { return _plnum; }
         }
         #endregion Model
 

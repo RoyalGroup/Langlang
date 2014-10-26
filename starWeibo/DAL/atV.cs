@@ -37,14 +37,14 @@ namespace starweibo.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into atV(");
-            strSql.Append("blogContent,blogAuthorId,blogPubTime,atId,userName,userHeadimage,atuserName,atuserHeadimage,blogId)");
+            strSql.Append("blogContent,blogAuthorId,blogPubTime,parentId,userName,userHeadimage,atuserName,atuserHeadimage,blogId)");
             strSql.Append(" values (");
-            strSql.Append("@blogContent,@blogAuthorId,@blogPubTime,@atId,@userName,@userHeadimage,@atuserName,@atuserHeadimage,@blogId)");
+            strSql.Append("@blogContent,@blogAuthorId,@blogPubTime,@parentId,@userName,@userHeadimage,@atuserName,@atuserHeadimage,@blogId)");
             SqlParameter[] parameters = {
 					new SqlParameter("@blogContent", SqlDbType.NVarChar,500),
 					new SqlParameter("@blogAuthorId", SqlDbType.Int,4),
 					new SqlParameter("@blogPubTime", SqlDbType.DateTime),
-					new SqlParameter("@atId", SqlDbType.Int,4),
+					new SqlParameter("@parentId", SqlDbType.Int,4),
 					new SqlParameter("@userName", SqlDbType.NVarChar,20),
 					new SqlParameter("@userHeadimage", SqlDbType.NVarChar,150),
 					new SqlParameter("@atuserName", SqlDbType.NVarChar,20),
@@ -53,7 +53,7 @@ namespace starweibo.DAL
             parameters[0].Value = model.blogContent;
             parameters[1].Value = model.blogAuthorId;
             parameters[2].Value = model.blogPubTime;
-            parameters[3].Value = model.atId;
+            parameters[3].Value = model.parentId;
             parameters[4].Value = model.userName;
             parameters[5].Value = model.userHeadimage;
             parameters[6].Value = model.atuserName;
@@ -80,7 +80,7 @@ namespace starweibo.DAL
             strSql.Append("blogContent=@blogContent,");
             strSql.Append("blogAuthorId=@blogAuthorId,");
             strSql.Append("blogPubTime=@blogPubTime,");
-            strSql.Append("atId=@atId,");
+            strSql.Append("parentId=@parentId,");
             strSql.Append("userName=@userName,");
             strSql.Append("userHeadimage=@userHeadimage,");
             strSql.Append("atuserName=@atuserName,");
@@ -91,7 +91,7 @@ namespace starweibo.DAL
 					new SqlParameter("@blogContent", SqlDbType.NVarChar,500),
 					new SqlParameter("@blogAuthorId", SqlDbType.Int,4),
 					new SqlParameter("@blogPubTime", SqlDbType.DateTime),
-					new SqlParameter("@atId", SqlDbType.Int,4),
+					new SqlParameter("@parentId", SqlDbType.Int,4),
 					new SqlParameter("@userName", SqlDbType.NVarChar,20),
 					new SqlParameter("@userHeadimage", SqlDbType.NVarChar,150),
 					new SqlParameter("@atuserName", SqlDbType.NVarChar,20),
@@ -100,7 +100,7 @@ namespace starweibo.DAL
             parameters[0].Value = model.blogContent;
             parameters[1].Value = model.blogAuthorId;
             parameters[2].Value = model.blogPubTime;
-            parameters[3].Value = model.atId;
+            parameters[3].Value = model.parentId;
             parameters[4].Value = model.userName;
             parameters[5].Value = model.userHeadimage;
             parameters[6].Value = model.atuserName;
@@ -168,7 +168,7 @@ namespace starweibo.DAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select  top 1 blogContent,blogAuthorId,blogPubTime,atId,userName,userHeadimage,atuserName,atuserHeadimage,blogId from atV ");
+            strSql.Append("select  top 1 blogContent,blogAuthorId,blogPubTime,parentId,userName,userHeadimage,atuserName,atuserHeadimage,blogId from atV ");
             strSql.Append(" where blogId=@blogId ");
             SqlParameter[] parameters = {
 					new SqlParameter("@blogId", SqlDbType.Int,4)			};
@@ -207,9 +207,9 @@ namespace starweibo.DAL
                 {
                     model.blogPubTime = DateTime.Parse(row["blogPubTime"].ToString());
                 }
-                if (row["atId"] != null && row["atId"].ToString() != "")
+                if (row["parentId"] != null && row["parentId"].ToString() != "")
                 {
-                    model.atId = int.Parse(row["atId"].ToString());
+                    model.parentId = int.Parse(row["parentId"].ToString());
                 }
                 if (row["userName"] != null)
                 {
@@ -241,7 +241,7 @@ namespace starweibo.DAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select blogContent,blogAuthorId,blogPubTime,atId,userName,userHeadimage,atuserName,atuserHeadimage,blogId ");
+            strSql.Append("select blogContent,blogAuthorId,blogPubTime,parentId,userName,userHeadimage,atuserName,atuserHeadimage,blogId ");
             strSql.Append(" FROM atV ");
             if (strWhere.Trim() != "")
             {
@@ -261,7 +261,7 @@ namespace starweibo.DAL
             {
                 strSql.Append(" top " + Top.ToString());
             }
-            strSql.Append(" blogContent,blogAuthorId,blogPubTime,atId,userName,userHeadimage,atuserName,atuserHeadimage,blogId ");
+            strSql.Append(" blogContent,blogAuthorId,blogPubTime,parentId,userName,userHeadimage,atuserName,atuserHeadimage,blogId ");
             strSql.Append(" FROM atV ");
             if (strWhere.Trim() != "")
             {

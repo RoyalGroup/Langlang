@@ -141,3 +141,5 @@ a{text-decoration: none;color: #333;}
 
 }
 .msg_diamain_box p{  margin-bottom: 5px;  line-height:22px;}
+
+.icon_mes{display: inline-block;width: 12px;height: 9px;overflow: hidden;background: url('../images/msg_icon.png') repeat scroll 0% 0% transparent;}

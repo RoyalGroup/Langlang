@@ -2,10 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/message.css" rel="stylesheet" />
     <link href="css/detailmessage.css" rel="stylesheet" />
+    <script src="js/detailmessage.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%@ Import namespace="System.Data" %> 
-    <%@ Import namespace="System.ComponentModel" %> 
+    <%--<%@ Import namespace="System.ComponentModel" %> --%>
     <div class="main_inner">
         <div class="W_main_l">
             <div class="left_commen">
@@ -83,7 +84,7 @@
                                     <div class="msgtitle">
                                         <em class="icon_mes"></em>
                                         发送私信给:
-                                        <span class="msgname">sb</span>
+                                        <span class="msgname"><%=sendname %></span>
                                     </div>
                                     <div class="msgnum">
                                         还可以输入
@@ -108,13 +109,12 @@
                                         <div class="S_line2 msg_time_line">
                                             <div class="time_tit">10秒前</div><%--(Convert.ToInt32(Eval("senderId")) == curid)--%>
                                         </div>
-                                        <%# (Convert.ToInt32(Eval("senderId")) == curid)?(checkid=1):(checkid=2) %>
                                         <%--<% if (check(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "senderId"))))
                                           {
                                             %>--%>
-                                        <%if(checkid==1)
+                                        <%--<% if (check(Convert.ToInt32(Eval("senderId"))))
                                           {
-                                             %>
+                                            %>--%>
                                             <div class="msg_dialogue_list msg_dialist_l clearfix ">
                                                 <div class="msg_dialist_box clearfix">
                                                     <div class="msg_dialist_pic">
@@ -133,7 +133,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        <%   
+                                        <%--<%   
                                           }
                                           else
                                           {
@@ -158,7 +158,7 @@
                                                 </div>
                                         <%
                                           } 
-                                          %>
+                                          %>--%>
                                         
                                         
                                     </ItemTemplate>

@@ -81,7 +81,7 @@
             $(this).attr("a", "1");
         }
     });
-    $(".yanzheng").click(function () {
+    $(document).on("click", ".yanzheng", function () {
         var email = $(".youxiang").val();
         var d = new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");
         if (!d.test(email)) {
@@ -94,12 +94,13 @@
                 data: "{email:'" + email + "'}",         //这里是要传递的参数，格式为 data: "{paraName:'paraValue'}",下面将会看到       
                 dataType: 'json',
                 success: function (result) {
-                    $(".yanzhengma").attr("yanzhengnum", result.d)
+                    $(".yanzhengma").attr("yanzhengnum", result.d);
                     alert("验证码已发送到您的邮箱，请查看您的邮件！");
                 }
             });
         }
     });
+
 
    
     //$(".finishzhuce").click(function () {
@@ -114,7 +115,9 @@
         var youxiang = $(".youxiang").val();
         var mima = $(".mima").val();
         var queren = $(".queren").val();
-        if (mima == queren && d.test(nicheng) && e.test(youxiang)) {
+        var yanzhengma = $(".yanzhengma").val();
+        var yanzhengnum = $(".yanzhengma").attr("yanzhengnum");
+        if (mima == queren && d.test(nicheng) && e.test(youxiang) && yanzhengma == yanzhengnum ) {
             $.ajax({
                 type: "POST",   //访问WebService使用Post方式请求
                 contentType: "application/json", //WebService 会返回Json类型

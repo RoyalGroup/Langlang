@@ -42,13 +42,13 @@ namespace starWeibo.webservice
             Random rad = new Random();
             int value = rad.Next(100000, 999999);
             //将生成的验证码通过邮件形式发送给用户
-            string formto = "2206902507@qq.com";
+            string formto = "xgjcsyx@126.com";
             string to = email;   //接收邮箱
             string content = "验证码";
             string body = "验证码为：" + value.ToString();
-            string name = "2206902507@qq.com";
-            string upass = "641077955";
-            string smtp = "stmp.qq.com";
+            string name = "xgjcsyx@126.com";
+            string upass = "mima12345678";
+            string smtp = "smtp.126.com";
             SmtpClient _smtpClient = new SmtpClient();
             _smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;//指定电子邮件发送方式
             _smtpClient.Host = smtp; //指定SMTP服务器

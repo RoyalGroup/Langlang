@@ -19,7 +19,7 @@
 						<li>
 							    <div class="name1">昵称：</div>
 								<input class="text_input nicheng" type="text"  name="uername" />
-								<div class="tishi ts1">请输入不超过10个字的用户名</div>
+								<div class="tishi ts1">请输入2到16位字符的用户名</div>
 						</li>
 						<li>
 								<div class="name1">安全邮箱：</div>
@@ -31,19 +31,19 @@
 						</li>
 						<li>
 								<div class="name1">密码：</div>
-								<input class="text_input mima" type="text"  name="uername"  autocomplete="off"/>
-								<div class="tishi ts3">请输入长度为8-16的字符，区分大小写</div>
+								<input class="text_input mima" type="password"  name="uername"  autocomplete="off"/>
+								<div class="tishi ts3">请输入密码，区分大小写</div>
 						</li>
 						<li>
 								<div class="name1">确认密码：</div>
-								<input class="text_input queren" type="text"  name="uername"  autocomplete="off"/>
+								<input class="text_input queren" type="password"  name="uername"  autocomplete="off"/>
 								<div class="tishi ts4">请输入与上面一致的密码</div>
 						</li>
-						<li>
+						<%--<li>
 								<div class="name1">验证码：</div>								
 								<input class="text_input yanzhengma" type="text"  name="uername"  autocomplete="off"/>
 								<div class="tishi ts5">请输入邮箱收到的验证码</div>
-						</li>
+						</li>--%>
 					</ul>
 					<div class="check">
 							<input type="checkbox" checked="checked"  name="use_active_code"/>

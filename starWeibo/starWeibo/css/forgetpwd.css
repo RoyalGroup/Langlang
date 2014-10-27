@@ -1,19 +1,57 @@
-﻿body {width:99%;height:100%;font-size:15px;color:#111;font-family:Arial;background-image:url("images/login/11sd.jpg"); font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";}
-*{margin:0;padding:0;}
-ul,li{list-style:none;}
-img{border:0;}
+﻿*{margin: 0px;padding: 0px;}
+img{border: 0px}
+ul,li{list-style: none;}
+a{text-decoration: none;}
+body{font-family: '微软雅黑';font-size: 12px;}
+input{outline: none;}
+
+.tubiao{width:100px;height: 50px;margin-top: 20px;border: 1px solid #ccc;margin-left:230px;}
+.form{width: 900px;height: 450px;margin: 10px auto;border: 1px solid #ccc;border-top: 2px solid #ff9000;}
+.title{width: 860px;height: 40px;text-align: left;line-height: 40px;font-size: 20px;padding-left: 40px;border-bottom: 2px solid #ff9000;}
+.mod-sub-nav{width: inherit;height: 36px;background:url("../images/mod_sub_nav.png") no-repeat scroll 0px 0px transparent;margin: 30px 0px 20px;color: #418dda;font: 16px/36px 微软雅黑,黑体；}
+.mod-sub-nav li{float: left;}
+.mod-sub-list1{width: 190px;padding-left: 56px;}
+.mod-sub-list2{width: 202px;padding-left: 56px;}
+.mod-sub-list3{width: 199px;padding-left: 56px;}
 
 
-.getpwd{width: 900px;height: 550px;border: 1px solid #ccc;margin: 70px auto;background-color: white;border-radius: 8px;}
-.registerTop{background-color:#fafafa;width:870px;height: 30px;color: #333;padding: 17px 0 17px 30px;line-height: 33px;font-size: 22px;border-bottom: 1px solid #ddd;border-top-left-radius: 8px;border-top-right-radius: 8px;font-family: "Microsoft Yahei"; }
-.zhaohui{width: 500px;height: 300px;border:1px solid #ddd;margin: 40px auto;}
-.zhaohui ul{width: 500px;height: 150px;}
-.zhaohui li{width: 450px;height: 40px;margin: 20px 0 20px 20px;font-size: 15px;}
+.list1-active{background: url("../images/forget/sub_nav_1.png") no-repeat scroll 0px 0px transparent;color: #fff;}
+.list2-active{background: url("../images/forget/sub_nav_2.png") no-repeat scroll 0px 0px transparent;color: #fff;margin-left: -30px;}
+.list3-active{background: url("../images/forget/sub_nav_3.png") no-repeat scroll 0px 0px transparent;color: #fff;margin-left: -50px;}
 
-.zhaohuiyouxiang{width: 120px;text-align: right;float: left;}
-.zhaohui_input{float: left;margin-left: 10px;height: 30px;outline: none;}
-.btn_sub{width: 160px;height: 25px;text-align: center;background-color:orange; margin-left: 60px;padding:10px 0 10px 0;}
-.btn_sub a{color:white;font-size:16px;text-decoration:none;}
-.validate_code{float: left; width: 80px;height: 30px;margin-left: 10px; border:1px solid #ccc;float: left;color: rgb(153,153,153);font-size: 14px;outline: none;*padding-top:8px;}
-.image_code{width:100px;height: 38px;margin-left: 5px;background-image: url("images/pin (1).png");float: left;background-repeat: no-repeat;margin-top: -5px;}
-.link_notice{color: #0a8cd2;text-decoration: none;color: 12px;width: 60px;}
+.step-email-info{font-size: 16px;padding-bottom: 20px;}
+.clear:after{content: "";display: block;height: 0px;clear: both;visibility: hidden;overflow: hidden;}
+.pass-input-container{margin-bottom: 15px;}
+#account{width: 230px;height: 25px;}
+
+
+.forgotse2{display: none;}
+.pass-button-submit{height: 34px;width: 109px;color: #fff;cursor: pointer;text-align: center;border: 0px none;background-image: url("../images/forget/button_icon.png");line-height: 32px;margin-top: 10px;}
+.pass-button-submit1{height: 34px;width: 109px;color: #fff;cursor: pointer;text-align: center;border: 0px none;background-image: url("../images/forget/button_icon.png");line-height: 32px;margin-top: 10px;}
+.step-email-info{font-size: 16px;padding-bottom: 20px;}
+.clear:after{content: "";display: block;height: 0px;clear: both;visibility: hidden;overflow: hidden;}
+.pass-input-container1{margin-bottom: 15px;}
+#account1{width: 230px;height: 25px;}
+
+
+.forgotse3{display: none;}
+
+.T1{width: 300px;height:30px;margin-top: 20px;}
+.T1 a{font-size: 14px;line-height: 30px;display: block;float: left;width: 120px;}
+.T1R{float: left;height: 25px; width: 160px;overflow: hidden;}
+
+.T2{width: 300px;height:30px;margin-top: 20px;}
+.T2 a{font-size: 14px;line-height: 30px;display: block;float: left;width: 120px;}
+.T2R{float: left;height: 25px; width: 160px;overflow: hidden;}
+
+
+
+
+
+
+
+
+
+
+
+

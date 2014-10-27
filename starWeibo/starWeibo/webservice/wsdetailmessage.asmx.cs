@@ -26,13 +26,14 @@ namespace starWeibo.webservice
         [WebMethod(EnableSession = true)]
         public int dtmessage(int receiveId, string content)
         {
-            int sendid = Convert.ToInt32(Session["userid"]);
-            int receiveid = receiveId;
+            //int sendid = Convert.ToInt32(Session["userid"]);
+            int sendid = 1;
             starweibo.Model.chatInfo onechat = new starweibo.Model.chatInfo();
             starweibo.BLL.chatInfo bllchat = new starweibo.BLL.chatInfo();
             onechat.senderId = sendid;
-            onechat.receiverId = receiveid;
+            onechat.receiverId = receiveId;
             onechat.msgContent = content;
+            onechat.msgState = "noread";
             return bllchat.Add(onechat);
         }
     }

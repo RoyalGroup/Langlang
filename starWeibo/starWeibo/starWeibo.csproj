@@ -64,6 +64,7 @@
     <Content Include="css\imgareaselect-default.css" />
     <Content Include="css\playstar.css" />
     <Content Include="detailmessage.aspx" />
+    <Content Include="error.aspx" />
     <Content Include="images\forget\button_icon.png" />
     <Content Include="images\forget\mod_sub_nav.png" />
     <Content Include="images\forget\sub_nav_1.png" />
@@ -73,6 +74,7 @@
     <Content Include="images\repeat_bg_yg.png" />
     <Content Include="js\cancel.png" />
     <Content Include="js\detailmessage.js" />
+    <Content Include="js\jquery-ui.js" />
     <Content Include="js\jquery.imgareaselect.pack.js" />
     <Content Include="js\jquery.uploadify.min.js" />
     <Content Include="js\playstar.js" />
@@ -340,6 +342,13 @@
     </Compile>
     <Compile Include="detailmessage.aspx.designer.cs">
       <DependentUpon>detailmessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
     </Compile>
     <Compile Include="playstar.aspx.cs">
       <DependentUpon>playstar.aspx</DependentUpon>

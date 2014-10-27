@@ -32,7 +32,7 @@ namespace starWeibo
                     Session["userid"] = curuserinfo[0].id;
                     Session["username"] = cusername;
                     Session["userpwd"] = cuserpwd;
-                    Response.Redirect("~/homePage.aspx");//~/zhujiemian.aspx
+                    Response.Redirect("~/playstar.aspx");//~/zhujiemian.aspx
                 }
             }
         }

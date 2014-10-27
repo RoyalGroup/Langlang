@@ -107,8 +107,8 @@
 				<div class="FansRightTop">已有3人关注了你</div>
 				<div class="RTopMenu"></div>
 				<div class="FansList">
-                      <asp:DataList runat="server" ID="fansinfomation" RepeatColumns="1" RepeatLayout="table">
-                      <ItemTemplate>
+                    <asp:DataList runat="server" ID="fansinfomation" RepeatColumns="1" RepeatLayout="table">
+                    <ItemTemplate>
 					    <div class="FansLi">
 						    <div class="FansLiL">
 							    <div class="FansHeadImg">
@@ -126,7 +126,7 @@
                                         <span class="DeleFans" userId="<%# Eval("userId") %>">移除粉丝 </span>
                                         <span class="ReportFans" userId="<%# Eval("userId") %>">举报</span>
                                         <div class="EnsureDeleFans">
-                                            <div class="EnsDeleFansTop">确认要移除萝莉蓓蓓啊?</div>
+                                            <div class="EnsDeleFansTop">确认要移除<%# Eval("fansName") %>?</div>
                                             <div class="EnsDeleFansBot">
 					                            <div class="EnsDeleFansBotBtn1">确定</div>
 					                            <div class="EnsDeleFansBotBtn2">取消</div>

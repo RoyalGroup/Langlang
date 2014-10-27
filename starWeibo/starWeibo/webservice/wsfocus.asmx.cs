@@ -63,27 +63,41 @@ namespace starWeibo.webservice
         }
 
         //关注
-        //[WebMethod(EnableSession = true)]
-        //public void guanzhu(int friendId)
-        //{
-        //    string userid = Session["userid"].ToString();
-        //    starweibo.BLL.relationInfo Bguanzhu = new starweibo.BLL.relationInfo();
-        //    starweibo.Model.relationInfo Mguanzhu = new starweibo.Model.relationInfo();
-        //    List<starweibo.Model.relationInfo> MfriendId = new List<starweibo.Model.relationInfo>();
+        [WebMethod(EnableSession = true)]
+        public int guanzhu(int friendId)
+        {
+            string userid = Session["userid"].ToString();
+            starweibo.BLL.relationInfo Bguanzhu = new starweibo.BLL.relationInfo();
+            starweibo.Model.relationInfo Mguanzhu = new starweibo.Model.relationInfo();
+            List<starweibo.Model.relationInfo> MfriendId = new List<starweibo.Model.relationInfo>();
 
-        //    MfriendId = Bguanzhu.GetModelList("friendId=" + friendId + " and userId=" + userid);
-        //    if (MfriendId==null)
-        //    {
-        //        Mguanzhu.userId = Convert.ToInt32(userid);
-        //        Mguanzhu.friendId = friendId;
-        //        Mguanzhu.groupId = 6;
+            MfriendId = Bguanzhu.GetModelList("friendId=" + friendId + " and userId=" + userid);
+            if (MfriendId == null)
+            {
+                Mguanzhu.userId = Convert.ToInt32(userid);
+                Mguanzhu.friendId = friendId;
+                Mguanzhu.groupId = 6;
 
-        //        Bguanzhu.Add(Mguanzhu);
-        //    }
-        //    else
-        //    {
-                
-        //    }
-        //}
+                return Bguanzhu.Add(Mguanzhu);
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        //移除粉丝
+        [WebMethod(EnableSession = true)]
+        public bool yichufensi(int friendId)
+        {
+            string userid = Session["userid"].ToString();
+
+            starweibo.BLL.relationInfo BNoteName = new starweibo.BLL.relationInfo();
+            List<starweibo.Model.relationInfo> MNoteName = new List<starweibo.Model.relationInfo>();
+
+            MNoteName = BNoteName.GetModelList("friendId=" + userid + " and userId=" + friendId);
+            int id = MNoteName[0].id;
+            return BNoteName.Delete(id);
+        }
     }
 }

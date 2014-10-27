@@ -126,6 +126,7 @@
                     //alert(result.d);
                     if (result.d != null) {
                         alert("注册成功！");
+                        window.location.href = "login.aspx";
                     }
                 }
             });

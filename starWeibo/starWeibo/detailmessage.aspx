@@ -74,7 +74,7 @@
                         <div class="group_read">
                             <div class="title">
                                 与
-                                <strong class="dia_object">sb</strong>
+                                <strong class="dia_object"><%=sendname %></strong>
                                 的对话
                             </div>                
                         </div>
@@ -84,7 +84,7 @@
                                     <div class="msgtitle">
                                         <em class="icon_mes"></em>
                                         发送私信给:
-                                        <span class="msgname"><%=sendname %></span>
+                                        <span class="msgname" msgid="<%=sendid %>"><%=sendname %></span>
                                     </div>
                                     <div class="msgnum">
                                         还可以输入
@@ -107,60 +107,27 @@
                                 <asp:Repeater runat="server" ID="msgdialogue">
                                     <ItemTemplate>
                                         <div class="S_line2 msg_time_line">
-                                            <div class="time_tit">10秒前</div><%--(Convert.ToInt32(Eval("senderId")) == curid)--%>
+                                            <div class="time_tit">10秒前</div>
                                         </div>
-                                        <%--<% if (check(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "senderId"))))
-                                          {
-                                            %>--%>
-                                        <%--<% if (check(Convert.ToInt32(Eval("senderId"))))
-                                          {
-                                            %>--%>
-                                            <div class="msg_dialogue_list msg_dialist_l clearfix ">
-                                                <div class="msg_dialist_box clearfix">
-                                                    <div class="msg_dialist_pic">
-                                                        <a class="dialist_pic_box">
-                                                            <img src="<%# Eval("userHeadimage") %>" alt="" height="50" width="50"/>
-                                                        </a>
-                                                    </div>
-                                                    <div class="msg_dialist_content S_line2 S_bg5">
-                                                        <div class="msg_arrow"></div>
-                                                        <div class="msg_dialist_main">
-                                                            <div class="msg_diamain_box">
-                                                                <p class="msg_dia_txt"><%# Eval("msgContent") %></p>
-                                                            </div>
+                                      <%--  <%# check(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "senderId")))  %>--%>
+                                        <div class="msg_dialogue_list msg_dialist_<%# (Convert.ToInt32(Eval("senderId"))==curid)?"l":"r" %> clearfix ">
+                                            <div class="msg_dialist_box clearfix">
+                                                <div class="msg_dialist_pic">
+                                                    <a class="dialist_pic_box">
+                                                        <img src="<%# Eval("userHeadimage") %>" alt="" height="50" width="50"/>
+                                                    </a>
+                                                </div>
+                                                <div class="msg_dialist_content S_line2 S_bg5">
+                                                    <div class="msg_arrow"></div>
+                                                    <div class="msg_dialist_main">
+                                                        <div class="msg_diamain_box">
+                                                            <p class="msg_dia_txt"><%# Eval("msgContent") %></p>
                                                         </div>
-                                                        <div class="msg_ctrl hover"></div>
                                                     </div>
+                                                    <div class="msg_ctrl hover"></div>
                                                 </div>
                                             </div>
-                                        <%--<%   
-                                          }
-                                          else
-                                          {
-                                               %>
-                                                 <div class="msg_dialogue_list msg_dialist_r clearfix ">
-                                                    <div class="msg_dialist_box clearfix">
-                                                        <div class="msg_dialist_pic">
-                                                            <a class="dialist_pic_box">
-                                                                <img src="<%# Eval("userHeadimage") %>" alt="" height="50" width="50"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="msg_dialist_content S_line2 S_bg5">
-                                                            <div class="msg_arrow"></div>
-                                                            <div class="msg_dialist_main">
-                                                                <div class="msg_diamain_box">
-                                                                    <p class="msg_dia_txt"><%# Eval("msgContent") %></p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="msg_ctrl hover"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                        <%
-                                          } 
-                                          %>--%>
-                                        
-                                        
+                                        </div> 
                                     </ItemTemplate>
                                 </asp:Repeater>      
                             </div>

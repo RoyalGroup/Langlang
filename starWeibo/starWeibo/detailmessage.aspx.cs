@@ -13,11 +13,13 @@ namespace starWeibo
     {
         public int curid;
         public string sendname="11";
+        public string sendid = "2";
         protected void Page_Load(object sender, EventArgs e)
         {
 
             //string sendid = Request.QueryString["sendid"].ToString();
             //sendname = Request.QueryString["sendname"].ToString();
+            //sendid = Request.QueryString["sendid"].ToString();
             if (Session["userid"] == null || Session["userid"].ToString() == "")
             {
                 //Response.Redirect("login.aspx");
@@ -32,12 +34,12 @@ namespace starWeibo
             this.msgdialogue.DataBind();
         }
 
-        protected bool check(int id)
-        {
-            if (id == curid)
-                return true;
-            else
-                return false;
-        }
+        //protected string check(int id)
+        //{
+        //    if (id == curid)
+        //        return "l";
+        //    else
+        //        return "r";
+        //}
     }
 }

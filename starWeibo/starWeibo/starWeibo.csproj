@@ -62,18 +62,26 @@
     <Content Include="comment.aspx" />
     <Content Include="css\detailmessage.css" />
     <Content Include="css\imgareaselect-default.css" />
+    <Content Include="css\playstar.css" />
     <Content Include="detailmessage.aspx" />
+    <Content Include="images\forget\button_icon.png" />
+    <Content Include="images\forget\sub_nav_1.png" />
+    <Content Include="images\forget\sub_nav_2.png" />
+    <Content Include="images\forget\sub_nav_3.png" />
     <Content Include="images\loading.gif" />
     <Content Include="js\cancel.png" />
     <Content Include="js\detailmessage.js" />
     <Content Include="js\jquery.imgareaselect.pack.js" />
     <Content Include="js\jquery.uploadify.min.js" />
+    <Content Include="js\playstar.js" />
     <Content Include="js\swfobject.js" />
     <Content Include="js\uploadify.css" />
     <Content Include="js\uploadify.swf" />
+    <Content Include="playstar.aspx" />
     <Content Include="uploadpage.aspx" />
-    <Content Include="webservice\detailmessage.asmx" />
+    <Content Include="webservice\forgetpwd.asmx" />
     <Content Include="webservice\wsadmin.asmx" />
+    <Content Include="webservice\wsdetailmessage.asmx" />
     <Content Include="webservice\wsfocus.asmx" />
     <Content Include="webservice\wshomepage.asmx" />
     <Content Include="webservice\wsregister.asmx" />
@@ -331,6 +339,13 @@
     <Compile Include="detailmessage.aspx.designer.cs">
       <DependentUpon>detailmessage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="playstar.aspx.cs">
+      <DependentUpon>playstar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="playstar.aspx.designer.cs">
+      <DependentUpon>playstar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="uploadpage.aspx.cs">
       <DependentUpon>uploadpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -338,12 +353,16 @@
     <Compile Include="uploadpage.aspx.designer.cs">
       <DependentUpon>uploadpage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webservice\detailmessage.asmx.cs">
-      <DependentUpon>detailmessage.asmx</DependentUpon>
+    <Compile Include="webservice\forgetpwd.asmx.cs">
+      <DependentUpon>forgetpwd.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="webservice\wsadmin.asmx.cs">
       <DependentUpon>wsadmin.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="webservice\wsdetailmessage.asmx.cs">
+      <DependentUpon>wsdetailmessage.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="webservice\wsfocus.asmx.cs">

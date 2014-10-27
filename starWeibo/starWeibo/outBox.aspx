@@ -93,7 +93,7 @@
                                                 </p>
                                                 <p style="margin-top: 6px;">
                                                     <span><%# Eval("pubTime") %></span>
-                                                    <a href="#" style="float: right">回复</a>
+                                                    <a href="#" style="float: right">展开</a>
                                                 </p>
                                             </div>
                                         </div>

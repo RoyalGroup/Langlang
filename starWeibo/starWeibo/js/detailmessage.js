@@ -6,6 +6,7 @@
 function send() {
     $(".btnsend").click(function () {
         var value = $(".dmsgtextarea").val();
+        var headimg = $("#info").attr("headimg");
         if (value!=null && value != "")
         {
             var msgid = $(".msgname").attr("msgid");
@@ -17,7 +18,7 @@ function send() {
                 dataType: 'json',
                 success: function (res) {
                     $(".dmsgtextarea").val("");
-                    chatmsg("10秒钟前", 1, value);
+                    chatmsg("10秒钟前", headimg, value);
                 },
                 error: function () {
                     alert("fail");

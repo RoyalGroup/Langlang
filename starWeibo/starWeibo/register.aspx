@@ -39,11 +39,11 @@
 								<input class="text_input queren" type="password"  name="uername"  autocomplete="off"/>
 								<div class="tishi ts4">请输入与上面一致的密码</div>
 						</li>
-						<%--<li>
+						<li>
 								<div class="name1">验证码：</div>								
-								<input class="text_input yanzhengma" type="text"  name="uername"  autocomplete="off"/>
+								<input class="text_input yanzhengma" type="text" yanzhengnum=""  name="uername"  autocomplete="off"/>
 								<div class="tishi ts5">请输入邮箱收到的验证码</div>
-						</li>--%>
+						</li>
 					</ul>
 					<div class="check">
 							<input type="checkbox" checked="checked"  name="use_active_code"/>

@@ -70,17 +70,36 @@
     $(document).click(function () {
         $(".ts5").hide();
     });
-    //$(".youxiang").click(function () {
-    //    var b = $(this).attr("a")
-    //    if (b == 1) {
-    //        $(".yincang").css("display", "block");
-    //        $(this).attr("a", "0");
-    //    }
-    //    else {
-    //        $(".yincang").css("display", "none");
-    //        $(this).attr("a", "1");
-    //    }
-    //});
+    $(".youxiang").click(function () {
+        var b = $(this).attr("a")
+        if (b == 1) {
+            $(".yincang").css("display", "block");
+            $(this).attr("a", "0");
+        }
+        else {
+            $(".yincang").css("display", "none");
+            $(this).attr("a", "1");
+        }
+    });
+    $(".yanzheng").click(function () {
+        var email = $(".youxiang").val();
+        var d = new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");
+        if (!d.test(email)) {
+            alert("请输入正确邮箱");
+        } else {
+            $.ajax({
+                type: "POST",   //访问WebService使用Post方式请求
+                contentType: "application/json", //WebService 会返回Json类型
+                url: "webservice/wsregister.asmx/Sendyanzheng", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+                data: "{email:'" + email + "'}",         //这里是要传递的参数，格式为 data: "{paraName:'paraValue'}",下面将会看到       
+                dataType: 'json',
+                success: function (result) {
+                    $(".yanzhengma").attr("yanzhengnum", result.d)
+                    alert("验证码已发送到您的邮箱，请查看您的邮件！");
+                }
+            });
+        }
+    });
 
    
     //$(".finishzhuce").click(function () {

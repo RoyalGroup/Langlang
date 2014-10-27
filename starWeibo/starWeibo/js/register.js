@@ -70,29 +70,32 @@
     $(document).click(function () {
         $(".ts5").hide();
     });
-    $(".youxiang").click(function () {
-        var b = $(this).attr("a")
-        if (b == 1) {
-            $(".yincang").css("display", "block");
-            $(this).attr("a", "0");
-        }
-        else {
-            $(".yincang").css("display", "none");
-            $(this).attr("a", "1");
-        }
-    });
+    //$(".youxiang").click(function () {
+    //    var b = $(this).attr("a")
+    //    if (b == 1) {
+    //        $(".yincang").css("display", "block");
+    //        $(this).attr("a", "0");
+    //    }
+    //    else {
+    //        $(".yincang").css("display", "none");
+    //        $(this).attr("a", "1");
+    //    }
+    //});
 
-    $(document).on("click", ".yanzheng", function () {
-        var c = $(".youxiang").val();
-        checkmail(c);
-    });
+   
+    //$(".finishzhuce").click(function () {
+    //    var nicheng = $(".nicheng").val();
+    //    checknicheng(nicheng);
+    //});
 
     $(".finishzhuce").click(function () {
+        var d = new RegExp("^[\u4E00-\u9FA5A-Za-z0-9_]{2,16}$");//汉字可以为1-8位，字母或数字可以为2-16位;
+        var e = new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");//邮箱的正则表达式
         var nicheng = $(".nicheng").val();
         var youxiang = $(".youxiang").val();
         var mima = $(".mima").val();
         var queren = $(".queren").val();
-        if (mima == queren) {
+        if (mima == queren && d.test(nicheng) && e.test(youxiang)) {
             $.ajax({
                 type: "POST",   //访问WebService使用Post方式请求
                 contentType: "application/json", //WebService 会返回Json类型
@@ -109,16 +112,20 @@
             });
         }
         else {
-            alert("请重新确认密码");
+            alert("请重新输入正确的注册资料");
         }
-
-
     });
  
 });
 function checkmail(control)
 {
-    var d=new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");
+    var d=new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");//邮箱的正则表达式;
     if(!d.test(control))
         alert("请输入正确邮箱");
+};
+
+function checknicheng(control) {
+    var d = new RegExp("^[\u4E00-\u9FA5A-Za-z0-9_]{2,16}$");//汉字可以为1-8位，字母或数字可以为2-16位;
+    if (!d.test(control))
+        alert("请输入正确的昵称");
 };

@@ -13,7 +13,7 @@ namespace starweibo.Model
         private string _blogcontent;
         private int _blogauthorid;
         private DateTime _blogpubtime;
-        private int? _atid;
+        private int? _parentid;
         private string _username;
         private string _userheadimage;
         private string _atusername;
@@ -46,10 +46,10 @@ namespace starweibo.Model
         /// <summary>
         /// 
         /// </summary>
-        public int? atId
+        public int? parentId
         {
-            set { _atid = value; }
-            get { return _atid; }
+            set { _parentid = value; }
+            get { return _parentid; }
         }
         /// <summary>
         /// 

@@ -47,6 +47,7 @@
     <Compile Include="chatV.cs" />
     <Compile Include="CollectionV.cs" />
     <Compile Include="focusV.cs" />
+    <Compile Include="fullblogInfoV.cs" />
     <Compile Include="messageInfo.cs" />
     <Compile Include="messageV.cs" />
     <Compile Include="photoGroupInfo.cs" />

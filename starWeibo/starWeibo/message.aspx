@@ -43,7 +43,7 @@
                     </a>
                 </div>
                 <div class="lev2 lev2-curr">
-                    <a href="#">
+                    <a href="message.aspx">
                         <i class="ico20 ico_letter"></i>
                         私信
                     </a>
@@ -77,14 +77,14 @@
                                 <ItemTemplate>
                                     <div class="comment_feed clearfix">
                                         <div class="face">
-                                            <a href="#">
+                                            <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("senderId") %>">
                                                 <img src="<%# Eval("userHeadimage") %>" />
                                             </a>
                                         </div>
                                         <div class="comment">
                                             <div class="comm_box">
                                                 <p>
-                                                    <a href="#"><%# Eval("userName") %></a>
+                                                    <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("senderId") %>"><%# Eval("userName") %></a>
                                                     <span>悄悄的对你说:</span>
                                                 </p>
                                                 <p>                                                  
@@ -92,7 +92,7 @@
                                                 </p>
                                                 <p style="margin-top: 6px;">
                                                     <span><%# Eval("pubTime") %></span>
-                                                    <a href="#" style="float: right">回复</a>
+                                                    <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("senderId") %>" style="float: right">回复</a>
                                                 </p>
                                             </div>
                                         </div>

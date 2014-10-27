@@ -3,13 +3,14 @@
     $("#fabu").click(function () {
         var content = $("#fabu_input").val();
         var userid = $("#info").attr("userid");
+        var parentid = 0;
         var btnActive = $(this).parent().attr("class");
         if (btnActive == "wbtnvactive") {
             $.ajax({
                 type: "POST",   //访问WebService使用Post方式请求
                 contentType: "application/json", //WebService 会返回Json类型
                 url: "webservice/wshomepage.asmx/publishBlog", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
-                data: "{userId:" + userid + ",content:'" + content + "'}",         //这里是要传递的参数，格式为 data: "{paraName:paraValue}",下面将会看到       
+                data: "{userId:" + userid + ",content:'" + content + "',parentid:" + parentid + "}",         //这里是要传递的参数，格式为 data: "{paraName:paraValue}",下面将会看到       
                 dataType: 'json',
                 success: function (result) {     //回调函数，result，返回值
                     if (result.d != null) {
@@ -119,11 +120,25 @@
         var parentid = 0;
         var blogid = that.parent().parent().parent().parent().attr("blogId");
         var ifzan = that.attr("ifzan");
+        var zannum = that.find("span").html();
         if (ifzan == 0) {
             var content = "";
             var parentid = 0;
             var typeid = 1;
             var d = "{blogid:" + blogid + ",content:'" + content + "',typeid:" + typeid + ",parentid:" + parentid + "}";
+            zannum=zannum*1+1;
+            var d1 = "{blogid:" + blogid + ",zannum:" + zannum + "}";
+            $.ajax({
+                url: "webservice/wshomepage.asmx/updateBlogZan",
+                type: "POST",
+                contentType: "application/json",
+                data: d1,
+                dataType: "json",
+                success: function (res) {
+                    if (res.d == true) {
+                    }
+                }
+            });
             $.ajax({
                 url: "webservice/wshomepage.asmx/publishMessage",
                 type: "POST",
@@ -145,6 +160,19 @@
         } else if (ifzan == 1) {
             var typeid = 9;
             var d = "{blogid:" + blogid + ",content:'" + content + "',typeid:" + typeid + ",parentid:" + parentid + "}";
+            zannum = zannum * 1-1;
+            var d1 = "{blogid:" + blogid + ",zannum:" + zannum + "}";
+            $.ajax({
+                url: "webservice/wshomepage.asmx/updateBlogZan",
+                type: "POST",
+                contentType: "application/json",
+                data: d1,
+                dataType: "json",
+                success: function (res) {
+                    if (res.d == true) {
+                    }
+                }
+            });
             $.ajax({
                 url: "webservice/wshomepage.asmx/publishMessage",
                 type: "POST",
@@ -162,7 +190,7 @@
                 error: function () {
                     alert("fail");
                 }
-            })
+            });
         }
        
     });
@@ -313,7 +341,23 @@
         var parentid = 0;
         var typeid = 2;
         var d = "{blogid:" + blogid + ",content:'" + replyContent + "',typeid:" + typeid + ",parentid:" + parentid + "}";
+
+        var plnum = $(".wbfeeddetail[blogid='" + blogid + "']").find(".pl span").html();
+        plnum = plnum * 1 + 1;
+        var d1 = "{blogid:" + blogid + ",plnum:" + plnum + "}";
         if (replyContent.length > 0 && replyContent.length < 141) {
+            $.ajax({
+                url: "webservice/wshomepage.asmx/updateBlogpl",
+                type: "POST",
+                contentType: "application/json",
+                data: d1,
+                dataType: "json",
+                success: function (res) {
+                    if (res.d == true) {
+                        $(".wbfeeddetail[blogid='" + blogid + "']").find(".pl span").html(plnum);
+                    }
+                }
+            });
             $.ajax({
                 url: "webservice/wshomepage.asmx/publishMessage",
                 type: "POST",
@@ -402,14 +446,34 @@
         var that = $(this);
         $(".mengban").show();
         $(".contrans").show();
-        var blogid = that.parent().parent().parent().parent().attr("blogid");
-        var blogAuthor = that.parent().parent().parent().find(".wbname").html();
-        var blogContent = that.parent().parent().parent().find(".wbtext").html();
-        var blogAuthorUrl=that.parent().parent().parent().find(".wbname").attr("href");
-        $(".contrans").find(".contmyan a.conttxtlink").attr("href",blogAuthorUrl);
-        $(".contrans").find(".contmyan a.conttxtlink").html("@" + blogAuthor);
-        $(".contrans").find(".contmyan span.contgeyan").html(blogContent);
-        $(".contrans").attr("blogid", blogid);
+        if (that.parent().parent().parent().find(".zfdisable").length > 0) {
+            var blogid = that.parent().parent().parent().parent().attr("blogid");
+            var blogAuthor = that.parent().parent().parent().find(".wbname").html();
+            var blogContent = that.parent().parent().parent().find(".wbtext").html();
+            var blogAuthorUrl = that.parent().parent().parent().find(".wbname").attr("href");
+            $(".contrans").find(".contmyan a.conttxtlink").attr("href", blogAuthorUrl);
+            $(".contrans").find(".contmyan a.conttxtlink").html("@" + blogAuthor);
+            $(".contrans").find(".contmyan span.contgeyan").html(blogContent);
+            $(".contrans").find(".contranstop .conttxt ").html("转发微博");
+            $(".contrans").find(".concwbrzfbtn").html("转发");
+            $(".contrans").find("textarea").attr("placeHolder", "说点什么吧……");
+            $(".contrans").attr("blogid", blogid);
+            $(".contrans").find(".contte").val("");
+        } else {
+            var blogid = that.parent().parent().parent().find(".wbmediaexpand").attr("blogid");
+            var blogAuthor = that.parent().parent().parent().find(".wbmediaexpand .wbname").html();
+            var blogContent = that.parent().parent().parent().find(".wbmediaexpand .wbtext em").html();
+            var blogAuthorUrl = that.parent().parent().parent().find(".wbmediaexpand .wbname").attr("href");
+            $(".contrans").find(".contmyan a.conttxtlink").attr("href", blogAuthorUrl);
+            $(".contrans").find(".contmyan a.conttxtlink").html("@" + blogAuthor);
+            $(".contrans").find(".contmyan span.contgeyan").html(blogContent);
+            $(".contrans").find(".contranstop .conttxt ").html("转发微博");
+            $(".contrans").find(".concwbrzfbtn").html("转发");
+            $(".contrans").find("textarea").attr("placeHolder", "说点什么吧……");
+            $(".contrans").attr("blogid", blogid);
+            $(".contrans").find(".contte").val("");
+        }
+        
         
     });
     //关闭转发窗口
@@ -417,133 +481,207 @@
         $(".mengban").hide();
         $(".contrans").hide();
     });
-    //转发消息
+    //转发/举报消息
     $(".concwbrzfbtn").click(function () {
         var that = $(this);
         var blogid = $(".contrans").attr("blogid");
         var content = that.parent().parent().find(".contte").val();
-        if(content.length==0){
-            content="转发微博";
-        }
         var parentid = 0;
-        var typeid = 6;
-        var d = "{blogid:" + blogid + ",content:'" + content + "',typeid:" + typeid + ",parentid:" + parentid + "}";
-        if (content.length < 141) {
-            $.ajax({
-                url: "webservice/wshomepage.asmx/publishMessage",
-                type: "POST",
-                contentType: "application/json",
-                data: d,
-                dataType: "json",
-                success: function (res) {
-                    if (res.d != null) {
-                        that.parent().parent().find(".contte").val("转发成功！");
-                        that.parent().parent().find(".contte").animate({ "opacity": "0.9" }, 500, function () {
-                            $(".mengban").hide();
-                            $(".contrans").hide();
-                        });
-                        var html = '';
-                        var blogAuthorUrl=that.parent().parent().find(".contmyan a.conttxtlink").attr("href");
-                        var blogAuthorName=that.parent().parent().find(".contmyan a.conttxtlink").html().split("@")[1];
-                        var blogContent=that.parent().parent().find(".contgeyan").html();
-                        html += '<div class="wbfeedtype swfun line2">';
-                        html += '<div class="wbscreen">';
-                        html += '<a class="wico12 iconchoose"></a>';
-                        html += '</div>';
-                        html += '<div class="wbfeeddetail line2 clearfix">';
-                        html += '<div class="wbface">';
-                        html += '<a href="#" class="wfaceradius">';
-                        html += '<img src="' + $("#info").attr("headimg") + '" />';
-                        html += '</a>';
-                        html += '</div>';
-                        html += '<div class="wbdetail">';
-                        html += '<div class="wbinfo">';
-                        html += '<a class="wbname func1">' + $("#info").attr("name") + '</a>	';
-                        html += '<a href="#">';
-                        html += '	<i class="wico16 approveco"></i>';
-                        html += '</a>';
-                        html += '</div>';
-                        html += '	<div class="wbtext">';
-                        html += content;
-                        html += '</div>';
-                        html += '<div class="wbmediaexpand swfun2 line1 bg1">';
-                        html+='<div class="wbarrow">';
-                        html+='<em class="line1c">◆</em>';
-                        html+='<span class="bg4c">◆</span>';
-                        html+='</div>';
-                        html += '<div class="listcontent">';
-                        html += '<div class="wbinfo">';
-                        html += '<a href='+blogAuthorUrl+' class="wbname func3">'+blogAuthorName+'</a>';
-                        html += '</div>	';
-                        html += '<div class="wbtext">';
-                        html += '<em>';
-                        html += blogContent;
-                        html += '</em>';
-                        html += '</div>';
-                        html += '</div>';
-                        html += '</div>';
-                        html += '<div class="wbfunc clearfix">';
-                        html += '<div class="wbhandle">	';
-                        html+='<a class="zan" ifzan="0">';
-                        html+='<em class="wico20 iconpraised"></em>';
-                        html+='(<span>';
-                        html+='0';
-                        html+='</span>)';
-                        html+='</a>';                    
-                        html += '<i class="txt3">|</i>';
-                        html += '<a class="zf">转发</a>';
-                        html += '<i class="txt3">|</i>';
-                        html += '<a href="#">收藏</a>';
-                        html += '<i class="txt3">|</i>';
-                        html += '<a class="pl" pindex="20" isopen="no" ifc="0">评论(0)</a>';
-                        html += '</div>';
-                        html += '<div class="wbfrom">';
-                        html += '<a href="#" class="link2 wbtime">一分钟前</a>';
-                        html += '<em class="txt2">来自</em>';
-                        html += '<a href="#" class="link2">weibo</a>';
-                        html += '<span class="hoverr">';
-                        html += '<em class="txt2">|</em>&nbsp;';
-                        html += '<a href="#" class="jubao">举报</a>';
-                        html += '</span>';
-                        html += '</div>';
-                        html += '</div>';
-                        html += '<div class="dahuifu20"></div>';
-                        html += '</div>';
-                        html += '</div>';
-                        html += '</div>';
-                        $(".wbfeed").prepend(html);
+        var userid = $("#info").attr("userid");
+        var thatType = that.parent().parent().parent().find(".contranstop .conttxt").html();
+        if (thatType == "举报") {
+            var typeid = 5;
+            var d = "{blogid:" + blogid + ",content:'" + content + "',typeid:" + typeid + ",parentid:" + parentid + "}";
+            if (content.length == 0) {
+                alert("举报理由不可为空！");
+            } else if (content.length > 141) {
+                alert("举报理由请保持在140字以内！");
+            } else {
+                $.ajax({
+                    url: "webservice/wshomepage.asmx/publishMessage",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: d,
+                    dataType: "json",
+                    success: function (res) {
+                        if (res.d != null) {
+                            that.parent().parent().find(".contte").val("举报成功！");
+                            that.parent().parent().find(".contte").animate({ "opacity": "0.9" }, 500, function () {
+                                $(".mengban").hide();
+                                $(".contrans").hide();
+                            });
+                        }
                     }
-                    
-                }
-            });
+                });
+            }
         } else {
-            alert("转发内容请保持在140字以内！");
-        }
+            if (content.length == 0) {
+                content = "转发微博";
+            }
+            var typeid = 6;
+            var d = "{blogid:" + blogid + ",content:'" + content + "',typeid:" + typeid + ",parentid:" + parentid + "}";
+            var d1 = "{userId:" + userid + ",content:'" + content + "',parentid:" + blogid + "}";
+            if (content.length < 141) {
+                $.ajax({
+                    type: "POST",   //访问WebService使用Post方式请求
+                    contentType: "application/json", //WebService 会返回Json类型
+                    url: "webservice/wshomepage.asmx/publishBlog", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+                    data: d1,         //这里是要传递的参数，格式为 data: "{paraName:paraValue}",下面将会看到       
+                    dataType: 'json',
+                    success: function (result) {     //回调函数，result，返回值
+                        if (res.d != null) {
+                            alert("fasdf asdfasdfasdfasd");
+                        }
+                    }
+                });
+                $.ajax({
+                    url: "webservice/wshomepage.asmx/publishMessage",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: d,
+                    dataType: "json",
+                    success: function (res) {
+                        if (res.d != null) {
+                            that.parent().parent().find(".contte").val("转发成功！");
+                            that.parent().parent().find(".contte").animate({ "opacity": "0.9" }, 500, function () {
+                                $(".mengban").hide();
+                                $(".contrans").hide();
+                            });
+                            var html = '';
+                            var blogAuthorUrl = that.parent().parent().find(".contmyan a.conttxtlink").attr("href");
+                            var blogAuthorName = that.parent().parent().find(".contmyan a.conttxtlink").html().split("@")[1];
+                            var blogContent = that.parent().parent().find(".contgeyan").html();
+                            html += '<div class="wbfeedtype swfun line2">';
+                            html += '<div class="wbscreen">';
+                            html += '<a class="wico12 iconchoose"></a>';
+                            html += '</div>';
+                            html += '<div class="wbfeeddetail line2 clearfix">';
+                            html += '<div class="wbface">';
+                            html += '<a href="#" class="wfaceradius">';
+                            html += '<img src="' + $("#info").attr("headimg") + '" />';
+                            html += '</a>';
+                            html += '</div>';
+                            html += '<div class="wbdetail">';
+                            html += '<div class="wbinfo">';
+                            html += '<a class="wbname func1">' + $("#info").attr("name") + '</a>	';
+                            html += '<a href="#">';
+                            html += '	<i class="wico16 approveco"></i>';
+                            html += '</a>';
+                            html += '</div>';
+                            html += '	<div class="wbtext">';
+                            html += content;
+                            html += '</div>';
+                            html += '<div class="wbmediaexpand swfun2 line1 bg1">';
+                            html += '<div class="wbarrow">';
+                            html += '<em class="line1c">◆</em>';
+                            html += '<span class="bg4c">◆</span>';
+                            html += '</div>';
+                            html += '<div class="listcontent">';
+                            html += '<div class="wbinfo">';
+                            html += '<a href=' + blogAuthorUrl + ' class="wbname func3">' + blogAuthorName + '</a>';
+                            html += '</div>	';
+                            html += '<div class="wbtext">';
+                            html += '<em>';
+                            html += blogContent;
+                            html += '</em>';
+                            html += '</div>';
+                            html += '</div>';
+                            html += '</div>';
+                            html += '<div class="wbfunc clearfix">';
+                            html += '<div class="wbhandle">	';
+                            html += '<a class="zan" ifzan="0">';
+                            html += '<em class="wico20 iconpraised"></em>';
+                            html += '(<span>';
+                            html += '0';
+                            html += '</span>)';
+                            html += '</a>';
+                            html += '<i class="txt3">|</i>';
+                            html += '<a class="zf">转发</a>';
+                            html += '<i class="txt3">|</i>';
+                            html += '<a href="#">收藏</a>';
+                            html += '<i class="txt3">|</i>';
+                            html += '<a class="pl" pindex="20" isopen="no" ifc="0">评论(0)</a>';
+                            html += '</div>';
+                            html += '<div class="wbfrom">';
+                            html += '<a href="#" class="link2 wbtime">一分钟前</a>';
+                            html += '<em class="txt2">来自</em>';
+                            html += '<a href="#" class="link2">weibo</a>';
+                            html += '<span class="hoverr">';
+                            html += '<em class="txt2">|</em>&nbsp;';
+                            html += '<a href="#" class="jubao">举报</a>';
+                            html += '</span>';
+                            html += '</div>';
+                            html += '</div>';
+                            html += '<div class="dahuifu20"></div>';
+                            html += '</div>';
+                            html += '</div>';
+                            html += '</div>';
+                            $(".wbfeed").prepend(html);
+                        }
 
+                    }
+                });
+            } else {
+                alert("转发内容请保持在140字以内！");
+            }
+        }
     });
+    //弹出举报微博窗口
+    $(document).on("click", ".jubao", function () {
+        var that = $(this);
+        $(".mengban").show();
+        $(".contrans").show();
+        if (that.parent().parent().parent().parent().find(".zfdisable").length > 0) {
+            var blogid = that.parent().parent().parent().parent().parent().attr("blogid");
+            var blogAuthor = that.parent().parent().parent().parent().find(".wbname").html();
+            var blogContent = that.parent().parent().parent().parent().find(".wbtext").html();
+            var blogAuthorUrl = that.parent().parent().parent().parent().find(".wbname").attr("href");
+            $(".contrans").find(".contmyan a.conttxtlink").attr("href", blogAuthorUrl);
+            $(".contrans").find(".contmyan a.conttxtlink").html("@" + blogAuthor);
+            $(".contrans").find(".contmyan span.contgeyan").html(blogContent);
+            $(".contrans").find(".contranstop .conttxt ").html("举报");
+            $(".contrans").find(".concwbrzfbtn").html("提交");
+            $(".contrans").find("textarea").attr("placeHolder", "请填写举报理由……");
+            $(".contrans").attr("blogid", blogid);
+            $(".contrans").find(".contte").val("");
+        } else {
+            var blogid = that.parent().parent().parent().parent().find(".wbmediaexpand").attr("blogid");
+            var blogAuthor = that.parent().parent().parent().parent().find(".wbmediaexpand .wbname").html();
+            var blogContent = that.parent().parent().parent().parent().find(".wbmediaexpand .wbtext em").html();
+            var blogAuthorUrl = that.parent().parent().parent().parent().find(".wbmediaexpand .wbname").attr("href");
+            $(".contrans").find(".contmyan a.conttxtlink").attr("href", blogAuthorUrl);
+            $(".contrans").find(".contmyan a.conttxtlink").html("@" + blogAuthor);
+            $(".contrans").find(".contmyan span.contgeyan").html(blogContent);
+            $(".contrans").find(".contranstop .conttxt ").html("举报");
+            $(".contrans").find(".concwbrzfbtn").html("提交");
+            $(".contrans").find("textarea").attr("placeHolder","请填写举报理由……");
+            $(".contrans").attr("blogid", blogid);
+            $(".contrans").find(".contte").val("");
+        }
+    });
+
 
     //分页与加载相关
     fenye();
-    loading();
-    $(document).ajaxStart(function () {
-        $("#loading").show();
-    });
-    $(document).ajaxStop(function () {
-        $("#loading").hide();
-    });
+    //loading();
+    //$(document).ajaxStart(function () {
+     //   $("#loading").show();
+    //});
+    //$(document).ajaxStop(function () {
+     //   $("#loading").hide();
+    //});
 
 });
 
-var pages = 1;
 var flag = true;
 function loading() {
     $(window).scroll(function () {
         var scrolls = $(this).scrollTop();
-        var startIndex = pages * 20 + 1;
-        var endIndex = startIndex + 19;
-
         if (scrolls > 1700) {
             if (flag == true) {
+                var pages = $(".curpage").attr("num");
+                var startIndex = (pages-1)*40+21;
+                var endIndex = startIndex + 19;
                 $.ajax({
                     type: "POST",   //访问WebService使用Post方式请求
                     contentType: "application/json", //WebService 会返回Json类型
@@ -556,7 +694,7 @@ function loading() {
                         //alert(result.d);
                         $(result.d).each(function () {
                             //alert(this.bloguserName);
-                            fabu(this.userHeadimage, this.userName, this.blogContent, "loading");
+                            fabu(this.blogAuthorHeadimage, this.blogAuthorName, this.blogContent, this.blogpubtime, "loading");
                         });
                     }
                 });
@@ -568,7 +706,7 @@ function loading() {
     });
 }
 
-function fabu(headimg, name, content, type) {
+function fabu(headimg, name, content,pubtime ,type) {
     var html = "";
     html += '<div class="wbfeedtype swfun line2">';
     html += '<div class="wbscreen">';
@@ -603,7 +741,7 @@ function fabu(headimg, name, content, type) {
     html += '<a class="pl" pindex="1" isopen="no" ifc="0">评论(0)</a>';
     html += '</div>';
     html += '<div class="wbfrom">';
-    html += '<a href="#" class="link2 wbtime">1分钟前</a>';
+    html += '<a href="#" class="link2 wbtime">' + eval('new ' + (pubtime.replace(/\//g, ''))).Format("yyyy-MM-dd hh:mm:ss") + '</a>';
     html += '<em class="txt2">来自</em>';
     html += '<a href="#" class="link2">360安全浏览器</a>';
     html += '<span class="hoverr">';

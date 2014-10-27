@@ -50,11 +50,11 @@ a{text-decoration: none;color: #333;}
 .lev-curr{font-weight: bold;background: url("../images/left_nav_border.png") left bottom no-repeat #fafafa;}
 /*评论列表*/
 .currA{font-weight: bold;}
-.comment_list{margin-top: 6px;}
+.comment_list{margin-top: 6px;height:780px; overflow:auto;}
 .comment_feed{padding-top: 20px;margin: 0 20px;}
 .face{float: left;}
 .face img{width: 50px;height: 50px;}
-.comment{float: left;width: 495px;margin-left: 15px;position: relative;line-height: 21px;}
+.comment{float: left;width: 465px;margin-left: 15px;position: relative;line-height: 21px;}
 .comm_box{padding: 15px 20px;border: 1px solid #d9d9d9;border-radius: 2px;background-color: #f2f2f2;}
 .comm_box a{color: #0a8cd2;margin:0;}
 .comm_box span{color: #808080;}

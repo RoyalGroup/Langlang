@@ -19,7 +19,7 @@ namespace starWeibo.at
             else
             {
                 int userid = (int)Session["userid"]; 
-                this.weiboDL.DataSource = atInfo.GetListByPage("atId = "+userid+"","blogPubTime",0,10);
+                this.weiboDL.DataSource = atInfo.GetListByPage("parentId = "+userid+"","blogPubTime",0,10);
                 this.weiboDL.DataBind();
             }
            

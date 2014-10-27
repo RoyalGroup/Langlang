@@ -7,6 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%@ Import namespace="System.Data" %> 
     <%--<%@ Import namespace="System.ComponentModel" %> --%>
+    <div style="display:none" id="info" userid="<%=curuser.id %>" name="<%=curuser.userName %>" headimg="<%= curuser.userHeadimage %>"></div>
     <div class="main_inner">
         <div class="W_main_l">
             <div class="left_commen">

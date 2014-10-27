@@ -9,10 +9,17 @@ namespace starWeibo
 {
     public partial class homePage : System.Web.UI.Page
     {
-        starweibo.BLL.blogInfoV bll = new starweibo.BLL.blogInfoV();
+        starweibo.BLL.fullblogInfoV bll = new starweibo.BLL.fullblogInfoV();
         public starweibo.Model.userInfo curuser;
         public int pages;
         public int curpre;
+        private starweibo.BLL.userInfo user = new starweibo.BLL.userInfo();
+        private starweibo.BLL.blogInfo blog = new starweibo.BLL.blogInfo();
+        private starweibo.BLL.relationInfo relation = new starweibo.BLL.relationInfo();
+        public starweibo.Model.userInfo curUser = new starweibo.Model.userInfo();
+        public int focusCountd = 0;//用户关注的个数
+        public int fansCount = 0;//用户的粉丝数
+        public int blogCount = 0;//用户的博客数
         protected void Page_Load(object sender, EventArgs e)
         {
             string pre = Request.QueryString["pre"] != "" ? Request.QueryString["pre"] : "0";
@@ -22,13 +29,22 @@ namespace starWeibo
             {
                 Response.Redirect("login.aspx");
             }
-            List<starweibo.Model.blogInfoV> bloginfo = new List<starweibo.Model.blogInfoV>();
+            //查询个人信息
+            focusCountd = relation.GetRecordCount("userId=" + Session["userid"].ToString());
+            fansCount = relation.GetRecordCount("friendId=" + Session["userid"].ToString());
+            blogCount = blog.GetRecordCount("blogAuthorId=" + Session["userid"].ToString());
+            //分页显示微博
+            List<starweibo.Model.fullblogInfoV> bloginfo = new List<starweibo.Model.fullblogInfoV>();
             int count = bll.GetRecordCount("blogAuthorId in (select friendId from relationInfo where userId=" + Convert.ToInt32(Session["userid"]) + ") or blogAuthorId=" + Convert.ToInt32(Session["userid"]));
-            pages = count / 40 + 1;
+            int countyushu = count % 40;
+            pages = count / 40;
+            if (countyushu > 0) {
+                pages++;
+            }
             pages = (pages <= 10) ? pages : 10;
             curpre = Convert.ToInt32(pre);
             int startindex = curpre * 40 + 1;
-            int endindex = curpre * 40 + 20;
+            int endindex = curpre * 40 + 40;
             string sql="T.blogAuthorId in (select friendId from relationInfo where userId="+ Convert.ToInt32(Session["userid"]) + ")";
             sql+=" or T.blogAuthorId=" + Convert.ToInt32(Session["userid"]) + "";
             this.wbList.DataSource = bll.GetListByPage(sql, "blogPubTime desc", startindex, endindex);

@@ -38,6 +38,22 @@ namespace starweibo.BLL
         }
 
         /// <summary>
+        /// 更新赞的数据
+        /// </summary>
+        public bool UpdateZan(starweibo.Model.blogInfo model)
+        {
+            return dal.UpdateZan(model);
+        }
+
+        /// <summary>
+        /// 更新评论的数据
+        /// </summary>
+        public bool Updatepl(starweibo.Model.blogInfo model)
+        {
+            return dal.Updatepl(model);
+        }
+
+        /// <summary>
         /// 删除一条数据
         /// </summary>
         public bool Delete(int blogId)

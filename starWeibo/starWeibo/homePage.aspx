@@ -18,7 +18,7 @@
                 <span class="contgeyan"></span>
             </div>
             <div class="conttebox">
-                <textarea class="contte"></textarea>
+                <textarea class="contte" placeholder=""></textarea>
             </div>
             <div class="contbom">
                 <div class="concwbrzfbtn">转发</div>
@@ -30,7 +30,7 @@
         <div class="W_main_l">
             <div class="left_commen">
                 <div class="lev">
-                    <a href="#">
+                    <a href="playstar.aspx">
                         <i class="ico20 ico_guide"></i>
                         新手指南
                     </a>
@@ -60,7 +60,7 @@
                     </a>
                 </div>
                 <div class="lev2">
-                    <a href="#">
+                    <a href="zan.aspx">
                         <i class="ico20 ico_zan"></i>
                         赞
                     </a>
@@ -72,7 +72,7 @@
                     </a>
                 </div>
                 <div class="lev2">
-                    <a href="#">
+                    <a href="">
                         <i class="ico20 ico_leave"></i>
                         未关注人私信
                     </a>
@@ -134,12 +134,12 @@
                                         <div class="wbfeeddetail line2 clearfix" blogid="<%# Eval("blogId") %>">
                                             <div class="wbface">
                                                 <a href="#" class="wfaceradius">
-                                                    <img src="<%# Eval("userHeadimage") %>" />
+                                                    <img src="<%# Eval("blogAuthorHeadimage") %>" />
                                                 </a>
                                             </div>
                                             <div class="wbdetail">
                                                 <div class="wbinfo">
-                                                    <a class="wbname func1 " href="personalCenter.aspx?Userid=<%#Eval("blogAuthorId") %>"><%# Eval("userName") %></a>
+                                                    <a class="wbname func1 " href="personalCenter.aspx?Userid=<%#Eval("blogAuthorId") %>"><%# Eval("blogAuthorName") %></a>
                                                     <a href="#">
                                                         <i class="wico16 approveco"></i>
                                                     </a>
@@ -147,20 +147,39 @@
                                                 <div class="wbtext">
                                                     <%# Eval("blogContent") %>
                                                 </div>
+                                                <div class="zfdisable<%# Eval("zfId") %>">
+                                                     <div class="wbmediaexpand swfun2 line1 bg1" blogid="<%# Eval("zfId") %>">
+                                                        <div class="wbarrow">					
+                                                            <em class="line1c">◆</em>					
+                                                            <span class="bg4c">◆</span>				
+
+                                                        </div>				
+                                                        <div class="listcontent">					
+                                                            <div class="wbinfo">						
+                                                                <a href="personalCenter.aspx?Userid=<%# Eval("zfAuthorId") %>" class="wbname func3"><%# Eval("zfAuthorName") %></a>	
+                                                            </div>					
+                                                            <div class="wbtext">						
+                                                                <em>						
+														            <%# Eval("zfContent") %>
+													            </em>
+                                                            </div>
+                                                        </div>	
+                                                    </div>
+                                                </div>
                                                 <div class="wbfunc clearfix">
                                                     <div class="wbhandle">
                                                         <a class="zan" ifzan="0">
-                                                            <em class="wico20 iconpraised"></em>(<span>0</span>)
+                                                            <em class="wico20 iconpraised"></em>(<span><%# Eval("zanNum") %></span>)
                                                         </a>
                                                         <i class="txt3">|</i>
                                                         <a class="zf">转发</a>
                                                         <i class="txt3">|</i>
                                                         <a class="wbcollect" ifcollect="0">收藏</a>
                                                         <i class="txt3">|</i>
-                                                        <a class="pl" pindex="1" isopen="no" ifc="0">评论(0)</a>
+                                                        <a class="pl" pindex="1" isopen="no" ifc="0">评论(<span><%# Eval("plNum") %></span>)</a>
                                                     </div>
                                                     <div class="wbfrom">
-                                                        <a href="#" class="link2 wbtime"><%# Eval("blogPubTime") %></a>
+                                                        <a href="#" class="link2 wbtime"><%# Eval("blogpubtime") %></a>
                                                         <em class="txt2">来自</em>
                                                         <a href="#" class="link2">weibo</a>
                                                         <span class="hoverr">
@@ -214,11 +233,36 @@
 
                 </div>
                 <div class="W_main_r">
-                    <div class="helpbox">
-                        <h3>消息箱使用小帮助</h3>
-                        <p>Q:什么是消息箱？</p>
-                        <p>A:是将@我的，评论，赞，私信等消息相关类服务综合在一起的消息中心，在这里可以看到所有的消息提示。</p>
-                    </div>
+                   <div class="pf_head S_bg4 S_line1">
+					<div>
+						<div class="pf_head_pic">
+                            <a href="personalCenter.aspx?Userid=<%=curuser.id %>">
+                                <img src="<%= curuser.userHeadimage %>">
+                            </a>
+							
+                        </div>
+						<ul class="user_atten clearfix user_atten_l">
+							<li class="S_line1">
+								<a class="S_func1" href="focus.aspx">
+									<strong node-type="follow"><%= focusCountd %></strong>
+									<span>关注 </span>
+								</a>
+							</li>
+							<li class="follower S_line1">
+								<a class="S_func1" name="place" href="focus.aspx">
+									<strong node-type="fans"><%=fansCount %></strong>
+									<span>粉丝</span>
+								</a>
+							</li>
+							<li class="W_no_border">
+								<a class="S_func1" name="profile_tab" href="homePage.aspx">
+									<strong node-type="weibo"><%= blogCount %></strong>
+									<span>微博</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
                 </div>
             </div>
         </div>

@@ -32,12 +32,15 @@ namespace starWeibo.webservice
         /// <param name="content"></param>
         /// <returns></returns>
         [WebMethod (EnableSession = true)]
-        public int publishBlog(int userId, string content)
+        public int publishBlog(int userId, string content,int parentid)
         {
             starweibo.Model.blogInfo oneblog = new starweibo.Model.blogInfo();
             starweibo.BLL.blogInfo bllblog = new starweibo.BLL.blogInfo();
             oneblog.blogAuthorId = userId;
             oneblog.blogContent = content;
+            if (parentid != 0) {
+                oneblog.parentId = parentid;
+            }
             return bllblog.Add(oneblog);
         }
         /// <summary>
@@ -91,17 +94,50 @@ namespace starWeibo.webservice
             return MsgV;
 
         }
-
+        /// <summary>
+        /// 加载更多
+        /// </summary>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        /// <returns></returns>
         [WebMethod(EnableSession = true)]
-        public List<starweibo.Model.blogInfoV> fengye(int startIndex, int endIndex)
+        public List<starweibo.Model.fullblogInfoV> fengye(int startIndex, int endIndex)
         {
-            starweibo.BLL.blogInfoV bllmnblog = new starweibo.BLL.blogInfoV();
-            List<starweibo.Model.blogInfoV> bloginfon = new List<starweibo.Model.blogInfoV>();
+            starweibo.BLL.fullblogInfoV bllmnblog = new starweibo.BLL.fullblogInfoV();
+            List<starweibo.Model.fullblogInfoV> bloginfon = new List<starweibo.Model.fullblogInfoV>();
             DataSet dbloginfon = bllmnblog.GetListByPage("blogAuthorId in (select friendId from relationInfo where userId=" + Convert.ToInt32(Session["userid"]) + ")or blogAuthorId=" + Convert.ToInt32(Session["userid"]), "blogPubTime desc", startIndex, endIndex);
-            List<starweibo.Model.blogInfoV> blogsn = bllmnblog.DataTableToList(dbloginfon.Tables[0]);
+            List<starweibo.Model.fullblogInfoV> blogsn = bllmnblog.DataTableToList(dbloginfon.Tables[0]);
             return blogsn;
         }
-
-
+        /// <summary>
+        /// 更新赞的数据
+        /// </summary>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        /// <returns></returns>
+        [WebMethod(EnableSession = true)]
+        public bool updateBlogZan(int blogid, int zannum)
+        {
+            starweibo.Model.blogInfo model = new starweibo.Model.blogInfo();
+            starweibo.BLL.blogInfo bllmnblog = new starweibo.BLL.blogInfo();
+            model.blogId = blogid;
+            model.zanNum = zannum;
+            return bllmnblog.UpdateZan(model);
+        }
+        /// <summary>
+        /// 更新评论数据
+        /// </summary>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        /// <returns></returns>
+        [WebMethod(EnableSession = true)]
+        public bool updateBlogpl(int blogid, int plnum)
+        {
+            starweibo.Model.blogInfo model = new starweibo.Model.blogInfo();
+            starweibo.BLL.blogInfo bllmnblog = new starweibo.BLL.blogInfo();
+            model.blogId = blogid;
+            model.plNum = plnum;
+            return bllmnblog.Updatepl(model);
+        }
     }
 }

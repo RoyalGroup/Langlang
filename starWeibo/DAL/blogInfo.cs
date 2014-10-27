@@ -99,7 +99,6 @@ namespace starweibo.DAL
             parameters[5].Value = model.zanNum;
             parameters[6].Value = model.plNum;
             parameters[7].Value = model.blogId;
-
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
             {
@@ -110,7 +109,54 @@ namespace starweibo.DAL
                 return false;
             }
         }
-
+        /// <summary>
+        /// 更新赞的数量
+        /// </summary>
+        public bool UpdateZan(starweibo.Model.blogInfo model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update blogInfo set ");
+            strSql.Append("zanNum=@zanNum");
+            strSql.Append(" where blogId=@blogId");
+            SqlParameter[] parameters = {
+					new SqlParameter("@zanNum", SqlDbType.Int,4),
+					new SqlParameter("@blogId", SqlDbType.Int,4)};
+            parameters[0].Value = model.zanNum;
+            parameters[1].Value = model.blogId;
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        /// <summary>
+        /// 更新评论的数量
+        /// </summary>
+        public bool Updatepl(starweibo.Model.blogInfo model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update blogInfo set ");
+            strSql.Append("plNum=@plNum");
+            strSql.Append(" where blogId=@blogId");
+            SqlParameter[] parameters = {
+					new SqlParameter("@plNum", SqlDbType.Int,4),
+					new SqlParameter("@blogId", SqlDbType.Int,4)};
+            parameters[0].Value = model.plNum;
+            parameters[1].Value = model.blogId;
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         /// <summary>
         /// 删除一条数据
         /// </summary>

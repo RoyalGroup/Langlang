@@ -107,7 +107,7 @@
                                 <asp:Repeater runat="server" ID="msgdialogue">
                                     <ItemTemplate>
                                         <div class="S_line2 msg_time_line">
-                                            <div class="time_tit">10秒前</div>
+                                            <div class="time_tit"><%# Eval("pubTime") %></div>
                                         </div>
                                       <%--  <%# check(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "senderId")))  %>--%>
                                         <div class="msg_dialogue_list msg_dialist_<%# (Convert.ToInt32(Eval("senderId"))==curid)?"l":"r" %> clearfix ">

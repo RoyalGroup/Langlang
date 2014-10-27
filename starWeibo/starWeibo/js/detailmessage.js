@@ -17,7 +17,7 @@ function send() {
                 dataType: 'json',
                 success: function (res) {
                     $(".dmsgtextarea").val("");
-                    
+                    chatmsg("10秒钟前", 1, value);
                 },
                 error: function () {
                     alert("fail");
@@ -50,5 +50,5 @@ function chatmsg(time,headimg,content) {
     html += '                                                </div>';
     html += '                                            </div>';
     html += '                                        </div>';
-    $(".msg_dialogue").pre
+    $(".msg_dialogue").prepend(html);
 }

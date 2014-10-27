@@ -13,7 +13,7 @@ namespace starWeibo
     {
         public int curid;
         public string sendname="11";
-        public string sendid = "12";
+        public string sendid = "2";
         protected void Page_Load(object sender, EventArgs e)
         {
 

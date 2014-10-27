@@ -132,12 +132,7 @@
         $(".FocusArea").hide();
         $(".FansArea").show();
     });
-    $(".DeleFans").click(function () {
-        $(this).parent().find(".EnsureDeleFans").show();
-    });
-    $(".EnsDeleFansBotBtn1").click(function (){
-        $(this).parent().parent().hide();
-    });
+    
     $(".EnsDeleFansBotBtn2").click(function () {
         $(this).parent().parent().hide();
     });
@@ -170,18 +165,43 @@
     //关注
     $(".BtnFocusFans").click(function () {
         var friendId = $(this).attr("userId");
-        //$.ajax({
-        //    type: "POST",   //访问WebService使用Post方式请求
-        //    contentType: "application/json", //WebService 会返回Json类型
-        //    url: "webservice/wsfocus.asmx/guanzhu", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
-        //    data: "{friendId:" + friendId + "}",
-        //    dataType: 'json',
-        //    success: function (result) {     //回调函数，result，返回值
-        //        alert("关注成功！");
-        //        //if (result.d == true) {
-        //        //    alert("关注成功！");
-        //        //}
-        //    }
-        //});
+        $.ajax({
+            type: "POST",   //访问WebService使用Post方式请求
+            contentType: "application/json", //WebService 会返回Json类型
+            url: "webservice/wsfocus.asmx/guanzhu", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+            data: "{friendId:" + friendId + "}",
+            dataType: 'json',
+            success: function (result) {     //回调函数，result，返回值
+                //alert(result.d);
+                if (result.d == -1) {
+                    alert("您已关注");
+                }
+                else {
+                    alert("关注成功");
+                }
+            }
+        });
+    });
+
+    //移除粉丝
+    $(".DeleFans").click(function () {
+        $(this).parent().find(".EnsureDeleFans").show();
+        var friendId = $(this).attr("userId");
+        $(".EnsDeleFansBotBtn1").click(function () {
+            $(this).parent().parent().parent().parent().parent().parent().parent().parent().remove();
+            $(this).parent().parent().hide();
+            $.ajax({
+                type: "POST",   //访问WebService使用Post方式请求
+                contentType: "application/json", //WebService 会返回Json类型
+                url: "webservice/wsfocus.asmx/yichufensi", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+                data: "{friendId:" + friendId + "}",
+                dataType: 'json',
+                success: function (result) {     //回调函数，result，返回值
+                    if (result.d == true) {
+                        alert("移除成功！");
+                    }
+                }
+            });
+        });
     });
 });

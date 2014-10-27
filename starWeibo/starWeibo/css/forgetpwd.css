@@ -15,9 +15,9 @@ input{outline: none;}
 .mod-sub-list3{width: 199px;padding-left: 56px;}
 
 
-.list1-active{background: url("../images/sub_nav_1.png") no-repeat scroll 0px 0px transparent;color: #fff;}
-.list2-active{background: url("../images/sub_nav_2.png") no-repeat scroll 0px 0px transparent;color: #fff;margin-left: -30px;}
-.list3-active{background: url("../images/sub_nav_3.png") no-repeat scroll 0px 0px transparent;color: #fff;margin-left: -50px;}
+.list1-active{background: url("../images/forget/sub_nav_1.png") no-repeat scroll 0px 0px transparent;color: #fff;}
+.list2-active{background: url("../images/forget/sub_nav_2.png") no-repeat scroll 0px 0px transparent;color: #fff;margin-left: -30px;}
+.list3-active{background: url("../images/forget/sub_nav_3.png") no-repeat scroll 0px 0px transparent;color: #fff;margin-left: -50px;}
 
 .step-email-info{font-size: 16px;padding-bottom: 20px;}
 .clear:after{content: "";display: block;height: 0px;clear: both;visibility: hidden;overflow: hidden;}
@@ -26,8 +26,8 @@ input{outline: none;}
 
 
 .forgotse2{display: none;}
-.pass-button-submit{height: 34px;width: 109px;color: #fff;cursor: pointer;text-align: center;border: 0px none;background-image: url("../images/button_icon.png");line-height: 32px;margin-top: 10px;}
-.pass-button-submit1{height: 34px;width: 109px;color: #fff;cursor: pointer;text-align: center;border: 0px none;background-image: url("../images/button_icon.png");line-height: 32px;margin-top: 10px;}
+.pass-button-submit{height: 34px;width: 109px;color: #fff;cursor: pointer;text-align: center;border: 0px none;background-image: url("../images/forget/button_icon.png");line-height: 32px;margin-top: 10px;}
+.pass-button-submit1{height: 34px;width: 109px;color: #fff;cursor: pointer;text-align: center;border: 0px none;background-image: url("../images/forget/button_icon.png");line-height: 32px;margin-top: 10px;}
 .step-email-info{font-size: 16px;padding-bottom: 20px;}
 .clear:after{content: "";display: block;height: 0px;clear: both;visibility: hidden;overflow: hidden;}
 .pass-input-container1{margin-bottom: 15px;}

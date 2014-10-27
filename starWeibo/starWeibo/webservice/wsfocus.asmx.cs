@@ -67,12 +67,13 @@ namespace starWeibo.webservice
         public int guanzhu(int friendId)
         {
             string userid = Session["userid"].ToString();
+            //string userid = "2";
             starweibo.BLL.relationInfo Bguanzhu = new starweibo.BLL.relationInfo();
             starweibo.Model.relationInfo Mguanzhu = new starweibo.Model.relationInfo();
             List<starweibo.Model.relationInfo> MfriendId = new List<starweibo.Model.relationInfo>();
 
             MfriendId = Bguanzhu.GetModelList("friendId=" + friendId + " and userId=" + userid);
-            if (MfriendId == null)
+            if (MfriendId.Count == 0)
             {
                 Mguanzhu.userId = Convert.ToInt32(userid);
                 Mguanzhu.friendId = friendId;

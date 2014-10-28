@@ -155,5 +155,25 @@ namespace starWeibo.webservice
             model = bllmnblog.DataTableToList(ds.Tables[0]);
             return model;
         }
+        /// <summary>
+        /// 获取用户信息
+        /// </summary>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        /// <returns></returns>
+        [WebMethod(EnableSession = true)]
+        public starweibo.Model.userInfo getUserInfo(int userid)
+        {
+            starweibo.BLL.userInfo bll = new starweibo.BLL.userInfo();
+            starweibo.Model.userInfo model = new starweibo.Model.userInfo();
+            model=bll.GetModel(userid);
+            starweibo.BLL.relationInfo bllrelation = new starweibo.BLL.relationInfo();
+            model.userPwd=bllrelation.GetRecordCount("userId='"+userid+"'").ToString();
+            model.userMail = bllrelation.GetRecordCount("friendId='" + userid + "'").ToString();
+            starweibo.BLL.blogInfo bllblog = new starweibo.BLL.blogInfo();
+            model.userBirthday = bllblog.GetRecordCount("blogAuthorId='"+userid+"'").ToString();
+            model.userAddress = bllrelation.GetRecordCount("userId='"+Convert.ToInt32(Session["userid"])+"' and friendId='" + userid + "'").ToString();
+            return model;
+        }
     }
 }

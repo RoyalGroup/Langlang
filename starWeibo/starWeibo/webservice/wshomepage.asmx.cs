@@ -139,5 +139,21 @@ namespace starWeibo.webservice
             model.plNum = plnum;
             return bllmnblog.Updatepl(model);
         }
+
+        /// <summary>
+        /// 获取赞和收藏的微博
+        /// </summary>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        /// <returns></returns>
+        [WebMethod(EnableSession = true)]
+        public List<starweibo.Model.messageInfo> loadingZanSc(int typeid)
+        {
+            starweibo.BLL.messageInfo bllmnblog = new starweibo.BLL.messageInfo();
+            List<starweibo.Model.messageInfo> model = new List<starweibo.Model.messageInfo>();
+            DataSet ds = bllmnblog.GetList("userId='"+Convert.ToInt32(Session["userid"])+"' and msgTypeId='"+typeid+"'");
+            model = bllmnblog.DataTableToList(ds.Tables[0]);
+            return model;
+        }
     }
 }

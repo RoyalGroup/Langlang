@@ -659,7 +659,8 @@
             $(".contrans").find(".contte").val("");
         }
     });
-
+    //页面加载时检测用户收藏或赞的微博
+    loadingZanSc();
 
     //分页与加载相关
     fenye();
@@ -785,4 +786,31 @@ Date.prototype.Format = function (fmt) { //author: meizz
     for (var k in o)
         if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
     return fmt;
+}
+
+function loadingZanSc() {
+    $.ajax({
+        url: "webservice/wshomepage.asmx/loadingZanSc",
+        type: "POST",
+        contentType: "application/json",
+        data: "{typeid:1}",
+        dataType: "json",
+        success: function (res) {
+            $(res.d).each(function () {
+                $(".wbfeeddetail[blogid='" + this.blogId + "']").find(".zan").attr("ifzan","1");
+            });
+        }
+    });
+    $.ajax({
+        url: "webservice/wshomepage.asmx/loadingZanSc",
+        type: "POST",
+        contentType: "application/json",
+        data: "{typeid:7}",
+        dataType: "json",
+        success: function (res) {
+            $(res.d).each(function () {
+                $(".wbfeeddetail[blogid='" + this.blogId + "']").find(".wbcollect").html("取消收藏");
+            });
+        }
+    });
 }

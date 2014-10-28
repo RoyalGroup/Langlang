@@ -12,6 +12,24 @@
 </head>
 <body>
     <div class="tubiao"></div>
+    <div class="tanchu">
+        <div class="tanchuTop"></div>
+        <div class="tanchuBtm">
+            <a>重置成功!</a>
+        </div>
+    </div>
+    <div class="tanchu1">
+        <div class="tanchu1Top"></div>
+        <div class="tanchu1Btm">
+            <a>请输入您注册时的信息!</a>
+        </div>
+    </div>
+    <div class="tanchu2">
+        <div class="tanchu2Top"></div>
+        <div class="tanchu2Btm">
+            <a>请输入同样的密码!</a>
+        </div>
+    </div>
     <div class="form">
     	<div class="title">找回密码</div>
     	<ul class="mod-sub-nav">

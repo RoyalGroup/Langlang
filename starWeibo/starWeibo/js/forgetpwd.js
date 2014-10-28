@@ -26,7 +26,8 @@
                 //回调函数，result，返回值
                 //alert(result.d);
                 if (result.d != b) {
-                    alert("请输入您注册时的信息");
+                    $(".tanchu1").fadeIn();
+                    $(".tanchu1").fadeOut();
                 }
                 if(result.d == b)
                 {
@@ -53,13 +54,16 @@
                     //alert(result);
                     //回调函数，result，返回值
                     if (result.d == true) {
-                        alert("重置成功")
+                        $(".tanchu").fadeIn();
+                        $(".tanchu").fadeOut();
+                        window.location.href = "login.aspx";             
                     }
                 }
             });
         }
         else {
-            alert("请两次输入同样的密码")
+            $(".tanchu2").fadeIn();
+            $(".tanchu2").fadeOut();
         }    
     });
 });

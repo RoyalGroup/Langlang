@@ -54,12 +54,34 @@ namespace starWeibo.webservice
             return user.Update(curUser).ToString();
         }
         [WebMethod]
-        //更新用户用户头像
+        //更新用户头像
         public string updateUserHeadImg(string id, string headImg)
         {
             curUser = user.GetModel(Convert.ToInt32(id));
             curUser.userHeadimage = headImg;
             return user.Update(curUser).ToString();
+        }
+        [WebMethod]
+        //修改用户密码
+        public string updateUserPwd(string id, string newpwd)
+        {
+            curUser = user.GetModel(Convert.ToInt32(id));
+            curUser.userPwd = newpwd;
+            return user.Update(curUser).ToString();
+        }
+        [WebMethod]
+        //验证用户密码
+        public string checkUserPwd(string id, string inputPwd)
+        {
+            curUser = user.GetModel(Convert.ToInt32(id));
+            if(curUser.userPwd == inputPwd)
+            {
+                return "true";
+            }
+            else
+            {
+                return "false";
+            }
         }
         /// <summary>
         /// 保存截图

@@ -2,13 +2,13 @@
 img{border: 0px}
 ul,li{list-style: none;}
 a{text-decoration: none;}
-body{font-family: '微软雅黑';font-size: 12px;}
+body{font-family: '微软雅黑';font-size: 12px;position:relative;}
 input{outline: none;}
 
 .tubiao{width:100px;height: 50px;margin-top: 20px;border: 1px solid #ccc;margin-left:230px;}
 .form{width: 900px;height: 450px;margin: 10px auto;border: 1px solid #ccc;border-top: 2px solid #ff9000;}
 .title{width: 860px;height: 40px;text-align: left;line-height: 40px;font-size: 20px;padding-left: 40px;border-bottom: 2px solid #ff9000;}
-.mod-sub-nav{width: inherit;height: 36px;background:url("../images/mod_sub_nav.png") no-repeat scroll 0px 0px transparent;margin: 30px 0px 20px;color: #418dda;font: 16px/36px 微软雅黑,黑体；}
+.mod-sub-nav{width: inherit;height: 36px;background:url("../images/forget/mod_sub_nav.png") no-repeat scroll 0px 0px transparent;margin: 30px 0px 20px;color: #418dda;font: 16px/36px 微软雅黑,黑体；}
 .mod-sub-nav li{float: left;}
 .mod-sub-list1{width: 190px;padding-left: 56px;}
 .mod-sub-list2{width: 202px;padding-left: 56px;}
@@ -36,17 +36,34 @@ input{outline: none;}
 
 .forgotse3{display: none;}
 
-.T1{width: 300px;height:30px;margin-top: 20px;}
-.T1 a{font-size: 14px;line-height: 30px;display: block;float: left;width: 120px;}
-.T1R{float: left;height: 25px; width: 160px;overflow: hidden;}
+.T1{width: 500px;height:30px;margin-top: 20px;}
+.T1 a{font-size: 14px;line-height: 30px;display: block;float: left;width: 150px;}
+.T1R{float: left;height: 25px; width: 160px;overflow: hidden;margin-left:20px;}
 
-.T2{width: 300px;height:30px;margin-top: 20px;}
-.T2 a{font-size: 14px;line-height: 30px;display: block;float: left;width: 120px;}
-.T2R{float: left;height: 25px; width: 160px;overflow: hidden;}
+.T2{width: 500px;height:30px;margin-top: 20px;}
+.T2 a{font-size: 14px;line-height: 30px;display: block;float: left;width: 150px;}
+.T2R{float: left;height: 25px; width: 160px;overflow: hidden;margin-left:20px;}
+
+.pass-button-submit2{height: 34px;width: 109px;color: #fff;cursor: pointer;text-align: center;border: 0px none;background-image: url("../images/forget/button_icon.png");line-height: 32px;margin-top: 20px;margin-left:100px;}
+
+.tanchu{width:200px;height:100px;position:absolute;top:220px;border:1px solid #333;left:580px;display:none;}
+.tanchuTop{width:200px;height:30px;margin-top:0 auto;background-color:#418dda;}
+.tanchuBtm a{line-height:70px;font-size:16px;text-align:center;display:block;font-weight:bold;color:#418dda;}
 
 
+.tanchu1{width:200px;height:100px;position:absolute;top:220px;border:1px solid #333;left:580px;display:none;}
+.tanchu1Top{width:200px;height:30px;margin-top:0 auto;background-color:#418dda;}
+.tanchu1Btm a{line-height:70px;font-size:16px;text-align:center;display:block;font-weight:bold;color:#418dda;}
 
 
+.tanchu2{width:200px;height:100px;position:absolute;top:220px;border:1px solid #333;left:580px;display:none;}
+.tanchu2Top{width:200px;height:30px;margin-top:0 auto;background-color:#418dda;}
+.tanchu2Btm a{line-height:70px;font-size:16px;text-align:center;display:block;font-weight:bold;color:#418dda;}
+
+
+.tanchu3{width:200px;height:100px;position:absolute;top:220px;border:1px solid #333;left:580px;display:none;}
+.tanchu3Top{width:200px;height:30px;margin-top:0 auto;background-color:#418dda;}
+.tanchu3Btm a{line-height:70px;font-size:16px;text-align:center;display:block;font-weight:bold;color:#418dda;}
 
 
 

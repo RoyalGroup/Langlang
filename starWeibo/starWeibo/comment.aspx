@@ -71,7 +71,7 @@
                         <div class="group_read">
                             <a href="#" class="currA">收到的评论</a>
                             <span>|</span>
-                            <a href="#" class="comA">发出的评论</a>
+                            <a href="comment.aspx?type=send" class="comA">发出的评论</a>
                         </div>
                         <div class="comment_list">
                             <asp:DataList runat="server" ID="commentDL">

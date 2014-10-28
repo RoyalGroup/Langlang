@@ -10,6 +10,6 @@
 namespace starWeibo {
     
     
-    public partial class register {
+    public partial class error {
     }
 }

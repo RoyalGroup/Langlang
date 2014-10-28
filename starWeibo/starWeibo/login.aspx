@@ -27,11 +27,11 @@
             </div>
             <div class="user">
                <div class="userName">用户名：</div>
-               <input runat="server" id="username" type="text" value="用户名/邮箱" onfocus="if(this.value=='用户名/邮箱') {this.value=''}" onblur="if(this.value=='') {this.value='用户名/邮箱'}" class="user-input" />
+               <input runat="server" id="username" type="text" placeholder="用户名/邮箱" onfocus="if(this.value=='用户名/邮箱') {this.value=''}" onblur="if(this.value=='') {this.value='用户名/邮箱'}" class="user-input" />
             </div>
              <div class="password">
                <div class="pwd">密 &nbsp 码：</div>
-               <input runat="server" id="userpwd" type="text" value="请输入密码" onfocus="if(this.value=='请输入密码') {this.value=''}" onblur="if(this.value=='') {this.value='请输入密码'}" class="pwd-input"/>
+               <input runat="server" id="userpwd" type="password" placeholder="请输入密码" onfocus="if(this.value=='请输入密码') {this.value=''}" onblur="if(this.value=='') {this.value='请输入密码'}" class="pwd-input"/>
             </div>
             <div class="rem-for">
                 <div class="remember-pwd">

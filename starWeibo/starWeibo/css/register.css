@@ -70,3 +70,8 @@ p{padding: 10px 0 10px 20px;}
 .tanchu5{width:200px;height:100px;position:absolute;top:180px;border:1px solid #333;left:550px;z-index:99999;background-color:#fff;display:none;}
 .tanchu5Top{width:200px;height:30px;margin-top:0 auto;background-color:#418dda;}
 .tanchu5Btm a{line-height:70px;font-size:16px;text-align:center;display:block;font-weight:bold;color:#418dda;}
+
+
+.tanchu6{width:200px;height:100px;position:absolute;top:180px;border:1px solid #333;left:550px;z-index:99999;background-color:#fff;display:none;}
+.tanchu6Top{width:200px;height:30px;margin-top:0 auto;background-color:#418dda;}
+.tanchu6Btm a{line-height:70px;font-size:16px;text-align:center;display:block;font-weight:bold;color:#418dda;}

@@ -47,6 +47,12 @@
             <a>请输入正确邮箱！</a>
         </div>
     </div>
+    <div class="tanchu6">
+        <div class="tanchu6Top"></div>
+        <div class="tanchu6Btm">
+            <a>请输入正确密码！</a>
+        </div>
+    </div>
      <div class="registerA">
 		<div class="registerTop">新用户注册</div>
 		<div class="register-form">
@@ -67,7 +73,7 @@
 						<li>
 								<div class="name1">密码：</div>
 								<input class="text_input mima" type="password"  name="uername"  autocomplete="off"/>
-								<div class="tishi ts3">请输入密码，区分大小写</div>
+								<div class="tishi ts3">请输入1到20位密码，区分大小写</div>
 						</li>
 						<li>
 								<div class="name1">确认密码：</div>

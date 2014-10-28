@@ -61,6 +61,12 @@ input{outline: none;}
 .tanchu2Btm a{line-height:70px;font-size:16px;text-align:center;display:block;font-weight:bold;color:#418dda;}
 
 
+.tanchu3{width:200px;height:100px;position:absolute;top:220px;border:1px solid #333;left:580px;display:none;}
+.tanchu3Top{width:200px;height:30px;margin-top:0 auto;background-color:#418dda;}
+.tanchu3Btm a{line-height:70px;font-size:16px;text-align:center;display:block;font-weight:bold;color:#418dda;}
+
+
+
 
 
 

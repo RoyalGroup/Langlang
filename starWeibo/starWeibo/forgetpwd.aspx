@@ -30,6 +30,12 @@
             <a>请输入同样的密码!</a>
         </div>
     </div>
+    <div class="tanchu3">
+        <div class="tanchu3Top"></div>
+        <div class="tanchu3Btm">
+            <a>请输入正确密码格式!</a>
+        </div>
+    </div>
     <div class="form">
     	<div class="title">找回密码</div>
     	<ul class="mod-sub-nav">

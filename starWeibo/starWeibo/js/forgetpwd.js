@@ -54,7 +54,7 @@
                 success: function (result) {
                     //alert(result);
                     //回调函数，result，返回值
-                    if (result.d == true) {
+                    if (result.d == true){
                         $(".tanchu").fadeIn();
                         $(".tanchu").fadeOut();
                         window.location.href = "login.aspx";             
@@ -67,4 +67,11 @@
             $(".tanchu2").fadeOut();
         }    
     });
+
 });
+//function checkmima (){
+//    var a = new RegExp("^[0-9A-z_]{1,20}$");//密码为1到20位的数字或字母;
+//    if (!f.test(control))
+//        $(".tanchu3").fadeIn();
+//        $(".tanchu3").fadeOut();
+//}

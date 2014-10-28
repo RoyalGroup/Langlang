@@ -103,23 +103,17 @@
         }
     });
 
-
-   
-    //$(".finishzhuce").click(function () {
-    //    var nicheng = $(".nicheng").val();
-    //    checknicheng(nicheng);
-    //});
-
     $(".finishzhuce").click(function () {
         var d = new RegExp("^[\u4E00-\u9FA5A-Za-z0-9_]{2,16}$");//汉字可以为1-8位，字母或数字可以为2-16位;
         var e = new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");//邮箱的正则表达式
+        var f = new RegExp("^[0-9A-z_]{1,20}$"); //密码为1到20位的数字或字母;
         var nicheng = $(".nicheng").val();
         var youxiang = $(".youxiang").val();
         var mima = $(".mima").val();
         var queren = $(".queren").val();
         var yanzhengma = $(".yanzhengma").val();
         var yanzhengnum = $(".yanzhengma").attr("yanzhengnum");
-        if (mima == queren && d.test(nicheng) && e.test(youxiang) && yanzhengma == yanzhengnum ) {
+        if (mima == queren && d.test(nicheng) && e.test(youxiang) && yanzhengma == yanzhengnum && f.test(mima)) {
             $.ajax({
                 type: "POST",   //访问WebService使用Post方式请求
                 contentType: "application/json", //WebService 会返回Json类型
@@ -157,4 +151,12 @@ function checknicheng(control) {
     if (!d.test(control))
         $(".tanchu4").fadeIn();
         $(".tanchu4").fadeOut();
+};
+
+
+function checkmima() {
+    var f = new RegExp("^[0-9A-z_]{1,20}$");//密码为1到20位的数字或字母;
+    if (!f.test(control))
+        $(".tanchu6").fadeIn();
+        $(".tanchu6").fadeOut();
 };

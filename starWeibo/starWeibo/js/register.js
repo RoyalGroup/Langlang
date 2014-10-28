@@ -85,7 +85,8 @@
         var email = $(".youxiang").val();
         var d = new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");
         if (!d.test(email)) {
-            alert("请输入正确邮箱");
+            $(".tanchu5").fadeIn();
+            $(".tanchu5").fadeOut();
         } else {
             $.ajax({
                 type: "POST",   //访问WebService使用Post方式请求
@@ -95,7 +96,8 @@
                 dataType: 'json',
                 success: function (result) {
                     $(".yanzhengma").attr("yanzhengnum", result.d);
-                    alert("验证码已发送到您的邮箱，请查看您的邮件！");
+                    $(".tanchu").fadeIn();
+                    $(".tanchu").fadeOut();
                 }
             });
         }
@@ -128,14 +130,16 @@
                     //回调函数，result，返回值
                     //alert(result.d);
                     if (result.d != null) {
-                        alert("注册成功！");
+                        $(".tanchu1").fadeIn();
+                        $(".tanchu1").fadeOut();
                         window.location.href = "login.aspx";
                     }
                 }
             });
         }
         else {
-            alert("请重新输入正确的注册资料");
+            $(".tanchu2").fadeIn();
+            $(".tanchu2").fadeOut();
         }
     });
  
@@ -144,11 +148,13 @@ function checkmail(control)
 {
     var d=new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");//邮箱的正则表达式;
     if(!d.test(control))
-        alert("请输入正确邮箱");
+        $(".tanchu3").fadeIn();
+        $(".tanchu3").fadeOut();
 };
 
 function checknicheng(control) {
     var d = new RegExp("^[\u4E00-\u9FA5A-Za-z0-9_]{2,16}$");//汉字可以为1-8位，字母或数字可以为2-16位;
     if (!d.test(control))
-        alert("请输入正确的昵称");
+        $(".tanchu4").fadeIn();
+        $(".tanchu4").fadeOut();
 };

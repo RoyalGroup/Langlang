@@ -8,7 +8,8 @@
             $(".mod-sub-list2").addClass("list2-active");
         }
         else {
-            alert("请输入您的账号名");
+            $(".tanchu1").fadeIn();
+            $(".tanchu1").fadeOut();
         }
     });
    

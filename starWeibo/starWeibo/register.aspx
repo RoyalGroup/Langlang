@@ -11,7 +11,42 @@
     <title>星空注册</title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <div class="tanchu">
+        <div class="tanchuTop"></div>
+        <div class="tanchuBtm">
+            <a>验证码已发送到您的邮箱，请查看您的邮件！</a>
+        </div>
+    </div>
+    <div class="tanchu1">
+        <div class="tanchu1Top"></div>
+        <div class="tanchu1Btm">
+            <a>注册成功！</a>
+        </div>
+    </div>
+    <div class="tanchu2">
+        <div class="tanchu2Top"></div>
+        <div class="tanchu2Btm">
+            <a>请重新输入正确的注册资料！</a>
+        </div>
+    </div>
+    <div class="tanchu3">
+        <div class="tanchu3Top"></div>
+        <div class="tanchu3Btm">
+            <a>请输入正确邮箱！</a>
+        </div>
+    </div>
+    <div class="tanchu4">
+        <div class="tanchu4Top"></div>
+        <div class="tanchu4Btm">
+            <a>请输入正确的昵称！</a>
+        </div>
+    </div>
+    <div class="tanchu5">
+        <div class="tanchu5Top"></div>
+        <div class="tanchu5Btm">
+            <a>请输入正确邮箱！</a>
+        </div>
+    </div>
      <div class="registerA">
 		<div class="registerTop">新用户注册</div>
 		<div class="register-form">
@@ -79,6 +114,5 @@
 		</div>
 		</div>
 	</div>
-    </form>
 </body>
 </html>

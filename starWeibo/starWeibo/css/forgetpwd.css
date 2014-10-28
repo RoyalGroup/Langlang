@@ -36,14 +36,15 @@ input{outline: none;}
 
 .forgotse3{display: none;}
 
-.T1{width: 300px;height:30px;margin-top: 20px;}
-.T1 a{font-size: 14px;line-height: 30px;display: block;float: left;width: 120px;}
-.T1R{float: left;height: 25px; width: 160px;overflow: hidden;}
+.T1{width: 500px;height:30px;margin-top: 20px;}
+.T1 a{font-size: 14px;line-height: 30px;display: block;float: left;width: 150px;}
+.T1R{float: left;height: 25px; width: 160px;overflow: hidden;margin-left:20px;}
 
-.T2{width: 300px;height:30px;margin-top: 20px;}
-.T2 a{font-size: 14px;line-height: 30px;display: block;float: left;width: 120px;}
-.T2R{float: left;height: 25px; width: 160px;overflow: hidden;}
+.T2{width: 500px;height:30px;margin-top: 20px;}
+.T2 a{font-size: 14px;line-height: 30px;display: block;float: left;width: 150px;}
+.T2R{float: left;height: 25px; width: 160px;overflow: hidden;margin-left:20px;}
 
+.pass-button-submit2{height: 34px;width: 109px;color: #fff;cursor: pointer;text-align: center;border: 0px none;background-image: url("../images/forget/button_icon.png");line-height: 32px;margin-top: 20px;margin-left:100px;}
 
 
 

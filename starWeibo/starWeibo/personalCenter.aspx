@@ -43,6 +43,46 @@
             </div>
         </div>
     </div>
+    <div class="menban2">
+        <div id="updatePwdArea">
+            <div class="updateInfo">
+                <div class='W_tips clearfix'>
+                    <p class='icon'>
+                        <span class='icon_succS'></span>
+                    </p>
+                    <span class='txt'>修改成功！</span>
+                </div>
+            </div>
+            <div class="pwdContainer">
+                <span class="remindInfo"></span>
+			    <div class="row">
+				    <label>原密码：</label>
+				    <div class="inputContainer">
+					    <input name="oldPwd" type="text" id="oldPwd">
+				    </div>
+                    <span class="oldPwdRemind"><img class="remindIcon" src="css/images/personalCenterimages/right.png"/></span>
+			    </div>
+			    <div class="row">
+				    <label>新密码：</label>
+				    <div class="inputContainer">
+					    <input name="newPwd" type="password" id="newPwd">
+				    </div>
+                    <span class="newPwdRemind"><img class="remindIcon" src="css/images/personalCenterimages/right.png"/></span>
+			    </div>
+			    <div class="row">
+				    <label>再次输入：</label>
+                    <div class="inputContainer">
+				        <input name="inputAgain" type="password" id="inputAgain">
+                    </div>
+                    <span class="inputAgainRemind"><img class="remindIcon" src="css/images/personalCenterimages/right.png"/></span>
+			    </div>
+			    <div class="operator">
+				    <div id="ensure">确 认</div>
+                    <div id="cancel">取 消</div>
+			    </div>
+            </div>
+	    </div>
+    </div>
     <div id="main">
 		<!-- 头部区 -->
 		<div class="header">

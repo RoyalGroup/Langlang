@@ -81,6 +81,100 @@ $(function () {
     $(".exitBtn").click(function () {
         $(".menban").hide();
     });
+
+    /*******************修改密码******************/
+    $("#updatePwd").click(function () {
+        $(".menban2").show();
+    });
+    //用户名错误提醒
+    $("#oldPwd").focus(function () {
+        $(".remindInfo").html("请输入原密码");
+    });
+    $("#oldPwd").blur(function () {
+        var id = $("#userid").text();
+        var inputPwd = $("#oldPwd").val();
+        $.ajax({
+            type: "POST", 
+            contentType: "application/json", 
+            url: "webservice/wspersonal.asmx/checkUserPwd",
+            data: "{ id:'" + id + "',inputPwd:'" + inputPwd + "'}",
+            dataType: 'json',
+            success: function (result) { 
+                if (result.d == 'true') {
+                    oldPwdCheck = true;
+                    $(".oldPwdRemind").show();
+                } else {
+                    oldPwdCheck = false;
+                    $(".remindInfo").html("原密码输入不正确，请重试！");
+                    $(".oldPwdRemind").hide();
+                    $("#oldPwd").val("");
+                }
+            }
+        });
+    });
+    //密码错误提醒
+    $("#regPwd").focus(function () {
+        $(".remindInfo").html("密码由20位以内的数字、字母、下划线组成。");
+    });
+    $("#newPwd").blur(function () {
+        var patt2 = new RegExp("^[0-9A-z_]{1,20}$");
+        if (patt2.test($("#newPwd").val()) == true) {
+            newPwdCheck = true;
+            $(".newPwdRemind").show();
+        } else {
+            newPwdCheck = false;
+            $(".remindInfo").html("密码输入不符合要求，请重试！");
+            $(".newPwdRemind").hide();
+            $("#newPwd").val("");
+        }
+    });
+    //确认密码错误提醒
+    $("#inputAgain").focus(function () {
+        $(".remindInfo").html("请再次输入密码，保持两次密码输入一致。");
+    });
+    $("#inputAgain").blur(function () {
+        if ($("#inputAgain").val().toString() == $("#newPwd").val().toString() && $("#inputAgain").val().toString() != "") {
+            inputAgainCheck = true;
+            $(".inputAgainRemind").show();
+        } else {
+            inputAgainCheck = false;
+            $(".remindInfo").html("两次密码输入不一致，请重试！");
+            $(".inputAgainRemind").hide();
+            $("#inputAgain").val("");
+        }
+    });
+    $("#ensure").click(function () {
+        if (oldPwdCheck == true && newPwdCheck == true && inputAgainCheck == true) {
+            var id = $("#userid").text();
+            var newpwd = $("#newPwd").val();
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                url: "webservice/wspersonal.asmx/updateUserPwd",
+                data: "{ id:'" + id + "',newpwd:'" + newpwd + "'}",
+                dataType: 'json',
+                success: function (result) {
+                    if (result.d == 'True') {
+                        clearInputInfo();
+                        $(".updateInfo").find(".icon_succS").removeClass("icon_delS");
+                        $(".updateInfo").find(".txt").text("修改成功");
+                        $(".updateInfo").fadeIn(1000).fadeOut(1000);
+                    } 
+                }
+            });
+        } else {
+            clearInputInfo(); 
+            $(".updateInfo").find(".icon_succS").addClass("icon_delS");
+            $(".updateInfo").find(".txt").text("修改失败");
+            $(".updateInfo").fadeIn(1000).fadeOut(1000);
+        }
+    });
+    $("#cancel").click(function () {
+        clearInputInfo();
+        $(".menban2").hide();
+    });
+    /******************修改密码*********************/
+
     //编辑保存基本信息
     $("#baseInfo .editBtn").click(function () {
         var state = $(this).text();
@@ -262,6 +356,8 @@ $(function () {
 //定义变量
 var id, userName, userAddress, userSex, userMarry, userBirthday, userDes;
 var qqIsRight = true, telIsRight = true;
+var oldPwdCheck = false, newPwdCheck = false, inputAgainCheck = false;
+
 //同步用户基本信息
 function syncUserBaseInfo() {
     $(".name").text(userName);
@@ -321,6 +417,7 @@ function showQSuserinfo() {
         $(".change_btn_div").remove();
         $(".editBtn").remove();
         $("#updatePwd").remove();
+        $(".btn_bed").remove();
         $("[action-type='quickedit']").parent().html("<a>该用户尚未填写此信息！</>");
         if ($(".pf_intro a").text() == "一句话介绍一下自己吧，让别人更了解你") {
             $(".pf_intro").html("<a style='color:#ccc'>这个人很懒，还没有填写个人简介</>");
@@ -328,7 +425,12 @@ function showQSuserinfo() {
         $(".user_atten").find("a").attr("href", "javascript:void(0);");
     }
 }
-
+//清除修改秘密区的输入信息
+function clearInputInfo() {
+    $(".remindInfo").html("");
+    $(".inputContainer input").val("");
+    $(".row span").hide();
+}
 //裁剪图片预览
 function preview(img, selection) {
     var scaleX = 150 / (selection.width || 1);

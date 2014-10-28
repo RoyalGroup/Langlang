@@ -61,6 +61,8 @@
     <Content Include="adminManage.aspx" />
     <Content Include="comment.aspx" />
     <Content Include="css\detailmessage.css" />
+    <Content Include="css\images\personalCenterimages\loginkuang.png" />
+    <Content Include="css\images\personalCenterimages\right.png" />
     <Content Include="css\imgareaselect-default.css" />
     <Content Include="css\playstar.css" />
     <Content Include="detailmessage.aspx" />

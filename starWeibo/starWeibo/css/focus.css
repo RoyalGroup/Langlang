@@ -101,3 +101,10 @@
 .EnsDeleFansBotBtn1{width: 60px;height: 30px; float: left; font-size: 14px; line-height: 30px; border-radius: 2px; border:1px solid #eee; text-align: center;margin-right: 10px;cursor: pointer; background-color:rgb(255, 162, 16); }
 .EnsDeleFansBotBtn2{width: 60px;height: 30px; float: left; font-size: 14px; line-height: 30px; border-radius: 2px; border:1px solid #eee; text-align: center;cursor: pointer;}
 .EnsDeleFansBotBtn1:hover,.EnsDeleFansBotBtn2:hover{background-image: -webkit-linear-gradient(top, rgb(255, 184, 71) 0%, rgb(255, 162, 16) 100%);}
+
+
+
+
+/*弹窗*/
+.Tanchu{width:90px;height:45px;position:fixed;left:620px;top:350px;text-align:center;line-height:45px;font-weight:bold;border:3px solid #6cbae4;border-radius:5px;color:#aaa;display:none;}
+.Tanchu1{width:90px;height:45px;position:fixed;left:620px;top:350px;text-align:center;line-height:45px;font-weight:bold;border:3px solid #6cbae4;border-radius:5px;color:#aaa;display:none;}

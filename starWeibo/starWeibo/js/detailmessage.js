@@ -21,7 +21,7 @@ function send() {
                     chatmsg("10秒钟前", headimg, value);
                 },
                 error: function () {
-                    alert("fail");
+                    //alert("fail");
                 }
             });
         }

@@ -23,7 +23,7 @@
 	    <div class="loginright">
             <div class="header">
                 <div class="left">用户登录</div>
-                <div class="right"><a href="#">管理员登录>></a></div>
+                <div class="right"><a href="adminLogin.aspx">管理员登录>></a></div>
             </div>
             <div class="user">
                <div class="userName">用户名：</div>
@@ -39,7 +39,7 @@
                     <span>记住密码</span>
                 </div>
                 <div class="forget-pwd">
-                    <a href="get-pwd.html">忘记密码？</a>
+                    <a href="forgetpwd.aspx">忘记密码？</a>
                 </div>
             </div>
             <%--<div class="denglu-but">

@@ -16,12 +16,12 @@ F:\Langlang\starWeibo\DAL\bin\Debug\Model.pdb
 F:\Langlang\starWeibo\DAL\obj\Debug\starweibo.DAL.csprojResolveAssemblyReference.cache
 F:\Langlang\starWeibo\DAL\obj\Debug\DAL.dll
 F:\Langlang\starWeibo\DAL\obj\Debug\DAL.pdb
-E:\Langlang\starWeibo\DAL\obj\Debug\starweibo.DAL.csprojResolveAssemblyReference.cache
 E:\Langlang\starWeibo\DAL\bin\Debug\DAL.dll
 E:\Langlang\starWeibo\DAL\bin\Debug\DAL.pdb
 E:\Langlang\starWeibo\DAL\bin\Debug\DBhelperSQL.dll
 E:\Langlang\starWeibo\DAL\bin\Debug\Model.dll
 E:\Langlang\starWeibo\DAL\bin\Debug\DBhelperSQL.pdb
 E:\Langlang\starWeibo\DAL\bin\Debug\Model.pdb
+E:\Langlang\starWeibo\DAL\obj\Debug\starweibo.DAL.csprojResolveAssemblyReference.cache
 E:\Langlang\starWeibo\DAL\obj\Debug\DAL.dll
 E:\Langlang\starWeibo\DAL\obj\Debug\DAL.pdb

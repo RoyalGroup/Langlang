@@ -60,7 +60,7 @@
     });
     //创建新分组
     $(".GroupCardB").click(function () {
-        alert("1");
+        //alert("1");
     });
     //设置备注
     $(".SetNote").click(function () {
@@ -115,7 +115,7 @@
                 dataType: 'json',
                 success: function (result) {     //回调函数，result，返回值
                     if (result.d == true) {
-                        //alert("取消成功！");
+                        location.reload();
                     }
                 }
             });
@@ -174,10 +174,12 @@
             success: function (result) {     //回调函数，result，返回值
                 //alert(result.d);
                 if (result.d == -1) {
-                    alert("您已关注");
+                    $(".Tanchu1").fadeIn();
+                    $(".Tanchu1").fadeOut();
                 }
                 else {
-                    alert("关注成功");
+                    $(".Tanchu").fadeIn();
+                    $(".Tanchu").fadeOut();
                 }
             }
         });

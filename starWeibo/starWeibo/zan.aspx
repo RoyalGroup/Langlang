@@ -8,7 +8,7 @@
         <div class="W_main_l">
             <div class="left_commen">
                 <div class="lev">
-                    <a href="#">
+                    <a href="playstar.aspx">
                         <i class="ico20 ico_guide"></i>
                         新手指南
                     </a>

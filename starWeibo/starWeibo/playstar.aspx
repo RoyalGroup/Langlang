@@ -5,11 +5,17 @@
     <script src="js/playstar.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <div class="Tanchu">
+            <span>关注成功</span>
+        </div>
+        <div class="Tanchu1">
+            <span>您已关注</span>
+        </div>
     <div class="main_inner">
         <div class="W_main_l">
             <div class="left_commen">
                 <div class="lev lev-curr">
-                    <a href="#">
+                    <a href="playstar.aspx">
                         <i class="ico20 ico_guide"></i>
                         新手指南
                     </a>

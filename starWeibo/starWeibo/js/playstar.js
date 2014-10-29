@@ -10,10 +10,12 @@
             success: function (result) {     //回调函数，result，返回值
                 //alert(result.d);
                 if (result.d == -1) {
-                    alert("您已关注");
+                    $(".Tanchu1").fadeIn();
+                    $(".Tanchu1").fadeOut();
                 }
                 else {
-                    alert("关注成功");
+                    $(".Tanchu").fadeIn();
+                    $(".Tanchu").fadeOut();
                 }
             }
         });

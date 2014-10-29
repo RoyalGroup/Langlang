@@ -6,6 +6,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    <!-- 主体 -->
 	<div class="MainBody">
+        <div class="Tanchu">
+            <span>关注成功</span>
+        </div>
+        <div class="Tanchu1">
+            <span>您已关注</span>
+        </div>
 		<div class="MainBodyIn">
 			<div class="MainLeft">
 				<div class="LeftTop">

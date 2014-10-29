@@ -4,7 +4,7 @@ a{text-decoration: none;color: #333;}
 .clearfix:after{content: "";display: block;visibility: hidden;clear: both;}
 
 .W_main{width: 980px;margin: 0 auto;}
-.main_inner{background-color:#fff;background: url("../images/repeat_bg_yg.png") repeat-y;}
+.main_inner{background-color:#fff;background: url("../images/repeat_bg_yg.png") repeat-y;overflow:hidden;}
 .W_main_l{float: left;width: 150px;overflow: hidden;padding: 12px 0 30px;}
 .W_main_a{min-height: 872px;}
 .W_main_c{float: left;width: 600px;min-height: 800px;overflow: hidden;padding: 22px 0 50px;}

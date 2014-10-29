@@ -39,6 +39,7 @@ namespace starWeibo
 
         protected void btnadminzhuxiao_Click(object sender, EventArgs e)
         {
+            Session["adminName"] = "";
             Response.Redirect("adminLogin.aspx");
         }
 
@@ -46,7 +47,7 @@ namespace starWeibo
         {
             //SearchButton.Attributes.Add("onClick", "return false");
             starweibo.BLL.powerV bllpowerV = new powerV();
-            List<starweibo.Model.powerV> spVs = bllpowerV.GetModelList("userName='" + this.searchContent.Value + "'");
+            List<starweibo.Model.powerV> spVs = bllpowerV.GetModelList("userName like '%" + this.searchContent.Value + "%'");
             this.rptspInfoList.DataSource = spVs;
             this.rptspInfoList.DataBind();
         }

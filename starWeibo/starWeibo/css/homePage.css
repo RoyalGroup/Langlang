@@ -102,7 +102,7 @@ em{font-style: normal;font-weight: normal;}
 .func1 img{height: 16px;width: 16px;margin: 3px 10px 0 6px;vertical-align: -4px;}
 
 .wmaina{width: 830px;overflow: hidden;display: block;background-color: #fff; margin: auto; }
-.wmainc{padding: 28px 0 30px;float: left;display: block; width: 600px;min-height: 800px;overflow: hidden;}
+.wmainc{padding: 28px 0 30px;float: left;display: block; width: 600px;min-height: 800px;}
 .sendweibo{padding: 0 20px 11px;}
 .titlearea{height: 24px;overflow: hidden;clear: both;display: block;}
 .title{background-position: 0 0;background-image: url("images/all_iconbtn.png");text-indent: -9999em;outline-style: none;font: normal 20px/24px Tahoma;float: left;width: 224px;height: 24px;}
@@ -192,7 +192,7 @@ em{font-style: normal;font-weight: normal;}
 .wbscreen .iconchoose{visibility: hidden;}
 .iconchoose{width: 16px;height: 16px;background-position: -75px -75px;}
 .wico12{display: inline-block;width: 12px;height: 12px;background-image: url("images/icon.png");background-repeat: no-repeat;}
-.wbfeeddetail{border-bottom-width: 1px;border-bottom-style: solid;padding: 20px 0 11px;overflow: hidden;width:560px; }
+.wbfeeddetail{border-bottom-width: 1px;border-bottom-style: solid;padding: 20px 0 11px;width:560px; }
 .wbface{float: left;width: 50px;position: relative;}
 .wbface .wfaceradius{height: 50px;display: block;overflow: hidden;}
 .wfaceradius{border-radius: 2px;}
@@ -451,3 +451,24 @@ dd {display: block;}
 .S_func1:hover{ color: #0a8cd2;}
 .follower{ width: 64px; padding: 0 0 3px 0;}
 .user_atten .W_no_border{ border: 0;}
+
+
+
+/*个人名片*/
+.wbinfo {position:relative; display:inline-block;}
+.mpWrapper{width: 300px; height: 180px;position: absolute;background-color:#fff; top: 0px; left: 60px;z-index:999; border: 1px solid #ccc;}
+.mpWrapperUp{width: 300px; height: 80px; background-image: url("images/mpBg.jpg"); padding: 20px 0 0 0; background-size:100% 100%;}
+.mpWrapperDown{width: 300px; height: 60px; background-color: #fff; padding: 10px 0 0 0;}
+.mpHeadimage{width: 50px; height: 50px; margin: auto; display: block; }
+.mpHeadimage img{width: 50px; height: 50px;border-radius: 25px;  }
+.mpUsername{width:300px; height: 20px;padding-top: 10px; line-height: 20px; text-align: center; display: block; text-decoration: none; color: #fff; font-weight: 140px; font-size: 14px; }
+.numCount{width: 300px;  height:20px;color: #333; text-align: center;}
+.numCount a{color: #333; text-decoration: none;}
+.c_focus{cursor: pointer; height: 20px; line-height: 20px; font-size: 12px;font-weight: bold; text-align: center; display: inline; padding:0 5px;}
+.c_fans{cursor: pointer; height: 20px; line-height: 20px; font-size: 12px; font-weight: bold;text-align: center;display: inline; border-left: 1px solid #ccc; padding:0 5px;}
+.c_weibo{cursor: pointer;height: 20px; line-height: 20px; font-size: 12px; font-weight: bold;text-align: center;display: inline;border-left: 1px solid #ccc; padding:0 5px;}
+.c_focus:hover a,.c_fans:hover a,.c_weibo:hover a{color: #eb7350;}
+.btnbox{width: 300px; height: 30px; padding: 10px 0 0 0;text-align: center;}
+.btnStyle{width: 90px; height: 26px; margin-left: 5px;padding: 0;vertical-align: top;cursor: pointer;color: #333;
+text-decoration: none;border:1px solid #d9d9d9;background-color: #fff; box-shadow: 0px 1px 2px rgba(0,0,0,0.1);white-space: nowrap;
+display: inline-block;border-radius: 2px;height: 24px;line-height: 25px;font-size: 12px;min-width: 40px;text-align: center;outline: none;}

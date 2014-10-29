@@ -81,11 +81,12 @@
             $(this).attr("a", "1");
         }
     });
-    $(".yanzheng").click(function () {
+    $(document).on("click", ".yanzheng", function () {
         var email = $(".youxiang").val();
         var d = new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");
         if (!d.test(email)) {
-            alert("请输入正确邮箱");
+            $(".tanchu5").fadeIn();
+            $(".tanchu5").fadeOut();
         } else {
             $.ajax({
                 type: "POST",   //访问WebService使用Post方式请求
@@ -94,27 +95,25 @@
                 data: "{email:'" + email + "'}",         //这里是要传递的参数，格式为 data: "{paraName:'paraValue'}",下面将会看到       
                 dataType: 'json',
                 success: function (result) {
-                    $(".yanzhengma").attr("yanzhengnum", result.d)
-                    alert("验证码已发送到您的邮箱，请查看您的邮件！");
+                    $(".yanzhengma").attr("yanzhengnum", result.d);
+                    $(".tanchu").fadeIn();
+                    $(".tanchu").fadeOut();
                 }
             });
         }
     });
 
-   
-    //$(".finishzhuce").click(function () {
-    //    var nicheng = $(".nicheng").val();
-    //    checknicheng(nicheng);
-    //});
-
     $(".finishzhuce").click(function () {
         var d = new RegExp("^[\u4E00-\u9FA5A-Za-z0-9_]{2,16}$");//汉字可以为1-8位，字母或数字可以为2-16位;
         var e = new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");//邮箱的正则表达式
+        var f = new RegExp("^[0-9A-z_]{1,20}$"); //密码为1到20位的数字或字母;
         var nicheng = $(".nicheng").val();
         var youxiang = $(".youxiang").val();
         var mima = $(".mima").val();
         var queren = $(".queren").val();
-        if (mima == queren && d.test(nicheng) && e.test(youxiang)) {
+        var yanzhengma = $(".yanzhengma").val();
+        var yanzhengnum = $(".yanzhengma").attr("yanzhengnum");
+        if (mima == queren && d.test(nicheng) && e.test(youxiang) && yanzhengma == yanzhengnum && f.test(mima)) {
             $.ajax({
                 type: "POST",   //访问WebService使用Post方式请求
                 contentType: "application/json", //WebService 会返回Json类型
@@ -125,14 +124,16 @@
                     //回调函数，result，返回值
                     //alert(result.d);
                     if (result.d != null) {
-                        alert("注册成功！");
+                        $(".tanchu1").fadeIn();
+                        $(".tanchu1").fadeOut();
                         window.location.href = "login.aspx";
                     }
                 }
             });
         }
         else {
-            alert("请重新输入正确的注册资料");
+            $(".tanchu2").fadeIn();
+            $(".tanchu2").fadeOut();
         }
     });
  
@@ -141,11 +142,21 @@ function checkmail(control)
 {
     var d=new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");//邮箱的正则表达式;
     if(!d.test(control))
-        alert("请输入正确邮箱");
+        $(".tanchu3").fadeIn();
+        $(".tanchu3").fadeOut();
 };
 
 function checknicheng(control) {
     var d = new RegExp("^[\u4E00-\u9FA5A-Za-z0-9_]{2,16}$");//汉字可以为1-8位，字母或数字可以为2-16位;
     if (!d.test(control))
-        alert("请输入正确的昵称");
+        $(".tanchu4").fadeIn();
+        $(".tanchu4").fadeOut();
+};
+
+
+function checkmima() {
+    var f = new RegExp("^[0-9A-z_]{1,20}$");//密码为1到20位的数字或字母;
+    if (!f.test(control))
+        $(".tanchu6").fadeIn();
+        $(".tanchu6").fadeOut();
 };

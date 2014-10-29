@@ -133,16 +133,14 @@
                                     <ItemTemplate>
                                         <div class="wbfeeddetail line2 clearfix" blogid="<%# Eval("blogId") %>">
                                             <div class="wbface">
-                                                <a href="#" class="wfaceradius">
+                                                <a href="personalCenter.aspx?Userid=<%#Eval("blogAuthorId") %>" class="wfaceradius userMp">
                                                     <img src="<%# Eval("blogAuthorHeadimage") %>" />
                                                 </a>
                                             </div>
                                             <div class="wbdetail">
                                                 <div class="wbinfo">
-                                                    <a class="wbname func1 " href="personalCenter.aspx?Userid=<%#Eval("blogAuthorId") %>"><%# Eval("blogAuthorName") %></a>
-                                                    <a href="#">
-                                                        <i class="wico16 approveco"></i>
-                                                    </a>
+                                                    <a class="wbname func1 userMp" href="personalCenter.aspx?Userid=<%#Eval("blogAuthorId") %>"><%# Eval("blogAuthorName") %></a>
+                                                   
                                                 </div>
                                                 <div class="wbtext">
                                                     <%# Eval("blogContent") %>
@@ -156,7 +154,7 @@
                                                         </div>				
                                                         <div class="listcontent">					
                                                             <div class="wbinfo">						
-                                                                <a href="personalCenter.aspx?Userid=<%# Eval("zfAuthorId") %>" class="wbname func3"><%# Eval("zfAuthorName") %></a>	
+                                                                <a href="personalCenter.aspx?Userid=<%# Eval("zfAuthorId") %>" class="wbname func3 userMp"><%# Eval("zfAuthorName") %></a>	
                                                             </div>					
                                                             <div class="wbtext">						
                                                                 <em>						

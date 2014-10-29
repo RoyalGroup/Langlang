@@ -26,13 +26,13 @@
                                 html += '<div class="wbfeedtype swfun line2">';
                                 html += '<div class="wbfeeddetail line2 clearfix" blogid="' + blogid + '">';
                                 html += '<div class="wbface">';
-                                html += '<a  class="wfaceradius">';
+                                html += '<a  class="wfaceradius userMp">';
                                 html += '<img src="' + $("#info").attr("headimg") + '" />';
                                 html += '</a>';
                                 html += '</div>';
                                 html += '<div class="wbdetail">';
                                 html += '<div class="wbinfo">';
-                                html += '<a class="wbname func1">' + $("#info").attr("name") + '</a>';
+                                html += '<a class="wbname userMp func1">' + $("#info").attr("name") + '</a>';
                                 html += '<a >';
                                 html += '<i class="wico16 approveco"></i>';
                                 html += '</a>';
@@ -265,13 +265,13 @@
                     $(res.d).each(function () {       
                         replyList+='<dl class="commentlist line1">';
                         replyList+='<dt>';
-                        replyList+='<a href="#">';
+                        replyList+='<a href="personalCenter.aspx?Userid='+this.userId+'" class="userMp">';
                         replyList+='<img src="'+this.userHeadimage+'">';
                         replyList+='</a>';
                         replyList+='</dt>';
                         replyList += '<dd>';
                         replyList += '<span class="replyContent">';
-                        replyList+='<a class="userName">';
+                        replyList+='<a class="userName userMp">';
                         replyList+=this.userName;
                         replyList+='</a>';
                         replyList += '：'
@@ -368,13 +368,13 @@
                     if (res.d != null) {
                         replyList += '<dl class="commentlist line1">';
                         replyList += '<dt>';
-                        replyList += '<a href="#">';
+                        replyList += '<a href="personalCenter.aspx?Userid=' + $("#info").attr("userid") + '" class="userMp">';
                         replyList += '<img src="' + $("#info").attr("headimg") + '">';
                         replyList += '</a>';
                         replyList += '</dt>';
                         replyList += '<dd>';
                         replyList += '<span class="replyContent">';
-                        replyList += '<a class="userName">';
+                        replyList += '<a class="userName userMp">';
                         replyList += $("#info").attr("name");
                         replyList += '</a>';
                         replyList += '：'
@@ -448,9 +448,9 @@
         $(".contrans").show();
         if (that.parent().parent().parent().find(".zfdisable").length > 0) {
             var blogid = that.parent().parent().parent().parent().attr("blogid");
-            var blogAuthor = that.parent().parent().parent().find(".wbname").html();
+            var blogAuthor = that.parent().parent().parent().find(".wbname userMp").html();
             var blogContent = that.parent().parent().parent().find(".wbtext").html();
-            var blogAuthorUrl = that.parent().parent().parent().find(".wbname").attr("href");
+            var blogAuthorUrl = that.parent().parent().parent().find(".wbname userMp").attr("href");
             $(".contrans").find(".contmyan a.conttxtlink").attr("href", blogAuthorUrl);
             $(".contrans").find(".contmyan a.conttxtlink").html("@" + blogAuthor);
             $(".contrans").find(".contmyan span.contgeyan").html(blogContent);
@@ -461,9 +461,9 @@
             $(".contrans").find(".contte").val("");
         } else {
             var blogid = that.parent().parent().parent().find(".wbmediaexpand").attr("blogid");
-            var blogAuthor = that.parent().parent().parent().find(".wbmediaexpand .wbname").html();
+            var blogAuthor = that.parent().parent().parent().find(".wbmediaexpand .wbname userMp").html();
             var blogContent = that.parent().parent().parent().find(".wbmediaexpand .wbtext em").html();
-            var blogAuthorUrl = that.parent().parent().parent().find(".wbmediaexpand .wbname").attr("href");
+            var blogAuthorUrl = that.parent().parent().parent().find(".wbmediaexpand .wbname userMp").attr("href");
             $(".contrans").find(".contmyan a.conttxtlink").attr("href", blogAuthorUrl);
             $(".contrans").find(".contmyan a.conttxtlink").html("@" + blogAuthor);
             $(".contrans").find(".contmyan span.contgeyan").html(blogContent);
@@ -557,16 +557,13 @@
                             html += '</div>';
                             html += '<div class="wbfeeddetail line2 clearfix">';
                             html += '<div class="wbface">';
-                            html += '<a href="#" class="wfaceradius">';
+                            html += '<a href="' + blogAuthorUrl + '" class="wfaceradius userMp">';
                             html += '<img src="' + $("#info").attr("headimg") + '" />';
                             html += '</a>';
                             html += '</div>';
                             html += '<div class="wbdetail">';
                             html += '<div class="wbinfo">';
-                            html += '<a class="wbname func1">' + $("#info").attr("name") + '</a>	';
-                            html += '<a href="#">';
-                            html += '	<i class="wico16 approveco"></i>';
-                            html += '</a>';
+                            html += '<a class="wbname userMp func1">' + $("#info").attr("name") + '</a>	';
                             html += '</div>';
                             html += '	<div class="wbtext">';
                             html += content;
@@ -578,7 +575,7 @@
                             html += '</div>';
                             html += '<div class="listcontent">';
                             html += '<div class="wbinfo">';
-                            html += '<a href=' + blogAuthorUrl + ' class="wbname func3">' + blogAuthorName + '</a>';
+                            html += '<a href=' + blogAuthorUrl + ' class="wbname userMp func3">' + blogAuthorName + '</a>';
                             html += '</div>	';
                             html += '<div class="wbtext">';
                             html += '<em>';
@@ -598,17 +595,17 @@
                             html += '<i class="txt3">|</i>';
                             html += '<a class="zf">转发</a>';
                             html += '<i class="txt3">|</i>';
-                            html += '<a href="#">收藏</a>';
+                            html += '<a class="wbcollect">收藏</a>';
                             html += '<i class="txt3">|</i>';
                             html += '<a class="pl" pindex="20" isopen="no" ifc="0">评论(0)</a>';
                             html += '</div>';
                             html += '<div class="wbfrom">';
-                            html += '<a href="#" class="link2 wbtime">一分钟前</a>';
+                            html += '<a  class="link2 wbtime">一分钟前</a>';
                             html += '<em class="txt2">来自</em>';
-                            html += '<a href="#" class="link2">weibo</a>';
+                            html += '<a  class="link2">weibo</a>';
                             html += '<span class="hoverr">';
                             html += '<em class="txt2">|</em>&nbsp;';
-                            html += '<a href="#" class="jubao">举报</a>';
+                            html += '<a class="jubao">举报</a>';
                             html += '</span>';
                             html += '</div>';
                             html += '</div>';
@@ -633,9 +630,9 @@
         $(".contrans").show();
         if (that.parent().parent().parent().parent().find(".zfdisable").length > 0) {
             var blogid = that.parent().parent().parent().parent().parent().attr("blogid");
-            var blogAuthor = that.parent().parent().parent().parent().find(".wbname").html();
+            var blogAuthor = that.parent().parent().parent().parent().find(".wbname userMp").html();
             var blogContent = that.parent().parent().parent().parent().find(".wbtext").html();
-            var blogAuthorUrl = that.parent().parent().parent().parent().find(".wbname").attr("href");
+            var blogAuthorUrl = that.parent().parent().parent().parent().find(".wbname userMp").attr("href");
             $(".contrans").find(".contmyan a.conttxtlink").attr("href", blogAuthorUrl);
             $(".contrans").find(".contmyan a.conttxtlink").html("@" + blogAuthor);
             $(".contrans").find(".contmyan span.contgeyan").html(blogContent);
@@ -646,9 +643,9 @@
             $(".contrans").find(".contte").val("");
         } else {
             var blogid = that.parent().parent().parent().parent().find(".wbmediaexpand").attr("blogid");
-            var blogAuthor = that.parent().parent().parent().parent().find(".wbmediaexpand .wbname").html();
+            var blogAuthor = that.parent().parent().parent().parent().find(".wbmediaexpand .wbname userMp").html();
             var blogContent = that.parent().parent().parent().parent().find(".wbmediaexpand .wbtext em").html();
-            var blogAuthorUrl = that.parent().parent().parent().parent().find(".wbmediaexpand .wbname").attr("href");
+            var blogAuthorUrl = that.parent().parent().parent().parent().find(".wbmediaexpand .wbname userMp").attr("href");
             $(".contrans").find(".contmyan a.conttxtlink").attr("href", blogAuthorUrl);
             $(".contrans").find(".contmyan a.conttxtlink").html("@" + blogAuthor);
             $(".contrans").find(".contmyan span.contgeyan").html(blogContent);
@@ -659,7 +656,75 @@
             $(".contrans").find(".contte").val("");
         }
     });
-
+    //显示用户名片
+    $(document).on("mouseover", ".userMp", function () {
+        var that = $(this);
+        var userid = that.attr("href").split("personalCenter.aspx?Userid=")[1];
+        $.ajax({
+            url: "webservice/wshomepage.asmx/getUserInfo",
+            type: "POST",
+            contentType: "application/json",
+            data: "{userid:'" + userid + "'}",
+            dataType: "json",
+            success: function (res) {
+                var html = '';
+                html += '<div class="mpWrapper">';
+                html += '<div class="mpWrapperUp">';
+                html += '<a href="" class="mpHeadimage">';
+                html += '<img src="'+res.d["userHeadimage"]+'">';
+                html += '</a>';
+                html += '<a href="personalCenter.aspx?Userid=' + res.d["id"] + '" class="mpUsername">';
+                html += res.d["userName"];
+                html += '</a>';
+                html += '</div>';
+                html += '<div class="mpWrapperDown">';
+                html += '<div class="numCount">';
+                html += '<span class="c_focus">';
+                html += '关注';
+                html += '<a href="">' + res.d["userPwd"] + '</a>';
+                html += '</span>';
+                html += '<span class="c_fans">';
+                html += '粉丝';
+                html += '<a href="">' + res.d["userMail"] + '</a>';
+                html += '</span>';
+                html += '<span class="c_weibo">';
+                html += '微博';
+                html += '<a href="">' + res.d["userBirthday"] + '</a>';
+                html += '</span>';
+                html += '</div>';
+                html += '<div class="btnbox">';
+                html += '<div class="btnStyle focusBtn">';
+                if (res.d["userBirthday"] >= "1") {
+                    html += '已关注';
+                } else {
+                    html += '未关注';
+                }
+                html+='</div>';
+                html += '<div class="btnStyle sixinBtn">私信</div>';
+                html += '</div>';
+                html += '</div>';
+                html += '</div>';
+                if (that.parent().find(".mpWrapper").length == 0) {
+                    that.parent().append(html);
+                    var thiswidth = that.css("width");
+                    that.parent().find(".mpWrapper").css("left", thiswidth);
+                } else {
+                    that.parent().find(".mpWrapper").show();
+                }
+            }
+        });
+    });
+    $(document).on("mouseout", ".wbinfo,.wbface", function () {
+        var that = $(this);
+        if (that.find(".mpWrapper").length > 0) {
+           // that.find(".mpWrapper").animate({ "top": "1px" }, 1000, function () {
+                that.find(".mpWrapper").hide();
+           // })
+            
+        }
+    });
+    //页面加载时检测用户收藏或赞的微博
+    loadingZanSc();
 
     //分页与加载相关
     fenye();
@@ -714,16 +779,13 @@ function fabu(headimg, name, content,pubtime ,type) {
     html += '</div>';
     html += '<div class="wbfeeddetail line2 clearfix">';
     html += '<div class="wbface">';
-    html += '<a href="#" class="wfaceradius">';
+    html += '<a  class="wfaceradius userMp">';
     html += '<img src="' + headimg + '" />';
     html += '</a>';
     html += '</div>';
     html += '<div class="wbdetail">';
     html += '<div class="wbinfo">';
-    html += '<a class="wbname func1">' + name + '</a>';
-    html += '<a href="#">';
-    html += '<i class="wico16 approveco"></i>';
-    html += '</a>';
+    html += '<a class="wbname userMp func1">' + name + '</a>';
     html += '</div>';
     html += '<div class="wbtext">';
     html += content;
@@ -736,17 +798,17 @@ function fabu(headimg, name, content,pubtime ,type) {
     html += '<i class="txt3">|</i>';
     html += '<a class="zf">转发</a>';
     html += '<i class="txt3">|</i>';
-    html += '<a href="#">收藏</a>';
+    html += '<a class="wbcollect">收藏</a>';
     html += '<i class="txt3">|</i>';
     html += '<a class="pl" pindex="1" isopen="no" ifc="0">评论(0)</a>';
     html += '</div>';
     html += '<div class="wbfrom">';
-    html += '<a href="#" class="link2 wbtime">' + eval('new ' + (pubtime.replace(/\//g, ''))).Format("yyyy-MM-dd hh:mm:ss") + '</a>';
+    html += '<a  class="link2 wbtime">' + eval('new ' + (pubtime.replace(/\//g, ''))).Format("yyyy-MM-dd hh:mm:ss") + '</a>';
     html += '<em class="txt2">来自</em>';
-    html += '<a href="#" class="link2">360安全浏览器</a>';
+    html += '<a  class="link2">360安全浏览器</a>';
     html += '<span class="hoverr">';
     html += '<em class="txt2">|</em>&nbsp;';
-    html += '<a href="#" class="jubao">举报</a>';
+    html += '<a  class="jubao">举报</a>';
     html += '</span>';
     html += '</div>';
     html += '</div>';
@@ -785,4 +847,31 @@ Date.prototype.Format = function (fmt) { //author: meizz
     for (var k in o)
         if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
     return fmt;
+}
+
+function loadingZanSc() {
+    $.ajax({
+        url: "webservice/wshomepage.asmx/loadingZanSc",
+        type: "POST",
+        contentType: "application/json",
+        data: "{typeid:1}",
+        dataType: "json",
+        success: function (res) {
+            $(res.d).each(function () {
+                $(".wbfeeddetail[blogid='" + this.blogId + "']").find(".zan").attr("ifzan","1");
+            });
+        }
+    });
+    $.ajax({
+        url: "webservice/wshomepage.asmx/loadingZanSc",
+        type: "POST",
+        contentType: "application/json",
+        data: "{typeid:7}",
+        dataType: "json",
+        success: function (res) {
+            $(res.d).each(function () {
+                $(".wbfeeddetail[blogid='" + this.blogId + "']").find(".wbcollect").html("取消收藏");
+            });
+        }
+    });
 }

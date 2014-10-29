@@ -76,7 +76,7 @@
             dataType: 'json',
             success: function (result) {     //回调函数，result，返回值
                 if (result.d == true) {
-                    alert("禁言成功！");
+                    //alert("禁言成功！");
                 }
             }
         });
@@ -253,7 +253,7 @@
                     dataType: 'json',
                     success: function (result) {     //回调函数，result，返回值
                         if (result.d == true) {
-                            alert("操作成功！");
+                            //alert("操作成功！");
                         }
                     }
                 });

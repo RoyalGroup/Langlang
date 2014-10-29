@@ -77,7 +77,7 @@
                 dataType: 'json',
                 success: function (result) {     //回调函数，result，返回值
                     if (result.d == true) {
-                        alert("修改成功！");
+                        //alert("修改成功！");
                     }
                 }
             });
@@ -115,7 +115,7 @@
                 dataType: 'json',
                 success: function (result) {     //回调函数，result，返回值
                     if (result.d == true) {
-                        alert("取消成功！");
+                        //alert("取消成功！");
                     }
                 }
             });
@@ -198,7 +198,7 @@
                 dataType: 'json',
                 success: function (result) {     //回调函数，result，返回值
                     if (result.d == true) {
-                        alert("移除成功！");
+                        //alert("移除成功！");
                     }
                 }
             });

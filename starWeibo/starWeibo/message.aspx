@@ -77,22 +77,22 @@
                                 <ItemTemplate>
                                     <div class="comment_feed clearfix">
                                         <div class="face">
-                                            <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("senderId") %>">
+                                            <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("id") %>">
                                                 <img src="<%# Eval("userHeadimage") %>" />
                                             </a>
                                         </div>
                                         <div class="comment">
                                             <div class="comm_box">
                                                 <p>
-                                                    <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("senderId") %>"><%# Eval("userName") %></a>
-                                                    <span>悄悄的对你说:</span>
+                                                    <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("id") %>"><%# Eval("userName") %></a>
+                                                    <span>私信了你</span>
                                                 </p>
                                                 <p>                                                  
-                                                    <a href="#"><%# Eval("msgContent") %></a>
+                                                   <%-- <a href="#"><%# Eval("msgContent") %></a>--%>
                                                 </p>
                                                 <p style="margin-top: 6px;">
-                                                    <span><%# Eval("pubTime") %></span>
-                                                    <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("senderId") %>" style="float: right">回复</a>
+                                                    <%--<span><%# Eval("pubTime") %></span>--%>
+                                                    <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("id") %>" style="float: right">回复</a>
                                                 </p>
                                             </div>
                                         </div>

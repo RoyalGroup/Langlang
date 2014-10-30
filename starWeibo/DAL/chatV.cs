@@ -17,30 +17,14 @@ namespace starweibo.DAL
         /// <summary>
         /// 是否存在该记录
         /// </summary>
-        public bool Exists(int senderId, string msgContent, DateTime pubTime, string msgState, int receiverId, string userName, string userHeadimage, string recuserName, string recuserHeadimage)
+        public bool Exists(int shortMsgId)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) from chatV");
-            strSql.Append(" where senderId=@senderId and msgContent=@msgContent and pubTime=@pubTime and msgState=@msgState and receiverId=@receiverId and userName=@userName and userHeadimage=@userHeadimage and recuserName=@recuserName and recuserHeadimage=@recuserHeadimage ");
+            strSql.Append(" where shortMsgId=@shortMsgId ");
             SqlParameter[] parameters = {
-					new SqlParameter("@senderId", SqlDbType.Int,4),
-					new SqlParameter("@msgContent", SqlDbType.NVarChar,200),
-					new SqlParameter("@pubTime", SqlDbType.DateTime),
-					new SqlParameter("@msgState", SqlDbType.NVarChar,50),
-					new SqlParameter("@receiverId", SqlDbType.Int,4),
-					new SqlParameter("@userName", SqlDbType.NVarChar,20),
-					new SqlParameter("@userHeadimage", SqlDbType.NVarChar,150),
-					new SqlParameter("@recuserName", SqlDbType.NVarChar,20),
-					new SqlParameter("@recuserHeadimage", SqlDbType.NVarChar,150)			};
-            parameters[0].Value = senderId;
-            parameters[1].Value = msgContent;
-            parameters[2].Value = pubTime;
-            parameters[3].Value = msgState;
-            parameters[4].Value = receiverId;
-            parameters[5].Value = userName;
-            parameters[6].Value = userHeadimage;
-            parameters[7].Value = recuserName;
-            parameters[8].Value = recuserHeadimage;
+					new SqlParameter("@shortMsgId", SqlDbType.Int,4)			};
+            parameters[0].Value = shortMsgId;
 
             return DbHelperSQL.Exists(strSql.ToString(), parameters);
         }
@@ -53,9 +37,9 @@ namespace starweibo.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into chatV(");
-            strSql.Append("senderId,msgContent,pubTime,msgState,receiverId,userName,userHeadimage,recuserName,recuserHeadimage)");
+            strSql.Append("senderId,msgContent,pubTime,msgState,receiverId,userName,userHeadimage,recuserName,recuserHeadimage,shortMsgId)");
             strSql.Append(" values (");
-            strSql.Append("@senderId,@msgContent,@pubTime,@msgState,@receiverId,@userName,@userHeadimage,@recuserName,@recuserHeadimage)");
+            strSql.Append("@senderId,@msgContent,@pubTime,@msgState,@receiverId,@userName,@userHeadimage,@recuserName,@recuserHeadimage,@shortMsgId)");
             SqlParameter[] parameters = {
 					new SqlParameter("@senderId", SqlDbType.Int,4),
 					new SqlParameter("@msgContent", SqlDbType.NVarChar,200),
@@ -65,7 +49,8 @@ namespace starweibo.DAL
 					new SqlParameter("@userName", SqlDbType.NVarChar,20),
 					new SqlParameter("@userHeadimage", SqlDbType.NVarChar,150),
 					new SqlParameter("@recuserName", SqlDbType.NVarChar,20),
-					new SqlParameter("@recuserHeadimage", SqlDbType.NVarChar,150)};
+					new SqlParameter("@recuserHeadimage", SqlDbType.NVarChar,150),
+					new SqlParameter("@shortMsgId", SqlDbType.Int,4)};
             parameters[0].Value = model.senderId;
             parameters[1].Value = model.msgContent;
             parameters[2].Value = model.pubTime;
@@ -75,6 +60,7 @@ namespace starweibo.DAL
             parameters[6].Value = model.userHeadimage;
             parameters[7].Value = model.recuserName;
             parameters[8].Value = model.recuserHeadimage;
+            parameters[9].Value = model.shortMsgId;
 
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
@@ -101,8 +87,9 @@ namespace starweibo.DAL
             strSql.Append("userName=@userName,");
             strSql.Append("userHeadimage=@userHeadimage,");
             strSql.Append("recuserName=@recuserName,");
-            strSql.Append("recuserHeadimage=@recuserHeadimage");
-            strSql.Append(" where senderId=@senderId and msgContent=@msgContent and pubTime=@pubTime and msgState=@msgState and receiverId=@receiverId and userName=@userName and userHeadimage=@userHeadimage and recuserName=@recuserName and recuserHeadimage=@recuserHeadimage ");
+            strSql.Append("recuserHeadimage=@recuserHeadimage,");
+            strSql.Append("shortMsgId=@shortMsgId");
+            strSql.Append(" where shortMsgId=@shortMsgId ");
             SqlParameter[] parameters = {
 					new SqlParameter("@senderId", SqlDbType.Int,4),
 					new SqlParameter("@msgContent", SqlDbType.NVarChar,200),
@@ -112,7 +99,8 @@ namespace starweibo.DAL
 					new SqlParameter("@userName", SqlDbType.NVarChar,20),
 					new SqlParameter("@userHeadimage", SqlDbType.NVarChar,150),
 					new SqlParameter("@recuserName", SqlDbType.NVarChar,20),
-					new SqlParameter("@recuserHeadimage", SqlDbType.NVarChar,150)};
+					new SqlParameter("@recuserHeadimage", SqlDbType.NVarChar,150),
+					new SqlParameter("@shortMsgId", SqlDbType.Int,4)};
             parameters[0].Value = model.senderId;
             parameters[1].Value = model.msgContent;
             parameters[2].Value = model.pubTime;
@@ -122,6 +110,7 @@ namespace starweibo.DAL
             parameters[6].Value = model.userHeadimage;
             parameters[7].Value = model.recuserName;
             parameters[8].Value = model.recuserHeadimage;
+            parameters[9].Value = model.shortMsgId;
 
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
@@ -137,33 +126,35 @@ namespace starweibo.DAL
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        public bool Delete(int senderId, string msgContent, DateTime pubTime, string msgState, int receiverId, string userName, string userHeadimage, string recuserName, string recuserHeadimage)
+        public bool Delete(int shortMsgId)
         {
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from chatV ");
-            strSql.Append(" where senderId=@senderId and msgContent=@msgContent and pubTime=@pubTime and msgState=@msgState and receiverId=@receiverId and userName=@userName and userHeadimage=@userHeadimage and recuserName=@recuserName and recuserHeadimage=@recuserHeadimage ");
+            strSql.Append(" where shortMsgId=@shortMsgId ");
             SqlParameter[] parameters = {
-					new SqlParameter("@senderId", SqlDbType.Int,4),
-					new SqlParameter("@msgContent", SqlDbType.NVarChar,200),
-					new SqlParameter("@pubTime", SqlDbType.DateTime),
-					new SqlParameter("@msgState", SqlDbType.NVarChar,50),
-					new SqlParameter("@receiverId", SqlDbType.Int,4),
-					new SqlParameter("@userName", SqlDbType.NVarChar,20),
-					new SqlParameter("@userHeadimage", SqlDbType.NVarChar,150),
-					new SqlParameter("@recuserName", SqlDbType.NVarChar,20),
-					new SqlParameter("@recuserHeadimage", SqlDbType.NVarChar,150)			};
-            parameters[0].Value = senderId;
-            parameters[1].Value = msgContent;
-            parameters[2].Value = pubTime;
-            parameters[3].Value = msgState;
-            parameters[4].Value = receiverId;
-            parameters[5].Value = userName;
-            parameters[6].Value = userHeadimage;
-            parameters[7].Value = recuserName;
-            parameters[8].Value = recuserHeadimage;
+					new SqlParameter("@shortMsgId", SqlDbType.Int,4)			};
+            parameters[0].Value = shortMsgId;
 
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        /// <summary>
+        /// 批量删除数据
+        /// </summary>
+        public bool DeleteList(string shortMsgIdlist)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from chatV ");
+            strSql.Append(" where shortMsgId in (" + shortMsgIdlist + ")  ");
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString());
             if (rows > 0)
             {
                 return true;
@@ -178,31 +169,15 @@ namespace starweibo.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public starweibo.Model.chatV GetModel(int senderId, string msgContent, DateTime pubTime, string msgState, int receiverId, string userName, string userHeadimage, string recuserName, string recuserHeadimage)
+        public starweibo.Model.chatV GetModel(int shortMsgId)
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select  top 1 senderId,msgContent,pubTime,msgState,receiverId,userName,userHeadimage,recuserName,recuserHeadimage from chatV ");
-            strSql.Append(" where senderId=@senderId and msgContent=@msgContent and pubTime=@pubTime and msgState=@msgState and receiverId=@receiverId and userName=@userName and userHeadimage=@userHeadimage and recuserName=@recuserName and recuserHeadimage=@recuserHeadimage ");
+            strSql.Append("select  top 1 senderId,msgContent,pubTime,msgState,receiverId,userName,userHeadimage,recuserName,recuserHeadimage,shortMsgId from chatV ");
+            strSql.Append(" where shortMsgId=@shortMsgId ");
             SqlParameter[] parameters = {
-					new SqlParameter("@senderId", SqlDbType.Int,4),
-					new SqlParameter("@msgContent", SqlDbType.NVarChar,200),
-					new SqlParameter("@pubTime", SqlDbType.DateTime),
-					new SqlParameter("@msgState", SqlDbType.NVarChar,50),
-					new SqlParameter("@receiverId", SqlDbType.Int,4),
-					new SqlParameter("@userName", SqlDbType.NVarChar,20),
-					new SqlParameter("@userHeadimage", SqlDbType.NVarChar,150),
-					new SqlParameter("@recuserName", SqlDbType.NVarChar,20),
-					new SqlParameter("@recuserHeadimage", SqlDbType.NVarChar,150)			};
-            parameters[0].Value = senderId;
-            parameters[1].Value = msgContent;
-            parameters[2].Value = pubTime;
-            parameters[3].Value = msgState;
-            parameters[4].Value = receiverId;
-            parameters[5].Value = userName;
-            parameters[6].Value = userHeadimage;
-            parameters[7].Value = recuserName;
-            parameters[8].Value = recuserHeadimage;
+					new SqlParameter("@shortMsgId", SqlDbType.Int,4)			};
+            parameters[0].Value = shortMsgId;
 
             starweibo.Model.chatV model = new starweibo.Model.chatV();
             DataSet ds = DbHelperSQL.Query(strSql.ToString(), parameters);
@@ -261,6 +236,10 @@ namespace starweibo.DAL
                 {
                     model.recuserHeadimage = row["recuserHeadimage"].ToString();
                 }
+                if (row["shortMsgId"] != null && row["shortMsgId"].ToString() != "")
+                {
+                    model.shortMsgId = int.Parse(row["shortMsgId"].ToString());
+                }
             }
             return model;
         }
@@ -271,7 +250,7 @@ namespace starweibo.DAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select senderId,msgContent,pubTime,msgState,receiverId,userName,userHeadimage,recuserName,recuserHeadimage ");
+            strSql.Append("select senderId,msgContent,pubTime,msgState,receiverId,userName,userHeadimage,recuserName,recuserHeadimage,shortMsgId ");
             strSql.Append(" FROM chatV ");
             if (strWhere.Trim() != "")
             {
@@ -291,7 +270,7 @@ namespace starweibo.DAL
             {
                 strSql.Append(" top " + Top.ToString());
             }
-            strSql.Append(" senderId,msgContent,pubTime,msgState,receiverId,userName,userHeadimage,recuserName,recuserHeadimage ");
+            strSql.Append(" senderId,msgContent,pubTime,msgState,receiverId,userName,userHeadimage,recuserName,recuserHeadimage,shortMsgId ");
             strSql.Append(" FROM chatV ");
             if (strWhere.Trim() != "")
             {
@@ -336,7 +315,7 @@ namespace starweibo.DAL
             }
             else
             {
-                strSql.Append("order by T.recuserHeadimage desc");
+                strSql.Append("order by T.shortMsgId desc");
             }
             strSql.Append(")AS Row, T.*  from chatV T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
@@ -364,7 +343,7 @@ namespace starweibo.DAL
                     new SqlParameter("@strWhere", SqlDbType.VarChar,1000),
                     };
             parameters[0].Value = "chatV";
-            parameters[1].Value = "recuserHeadimage";
+            parameters[1].Value = "shortMsgId";
             parameters[2].Value = PageSize;
             parameters[3].Value = PageIndex;
             parameters[4].Value = 0;

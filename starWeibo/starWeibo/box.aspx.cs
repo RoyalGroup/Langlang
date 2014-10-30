@@ -11,7 +11,7 @@ namespace starWeibo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.Redirect("weibo.aspx");
         }
     }
 }

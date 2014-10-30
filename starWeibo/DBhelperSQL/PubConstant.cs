@@ -12,7 +12,7 @@ namespace starweibo.DBUtility
         {
             get
             {
-                return ConfigurationManager.ConnectionStrings["starconstr"].ConnectionString; ;
+                return ConfigurationManager.ConnectionStrings["starconstr"].ConnectionString; 
             }
         }
 

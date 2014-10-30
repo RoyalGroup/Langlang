@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,7 +20,10 @@ namespace starWeibo.comment
             else
             {
                 int userid = (int)Session["userid"];
-                this.chatDL.DataSource = chatlist.GetListByPage("senderid = " + userid + "", "pubTime", 0, 10);
+                starweibo.BLL.userInfo blluserinfo = new starweibo.BLL.userInfo();
+                DataSet ds = blluserinfo.GetList("id in (select receiverId from chatV group by senderId,receiverId having senderId=" + userid + ") ");
+                //this.chatDL.DataSource = chatlist.GetListByPage("receiverid = "+userid+"","pubTime",0,10);
+                this.chatDL.DataSource = ds;
                 this.chatDL.DataBind();
             }
         }

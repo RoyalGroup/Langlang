@@ -93,7 +93,7 @@
             data: "{msgContent:'" + msgContent + "'}",
             dataType: 'json',
             success: function (result) {     //回调函数，result，返回值
-                alert("发送成功！");
+                //alert("发送成功！");
                 //if (result.d == "true") {
                 //    alert("发送成功！");
                 //}

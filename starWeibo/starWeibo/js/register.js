@@ -85,8 +85,8 @@
         var email = $(".youxiang").val();
         var d = new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");
         if (!d.test(email)) {
-            $(".tanchu5").fadeIn();
-            $(".tanchu5").fadeOut();
+            $(".tanchu5").fadeIn(1000);
+            $(".tanchu5").fadeOut(1000);
         } else {
             $.ajax({
                 type: "POST",   //访问WebService使用Post方式请求
@@ -96,8 +96,8 @@
                 dataType: 'json',
                 success: function (result) {
                     $(".yanzhengma").attr("yanzhengnum", result.d);
-                    $(".tanchu").fadeIn();
-                    $(".tanchu").fadeOut();
+                    $(".tanchu").fadeIn(1000);
+                    $(".tanchu").fadeOut(1000);
                 }
             });
         }
@@ -124,17 +124,29 @@
                     //回调函数，result，返回值
                     //alert(result.d);
                     if (result.d != null) {
-                        $(".tanchu1").fadeIn();
-                        $(".tanchu1").fadeOut();
+                        $(".tanchu1").fadeIn(1000);
+                        $(".tanchu1").fadeOut(1000);
                         window.location.href = "login.aspx";
                     }
                 }
             });
         }
         else {
-            $(".tanchu2").fadeIn();
-            $(".tanchu2").fadeOut();
+            $(".tanchu2").fadeIn(1000);
+            $(".tanchu2").fadeOut(1000);
         }
+
+        //权限插入
+        $.ajax({
+            type: "POST",   //访问WebService使用Post方式请求
+            contentType: "application/json", //WebService 会返回Json类型
+            url: "webservice/wsregister.asmx/charuP", //调用WebService的地址和方法名称组合 ---- WsURL/方法名
+            data: "{userName:'" + nicheng + "'}",         //这里是要传递的参数，格式为 data: "{paraName:'paraValue'}",下面将会看到       
+            dataType: 'json',
+            success: function (result) {
+                
+            }
+        });
     });
  
 });
@@ -142,21 +154,21 @@ function checkmail(control)
 {
     var d=new RegExp("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");//邮箱的正则表达式;
     if(!d.test(control))
-        $(".tanchu3").fadeIn();
-        $(".tanchu3").fadeOut();
+        $(".tanchu3").fadeIn(1000);
+        $(".tanchu3").fadeOut(1000);
 };
 
 function checknicheng(control) {
     var d = new RegExp("^[\u4E00-\u9FA5A-Za-z0-9_]{2,16}$");//汉字可以为1-8位，字母或数字可以为2-16位;
     if (!d.test(control))
-        $(".tanchu4").fadeIn();
-        $(".tanchu4").fadeOut();
+        $(".tanchu4").fadeIn(1000);
+        $(".tanchu4").fadeOut(1000);
 };
 
 
 function checkmima() {
     var f = new RegExp("^[0-9A-z_]{1,20}$");//密码为1到20位的数字或字母;
     if (!f.test(control))
-        $(".tanchu6").fadeIn();
-        $(".tanchu6").fadeOut();
+        $(".tanchu6").fadeIn(1000);
+        $(".tanchu6").fadeOut(1000);
 };

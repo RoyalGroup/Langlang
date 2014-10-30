@@ -8,8 +8,8 @@
             $(".mod-sub-list2").addClass("list2-active");
         }
         else {
-            $(".tanchu1").fadeIn();
-            $(".tanchu1").fadeOut();
+            $(".tanchu1").fadeIn(1000);
+            $(".tanchu1").fadeOut(1000);
         }
     });
    
@@ -27,8 +27,8 @@
                 //回调函数，result，返回值
                 //alert(result.d);
                 if (result.d != b) {
-                    $(".tanchu1").fadeIn();
-                    $(".tanchu1").fadeOut();
+                    $(".tanchu1").fadeIn(1000);
+                    $(".tanchu1").fadeOut(1000);
                 }
                 if(result.d == b)
                 {
@@ -55,16 +55,16 @@
                     //alert(result);
                     //回调函数，result，返回值
                     if (result.d == true){
-                        $(".tanchu").fadeIn();
-                        $(".tanchu").fadeOut();
+                        $(".tanchu").fadeIn(1000);
+                        $(".tanchu").fadeOut(1000);
                         window.location.href = "login.aspx";             
                     }
                 }
             });
         }
         else {
-            $(".tanchu2").fadeIn();
-            $(".tanchu2").fadeOut();
+            $(".tanchu2").fadeIn(1000);
+            $(".tanchu2").fadeOut(1000);
         }    
     });
 

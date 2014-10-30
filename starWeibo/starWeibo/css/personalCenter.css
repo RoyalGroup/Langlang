@@ -86,8 +86,8 @@ ul,li{ list-style: none; list-style-position: outside; }
 .W_tips .icon { float: left; width: 16px; margin-right: 3px; _margin-right: 0; vertical-align: -3px; }
 .tips_del{ border: 1px solid #FFD9BB; background: #FFF7F5; line-height: 12px; color: #666; }
 .icon_delS,.icon_succS{ width: 16px; height: 16px; background: url("images/personalCenterimages/ico_warn.png"); margin: 0 3px 0 0; overflow: hidden; display: inline-block;}
-.icon_delS{ background-position: 0 -50px; }
 .icon_succS{ background-position: 0 0; }
+.icon_delS{ background-position: 0 -50px; }
 .pf_item .rsp { margin-right: 10px; }
 .W_radio { vertical-align: -2px; _vertical-align: -3px; margin-right: 3px; }
 textarea.W_input { width: 195px; height: 44px; line-height: 22px; overflow-y: auto; overflow-x: hidden; padding: 5px 0 0 2px; border: 1px solid #ccc; border-radius: 2px; vertical-align: middle; color: #808080; -webkit-box-shadow: 0px 1px 1px 0px #eaeaea inset; -moz-box-shadow: 0px 1px 1px 0px #eaeaea inset; box-shadow: 0px 1px 1px 0px #eaeaea inset; resize: none;}

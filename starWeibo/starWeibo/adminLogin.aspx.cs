@@ -16,19 +16,23 @@ namespace starWeibo
         {
 
         }
-
+        public int i=-1;
+        public int cadmincount;
+        public string cusername;
+        public string cuserpwd;
+        public List<starweibo.Model.adminInfo> cadminInfo;
         protected void btnadminLogin_Click(object sender, EventArgs e)
         {
-            string cusername = (this.adminName.Value == "用户名" ? null : this.adminName.Value);
-            string cuserpwd = (this.adminPwd.Value == "请输入密码" ? null : this.adminPwd.Value);
+            cusername = (this.adminName.Value == "用户名" ? null : this.adminName.Value);
+            cuserpwd = (this.adminPwd.Value == "请输入密码" ? null : this.adminPwd.Value);
             if (cusername != null && cuserpwd != null)
             {
                 starweibo.BLL.adminInfo curuser = new adminInfo();
-                List<starweibo.Model.adminInfo> cadminInfo = curuser.GetModelList("adminName='" + cusername + "'");
-                int cadmincount = curuser.GetRecordCount("adminName='" + cusername + "'");
-                if (cadmincount ==0)
+                cadminInfo = curuser.GetModelList("adminName='" + cusername + "'");
+                cadmincount = curuser.GetRecordCount("adminName='" + cusername + "'");
+                if (cadmincount == 0)
                 {
-                    Response.Write ("<script>alert('您输入的用户名不存在请重新输入！')</script>");
+                    i = 0;
                 }
                 else
                 {
@@ -40,7 +44,7 @@ namespace starWeibo
                     }
                     else
                     {
-                        Response.Write ("<script>alert('您输入的用户名或密码不正确请重新输入！')</script>");
+                        i = 1;
                     }
                 }
             }

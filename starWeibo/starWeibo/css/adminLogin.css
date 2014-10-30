@@ -12,6 +12,12 @@ a{text-decoration: none;}
 .bd{width: 325px;height: 40px;margin-top: 20px;margin-left: 15px;}
 .txtUserid{outline: none;width: 235px;height: 30px;margin-top:5px;margin-left: 5px;margin-bottom: 5px;padding: 1px;line-height: 28px;float: left;color:#808080;}
 .txtUserpwd{outline: none;width: 235px;height: 30px;margin-top:5px;margin-left: 6px;margin-bottom: 5px;padding: 1px;line-height: 28px;float: left;color:#808080;}
-.btn{width: 325px;height: 35px;margin: 30px auto;}
+.btn{width: 325px;height: 35px;margin: 20px auto;}
 .btnLogin{width: 110px;height: 35px;text-align: center;background-color: #5A98DE;border: none;font-size: 18px;color: #fff;font-weight: bold;cursor: pointer;float: left;margin-left: 30px;line-height:35px;}
 .btnRegist{width: 110px;height: 35px;text-align: center;background-color: #5A98DE;border: none;font-size: 18px;color: #fff;font-weight: bold;cursor: pointer;float: right;margin-right: 20px;line-height:35px;}
+
+
+.YH{width: 280px;height: 35px;margin: 10px auto;padding-left:45px;}
+.YH span{color:red;}
+.MM{width: 280px;height: 35px;margin: 10px auto;padding-left:45px;}
+.MM span{color:red;}

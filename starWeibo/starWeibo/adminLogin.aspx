@@ -21,8 +21,24 @@
 			    </div>
 			    <div class="bd">
 				    <span>密&nbsp;&nbsp;&nbsp;码：</span>
-                    <input runat="server" id="adminPwd" type="text" value="请输入密码" onfocus="if(this.value=='请输入密码') {this.value=''}" onblur="if(this.value=='') {this.value='请输入密码'}" class="txtUserpwd"/>
+                    <input runat="server" id="adminPwd" type="password" value="请输入密码" onfocus="if(this.value=='请输入密码') {this.value=''}" onblur="if(this.value=='') {this.value='请输入密码'}" class="txtUserpwd"/>
 			    </div>
+                <%
+                    if (i==0)
+                    {
+                       %>
+                        <div class="YH"><span>*您输入的用户名不存在请重新输入！</span></div>
+                <%
+                    }
+                    else if(i==1)
+                    {
+                       %>
+                    <div class="MM"><span>*您输入的用户名或密码不正确请重新输入！</span></div>
+                <% 
+                    }
+                     %>
+                <%--<div class="YH"><span>*您输入的用户名不存在请重新输入！</span></div>--%>
+                <%--<div class="MM"><span>*您输入的用户名或密码不正确请重新输入！</span></div>--%>
 			    <div class="btn">
                     <asp:Button ID="btnadminLogin" runat="server" Text="登录" class="btnLogin" OnClick="btnadminLogin_Click"/>
                     <div class="btnRegist">注册</div>

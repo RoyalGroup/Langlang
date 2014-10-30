@@ -193,7 +193,7 @@ em{font-style: normal;font-weight: normal;}
 .iconchoose{width: 16px;height: 16px;background-position: -75px -75px;}
 .wico12{display: inline-block;width: 12px;height: 12px;background-image: url("images/icon.png");background-repeat: no-repeat;}
 .wbfeeddetail{border-bottom-width: 1px;border-bottom-style: solid;padding: 20px 0 11px;width:560px; }
-.wbface{float: left;width: 50px;position: relative;}
+.wbface{float: left;min-width: 50px;width:auto; min-height:50px; height:auto; position: relative;display:inline-block; }
 .wbface .wfaceradius{height: 50px;display: block;overflow: hidden;}
 .wfaceradius{border-radius: 2px;}
 .wfaceradius img{width: 50px;height: 50px;}
@@ -455,6 +455,8 @@ dd {display: block;}
 
 
 /*个人名片*/
+.replyerFace {position:relative;display:inline-block; }
+.replyerName {position:relative;display:inline-block;}
 .wbinfo {position:relative; display:inline-block;}
 .mpWrapper{width: 300px; height: 180px;position: absolute;background-color:#fff; top: 0px; left: 60px;z-index:999; border: 1px solid #ccc;}
 .mpWrapperUp{width: 300px; height: 80px; background-image: url("images/mpBg.jpg"); padding: 20px 0 0 0; background-size:100% 100%;}

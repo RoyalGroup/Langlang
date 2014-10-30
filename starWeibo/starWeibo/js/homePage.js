@@ -26,13 +26,13 @@
                                 html += '<div class="wbfeedtype swfun line2">';
                                 html += '<div class="wbfeeddetail line2 clearfix" blogid="' + blogid + '">';
                                 html += '<div class="wbface">';
-                                html += '<a  class="wfaceradius userMp">';
+                                html += '<a href="personalCenter.aspx?Userid=' + userid + '" class="wfaceradius userMp">';
                                 html += '<img src="' + $("#info").attr("headimg") + '" />';
                                 html += '</a>';
                                 html += '</div>';
                                 html += '<div class="wbdetail">';
                                 html += '<div class="wbinfo">';
-                                html += '<a class="wbname userMp func1">' + $("#info").attr("name") + '</a>';
+                                html += '<a href="personalCenter.aspx?Userid=' + userid + '" class="wbname userMp func1">' + $("#info").attr("name") + '</a>';
                                 html += '<a >';
                                 html += '<i class="wico16 approveco"></i>';
                                 html += '</a>';
@@ -264,16 +264,20 @@
                 success: function (res) {
                     $(res.d).each(function () {       
                         replyList+='<dl class="commentlist line1">';
-                        replyList+='<dt>';
+                        replyList += '<dt>';
+                        replyList += '<div class="replyerFace">';
                         replyList+='<a href="personalCenter.aspx?Userid='+this.userId+'" class="userMp">';
                         replyList+='<img src="'+this.userHeadimage+'">';
-                        replyList+='</a>';
+                        replyList += '</a>';
+                        replyList += '</div>';
                         replyList+='</dt>';
                         replyList += '<dd>';
                         replyList += '<span class="replyContent">';
+                        replyList += '<div class="replyerName">';
                         replyList+='<a class="userName userMp">';
                         replyList+=this.userName;
-                        replyList+='</a>';
+                        replyList += '</a>';
+                        replyList += '</div>';
                         replyList += '：'
                         replyList += this.msgContent;
                         replyList += '&nbsp;&nbsp;&nbsp;&nbsp;(' + eval('new ' + (this.pubTime.replace(/\//g, ''))).Format("yyyy-MM-dd hh:mm:ss") + ')';
@@ -657,72 +661,69 @@
         }
     });
     //显示用户名片
-    $(document).on("mouseover", ".userMp", function () {
-        var that = $(this);
-        var userid = that.attr("href").split("personalCenter.aspx?Userid=")[1];
-        $.ajax({
-            url: "webservice/wshomepage.asmx/getUserInfo",
-            type: "POST",
-            contentType: "application/json",
-            data: "{userid:'" + userid + "'}",
-            dataType: "json",
-            success: function (res) {
-                var html = '';
-                html += '<div class="mpWrapper">';
-                html += '<div class="mpWrapperUp">';
-                html += '<a href="" class="mpHeadimage">';
-                html += '<img src="'+res.d["userHeadimage"]+'">';
-                html += '</a>';
-                html += '<a href="personalCenter.aspx?Userid=' + res.d["id"] + '" class="mpUsername">';
-                html += res.d["userName"];
-                html += '</a>';
-                html += '</div>';
-                html += '<div class="mpWrapperDown">';
-                html += '<div class="numCount">';
-                html += '<span class="c_focus">';
-                html += '关注';
-                html += '<a href="">' + res.d["userPwd"] + '</a>';
-                html += '</span>';
-                html += '<span class="c_fans">';
-                html += '粉丝';
-                html += '<a href="">' + res.d["userMail"] + '</a>';
-                html += '</span>';
-                html += '<span class="c_weibo">';
-                html += '微博';
-                html += '<a href="">' + res.d["userBirthday"] + '</a>';
-                html += '</span>';
-                html += '</div>';
-                html += '<div class="btnbox">';
-                html += '<div class="btnStyle focusBtn">';
-                if (res.d["userBirthday"] >= "1") {
-                    html += '已关注';
-                } else {
-                    html += '未关注';
-                }
-                html+='</div>';
-                html += '<div class="btnStyle sixinBtn">私信</div>';
-                html += '</div>';
-                html += '</div>';
-                html += '</div>';
-                if (that.parent().find(".mpWrapper").length == 0) {
-                    that.parent().append(html);
-                    var thiswidth = that.css("width");
-                    that.parent().find(".mpWrapper").css("left", thiswidth);
-                } else {
-                    that.parent().find(".mpWrapper").show();
-                }
-            }
-        });
-    });
-    $(document).on("mouseout", ".wbinfo,.wbface", function () {
-        var that = $(this);
-        if (that.find(".mpWrapper").length > 0) {
-           // that.find(".mpWrapper").animate({ "top": "1px" }, 1000, function () {
-                that.find(".mpWrapper").hide();
-           // })
-            
-        }
-    });
+    //$(document).on("mouseover", ".userMp", function () {
+    //    var that = $(this);
+    //    var userid = that.attr("href").split("personalCenter.aspx?Userid=")[1];
+    //    $.ajax({
+    //        url: "webservice/wshomepage.asmx/getUserInfo",
+    //        type: "POST",
+    //        contentType: "application/json",
+    //        data: "{userid:'" + userid + "'}",
+    //        dataType: "json",
+    //        success: function (res) {
+    //            var html = '';
+    //            html += '<div class="mpWrapper">';
+    //            html += '<div class="mpWrapperUp">';
+    //            html += '<a href="" class="mpHeadimage">';
+    //            html += '<img src="'+res.d["userHeadimage"]+'">';
+    //            html += '</a>';
+    //            html += '<a href="personalCenter.aspx?Userid=' + res.d["id"] + '" class="mpUsername">';
+    //            html += res.d["userName"];
+    //            html += '</a>';
+    //            html += '</div>';
+    //            html += '<div class="mpWrapperDown">';
+    //            html += '<div class="numCount">';
+    //            html += '<span class="c_focus">';
+    //            html += '关注';
+    //            html += '<a href="">' + res.d["userPwd"] + '</a>';
+    //            html += '</span>';
+    //            html += '<span class="c_fans">';
+    //            html += '粉丝';
+    //            html += '<a href="">' + res.d["userMail"] + '</a>';
+    //            html += '</span>';
+    //            html += '<span class="c_weibo">';
+    //            html += '微博';
+    //            html += '<a href="">' + res.d["userBirthday"] + '</a>';
+    //            html += '</span>';
+    //            html += '</div>';
+    //            html += '<div class="btnbox">';
+    //            html += '<div class="btnStyle focusBtn">';
+    //            if (res.d["userBirthday"] >= "1") {
+    //                html += '已关注';
+    //            } else {
+    //                html += '未关注';
+    //            }
+    //            html+='</div>';
+    //            html += '<div class="btnStyle sixinBtn">私信</div>';
+    //            html += '</div>';
+    //            html += '</div>';
+    //            html += '</div>';
+    //            if (that.parent().find(".mpWrapper").length == 0) {
+    //                that.parent().append(html);
+    //                var thiswidth = that.css("width");
+    //                that.parent().find(".mpWrapper").css("left", thiswidth);
+    //            } else {
+    //                that.parent().find(".mpWrapper").show();
+    //            }
+    //        }
+    //    });
+    //});
+    //$(document).on("mouseout", ".wbface,.wbinfo", function () {
+    //    var that = $(this);
+    //    if (that.find(".mpWrapper").length > 0) {
+    //        that.find(".mpWrapper").hide();
+    //    }
+    //});
     //页面加载时检测用户收藏或赞的微博
     loadingZanSc();
 

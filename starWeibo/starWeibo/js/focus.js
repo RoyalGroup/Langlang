@@ -77,6 +77,7 @@
                 dataType: 'json',
                 success: function (result) {     //回调函数，result，返回值
                     if (result.d == true) {
+                        location.reload();
                         //alert("修改成功！");
                     }
                 }

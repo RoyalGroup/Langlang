@@ -122,3 +122,4 @@ textarea.W_input { width: 195px; height: 44px; line-height: 22px; overflow-y: au
 .operator{ width: 280px; height: 36px; padding: 20px; }
 #ensure,#cancel{ width: 112px; height: 34px; padding: 1px 6px; border-radius:7px; font-size: 16px; font-weight:bold; text-decoration: none; line-height: 34px; text-align: center; background-color:#99DD20; color:#fff; float: left; cursor: pointer;}
 #cancel{ float:right;}
+#ensure:hover,#cancel:hover{ background-color:#CAE533;}

@@ -203,7 +203,7 @@
 							<div node-type="base_view" >
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">登录名</div>
-									<div class="con" node-type="username_view"><% =curUser.userName%><a href="javascript:void(0);" id="updatePwd">&nbsp;&nbsp;修改密码</a></div>
+									<div class="con" node-type="username_view"><% =curUser.userName%><a href="javascript:void(0);" class="updatePwd">&nbsp;&nbsp;修改密码</a></div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">昵&nbsp;&nbsp;称</div>
@@ -243,7 +243,7 @@
 							<div node-type="base" style="display:none">
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">登录名</div>
-									<div class="con"><% =curUser.userName%><a href="javascript:void(0);">&nbsp;&nbsp;修改密码</a></div>
+									<div class="con"><% =curUser.userName%><a href="javascript:void(0);" class="updatePwd">&nbsp;&nbsp;修改密码</a></div>
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2"><span class="W_error">*</span>昵&nbsp;&nbsp;称</div>
@@ -362,7 +362,7 @@
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2">Tel</div>
-									<div class="con"><input name="tel" node-type="tel" action-type="text_copy" placeHolder="请输入手机号码" action-data="text=请输入手机号码&amp;must=false" class="W_input " value="<% =curUser.userTell %>"></div>
+									<div class="con"><input name="tel" node-type="tel" action-type="text_copy" placeHolder="请输入手机号码" action-data="text=请输入手机号码&amp;must=false" class="W_input " value="<% =curUser.userTell.Trim() %>"></div>
 									<div class="status" node-type="tel_tip"></div>
 								</div>
 							</div>

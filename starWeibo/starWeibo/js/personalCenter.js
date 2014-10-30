@@ -83,7 +83,7 @@ $(function () {
     });
 
     /*******************修改密码******************/
-    $("#updatePwd").click(function () {
+    $(document).on("click", ".updatePwd", function () {
         $(".menban2").show();
     });
     //用户名错误提醒
@@ -113,7 +113,7 @@ $(function () {
         });
     });
     //密码错误提醒
-    $("#regPwd").focus(function () {
+    $("#newPwd").focus(function () {
         $(".remindInfo").html("密码由20位以内的数字、字母、下划线组成。");
     });
     $("#newPwd").blur(function () {
@@ -361,10 +361,11 @@ var oldPwdCheck = false, newPwdCheck = false, inputAgainCheck = false;
 //同步用户基本信息
 function syncUserBaseInfo() {
     $(".name").text(userName);
-    $(".con[node-type='username_view']").text(userName);
+    $(".con[node-type='username_view']").html(userName+'<a href="javascript:void(0);" class="updatePwd">&nbsp;&nbsp;修改密码</a>');
     $(".con[node-type='nickname_view']").text(userName);
     $(".con[node-type='city_view']").text(cityinfo);
     $(".con[node-type='sex_view']").text(userSex);
+    $("#userSex").text(userSex);
     $(".con[node-type='love_view']").text(userMarry);
     $(".con[node-type='birth_view']").text(userBirthday);
     $(".con[node-type='desc_view']").text(userDes);
@@ -416,8 +417,8 @@ function showQSuserinfo() {
     if (loginUserid != qsuserid) {
         $(".change_btn_div").remove();
         $(".editBtn").remove();
-        $("#updatePwd").remove();
-        $(".btn_bed").remove();
+        $(".updatePwd").remove();
+        $(".btn_bed").css("visibility", "hidden");
         $("[action-type='quickedit']").parent().html("<a>该用户尚未填写此信息！</>");
         if ($(".pf_intro a").text() == "一句话介绍一下自己吧，让别人更了解你") {
             $(".pf_intro").html("<a style='color:#ccc'>这个人很懒，还没有填写个人简介</>");

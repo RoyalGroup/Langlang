@@ -5,12 +5,12 @@
     <script src="js/playstar.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="Tanchu">
-            <span>关注成功</span>
-        </div>
-        <div class="Tanchu1">
-            <span>您已关注</span>
-        </div>
+    <div class="Tanchu">
+        <span>关注成功</span>
+    </div>
+    <div class="Tanchu1">
+        <span>您已关注</span>
+    </div>
     <div class="main_inner">
         <div class="W_main_l">
             <div class="left_commen">
@@ -51,7 +51,7 @@
                     </a>
                 </div>
                 <div class="lev2 lev2-curr">
-                    <a href="#">
+                    <a href="message.aspx">
                         <i class="ico20 ico_letter"></i>
                         私信
                     </a>
@@ -91,7 +91,7 @@
 							        <div class="FCardinfo">
                                         <span class="FCardName"><%# Eval("userName") %></span>
                                         <span class="FCardRelation"><%# Eval("userMarry") %>  <%# Eval("userSex") %></span>
-                                        <span class="SetNote" friendId="<%# Eval("id") %>">关注</span>
+                                        <span class="SetNote" friendId="<%# Eval("id") %>" guanzhu="1">关注</span>
 							        </div>
 						        </div>
 						        <div class="FocusCardX">

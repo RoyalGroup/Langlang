@@ -106,5 +106,5 @@
 
 
 /*弹窗*/
-.Tanchu{width:90px;height:45px;position:fixed;left:620px;top:350px;text-align:center;line-height:45px;font-weight:bold;border:3px solid #6cbae4;border-radius:5px;color:#aaa;display:none;}
-.Tanchu1{width:90px;height:45px;position:fixed;left:620px;top:350px;text-align:center;line-height:45px;font-weight:bold;border:3px solid #6cbae4;border-radius:5px;color:#aaa;display:none;}
+.Tanchu{width:120px;height:45px;position:fixed;left:620px;top:350px;text-align:center;line-height:45px;font-weight:bold;border:3px solid #6cbae4;border-radius:5px;color:#aaa;display:none;}
+.Tanchu1{width:120px;height:45px;position:fixed;left:620px;top:350px;text-align:center;line-height:45px;font-weight:bold;border:3px solid #6cbae4;border-radius:5px;color:#aaa;display:none;}

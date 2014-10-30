@@ -174,12 +174,10 @@
             success: function (result) {     //回调函数，result，返回值
                 //alert(result.d);
                 if (result.d == -1) {
-                    $(".Tanchu1").fadeIn();
-                    $(".Tanchu1").fadeOut();
+                    $(".Tanchu1").fadeIn(1000).fadeOut(1000);
                 }
                 else {
-                    $(".Tanchu").fadeIn();
-                    $(".Tanchu").fadeOut();
+                    $(".Tanchu").fadeIn(1000).fadeOut(1000);
                 }
             }
         });

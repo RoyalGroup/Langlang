@@ -18,7 +18,7 @@ namespace starWeibo
             }
             string userId=Session["userid"].ToString();
             starweibo.BLL.userInfo blluserInfo = new userInfo();
-            List<starweibo.Model.userInfo> userInfos = blluserInfo.GetModelList("id!=44 and id!=" + userId);
+            List<starweibo.Model.userInfo> userInfos = blluserInfo.GetModelList("id!=44 and id!="+userId+" and id not in(select friendId from relationInfo where userId="+userId+")" );
             //List<starweibo.Model.userInfo> userInfosn = blluserInfo.GetModelList("id in (select friendId from relationInfo where userId=2)");
             //List<starweibo.Model.userInfo> userInfosnn = blluserInfo.GetModelList("id not in (select friendId from relationInfo where userId=2)");
             //userInfosn.Add(userInfosnn[0]);

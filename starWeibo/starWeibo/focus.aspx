@@ -70,7 +70,8 @@
 								   <img src="<%# Eval("userHeadimage") %>" class="fanimg"/>
 							    </div>
 							    <div class="FCardinfo">
-								    <span class="FCardName"><%# Eval("FriendNoteName") %></span>
+								    <%--<span class="FCardName"><%# Eval("FriendNoteName") %></span>--%>
+                                    <span class="FCardName"><%# Eval("FriendNoteName")==""?Eval("userName"):Eval("FriendNoteName") %></span>
 								    <span class="FCardRelation">已关注</span>
 								    <span class="FCardGroup"><%# Eval("groupName") %></span>
             

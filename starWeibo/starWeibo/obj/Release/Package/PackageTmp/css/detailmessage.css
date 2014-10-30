@@ -1,0 +1,147 @@
+﻿body{font: 12px/1.125 Arial,Helvetica,sans-serif;}
+*{margin: 0;padding: 0;}
+a{text-decoration: none;color: #333;}
+.clearfix:after{content: "";display: block;visibility: hidden;clear: both;}
+
+.title {height: 24px;line-height: 28px;padding: 0px 0px 8px;font-size: 14px;font-weight: 700;}
+.dia_object {margin: 0px 5px;}
+.send_private_msgbox {margin: 20px 20px 0px;}
+.send_private_msg{position:relative;}
+.msgnum{position: absolute;right: 10px;top: 0px;}
+
+.msgcontent{margin: 5px 0px;}
+.msgtextarea {
+    background: none repeat scroll 0% 0% #FFF;
+    border: 1px solid #CCC;
+    box-shadow: 1px 1px 1px 0px #DDD inset;
+    border-radius: 2px;
+    padding: 5px 5px 5px 7px;
+}
+.dmsgtextarea{
+    height: 70px;
+    margin: 0px;
+    padding: 0px;
+    border-color: #FFF;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 12px;
+    font-family: Tahoma,宋体;
+    word-wrap: break-word;
+    line-height: 18px;
+    overflow: hidden;
+    outline: medium none;
+    width: 540px;
+    resize: none;
+}
+
+.send_handle {
+    padding: 5px 0px 0px;
+}
+.btnsend{float:right;}
+.btnsenda{display:inline-block;color:black;border:2px solid #DDD;background-color: #FFF;border-radius: 2px;height:20px;line-height:20px; width:40px;text-align:center;}/**/
+.btnsenda:hover{display: inline-block;border: 2px solid #ff9b01; background-color: #ffa00a;border-radius: 2px;color:#fff;}
+
+/*msg_dialogue部分*/
+
+.msg_dialogue {
+    overflow:auto;
+    margin-top: 25px;
+    padding: 0px 20px;
+    line-height: 22px;
+    height:650px;
+}
+.msg_time_line {
+    margin: 5px 65px 25px;
+    text-align: center;
+    padding: 0px 0px 0px 148px;
+}
+.time_tit {
+    width: 120px;
+    text-align: center;
+    font-weight: 400;
+    padding: 0px 5px;
+}
+.S_txt3 {
+    color: #AEAEAE;
+}
+
+
+.msg_dialogue_list {
+    margin-bottom: 20px;
+}
+.msg_dialist_l .msg_dialist_pic {
+    float: left;
+}
+.msg_dialist_r .msg_dialist_pic {
+    float: right;
+}
+.msg_dialogue_list .msg_dialist_pic {
+    width: 50px;
+    height: 50px;
+}
+
+.msg_dialogue_list .msg_dialist_pic .dialist_pic_box {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.msg_dialist_l .msg_dialist_content {
+    float: left;
+    margin-left: 15px;
+}
+.msg_dialist_r .msg_dialist_content {
+    float: right;
+    margin-right: 15px;
+}
+
+.msg_dialogue_list .msg_dialist_content {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
+}
+
+.S_bg5 {
+    background-color: #FFF;
+}
+
+.msg_dialogue_list .msg_dialist_content .msg_arrow {
+    position: absolute;
+    top: 15px;
+    width: 10px;
+    overflow: hidden;
+}
+
+.msg_dialist_l .msg_arrow {
+    left: -10px;
+}
+
+.msg_dialist_r .msg_arrow {
+    right: -10px;
+}
+
+.msg_dialogue_list .msg_dialist_content .msg_dialist_main {
+    border-radius: 5px;
+}
+.msg_dialogue_list .msg_dialist_content .msg_diamain_box {
+    width: 388px;
+    padding: 15px 20px 10px;
+}
+.msg_dialogue_list .msg_ctrl {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.msg_dialogue_list .msg_diamain_con .msg_dia_txt {
+    width:388px;
+    word-break: break-all;
+    white-space: normal;
+    word-wrap: break-word;
+
+}
+.msg_diamain_box p{  margin-bottom: 5px;  line-height:22px;}
+
+.icon_mes{display: inline-block;width: 12px;height: 9px;overflow: hidden;background: url('../images/msg_icon.png') repeat scroll 0% 0% transparent;}

@@ -1,0 +1,11 @@
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Release\BLL.dll
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Release\BLL.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Release\DAL.dll
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Release\Model.dll
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Release\DBhelperSQL.dll
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Release\DAL.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Release\Model.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Release\DBhelperSQL.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\obj\Release\starweibo.BLL.csprojResolveAssemblyReference.cache
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\obj\Release\BLL.dll
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\obj\Release\BLL.pdb

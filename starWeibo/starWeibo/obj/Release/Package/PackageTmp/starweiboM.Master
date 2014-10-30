@@ -1,0 +1,289 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="starweiboM.master.cs" Inherits="starWeibo.starweiboM" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>STAR微博</title>
+    <link rel="stylesheet" type="text/css" href="css/starweibo.css"/>
+	<link rel="stylesheet" type="text/css" href="skin/css/change1.css"class="yangshi" />
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/starweibo.js"></script>
+	<meta charset="utf-8"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+	<div class="maintitle">
+		<div class="gn_header">
+			<div class="gn_logo_v2">
+				<div class="box">
+					<span class="logo"></span>
+				</div>
+			</div>
+			<div class="gn_nav">
+				<div class="gn_title current">
+					<a href="homepage.aspx" class="gn_tab">
+						<i>首页</i>
+					</a>
+				</div>
+				<div class="gn_title">
+					<a href="#" class="gn_tab">
+						<i>热门
+						</i>
+					</a>
+				</div>
+				<div class="gn_title">
+					<a href="#" class="gn_tab">
+						<i>应用
+						</i>
+					</a>
+				</div>
+				<div class="gn_title skinlist">
+					<a href="#" class="gn_tab">
+						<i>皮肤
+						</i>
+					</a>
+                    <div class="gn_topmenulist skin">
+                        <div class="dress-topic">
+                            <a class="topic-link current1">假日回忆</a>
+                            <span class="sep-line"></span>
+                            <a class="topic-link ">假日回忆</a>
+                            <span class="sep-line"></span>
+                            <a class="topic-link ">假日回忆</a>
+                            <span class="sep-line"></span>
+                            <a class="topic-link ">假日回忆</a>
+                        </div>
+                        <div class="dress-list1">
+                            <div class="pifu1" id="3">
+                                <img src="images/starweibo/cover_s.png" />
+                            </div>
+                            <div class="pifu1" id="2">
+                                <img src="images/starweibo/cover_s1.png" />
+                            </div>
+                            <div class="pifu1" id="4">
+                                <img src="images/starweibo/cover_s2.png" />
+                            </div>
+                            <div class="pifu1" id="1">
+                                <img src="images/starweibo/cover_s3.png" />
+                            </div>
+                        </div>
+                        <div class="dress-list2">
+                            <div class="pifu1">
+                                <img src="images/starweibo/cover_s.png" />
+                            </div>
+                            <div class="pifu1">
+                                <img src="images/starweibo/cover_s1.png" />
+                            </div>
+                            <div class="pifu1">
+                                <img src="images/starweibo/cover_s2.png" />
+                            </div>
+                            <div class="pifu1">
+                                <img src="images/starweibo/cover_s3.png" />
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<div class="gn_search">
+				<input type="text" class="gn_input" placeholder="火锅外送"/>
+				<a class="gn_btn"></a>
+			</div>
+			<div class="gn_person">
+				<div class="gn_setting">
+					<a href="personalCenter.aspx?Userid=<%= Session["userid"] %>" class="gn_name"><%= Session["username"] %></a>
+				</div>
+				<div class="bianhei gn_setting">
+					<a href="#" class="gn_tab gn_write" title="快速写微博">
+						<span class="ico" style="margin-top: 10px"></span>
+					</a>
+				</div>
+				<div class="bianhei gn_setting message">
+					<a href="#" class="gn_tab gn_notice" title="消息">
+						<span class="ico" style="margin-top: 10px"></span>
+					</a>
+					<div class="gn_topmenulist gn_topmenulist_notice">
+						<ul class="gn_text_list">
+							<li>
+								<a target="_top" href="http://weibo.com/comment/inbox?topnav=1&amp;wvr=5&amp;f=1">查看评论<span></span></a>
+							</li>
+							<li>
+								<a target="_top"  href="http://weibo.com/at/weibo?topnav=1&amp;wvr=5"><span></span>查看@我</a>
+							</li>
+							<li>
+								<a target="_top" href="http://weibo.com/messages?topnav=1&amp;wvr=5"><span><%=unreadCount %></span>查看新私信</a>
+								</li>
+							<li>
+								<a  target="_top" href="http://weibo.com/notesboard?topnav=1&amp;wvr=5"><span></span>查看未关注人私信</a>
+							</li>
+							<li>
+								<a target="_top" href="http://weibo.com/5138858580/fans?topnav=1&amp;wvr=5">查看新粉丝</a>
+							</li>
+							<li>
+								<a target="_top"  href="http://weibo.com/friends?topnav=1&amp;wvr=5&amp;isfriends=1"><span></span>查看好友圈微博</a>
+							</li>
+							<li>
+								<a target="_top"  href="http://weibo.com/direct/tome?topnav=1&amp;wvr=5&amp;f=1"><span></span>查看发给我的</a>
+							</li>
+							<li class="yingyong">
+								<a target="_top" href="http://weibo.com/direct/tome?topnav=1&amp;wvr=5&amp;f=1"><span></span>应用消息</a>
+							</li>
+							<li class="tixing">
+								<a target="_top" href="http://weibo.com/direct/tome?topnav=1&amp;wvr=5&amp;f=1"><span></span>提醒设置</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="bianhei gn_setting shezhi">
+					<a href="#" class="gn_tab gn_set" title="设置">
+						<span class="ico" style="margin-top: 10px"></span>
+					</a>
+					<div class="gn_topmenulist gn_topmenulist_set">
+						<ul class="gn_text_list">
+							<li>
+								<a target="_top"  href="http://account.weibo.com/set/index?topnav=1&amp;wvr=5#personalInfo_personalData">帐号设置</a>
+							</li>
+							<li>
+								<a target="_top" href="http://skin.vip.weibo.com/list?topnav=1&amp;wvr=5">模板设置</a>
+							</li>
+							<li class="yingyong">
+								<a target="_top" href="http://badge.weibo.com/5138858580?topnav=1&amp;wvr=5">勋章</a>
+							</li>
+							<li class="yingyong">
+								<a target="_top" href="http://verified.weibo.com/verify?topnav=1&amp;wvr=5">V认证</a>
+							</li>
+							<li>
+								<a target="_top" href="http://club.weibo.com?topnav=1&amp;wvr=5">达人</a>
+							</li>
+							<li>
+								<a target="_top" href="http://hao.weibo.com?topnav=1&amp;wvr=5">微号</a>
+							</li>
+							<li>
+								<a target="_top" href="http://m.weibo.com/web/cellphone.php?topnav=1&amp;wvr=5">手机</a>
+							</li>
+							<li class="yingyong">
+								<a target="_top" href="http://credits.weibo.com?topnav=1&amp;wvr=5">我的微币</a>
+							</li>
+							<li>
+								<a target="_top" href="http://app.weibo.com/tool?topnav=1&amp;wvr=5">我的工具</a>
+							</li>
+							<li class="gn_func yingyong">
+								<a target="_top" href="http://weibo.com/logout.php?backurl=%2F">退出</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="bianhei gn_setting member">
+					<a href="#" class="gn_tab gn_member" title="会员">
+						<span class="ico" style="margin-top: 10px"></span>
+					</a>
+					<div class="gn_topmenulist gn_topmenulist_member">
+						<ul class="gn_text_list">
+							<li><a href="http://vip.weibo.com/paycenter?from=guide2&amp;topnav=1&amp;wvr=5">开通会员</a></li>
+							<li><a href="http://vip.weibo.com/yearvip?topnav=1&amp;wvr=5">年费会员</a></li>
+							<li><a href="http://vip.weibo.com/home?topnav=1&amp;wvr=5">会员官网</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<div class="W_main">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+        </asp:ContentPlaceHolder>
+	</div>
+	<div class="global_footer S_bg4">
+		<div class="btm1">
+			<dl class="list">
+				<dt>找找感兴趣的人</dt>
+				<dd>
+					<a href="http://verified.weibo.com/?bottomnav=1&amp;wvr=5">名人堂</a>
+					<a href="http://vip.weibo.com/home?bottomnav=1&amp;wvr=5">微博会员</a>
+				</dd>
+				<dd>
+					<a href="http://club.weibo.com?bottomnav=1&amp;wvr=5">微博达人</a>
+				</dd>
+				<dd>
+					<a href="http://verified.e.weibo.com/media?bottomnav=1&amp;wvr=5">媒体</a>
+					<a href="http://verified.e.weibo.com/brand?bottomnav=1&amp;wvr=5">企业</a>
+					<a href="http://gov.weibo.com/government/index.php?bottomnav=1&amp;wvr=5">政府</a>
+				</dd>
+			</dl>
+			<dl class="list">
+				<dt>精彩内容</dt>
+				<dd>
+					<a href="http://huati.weibo.com/?bottomnav=1&amp;wvr=5">微话题</a>
+					<a href="http://top.weibo.com/?bottomnav=1&amp;wvr=5">风云榜</a>
+				</dd>
+				<dd>
+					<a href="http://talk.weibo.com?bottomnav=1&amp;wvr=5">微访谈</a>
+				</dd>
+				<dd>
+					<a href="http://hot.plaza.weibo.com/?bottomnav=1&amp;wvr=5&amp;type=re&amp;act=day">热门微博</a>
+				</dd>
+			</dl>
+			<dl class="list">
+				<dt>热门应用</dt>
+				<dd>
+					<a href="http://gongyi.weibo.com/?bottomnav=1&amp;wvr=5">微公益</a>
+					<a href="http://weiba.weibo.com?bottomnav=1&amp;wvr=5">微吧</a>
+				</dd>
+				<dd>
+					<a href="http://music.weibo.com/t/index.php?bottomnav=1&amp;wvr=5">微音乐</a>
+					<a href="http://photo.weibo.com?bottomnav=1&amp;wvr=5">相册</a>
+				</dd>
+				<dd>
+					<a href="http://game.weibo.com?bottomnav=1&amp;wvr=5">微游戏</a>
+					<a href="http://xueyuan.weibo.com/?bottomnav=1&amp;wvr=5">微博商学院</a>
+				</dd>
+			</dl>
+			<dl class="list">
+				<dt>手机玩微博</dt>
+				<dd>
+					<a href="http://m.weibo.com/web/cellphone.php?bottomnav=1&amp;wvr=5">WAP版</a>
+					<a href="http://m.weibo.com/web/cellphone.php?bottomnav=1&amp;wvr=5#msg">短彩发微博</a>
+				</dd>
+				<dd>
+					<a href="http://m.weibo.com/web/cellphone.php?bottomnav=1&amp;wvr=5#iphone">iPhone客户端</a>
+					<a href="http://m.weibo.com/web/cellphone.php?bottomnav=1&amp;wvr=5#ipad">iPad客户端</a>
+				</dd>
+				<dd>
+					<a href="http://m.weibo.com/web/cellphone.php?bottomnav=1&amp;wvr=5#android">Android客户端</a>
+				</dd>
+			</dl>
+			<dl class="list">
+				<dt>认证&合作</dt>
+				<dd>
+					<a href="http://verified.weibo.com/verify?bottomnav=1&amp;wvr=5">申请认证</a>
+					<a href="http://open.weibo.com/?bottomnav=1&amp;wvr=5">开放平台</a>
+				</dd>
+				<dd>
+					<a href="http://open.weibo.com/connect?bottomnav=1&amp;wvr=5">连接网站</a>
+					<a href="http://weibo.com/static/logo?bottomnav=1&amp;wvr=5">微博标识</a>
+				</dd>
+				<dd>
+					<a href="http://tui.weibo.com?bottomnav=1&amp;wvr=5">广告服务</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="other_link S_line2">
+			<div class="help_link">
+				<p>
+					<a href="http://ir.weibo.com/?bottomnav=1&amp;wvr=5" class="S_func1"><i class="W_ico16 ico_weibo"></i>关于微博</a>
+					<a href="http://help.weibo.com/?refer=didao&amp;bottomnav=1&amp;wvr=5" class="S_func1">微博帮助</a>
+					<a class="S_func1" href="http://help.weibo.com/newtopic/suggest?bottomnav=1&amp;wvr=5">意见反馈</a>
+					<a class="S_func1" href="http://open.weibo.com/?bottomnav=1&amp;wvr=5">开放平台</a>
+					<a class="S_func1" href="http://hr.weibo.com?bottomnav=1&amp;wvr=5">微博招聘</a>
+					<a class="S_func1" href="http://news.sina.com.cn/guide/?bottomnav=1&amp;wvr=5">新浪网导航</a>
+					<a class="S_func1" href="http://service.account.weibo.com/?bottomnav=1&amp;wvr=5" target="__blank">社区管理中心</a>
+					<a class="S_func1" href="http://service.account.weibo.com/roles/gongyue?bottomnav=1&amp;wvr=5" target="__blank">微博社区公约</a>
+				</p>
+				<p class="tonghua">客服电话：4000 960 960（个人） 4000 980 980（企业） （按当地市话标准计算）</p>
+				<p class="tonghua S_txt2">北京微梦创科网络技术有限公司 <a class="S_func1" href="http://weibo.com/aj/static/jww.html?_wv=5">京网文[2011]0398-130号</a> <a class="S_func1" href="http://www.miibeian.gov.cn" target="_blank">京ICP备12002058号</a></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

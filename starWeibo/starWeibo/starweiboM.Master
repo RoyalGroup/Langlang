@@ -169,7 +169,7 @@
 								<a target="_top" href="http://app.weibo.com/tool?topnav=1&amp;wvr=5">我的工具</a>
 							</li>
 							<li class="gn_func yingyong">
-								<a target="_top" href="http://weibo.com/logout.php?backurl=%2F">退出</a>
+								<a target="_top" href="login.aspx">退出</a>
 							</li>
 						</ul>
 					</div>

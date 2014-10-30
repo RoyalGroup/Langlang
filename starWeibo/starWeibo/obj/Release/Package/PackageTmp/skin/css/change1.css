@@ -1,0 +1,19 @@
+*{margin: 0;padding: 0;}
+img{border: 0;}
+a{text-decoration: none;}
+li{list-style: none;}
+
+body{background-image: url("../images/change1/body_bg.jpg");background-repeat: no-repeat;background-color: #f9d5dd;background-position: center 0;}
+.maintitle{background-image: url("../images/change1/bg_nav.png");}
+
+.gn_name:hover{background-color: #71285f;}
+.bianhei:hover{background-color: #71285f;}
+.gn_title:hover{background-color:#71285f;}
+.current{background-color:#71285f;color: #fff; }
+
+
+
+
+
+
+

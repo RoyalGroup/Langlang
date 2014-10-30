@@ -1,0 +1,88 @@
+﻿*{margin: 0;padding: 0}
+li ul{list-style: none;}
+a{text-decoration: none;}
+img{border: 0;}
+body{font-family: "宋体",Verdana;font-size: 12px;}
+
+.Content{width: 1349px;height: 667px;overflow-y:hidden;}
+.ContentT{width: 1349px;height: 80px;background-image: url("../images/adminimg/title.jpg");background-size: 100% 100%;background-repeat: no-repeat;}
+.ContentD{width: 1349px;height: 547px;}
+.footer{width: 1349px;height: 40px;background-color: #F6F6F6;}
+.help_link{margin-left: 450px;}
+.footer a{color: #CDCDCD;font-size: 12px;line-height: 38px;}
+.footer a:hover{text-decoration: underline;}
+.Left{width: 215px;height: 547px;float: left;background-image: url("../images/adminimg/left.jpg");}
+.Right1{width:1134px;height: 547px;float: left;display: none;}
+.Right2{width:1134px;height: 547px;float: left;}
+.Right3{width:1134px;height: 547px;float: left;display: none;}
+
+
+.welcome{margin-left: 10px;float: left;margin-top: 52px;margin-left: 1170px;color: #fff;font-weight:bold;font-size:14px;}
+.user{float: left;margin-top: 52px;color: #fff;font-weight:bold;font-size:14px;}
+.zhuxiao{color: #fff;cursor: pointer;float: right;margin-right: 15px;margin-top: 45px;font-size:18px;font-weight: bold;background-color:transparent;border:none;height:30px;width:50px;line-height:30px;text-align:center;outline:none;}
+
+.Report{height: 50px;text-align: center;line-height: 50px;border-radius: 5px;cursor: pointer;border: 1px solid #fff;margin-top: 5px;opacity: 1;font-size: 18px;color: #fff;background-color: #6398CD;border-right: none;}
+.Report:hover{opacity: 0.7;}
+.UserManages{height: 50px;text-align: center;line-height: 50px;border-radius: 5px;cursor: pointer;border: 1px solid #fff;margin-top: 5px;opacity: 1;font-size: 18px;color: #fff;background-color: #6398CD;border-right: none;}
+.UserManages:hover{opacity: 0.7;}
+.Send{height: 50px;text-align: center;line-height: 50px;border-radius: 5px;cursor: pointer;border: 1px solid #fff;margin-top: 5px;opacity: 1;font-size: 18px;color: #fff;background-color: #6398CD;border-right: none;}
+.Send:hover{opacity: 0.7;}
+
+.Title{height: 38px;padding-left: 30px;line-height: 40px;background-color: #5C94CF;font-size: 20px;color: #fff;margin-top: 2px;}
+.ReportMain{height: 504px;overflow-y: auto;}
+.ReportOne{height: 115px;width: 1050px;margin-left: 50px;margin-top: 30px;border: 1px solid #ccc;}
+.ReportTitle{height: 30px;}
+.Reporter{width: 200px;height: 30px;line-height: 30px;padding-left: 10px;float: left;}
+.BReporter{width: 200px;height: 30px;line-height: 30px;padding-left: 10px;float: left;}
+.ReportTime{width: 260px;height: 30px;line-height: 30px;padding-left: 10px;float: left;}
+.Reason{height: 30px;line-height: 30px;padding-left: 10px;float: left;}
+
+.ReportContent{height: 50px;background-color: #DAEAFA;line-height:23px;margin-top:2px;text-indent:2em;overflow-y:auto;}
+.ReportManage{height: 35px;}
+.hulue{float: right;height: 35px;line-height: 35px;padding-right: 10px;cursor: pointer;color: #5A98DE;font-weight: bold;background-color:transparent;border:none;font-size:18px;outline:none;}
+.Delete{float: right;height: 35px;line-height: 35px;padding-right: 10px;cursor: pointer;color: #5A98DE;font-weight: bold;background-color:transparent;border:none;font-size:18px;outline:none;}
+.jinyan{float: right;height: 35px;line-height: 35px;padding-right: 10px;cursor: pointer;color: #5A98DE;font-weight: bold;background-color:transparent;border:none;font-size:18px;outline:none;}
+.yincang{display:none;}
+
+.UserManagesMain{height: 504px;background-color: #f2f4f6;position: relative;}
+.UserManagesContent{height: 442px;overflow-y: auto;display:none;}
+.UserManagesContentS{height: 442px;overflow-y: auto;}
+.tool{height: 24px;padding: 7px;border-bottom: 1px solid rgb(170, 193, 222);font-size: 13px;}
+.tool_left{height: 24px;float: left;margin-left: 15px;float: left;}
+.tool_left a{display: inline-block;border: 1px solid rgb(136, 136, 136);border-radius: 3px;background-color: #fff;color: #333;height: 22px;line-height: 22px;padding: 0 12px 0 12px;float: left;margin-left: 3px;}
+
+.tool_center{height: 24px;float: left;float: right;margin-right: 30px;}
+.tool_center a{display: inline-block;border: 1px solid rgb(136, 136, 136);border-radius: 3px;background-color: #fff;color: #333;height: 22px;line-height: 22px;padding: 0 12px 0 12px;float: left;margin-left: 3px;}
+
+.tool_right{height: 24px;outline: none;position: absolute;right:20px;top: -30px;}
+.button{float: right;height: 24px;width: 30px;border-radius: 5px;font-size: 12px;border: 1px solid #ddd;text-align: center;line-height: 22px;margin-left: 8px;cursor: pointer;color: #fff;background-color:transparent;}
+.buttonS{float: right;height: 22px;width: 60px;border-radius: 5px;font-size: 12px;border: 1px solid #ddd;text-align: center;line-height: 22px;margin-left: 8px;cursor: pointer;color: #fff;}
+.searchInput{float: right;height: 20px;}
+
+td{font-size: 12px;line-height: 21px;}
+td a{text-align: left;color: #333;}
+td a:hover{text-decoration: underline;}
+.t{height: 21px;border-bottom: 1px solid #c1c8d2;background-color: #f2f4f6;margin-left: 20px;}
+.t1{width: 27px;height: 19px;padding: 1px 0 1px 5px;float: left;}
+.t2{width: 100px;height: 21px;padding-left: 12px;float: left;}
+.t3{width: 113px;height: 21px;padding-left: 12px;float: left;}
+.t4{width: 91px;height: 21px;padding-left: 12px;float: left;}
+.t5{width: 91px;height: 21px;padding-left: 12px;float: left;}
+.t6{width: 91px;height: 21px;padding-left: 12px;float: left;}
+.t7{width: 91px;height: 21px;padding-left: 12px;float: left;}
+.t8{width: 91px;height: 21px;padding-left: 12px;float: left;}
+.t9{width: 91px;height: 21px;padding-left: 12px;float: left;}
+.t10{width: 91px;height: 21px;padding-left: 12px;float: left;}
+.t11{width: 91px;height: 21px;padding-left: 12px;float: left;}
+.selectAll{margin-top: 5px;margin-left:-2px;}
+.selectOne{margin-top: 3px;}
+.select{margin-top: 5px;}
+
+
+
+
+
+
+.SendMain{height: 462px;padding-top: 50px;}
+.SendContent{height: 307px;width: 900px;margin-left: 100px;border: 1px solid #ccc;}
+.SendButton{width: 70px;height: 35px;border-radius: 5px;border: 1px solid #ccc;line-height: 35px;text-align: center;cursor: pointer;margin-left: 930px;margin-top: 10px;color:#fff;background-color:#1C8CF9;}

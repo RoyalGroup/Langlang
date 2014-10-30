@@ -1,0 +1,110 @@
+﻿body {
+}
+/*主体*/
+.MainBody{width:974px; min-height: 200px;height:auto;margin:auto; padding-top: 70px;}
+.MainBodyIn{width:974px; min-height: 200px;background-color:#fff; margin:auto;display: inline-block;}
+/*主左*/
+.MainLeft{ width: 150px; min-height:700px; display: inline-block; background-color:#f1f1f1; float: left;box-shadow: 0px 1px 1px 1px #ccc;}
+.LeftTop{ width: 150px; height:50px;  border-bottom: 1px solid #bbb; position: relative;}
+.LeftTopIn{width: 60px; height:20px;  font-size: 12px; color: #aaa; font-weight: bold; position: absolute; bottom: -13px; left: 10px;text-align: center; background-color:#f1f1f1;}
+.Focus{width: 150px;display: inline-block;padding-top: 20px; padding-bottom: 10px;border-bottom: 1px solid #bbb;}
+.FocusIn{width: 150px;display: inline-block;padding-top: 20px; padding-bottom: 10px;}
+.FocusLi{width: 150px;height: 30px; display: block; cursor: pointer; color: #333; text-align:center; line-height:30px; font-size:12px;}
+.FocusLi:hover{ background-color:#e6e6e6;}
+.Fotitle{text-align: center; font-weight: bold;line-height: 30px; font-size: 14px;cursor:pointer;}
+.Fanstitle{text-align: center; font-weight: bold;line-height: 30px; font-size: 14px;}
+.FoAll,.FansAll{width: 150px;height: 30px; display: block; cursor:pointer;}
+.FoAllL{width:60px; font-size: 12px;font-weight: bold;line-height: 30px;float: left;padding-left: 30px;}
+.FoAllR{width: 30px; font-size: 12px;text-align: center; font-weight: bold;line-height: 30px;float: left;}
+.FocusLiL{font-size: 12px;text-align:left; line-height: 30px;float: left; padding-left:40px; display: inline-block;}
+.CreateGroup{width:80px; font-size: 12px;line-height: 20px;float: left;border: 1px solid #ccc; height: 20px; text-align: center; margin-left:20px;cursor: pointer;}
+.FocusLiR{width: 30px; font-size: 12px;text-align: center;line-height: 30px;float: left;}
+.Fans{width: 150px;min-height: 100px;  display: inline-block;padding-bottom: 10px;}
+/*主右*/
+.MainRight{ width: 770px; min-height:700px; display: inline-block; float:right; padding-right: 20px;}
+.RightTop{width: 770px; height:25px; border-bottom: 2px solid #ea1429; padding-top: 25px;}
+.RTopLeft{ float: left; font-size: 14px;font-weight: bold;}
+.RTopRight{ float: left;font-size: 14px;}
+.RTopMenu{width: 770px; height: 30px;background-color:#f1f1f1;margin-top: 20px;}
+.FocusList{width: 770px;display:inline-block;min-height: 30px; padding-top: 20px;}
+.FocusCard{ width: 230px; height: 100px; border: 2px solid #f3f3f3; border-radius: 3px; cursor: pointer; padding: 8px; float: left; margin-right: 6px; margin-top: 10px; box-shadow: 1px 1px 1px 1px #ddd; position: relative;}
+.FocusCard:hover{ border: 2px solid #f48c12;}
+.fanimg { width:50px;height:50px;}
+.GroupCard{display: none;width: 300px;border: 1px solid #ccc; border-radius: 3px; background-color:#fff; position: absolute; top: 60px;padding: 10px; padding-bottom:20px; z-index:100;}
+.GroupCardT{width: 300px;height: 20px; font-size: 12px;}
+.GroupCardM{width: 300px;display: inline-block;}
+.GroupCardMLi{width:140px;height: 20px;display: block; margin-top: 5px; float:left;}
+.GroupCheck{ float: left; display: block; cursor: pointer;}
+.GroupName{width: 100px;height: 20px; font-size: 12px; float: left; padding-left: 10px; color: #999;}
+.BtnSureGroup {width:200px; height:40px;}
+.BtnSureGroupIn{float:left; width:80px;height: 30px;font-size: 14px; line-height: 30px; border-radius: 2px; border:1px solid #eee; text-align: center; cursor: pointer; background-color:rgb(255, 162, 16);}
+.GroupCardB{width: 80px; height: 20px; font-size: 12px;color:#0a8cd2; float:left; margin-top:10px;}
+.FocusCardS{ width: 230px;height:60px; }
+.HeadImg{width: 50px; height: 50px; float: left;}
+.FCardinfo{width: 170px; height: 50px;background-color: #fff;padding-left: 10px; float: left;}
+.FCardName{width: 170px;display: block;font-size: 12px; height: 17px; float:left; font-weight:bold}
+.FCardName:hover{color:#6cbae4;}
+.FCardRelation{width: 170px;display: block; font-size: 12px; height: 17px;float: left;}
+.FCardGroup{width: 70px;display: block;font-size: 12px;height: 17px;float: right; color:#6cbae4; float: left;}
+.FCardGroup:hover{text-decoration: underline;}
+.FocusCardX{width: 170px;height:40px;}
+.OwnActions{width: 170px;height:20px; font-size: 12px; color: #777;}
+.OwnActions span{ display: block; float: left;}
+.SetNote{width:50px;height: 20px;color:#0a8cd2;}
+.SetNote:hover{ text-decoration: underline;}
+.SetNoteMeng{display: none; position: absolute;background-color:rgba(0,0,0,0.5); width: 100%; height:900px; z-index:1000; left: 0px;top: 0px;}
+.SetNoteCard{width:300px; height: 170px; background-color: #fff; margin: auto; margin-top: 250px; border-radius: 3px; box-shadow:1px 1px 1px 1px #aaa;}
+.SetNoteCardTop{width: 280px; height: 30px; background-color: #ddd;font-size: 12px; font-weight: bold; line-height: 30px; padding-left: 20px;}
+.SetNoteCardMid{width: 282px;height:50px; padding-top: 30px; padding-left: 20px;}
+.SetNoteCardMidL{width: 50px;height: 30px;  font-size: 12px; text-align: center;line-height:30px; float: left;}
+.SetNoteCardMidR{width:200px; height:25px; float: left; font-size: 12px; color: #ccc;}
+.SetNoteCardBot{width: 280px;height: 40px; border-color: #ccc;}
+.SetNoteCardBtn1{width: 60px;height: 30px; float: left; font-size: 14px; line-height: 30px; border-radius: 2px; border:1px solid #eee; text-align: center;margin-right: 10px; margin-left:130px; cursor: pointer; background-color:rgb(255, 162, 16); }
+.SetNoteCardBtn2{width: 60px;height: 30px; float: left; font-size: 14px; line-height: 30px; border-radius: 2px; border:1px solid #eee; text-align: center;cursor: pointer;}
+.SetNoteCardBtn1:hover,.SetNoteCardBtn2:hover{background-image: -webkit-linear-gradient(top, rgb(255, 184, 71) 0%, rgb(255, 162, 16) 100%);}
+.CancelFocus{width:60px;height: 20px; padding-left: 10px; color:#0a8cd2;}
+.CancelFocus:hover{ text-decoration: underline;}
+.CancelFocusMeng{display: none; position: absolute;background-color:rgba(0,0,0,0.5); width: 100%; height:900px; z-index:1000; left: 0px;top: 0px;}
+.CancelFocusCard{width:300px; height: 140px; background-color: #fff; margin: auto; margin-top: 250px; border-radius: 3px; box-shadow:1px 1px 1px 1px #aaa;}
+.CancelFocusCardTop{width: 280px; height: 30px; background-color: #ddd;font-size: 12px; font-weight: bold; line-height: 30px; padding-left: 20px;}
+.CancelFocusCardMid{width: 282px;height:50px; line-height: 50px; text-align: center; border:none;outline:none;}
+.CancelFocusCardBtn1{width: 60px;height: 30px; float: left; font-size: 14px; line-height: 30px; border-radius: 2px; border:1px solid #eee; text-align: center;margin-right: 10px; margin-left:130px; cursor: pointer; background-color:rgb(255, 162, 16); }
+.CancelFocusCardBtn2{width: 60px;height: 30px; float: left; font-size: 14px; line-height: 30px; border-radius: 2px; border:1px solid #eee; text-align: center;cursor: pointer;}
+.CancelFocusCardBtn1:hover,.CancelFocusCardBtn2:hover{background-image: -webkit-linear-gradient(top, rgb(255, 184, 71) 0%, rgb(255, 162, 16) 100%);}
+.personalInfo{width: 170px;height:15px; font-size: 12px; color: #777;}
+/*粉丝*/
+.FansRightTop{width: 770px; height:25px; border-bottom: 2px solid #ea1429; padding-top: 25px;font-size: 14px; font-weight: bold;}
+.FansList{width: 770px;display:inline-block;min-height: 30px; padding-top: 20px;}
+.FansLi{width: 770px; display: inline-block;  margin-top: 10px; border-bottom: 1px solid #ccc;}
+.FansLiL{width: 60px; display:inline-block; float: left;}
+.FansLiR{width:710px; display: inline-block; float: left; background-color: #fff;}
+.FansHeadImg{width: 50px; height: 50px;}
+.FansLiRTop{width: 710px; height: 20px;}
+.FansName{font-size: 14px; font-weight:bold; cursor: pointer;}
+.FansName:hover{color:#0a8cd2;}
+.FansArea {display: none;}
+.FansAddress{font-size: 12px;}
+.FansLiRTopL{width:200px; height: 30px; float: left;}
+.FansLiRMid{width: 200px; height: 30px;}
+.FansInfoli{display:inline-block;}
+.FansInfoliL{ font-size: 12px;}
+.FansInfoliR{font-size: 14px;color:#0a8cd2; cursor: pointer;}
+.FansLiRBot{width: 100px;height: 30px; font-size: 12px;color:#0a8cd2; cursor: pointer; line-height:30px;}
+.FansLiRTopR{width: 400px;height: 30px; float:right; position:relative;}
+.BtnFocusFans{width:60px;height:20px; border:1px solid #ccc; display:inline-block; font-size:12px; background-color:#f1f1f1;text-align:center; line-height:20px; border-radius:3px;cursor:pointer;}
+.BtnFocusFans:hover{background-color:rgb(255, 162, 16);color:#fff;}
+.DeleFans,.ReportFans{ width:60px;height:20px; font-size:12px;line-height:20px; display:inline-block;color:#0a8cd2;cursor:pointer; border-right:1px solid #ddd;margin-left:20px;}
+.DeleFans:hover { text-decoration:underline; }
+.EnsureDeleFans {display:none; width:200px; height:120px; border:1px solid #ccc; position:absolute;top:-120px;left:90px;box-shadow:1px 1px 1px #ccc; background-color:#fff;border-radius:3px;}
+.EnsDeleFansTop {width:200px; height:60px; font-size:14px;line-height:60px;text-align:center; }
+.EnsDeleFansBot{width:180px;height:60px; padding-left:20px;}
+.EnsDeleFansBotBtn1{width: 60px;height: 30px; float: left; font-size: 14px; line-height: 30px; border-radius: 2px; border:1px solid #eee; text-align: center;margin-right: 10px;cursor: pointer; background-color:rgb(255, 162, 16); }
+.EnsDeleFansBotBtn2{width: 60px;height: 30px; float: left; font-size: 14px; line-height: 30px; border-radius: 2px; border:1px solid #eee; text-align: center;cursor: pointer;}
+.EnsDeleFansBotBtn1:hover,.EnsDeleFansBotBtn2:hover{background-image: -webkit-linear-gradient(top, rgb(255, 184, 71) 0%, rgb(255, 162, 16) 100%);}
+
+
+
+
+/*弹窗*/
+.Tanchu{width:120px;height:45px;position:fixed;left:620px;top:350px;text-align:center;line-height:45px;font-weight:bold;border:3px solid #6cbae4;border-radius:5px;color:#aaa;display:none;}
+.Tanchu1{width:120px;height:45px;position:fixed;left:620px;top:350px;text-align:center;line-height:45px;font-weight:bold;border:3px solid #6cbae4;border-radius:5px;color:#aaa;display:none;}

@@ -1,0 +1,35 @@
+﻿body {width:99%;height:100%;font-size:15px;color:#111;font-family:Arial;background-image:url("..//images/login/11sd.jpg"); font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";}
+*{margin:0;padding:0;}
+ul,li{list-style:none;}
+img{border:0;}
+
+
+
+/*用户登录界面*/
+#login{width: 900px;height: 650px;border: 1px solid #ccc;margin:100px auto;background-color: white; }
+.logo{padding-left: 90px;width: 900px;}
+.loginleft{width: 570px;height: 390px;float: left;border-right: 2px solid #ddd;border-top: 2px solid #ddd;}
+.llTop{width: 537px;height: 40px;padding: 17px 0 17px 30px;line-height: 32px;font-size: 26px;font-family: "Microsoft Yahei";font-style: italic;background-color: #fafafa;}
+.btn-red{margin-left: 24px;width: 143px;height: 36px;line-height: 36px;color: white;background-color:#e64141;padding: 5px 15px;font-style: normal;text-decoration: none;}
+
+
+.loginright{ width:327px;height:390px;background-color:white;float: left;border-top: 2px solid #ddd;}
+.header{width:320px;height:40px;float:left;}
+.left{color:#808080;font-size:15px;font-weight:bold;padding:10px 0 0 10px;float:left;line-height: 30px;padding-left: 60px;}
+.right{float: right;padding: 15px 10px 0 0;}
+.right a{color:#00a7ea;font-size:15px;font-weight:bold;float:right;text-decoration:none;}
+.user{width:250px;height:40px;margin:60px 0 10px 60px;color:#111;}
+.userName,.pwd{float:left;width:60px;}
+.user-input,.pwd-input{float:left;outline: none;height: 25px;width: 160px;color:#808080;}
+.password{width:250px;height:40px; margin-left:60px;}
+.rem-for{float:left;margin-left:60px;width:250px;height:40px; color:#808080;}
+.remember-pwd{float:left;width:150px;font-size: 14px;}
+.forget-pwd{float:right;width:100px;}
+.forget-pwd a{color:#00a7ea;text-decoration:none;font-size: 14px;}
+.denglu-but{margin-left:60px;width:220px;height:25px;margin-top:40px;text-align:center;background-color: orange;border:1px solid #ccc;line-height:25px;}
+.denglu-but a{color:white;font-size:15px;text-decoration:none;}
+.register{width:250px;height:20px;margin-left:60px;font-size:15px;color:#808080;margin-top:10px;}
+.register a{color:#00a7ea;text-decoration:none;font-size: 14px;}
+.register a:hover{text-decoration: underline;}
+/*.footer{width: 900px;height: 40px;margin-top: 20px auto;}*/
+

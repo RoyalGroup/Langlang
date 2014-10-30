@@ -1,0 +1,125 @@
+*{margin: 0; padding: 0;}
+body{ width: 100%; text-align: left; color: #333; font-size: 12px; font-family: Arial, Helvetica, sans-serif;}
+img{ border: 0px; }
+a{ text-decoration: none; cursor: pointer; color: #0a8cd2;}
+ul,li{ list-style: none; list-style-position: outside; }
+
+.maintitle{ z-index:9999;}
+.W_main{ padding-top:0; position:relative;}
+#main{ width: 980px; margin: 0 auto; padding-top: 40px; background-color: #ffffff;}
+
+/************header区*************/
+.header{ width: 100%; color: #333;}
+.headerPic{ height: 300px; position: relative; background-image: url("images/personalCenterimages/headerTopPic.jpg"); background-position: center bottom; background-repeat: no-repeat; }
+.pf_use_num{ position: absolute; height: 22px; padding: 0 8px; line-height: 20px; color: #e7e4e4; background-image: url(""); background-repeat: repeat; background: rgba(0,0,0,0.25); _background: #333; border-radius: 10px; right: 46px; top: 11px; visibility: hidden;}
+.pf_use_num_display{ visibility: visible;}
+.templete_enter a{ background: url("images/personalCenterimages/icon.png") no-repeat -477px 0px; display: block; width: 23px; height: 24px; position: absolute; right: 0px; top: 0px;}
+.templete_enter a:hover{ background: url("images/personalCenterimages/icon.png") no-repeat -477px -25px;}
+.profile_top{ position: relative; padding-bottom: 15px; }
+.pf_info{ margin-left: 225px; line-height: 22px; padding-top: 10px; position: relative;}
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.pf_info_left{ float: left; width: 550px; padding-right: 30px;}
+.bsp { margin-bottom: 8px; _margin-bottom: 10px; }
+.pf_name .name { font: normal 20px/30px "Microsoft Yahei"; margin-right: 3px; }
+.pf_intro{ white-space: nowrap; overflow: hidden; text-overflow: ellipsis; _width: 500px; height: 14px; line-height: 14px;}
+.pf_intro a{ color: #0a8cd2;}
+.pf_intro a:hover{ text-decoration: underline;}
+.W_ico12{ width: 13px; height: 15px; display: inline-block; vertical-align: -2px;}
+.male{ background-image: url("images/personalCenterimages/bg_line.png"); background-position: 0 -3px; background-repeat: no-repeat;}
+.female{ background-image: url("images/personalCenterimages/bg_line.png"); background-position: -25px -3px; background-repeat: no-repeat;}
+.W_vline{ margin: 0 9px 0 5px;}
+.S_line1_c{ color: #d9d9d9;}
+.city{ color: #0a8cd2;}
+.city:hover{ text-decoration: underline;}
+.pf_do .btn_bed{ float: left; display: inline; margin-right: 5px; }
+.W_btn_c{ display: inline-block; border: 1px solid #d9d9d9; border-radius: 2px; vertical-align: middle; cursor: pointer; background-color: #f0f0f0;}
+.W_btn_c:hover{ background-color: #f9f9f9;}
+.W_btn_c span{ padding: 0 9px 0 10px; display: inline-block; height: 18px; line-height: 18px; color: #333;}
+.S_bg4{ background-color: #fafafa;}
+.S_line1{ border-color: #d9d9d9;}
+.pf_head { position: absolute; top: -108px; left: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);}
+.pf_head_pic{ padding: 2px; width: 180px; height: 180px; position: relative;}
+.pf_head_pic img{ width: 180px; height: 180px;}
+.pf_head_pic .change_btn_div{ position: absolute; text-align: right; right: 12px; bottom: 12px; display:none;}
+.user_atten{ margin: 5px 0 4px 0; border: 0; padding: 0; line-height: 1.125; width: 184px;}
+.user_atten li { padding: 0 3px 3px; float: left; border-right-width: 1px; border-right-style: solid; text-align: center; width: 53px;}
+.user_atten li strong { line-height: 20px; display: block; margin-bottom: 5px; font-family: Tahoma; font-weight: 400; }
+.user_atten_l li strong { font-size: 20px; }
+.S_func1{ color: #333; text-decoration: none;}
+.S_func1:hover{ color: #0a8cd2;}
+.follower{ width: 64px; padding: 0 0 3px 0;}
+.user_atten .W_no_border{ border: 0;}
+
+/***********导航区************/
+.S_line5{ border-color: #ffffff;}
+.navTabList{ width: 980px; border-bottom-width: 1px; border-bottom-style: solid; font: normal 16px/40px "Microsoft Yahei"; background-color: #f6f6f6;}
+.pftb_ul{ border-bottom-width: 1px; border-bottom-style: solid; height: 49px; padding-left: 100px;}
+.pftb_itm { position: relative; float: left; border-width: 1px; border-style: solid; border-right-width: 0; height: 48px; }
+.S_line1{ border-color: #d9d9d9}
+.pftb_itm_A{ border-bottom-color: #ffffff}
+.pftb_itm_lst{ border-right-width: 1px;}
+.pftb_lk { display: block; width: 116px; height: 38px; padding: 8px 0 0; border-width: 1px; border-style: solid; line-height: 27px; text-align: center; }
+.S_bg1{ background-color: #f2f2f2;}
+.S_bg1_A{ background-color: #ffffff;}
+.S_txt1{ color: #333; text-decoration: none;}
+
+/***********内容区**********/
+.W_profile_main { min-height: 300px; position:relative;}
+.pIleft{ width: 450px; padding: 20px; float: left;}
+.pIright{ width: 450px; height: 50px; padding:20px 20px 20px 0; float: left;}
+#baseInfo{ width: 100%; color: #333;}
+.info_title { margin: 15px 0 11px; position: relative;}
+.midleLine{ position: absolute; height: 0; border-bottom: 1px solid #d9d9d9; top:11px; left: 70px; right: 50px;}
+.info_title_name{ font-size: 16px; padding: 0 5px 0 0; color: #333; font-weight: bold; line-height: 22px; float: left;}
+.editBtn{ display: inline-block; border-width: 1px; border-style: solid; overflow: hidden; vertical-align: middle; cursor: pointer; border-radius: 10px; border-color: #d9d9d9; background-color: #f2f2f2; padding: 2px 10px; height: 18px; line-height: 18px; font-size: 14px; float: right;}
+.editBtn:hover{ background-color: #ff5612; color: #fff;}
+.pf_item { font-size: 12px; line-height: 30px; margin-bottom: 5px; position: relative; }
+.pf_item .label { float: left; width: 53px; text-align: right; white-space: nowrap; }
+.S_txt2{ color: #808080; }
+.pf_item .con { margin-left: 67px; padding: 0 10px; word-wrap: break-word; }
+.W_ico16{ display: inline-block; width: 16px; height: 16px; background: url("images/personalCenterimages/icon.png") no-repeat -75px -150px; vertical-align: middle;}
+.W_ico16:hover{ background: url("images/personalCenterimages/icon.png") no-repeat -100px -150px;}
+.W_error{ color: #f00;}
+.W_input { width: 180px; border: 1px solid #ccc; border-radius: 2px; height: 28px; padding: 0 0 0 2px; vertical-align: middle; color: #808080; -webkit-box-shadow: 0px 1px 1px 0px #eaeaea inset; -moz-box-shadow: 0px 1px 1px 0px #eaeaea inset; box-shadow: 0px 1px 1px 0px #eaeaea inset; outline-style: none;}
+.status{ position: absolute; left: 270px; top: 1px;}
+.W_tips { font-size: 12px; overflow: hidden; padding: 5px 7px 4px 10px; _width: auto;}
+.W_tips .icon { float: left; width: 16px; margin-right: 3px; _margin-right: 0; vertical-align: -3px; }
+.tips_del{ border: 1px solid #FFD9BB; background: #FFF7F5; line-height: 12px; color: #666; }
+.icon_delS,.icon_succS{ width: 16px; height: 16px; background: url("images/personalCenterimages/ico_warn.png"); margin: 0 3px 0 0; overflow: hidden; display: inline-block;}
+.icon_delS{ background-position: 0 -50px; }
+.icon_succS{ background-position: 0 0; }
+.pf_item .rsp { margin-right: 10px; }
+.W_radio { vertical-align: -2px; _vertical-align: -3px; margin-right: 3px; }
+textarea.W_input { width: 195px; height: 44px; line-height: 22px; overflow-y: auto; overflow-x: hidden; padding: 5px 0 0 2px; border: 1px solid #ccc; border-radius: 2px; vertical-align: middle; color: #808080; -webkit-box-shadow: 0px 1px 1px 0px #eaeaea inset; -moz-box-shadow: 0px 1px 1px 0px #eaeaea inset; box-shadow: 0px 1px 1px 0px #eaeaea inset; resize: none;}
+.con a{ color:#0a8cd2; vertical-align: middle;}
+.con p{ padding:0; line-height:30px;}
+.txt{ line-height:24px;}
+.saveInfo,.updateInfo{ display:none; width:100px; height:30px; background-color:#ffffff; padding:10px; border:5px solid #eaeaea; border-radius:5px; position:absolute; left:50%; margin-left:-55px; top:70px; z-index:200;}
+#uploadSec{ width:600px; height:500px; background-color:#ffffff; padding:0 10px 10px 10px; border:5px solid #eaeaea; border-radius:5px; position:absolute; left:50%; margin-left:-315px; top:100px;}
+.upload,.fileBtn{ padding:5px 20px; margin-left:20px; cursor:pointer; display:inline-block; background-color:#666; border-radius:5px; height:20px; line-height:20px; color:#fff; text-align:center; font-size:14px; font-weight:bold; vertical-align:top;}
+.upload:hover{ background-color:#d9d9d9;}
+.exitBtn{ width:40px; height:40px; cursor:pointer; text-align:center; line-height:40px; font-size:30px; color:#666; font-weight:bold; position:absolute; top:0; right:0;}
+.exitBtn:hover{ background-color:#f2f2f2; color:#0a8cd2;}
+#showImage{ width:600px; height:400px; background-color:#f2f2f2;}
+.originalImageArea{ width:400px; height:400px; float:left;}
+#originalImg{ max-width:400px; max-height: 400px; min-width:200px; min-height: 200px;}
+.showImageRight{ width:200px; height:400px; float:left;}
+.showImageRight p{ height:30px; line-height:30px; font-size:18px; font-weight:bold; color:#0a8cd2; text-align:center; margin:10px auto 10px auto;}
+.previewArea{ width:150px; height:150px; margin:0 0 20px 25px; position:relative; overflow:hidden; float:left;}
+#previewImg{ position:absolute;}
+.ensureBtn{ height:30px; line-height:30px; display:inline-block; margin:10px 0 0 52px; cursor:pointer; padding:0 10px; border-radius:7px; font-size:18px; font-weight:bold; color:#fff; text-align:center; background-color:#ccc;}
+.ensureBtn:hover{ background-color:#d9d9d9; color:#0a8cd2;}
+.menban,.menban2{ width:980px; height:100%; background-color:rgba(0,0,0,0.5); position:fixed; z-index:999999; display:none;}
+#updatePwdArea{ width: 543px; height: 255px; background-image: url("images/personalCenterimages/loginkuang.png"); position:absolute; left:50%; margin-left:-272px; top:150px; z-index:100;}
+.pwdContainer{ width: 320px; height: 180px; display: block; padding: 37px 111px; position: relative;}
+.remindInfo{ width: 320px; height: 20px; display: block; line-height: 20px; color: #ff4a00; text-align: center; font-size: 14px; position: absolute; top: 18px; left: 115px; }
+.row{ width: 100%; height: 27px; padding: 15px 0 0 20px;}
+.row label{ width: 25%; height: 15px; font-size: 15px; line-height: 15px; color: #000; padding: 6px 0; text-align: center; display: block; float: left; }
+.inputContainer{ float: left; width: 140px; height: 25px; line-height: 25px; margin-left: 16px; border: 1px solid #ccc; padding-left: 5px; background-color: #FFFFFF;}
+#oldPwd,#newPwd,#inputAgain{ width: 135px; height: 22px; outline: none; border:0;}
+.remindIcon{ width: 25px; height: 25px;}
+.oldPwdRemind,.newPwdRemind,.inputAgainRemind{ width: 25px; height: 25px; display: none; float: left; padding-left: 10px;}
+.operator{ width: 280px; height: 36px; padding: 20px; }
+#ensure,#cancel{ width: 112px; height: 34px; padding: 1px 6px; border-radius:7px; font-size: 16px; font-weight:bold; text-decoration: none; line-height: 34px; text-align: center; background-color:#99DD20; color:#fff; float: left; cursor: pointer;}
+#cancel{ float:right;}
+#ensure:hover,#cancel:hover{ background-color:#CAE533;}

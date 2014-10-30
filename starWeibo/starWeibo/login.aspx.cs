@@ -12,7 +12,10 @@ namespace starWeibo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["user"] = null;
+            Session["userid"] = "";
+            Session["username"] = "";
+            Session["userpwd"] = "";
         }
 
         protected void btnlogin_Click(object sender, EventArgs e)

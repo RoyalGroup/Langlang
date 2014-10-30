@@ -1,0 +1,9 @@
+C:\Users\just\Desktop\Langlang\starWeibo\DAL\bin\Release\DAL.dll
+C:\Users\just\Desktop\Langlang\starWeibo\DAL\bin\Release\DAL.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\DAL\bin\Release\DBhelperSQL.dll
+C:\Users\just\Desktop\Langlang\starWeibo\DAL\bin\Release\Model.dll
+C:\Users\just\Desktop\Langlang\starWeibo\DAL\bin\Release\DBhelperSQL.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\DAL\bin\Release\Model.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\DAL\obj\Release\starweibo.DAL.csprojResolveAssemblyReference.cache
+C:\Users\just\Desktop\Langlang\starWeibo\DAL\obj\Release\DAL.dll
+C:\Users\just\Desktop\Langlang\starWeibo\DAL\obj\Release\DAL.pdb

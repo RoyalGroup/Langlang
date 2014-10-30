@@ -88,9 +88,9 @@
                                         <span class="msgname" msgid="<%=sendid %>"><%=sendname %></span>
                                     </div>
                                     <div class="msgnum">
-                                        还可以输入
+                                        <%--还可以输入--%>
                                         <span></span>
-                                        字
+                                        <%--字--%>
                                     </div>
                                     <div class="msgcontent">
                                         <div class="msgtextarea">

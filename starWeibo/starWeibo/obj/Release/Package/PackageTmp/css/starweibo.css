@@ -1,0 +1,266 @@
+﻿*{margin: 0;padding: 0;}
+img{border: 0;}
+a{text-decoration: none;}
+li{list-style: none;}
+input{outline: none;}
+
+button, input, select, textarea {
+font: 12px/1.125 Arial,Helvetica,sans-serif;}
+
+
+body{background-color: #bee1f5;}
+
+
+.maintitle{z-index:9999;height:39px;position: fixed;background-repeat: repeat-x;box-shadow: 0px 1px 3px 0px #000;border-bottom: 3px solid red;width:100%;}
+.gn_header{position: relative;width: 980px;margin: 0 auto;display: block;}
+.gn_logo_v2{position: absolute;left: 0;top: 0;width: 190px;height: 39px;margin: 0px 0 0 -27px;}
+
+/***************图标************/
+.box{width: 100%;height: 100%;overflow: hidden;display: block;}
+.logo{background-repeat: no-repeat;display:block;background-position: -548px -4px;height: 39px;background-image:url("../images/starweibo/bg_line.png");}
+
+/***************首页************/
+.gn_nav{float: left;margin: 0 0 0 150px;display: block;}
+.gn_title{position: relative;float: left;font-size: 14px;display: inline-block;}
+.gn_tab{cursor: pointer;line-height: 16px;color: #fff;font-size: 14px;position: relative;}
+.gn_tab i{display: inline-block;padding: 11px 19px 11px 20px;}
+.gn_title:hover{background-color:#a57d66;}
+
+.WB_global_nav .gn_title .gn_tab .W_arrow {position: absolute;top: 17px;margin: 0 0 0 4px;}
+.WB_global_nav .W_arrow {border-width: 4px 4px 0px 4px;border-style: solid;border-color:#fff transparent;}
+
+/**************倒三角***************/
+.WB_global_nav .W_arrow em {
+display: block;
+position: absolute;
+width: 0;
+margin: 0;
+border-width: 2px;
+border-style: solid;
+border-color: #fff transparent transparent transparent;
+overflow: hidden;
+font-size: 0;
+line-height: 0;
+}
+
+
+/**************搜索***************/
+.gn_search{display: inline;position: relative;float: left;width: 235px;height: 24px;margin: 7px 0 0 25px;border-radius: 24px;background-color: #fff;cursor: pointer;}
+.gn_input{width: 193px;
+margin: 5px 0 0 10px;
+border: 0;
+background: none;
+color: #808080;
+vertical-align: top;}
+
+.gn_btn{display: inline-block;
+width: 20px;
+height: 20px;
+margin: 4px 0 0;
+background-image: url("../images/starweibo/bg_line.png");
+background-repeat: no-repeat;
+background-position: -450px -6px;
+vertical-align: top;}
+
+
+/***************个人*****************/
+.gn_person{float: right;}
+.gn_setting {float: left;position: relative;max-width: 95px;margin-left: 15px;}
+.gn_name{display: inline-block;
+max-width: 75px;
+height: 38px;
+padding: 0 10px;
+overflow: hidden;
+line-height: 37px;
+white-space: nowrap;
+text-overflow: ellipsis;
+color: #fff;
+font-size: 14px;
+overflow:hidden;
+}
+
+
+.gn_setting .gn_tab .ico{display: block;width: 16px;height: 16px;background-image: url("../images/starweibo/bg_line.png");background-repeat: no-repeat;overflow: hidden;}
+.gn_setting .gn_write .ico{background-position: -225px -6px;}
+.gn_setting .gn_notice .ico{background-position: -275px -6px;}
+.gn_setting .gn_set .ico{background-position: -350px -6px;}
+.gn_setting .gn_member .ico{background-position: -400px -6px;}
+.ico{margin-top: 15px;margin-left: 12.5px;}
+
+.bianhei{width: 41px;height: 38px;cursor: pointer;}
+
+
+/************************个人结束**************************/
+
+i{font-style: normal;font-weight: normal;}
+
+
+
+
+
+
+
+
+.W_main{width: 980px;margin: 0 auto;background-color: #ccc;display: block;background-color: transparent;padding-top:50px;}
+
+
+
+
+
+
+/********************页脚**********************/
+.global_footer{background-image: url("../images/starweibo/footer_bg.png");font-size: 14px;}
+.global_footer{border: 1px solid #ccc;width: 940px;height: 178px;margin: 20px auto 0;padding: 20px 20px 10px 20px;background-repeat: no-repeat;background-position: left;}
+.S_bg4{background-color: #fafafa;}
+
+.list{float: left;width: 170px;display: inline-block;margin: 0 18px 0 0;font-size: 12px;}
+.list dt{line-height: 20px;padding-top: 0 0 5px;margin-bottom: 5px;}
+.list dd{line-height: 20px;}
+.list dd a{margin-right: 8px;color: #0a8cd2;text-decoration: none;}
+.list dd a:hover{text-decoration: underline;}
+
+.global_footer .other_link{
+	line-height: 0.5;
+	margin: 15px 0 0;
+	border-top-width: 1px;
+	border-top-style: solid;
+	margin-top: 107px;
+
+}
+
+.S_line2{
+	border-color: #e6e6e6;
+}
+
+
+.help_link{float: left;padding: 10px 0 0;display: block;}
+p{padding:3px 0 0;line-height: 18px;font-size: 12px;}
+p a{font-size: 12px;color: #333;margin-left: 10px;}
+.help_link a:hover{color: #0a8cd2;}
+
+.tonghua{margin-left: 11px;}
+.S_txt2{color: #808080;}
+
+.W_ico16 {display: inline-block;width: 16px;height: 16px;background-image: url("../images/icon.png");background-repeat: no-repeat;padding-left: 5px;}
+.ico_weibo{background-position: -350px -123px;}
+
+
+/**************************消息下拉*******************************/
+
+.gn_topmenulist {	
+	position: absolute;
+	z-index: 9998;
+	padding: 5px 0 0;
+	border: 1px solid #333;
+	background: #fff;
+	font-size: 12px;
+	color: #333;
+    z-index:999;
+	}
+.gn_topmenulist li span{float:right;margin-right:10px;font-weight:bold;line-height:16px;font-size:12px;margin-top:5px;}
+
+
+
+.gn_topmenulist_notice{
+	display: none;
+	width: 150px;
+	border-radius: 0 2px 2px 2px;
+	box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+	left: -111px;
+	top: 36px;}
+
+.gn_text_list{border-bottom: 1px solid #e6e6e6;}
+.gn_text_list li{height: 26px;line-height: 26px;margin-bottom: 2px;}
+.gn_text_list li:hover{background-color: #333 rgba(0,0,0,0.2);}
+.gn_text_list a{color: #333;margin-left: 10px;}
+
+
+.message:hover .gn_topmenulist_notice{display: block;}
+.yingyong{border-top: 1px solid #ccc;}
+
+
+/***********************************/
+
+
+/****************设置********************/
+.gn_topmenulist_set{
+	display: none;
+	width: 150px;top: 39px;
+	border-radius: 0 2px 2px 2px;
+	box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+	top: 36px;
+	left: -111px;}
+
+
+.gn_func{
+	height: 32px;
+	padding: 0 3px;
+	background: #f2f2f2;
+	line-height: 32px;}
+
+.shezhi:hover .gn_topmenulist_set{display: block;}
+
+/**************************************/
+
+
+/**************************************/
+.gn_topmenulist_member{
+	display: none;
+	width: 150px;top: 39px;
+	border-radius: 0 2px 2px 2px;
+	box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+	top: 36px;
+	left: -111px;}
+
+.member:hover .gn_topmenulist_member{display: block;}
+
+/************************************/
+.gn_text_list li:hover{background-color:#ccc;}
+
+
+
+/******************皮肤*********************/
+.skin{width:440px;z-index:999;height:269px;padding:29px 0 0 28px;display:none;cursor:pointer;}
+.dress-topic{font-size:12px;line-height:1.334;}
+.topic-link{color:#6d6d6d;vertical-align:2px;}
+.sep-line{margin: 0 12px;height: 14px;display: inline-block;border-right: 1px solid #cacaca;}
+.current1{font-weight:bold;color:#404040;}
+
+.dress-list1{overflow: hidden;margin: 5px 0 0 -5px;border:1px solid #ccc;width:400px;height:230px;}
+.pifu1{width:190px;float:left;height:105px;border:1px solid #ccc;margin:4px;}
+
+.dress-list2{overflow: hidden;margin: 5px 0 0 -5px;border:1px solid #ccc;width:400px;height:230px;display:none;}
+
+.dress-list3{overflow: hidden;margin: 5px 0 0 -5px;border:1px solid #ccc;width:400px;height:230px;display:none;}
+
+.dress-list4{overflow: hidden;margin: 5px 0 0 -5px;border:1px solid #ccc;width:400px;height:230px;display:none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

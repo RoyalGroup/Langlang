@@ -91,6 +91,7 @@
     <Content Include="webservice\wsdetailmessage.asmx" />
     <Content Include="webservice\wsfocus.asmx" />
     <Content Include="webservice\wshomepage.asmx" />
+    <Content Include="webservice\wsmessage.asmx" />
     <Content Include="webservice\wsregister.asmx" />
     <Content Include="weibo.aspx" />
     <Content Include="box.aspx" />
@@ -385,6 +386,10 @@
     </Compile>
     <Compile Include="webservice\wshomepage.asmx.cs">
       <DependentUpon>wshomepage.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="webservice\wsmessage.asmx.cs">
+      <DependentUpon>wsmessage.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="webservice\wsregister.asmx.cs">

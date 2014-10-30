@@ -35,6 +35,29 @@ namespace starWeibo.webservice
             return oneshenqing.Add(shengqing).ToString();
 
         }
+
+        [WebMethod]
+        public void charuP(string userName)
+        {
+            List<starweibo.Model.userInfo> shenqing = new List<starweibo.Model.userInfo>();
+            starweibo.BLL.userInfo oneshenqing = new starweibo.BLL.userInfo();
+            starweibo.BLL.powerInfo OP = new starweibo.BLL.powerInfo();
+            starweibo.Model.powerInfo IDP=new starweibo.Model.powerInfo();
+
+            shenqing = oneshenqing.GetModelList("userName='" + userName + "'");
+            IDP.userId =shenqing[0].id;
+            IDP.zan = "1";
+            IDP.pinglun = "1";
+            IDP.at = "1";
+            IDP.guanzhu = "1";
+            IDP.jubao = "1";
+            IDP.zhuanfa = "1";
+            IDP.shoucang = "1";
+            IDP.fasong = "1";
+
+            OP.Add(IDP);
+
+        }
         [WebMethod]
         public string Sendyanzheng(string email)
         {

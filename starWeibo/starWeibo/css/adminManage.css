@@ -45,8 +45,8 @@ body{font-family: "宋体",Verdana;font-size: 12px;}
 .yincang{display:none;}
 
 .UserManagesMain{height: 504px;background-color: #f2f4f6;position: relative;}
-.UserManagesContent{height: 449px;overflow-y: auto;display:none;}
-.UserManagesContentS{height: 449px;overflow-y: auto;}
+.UserManagesContent{height: 442px;overflow-y: auto;display:none;}
+.UserManagesContentS{height: 442px;overflow-y: auto;}
 .tool{height: 24px;padding: 7px;border-bottom: 1px solid rgb(170, 193, 222);font-size: 13px;}
 .tool_left{height: 24px;float: left;margin-left: 15px;float: left;}
 .tool_left a{display: inline-block;border: 1px solid rgb(136, 136, 136);border-radius: 3px;background-color: #fff;color: #333;height: 22px;line-height: 22px;padding: 0 12px 0 12px;float: left;margin-left: 3px;}

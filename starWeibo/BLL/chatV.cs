@@ -16,9 +16,9 @@ namespace starweibo.BLL
         /// <summary>
         /// 是否存在该记录
         /// </summary>
-        public bool Exists(int senderId, string msgContent, DateTime pubTime, string msgState, int receiverId, string userName, string userHeadimage, string recuserName, string recuserHeadimage)
+        public bool Exists(int shortMsgId)
         {
-            return dal.Exists(senderId, msgContent, pubTime, msgState, receiverId, userName, userHeadimage, recuserName, recuserHeadimage);
+            return dal.Exists(shortMsgId);
         }
 
         /// <summary>
@@ -40,34 +40,41 @@ namespace starweibo.BLL
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        public bool Delete(int senderId, string msgContent, DateTime pubTime, string msgState, int receiverId, string userName, string userHeadimage, string recuserName, string recuserHeadimage)
+        public bool Delete(int shortMsgId)
         {
 
-            return dal.Delete(senderId, msgContent, pubTime, msgState, receiverId, userName, userHeadimage, recuserName, recuserHeadimage);
+            return dal.Delete(shortMsgId);
+        }
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public bool DeleteList(string shortMsgIdlist)
+        {
+            return dal.DeleteList(shortMsgIdlist);
         }
 
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public starweibo.Model.chatV GetModel(int senderId, string msgContent, DateTime pubTime, string msgState, int receiverId, string userName, string userHeadimage, string recuserName, string recuserHeadimage)
+        public starweibo.Model.chatV GetModel(int shortMsgId)
         {
 
-            return dal.GetModel(senderId, msgContent, pubTime, msgState, receiverId, userName, userHeadimage, recuserName, recuserHeadimage);
+            return dal.GetModel(shortMsgId);
         }
 
         ///// <summary>
         ///// 得到一个对象实体，从缓存中
         ///// </summary>
-        //public starweibo.Model.chatV GetModelByCache(int senderId, string msgContent, DateTime pubTime, string msgState, int receiverId, string userName, string userHeadimage, string recuserName, string recuserHeadimage)
+        //public starweibo.Model.chatV GetModelByCache(int shortMsgId)
         //{
 
-        //    string CacheKey = "chatVModel-" + senderId + msgContent + pubTime + msgState + receiverId + userName + userHeadimage + recuserName + recuserHeadimage;
+        //    string CacheKey = "chatVModel-" + shortMsgId;
         //    object objModel = starweibo.Common.DataCache.GetCache(CacheKey);
         //    if (objModel == null)
         //    {
         //        try
         //        {
-        //            objModel = dal.GetModel(senderId, msgContent, pubTime, msgState, receiverId, userName, userHeadimage, recuserName, recuserHeadimage);
+        //            objModel = dal.GetModel(shortMsgId);
         //            if (objModel != null)
         //            {
         //                int ModelCache = starweibo.Common.ConfigHelper.GetConfigInt("ModelCache");

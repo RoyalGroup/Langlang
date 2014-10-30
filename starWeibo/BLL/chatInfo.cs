@@ -172,7 +172,13 @@ namespace starweibo.BLL
 
         #endregion  BasicMethod
         #region  ExtensionMethod
-
+        /// <summary>
+        /// my更新一条数据
+        /// </summary>
+        public bool myUpdate(string state, string strWhere)
+        {
+            return dal.myUpdate(state, strWhere);
+        }
         #endregion  ExtensionMethod
     }
 }

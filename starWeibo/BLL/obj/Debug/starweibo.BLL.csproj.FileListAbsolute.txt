@@ -31,3 +31,14 @@ E:\Langlang\starWeibo\BLL\bin\Debug\DBhelperSQL.dll
 E:\Langlang\starWeibo\BLL\bin\Debug\DAL.pdb
 E:\Langlang\starWeibo\BLL\bin\Debug\Model.pdb
 E:\Langlang\starWeibo\BLL\bin\Debug\DBhelperSQL.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Debug\BLL.dll
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Debug\BLL.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Debug\DAL.dll
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Debug\Model.dll
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Debug\DBhelperSQL.dll
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Debug\DAL.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Debug\Model.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\bin\Debug\DBhelperSQL.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\obj\Debug\starweibo.BLL.csprojResolveAssemblyReference.cache
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\obj\Debug\BLL.dll
+C:\Users\just\Desktop\Langlang\starWeibo\BLL\obj\Debug\BLL.pdb

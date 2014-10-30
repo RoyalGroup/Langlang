@@ -13,3 +13,7 @@ E:\Langlang\starWeibo\DBhelperSQL\bin\Debug\DBhelperSQL.pdb
 E:\Langlang\starWeibo\DBhelperSQL\obj\Debug\DBhelperSQL.dll
 E:\Langlang\starWeibo\DBhelperSQL\obj\Debug\DBhelperSQL.pdb
 E:\Langlang\starWeibo\DBhelperSQL\obj\Debug\starweibo.DBUtility.csprojResolveAssemblyReference.cache
+C:\Users\just\Desktop\Langlang\starWeibo\DBhelperSQL\bin\Debug\DBhelperSQL.dll
+C:\Users\just\Desktop\Langlang\starWeibo\DBhelperSQL\bin\Debug\DBhelperSQL.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\DBhelperSQL\obj\Debug\DBhelperSQL.dll
+C:\Users\just\Desktop\Langlang\starWeibo\DBhelperSQL\obj\Debug\DBhelperSQL.pdb

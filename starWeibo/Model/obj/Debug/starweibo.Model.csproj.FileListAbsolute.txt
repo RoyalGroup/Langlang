@@ -12,3 +12,7 @@ E:\Langlang\starWeibo\Model\bin\Debug\Model.pdb
 E:\Langlang\starWeibo\Model\obj\Debug\Model.dll
 E:\Langlang\starWeibo\Model\obj\Debug\Model.pdb
 E:\Langlang\starWeibo\Model\obj\Debug\starweibo.Model.csprojResolveAssemblyReference.cache
+C:\Users\just\Desktop\Langlang\starWeibo\Model\bin\Debug\Model.dll
+C:\Users\just\Desktop\Langlang\starWeibo\Model\bin\Debug\Model.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\Model\obj\Debug\Model.dll
+C:\Users\just\Desktop\Langlang\starWeibo\Model\obj\Debug\Model.pdb

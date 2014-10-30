@@ -24,14 +24,21 @@ namespace starWeibo
             curuser = (starweibo.Model.userInfo)Session["user"];
             sendname = Request.QueryString["sendname"].ToString();
             sendid = Request.QueryString["sendid"].ToString();
-            
+
             curid = Convert.ToInt32(Session["userid"]);
-            
+
             starweibo.BLL.chatV bllchatv = new starweibo.BLL.chatV();
+            starweibo.BLL.chatInfo bllchatInfo = new starweibo.BLL.chatInfo();
             List<starweibo.Model.chatV> modchatV = new List<starweibo.Model.chatV>();
-            modchatV = bllchatv.GetModelList("(senderId="+curid+" and receiverId="+sendid+") or (senderId="+sendid+" and receiverId="+curid+") order by pubTime desc");
+            modchatV = bllchatv.GetModelList("(senderId=" + curid + " and receiverId=" + sendid + ") or (senderId=" + sendid + " and receiverId=" + curid + ") order by pubTime desc");
             this.msgdialogue.DataSource = modchatV;
             this.msgdialogue.DataBind();
+
+            //starweibo.BLL.chatInfo
+            foreach (starweibo.Model.chatV onechatV in modchatV)
+            {
+                bllchatInfo.myUpdate("read", onechatV.shortMsgId.ToString());
+            }
         }
 
         //protected string check(int id)

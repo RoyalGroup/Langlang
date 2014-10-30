@@ -327,7 +327,24 @@ namespace starweibo.DAL
 
         #endregion  BasicMethod
         #region  ExtensionMethod
+        /// <summary>
+        /// my更新一条数据
+        /// </summary>
+        public bool myUpdate(string state, string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update chatV set msgState='" + state + "' where shortMsgId=" + strWhere);
 
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString());
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         #endregion  ExtensionMethod
     }
 }

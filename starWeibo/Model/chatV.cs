@@ -19,6 +19,7 @@ namespace starweibo.Model
         private string _userheadimage;
         private string _recusername;
         private string _recuserheadimage;
+        private int _shortmsgid;
         /// <summary>
         /// 
         /// </summary>
@@ -90,6 +91,14 @@ namespace starweibo.Model
         {
             set { _recuserheadimage = value; }
             get { return _recuserheadimage; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int shortMsgId
+        {
+            set { _shortmsgid = value; }
+            get { return _shortmsgid; }
         }
         #endregion Model
 

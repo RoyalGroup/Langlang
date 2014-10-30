@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/starweiboM.Master" AutoEventWireup="true" CodeBehind="message.aspx.cs" Inherits="starWeibo.message" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/message.css" rel="stylesheet" />
+    <script src="js/message.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="main_inner">
@@ -70,36 +71,67 @@
                         <div class="group_read">
                             <a href="#" class="currA">收到的私信</a>
                             <span>|</span>
-                            <a href="outbox.aspx">发出的私信</a>                       
+                            <a href="outbox.aspx">发出的私信</a>   
+                            <div class="sendself">
+                                <em class="icon_mes"></em>
+                                <span class="sendselfbtn">发送私信</span>
+                            </div>                    
                         </div>
-                        <div class="comment_list">
-                            <asp:DataList runat="server" ID="chatDL">
-                                <ItemTemplate>
-                                    <div class="comment_feed clearfix">
-                                        <div class="face">
-                                            <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("id") %>">
-                                                <img src="<%# Eval("userHeadimage") %>" />
-                                            </a>
+                         <div class="comment_list">
+                            <div class="send_private_msgbox" style="display:none;">
+                                <div class="send_private_msg">
+                                    <div class="msgtitle">
+                                        <%--<em class="icon_mes"></em>--%>
+                                        接收人:
+                                        <input class="selfname" />
+                                        <span class="selferror" style="display:none;">此用户不存在!</span>
+                                        <%--<span class="msgname" msgid="<%=sendid %>"><%=sendname %></span>--%>
+                                    </div>
+                                    <div class="msgnum">
+                                        <%--还可以输入--%>
+                                        <span></span>
+                                        <%--字--%>
+                                    </div>
+                                    <div class="msgcontent">
+                                        <div class="msgtextarea">
+                                            <textarea class="dmsgtextarea"></textarea>
                                         </div>
-                                        <div class="comment">
-                                            <div class="comm_box">
-                                                <p>
-                                                    <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("id") %>"><%# Eval("userName") %></a>
-                                                    <span>私信了你</span>
-                                                </p>
-                                                <p>                                                  
-                                                   <%-- <a href="#"><%# Eval("msgContent") %></a>--%>
-                                                </p>
-                                                <p style="margin-top: 6px;">
-                                                    <%--<span><%# Eval("pubTime") %></span>--%>
-                                                    <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("id") %>" style="float: right">回复</a>
-                                                </p>
+                                        <div class="send_handlen">
+                                            <div class="btnsendn">
+                                                <a class="btnsendan" href="javascript:void(0);">发送</a>
                                             </div>
                                         </div>
                                     </div>
-                                </ItemTemplate>
-                            </asp:DataList>
-
+                                </div>
+                            </div>
+                            <div class="msg_dialoguen">
+                                <asp:DataList runat="server" ID="chatDL">
+                                    <ItemTemplate>
+                                        <div class="comment_feed clearfix">
+                                            <div class="face">
+                                                <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("id") %>">
+                                                    <img src="<%# Eval("userHeadimage") %>" />
+                                                </a>
+                                            </div>
+                                            <div class="comment">
+                                                <div class="comm_box">
+                                                    <p>
+                                                        <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("id") %>"><%# Eval("userName") %></a>
+                                                        <span>私信了你</span>
+                                                    </p>
+                                                    <p>
+                                                        <%-- <a href="#"><%# Eval("msgContent") %></a>--%>
+                                                    </p>
+                                                    <p style="margin-top: 6px;">
+                                                        <%--<span><%# Eval("pubTime") %></span>--%>
+                                                        <a href="detailmessage.aspx?sendname=<%# Eval("userName") %>&sendid=<%# Eval("id") %>" style="float: right">回复</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:DataList>
+                            </div>
                         </div>
                     </div>
                 </div>

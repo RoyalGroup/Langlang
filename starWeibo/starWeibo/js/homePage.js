@@ -408,9 +408,9 @@
                 }
             });
         } else if (replyContent.length == 0) {
-            alert("评论内容不可为空！");
+            that.parent().parent().find(".winput").val("评论内容不可为空！");
         } else {
-            alert("评论内容请保持在140字以内！");
+            that.parent().parent().find(".winput").val("评论内容请保持在140字以内！");
         }
     });
     //弹出对评论的评论对话框
@@ -452,9 +452,9 @@
         $(".contrans").show();
         if (that.parent().parent().parent().find(".zfdisable").length > 0) {
             var blogid = that.parent().parent().parent().parent().attr("blogid");
-            var blogAuthor = that.parent().parent().parent().find(".wbname userMp").html();
+            var blogAuthor = that.parent().parent().parent().find(".wbname").html();
             var blogContent = that.parent().parent().parent().find(".wbtext").html();
-            var blogAuthorUrl = that.parent().parent().parent().find(".wbname userMp").attr("href");
+            var blogAuthorUrl = that.parent().parent().parent().find(".wbname").attr("href");
             $(".contrans").find(".contmyan a.conttxtlink").attr("href", blogAuthorUrl);
             $(".contrans").find(".contmyan a.conttxtlink").html("@" + blogAuthor);
             $(".contrans").find(".contmyan span.contgeyan").html(blogContent);
@@ -465,9 +465,9 @@
             $(".contrans").find(".contte").val("");
         } else {
             var blogid = that.parent().parent().parent().find(".wbmediaexpand").attr("blogid");
-            var blogAuthor = that.parent().parent().parent().find(".wbmediaexpand .wbname userMp").html();
+            var blogAuthor = that.parent().parent().parent().find(".wbmediaexpand .wbname").html();
             var blogContent = that.parent().parent().parent().find(".wbmediaexpand .wbtext em").html();
-            var blogAuthorUrl = that.parent().parent().parent().find(".wbmediaexpand .wbname userMp").attr("href");
+            var blogAuthorUrl = that.parent().parent().parent().find(".wbmediaexpand .wbname").attr("href");
             $(".contrans").find(".contmyan a.conttxtlink").attr("href", blogAuthorUrl);
             $(".contrans").find(".contmyan a.conttxtlink").html("@" + blogAuthor);
             $(".contrans").find(".contmyan span.contgeyan").html(blogContent);
@@ -497,9 +497,9 @@
             var typeid = 5;
             var d = "{blogid:" + blogid + ",content:'" + content + "',typeid:" + typeid + ",parentid:" + parentid + "}";
             if (content.length == 0) {
-                alert("举报理由不可为空！");
+                that.parent().parent().find(".contte").val("举报理由不可为空!");
             } else if (content.length > 141) {
-                alert("举报理由请保持在140字以内！");
+                that.parent().parent().find(".contte").val("举报理由请保持在140字以内!");
             } else {
                 $.ajax({
                     url: "webservice/wshomepage.asmx/publishMessage",
@@ -534,7 +534,7 @@
                     dataType: 'json',
                     success: function (result) {     //回调函数，result，返回值
                         if (res.d != null) {
-                            alert("fasdf asdfasdfasdfasd");
+                           
                         }
                     }
                 });
@@ -623,7 +623,7 @@
                     }
                 });
             } else {
-                alert("转发内容请保持在140字以内！");
+                that.parent().parent().find(".contte").val("转发内容请保持在140字以内！");
             }
         }
     });
@@ -634,9 +634,9 @@
         $(".contrans").show();
         if (that.parent().parent().parent().parent().find(".zfdisable").length > 0) {
             var blogid = that.parent().parent().parent().parent().parent().attr("blogid");
-            var blogAuthor = that.parent().parent().parent().parent().find(".wbname userMp").html();
+            var blogAuthor = that.parent().parent().parent().parent().find(".wbname").html();
             var blogContent = that.parent().parent().parent().parent().find(".wbtext").html();
-            var blogAuthorUrl = that.parent().parent().parent().parent().find(".wbname userMp").attr("href");
+            var blogAuthorUrl = that.parent().parent().parent().parent().find(".wbname").attr("href");
             $(".contrans").find(".contmyan a.conttxtlink").attr("href", blogAuthorUrl);
             $(".contrans").find(".contmyan a.conttxtlink").html("@" + blogAuthor);
             $(".contrans").find(".contmyan span.contgeyan").html(blogContent);
@@ -647,9 +647,9 @@
             $(".contrans").find(".contte").val("");
         } else {
             var blogid = that.parent().parent().parent().parent().find(".wbmediaexpand").attr("blogid");
-            var blogAuthor = that.parent().parent().parent().parent().find(".wbmediaexpand .wbname userMp").html();
+            var blogAuthor = that.parent().parent().parent().parent().find(".wbmediaexpand .wbname").html();
             var blogContent = that.parent().parent().parent().parent().find(".wbmediaexpand .wbtext em").html();
-            var blogAuthorUrl = that.parent().parent().parent().parent().find(".wbmediaexpand .wbname userMp").attr("href");
+            var blogAuthorUrl = that.parent().parent().parent().parent().find(".wbmediaexpand .wbname").attr("href");
             $(".contrans").find(".contmyan a.conttxtlink").attr("href", blogAuthorUrl);
             $(".contrans").find(".contmyan a.conttxtlink").html("@" + blogAuthor);
             $(".contrans").find(".contmyan span.contgeyan").html(blogContent);

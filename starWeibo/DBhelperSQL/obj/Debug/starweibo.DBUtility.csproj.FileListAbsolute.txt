@@ -17,3 +17,4 @@ C:\Users\just\Desktop\Langlang\starWeibo\DBhelperSQL\bin\Debug\DBhelperSQL.dll
 C:\Users\just\Desktop\Langlang\starWeibo\DBhelperSQL\bin\Debug\DBhelperSQL.pdb
 C:\Users\just\Desktop\Langlang\starWeibo\DBhelperSQL\obj\Debug\DBhelperSQL.dll
 C:\Users\just\Desktop\Langlang\starWeibo\DBhelperSQL\obj\Debug\DBhelperSQL.pdb
+C:\Users\just\Desktop\Langlang\starWeibo\DBhelperSQL\obj\Debug\starweibo.DBUtility.csprojResolveAssemblyReference.cache

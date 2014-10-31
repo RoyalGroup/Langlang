@@ -65,39 +65,38 @@ namespace starWeibo.webservice
             Random rad = new Random();
             int value = rad.Next(100000, 999999);
             ////将生成的验证码通过邮件形式发送给用户
-            //string formto = "xgjcsyx@126.com";
-            //string to = email;   //接收邮箱
-            //string content = "验证码";
-            //string body = "验证码为：" + value.ToString();
-            //string name = "xgjcsyx@126.com";
-            //string upass = "mima12345678";
-            //string smtp = "smtp.126.com";
-            //SmtpClient _smtpClient = new SmtpClient();
-            //_smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;//指定电子邮件发送方式
-            //_smtpClient.Host = smtp; //指定SMTP服务器
-            //_smtpClient.Credentials = new System.Net.NetworkCredential(name, upass);//用户名和密码
-            //MailMessage _mailMessage = new MailMessage();
-            ////发件人，发件人名 
-            //_mailMessage.From = new MailAddress(formto, "浪浪微博官方");
-            ////收件人 
-            //_mailMessage.To.Add(to);
-            //_mailMessage.SubjectEncoding = System.Text.Encoding.GetEncoding("gb2312");
-            //_mailMessage.Subject = content;//主题
+            string formto = "xuguojian2@126.com";
+            string to = email;   //接收邮箱
+            string content = "验证码";
+            string body = "验证码为：" + value.ToString();
+            string name = "xuguojian2@126.com";
+            string upass = "xuguojian123123";
+            string smtp = "smtp.126.com";
+            SmtpClient _smtpClient = new SmtpClient();
+            _smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;//指定电子邮件发送方式
+            _smtpClient.Host = smtp; //指定SMTP服务器
+            _smtpClient.Credentials = new System.Net.NetworkCredential(name, upass);//用户名和密码
+            MailMessage _mailMessage = new MailMessage();
+            //发件人，发件人名 
+            _mailMessage.From = new MailAddress(formto, "星空微博官方");
+            //收件人 
+            _mailMessage.To.Add(to);
+            _mailMessage.SubjectEncoding = System.Text.Encoding.GetEncoding("gb2312");
+            _mailMessage.Subject = content;//主题
 
-            //_mailMessage.Body = body;//内容
-            //_mailMessage.BodyEncoding = System.Text.Encoding.GetEncoding("gb2312");//正文编码
-            //_mailMessage.IsBodyHtml = true;//设置为HTML格式
-            //_mailMessage.Priority = MailPriority.High;//优先级   
-            //try
-            //{
-            //    _smtpClient.Send(_mailMessage);
-            //    return value.ToString();
-            //}
-            //catch (Exception error)
-            //{
-            //    return error.ToString();
-            //}
-            return value.ToString();
+            _mailMessage.Body = body;//内容
+            _mailMessage.BodyEncoding = System.Text.Encoding.GetEncoding("gb2312");//正文编码
+            _mailMessage.IsBodyHtml = true;//设置为HTML格式
+            _mailMessage.Priority = MailPriority.High;//优先级   
+            try
+            {
+                _smtpClient.Send(_mailMessage);
+                return value.ToString();
+            }
+            catch 
+            {
+                return value.ToString();
+            }
         }
 
     }

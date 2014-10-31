@@ -60,11 +60,11 @@
     	<div class="forgotse3">
     		<div class="T1">
     			<a>请输入您的密码：</a>
-    			<input class="T1R" type="text" placeholder="请输入您的密码"/>
+    			<input class="T1R" type="password" placeholder="请输入您的密码"/>
     		</div>
     		<div class="T2">
     			<a>请重新输入您的密码：</a>
-    			<input class="T2R" type="text" placeholder="请重新输入您的密码"/>
+    			<input class="T2R" type="password" placeholder="请重新输入您的密码"/>
     		</div>
             <input class="pass-button-submit2" type="submit" value="重置密码" name=""/>
     	</div>

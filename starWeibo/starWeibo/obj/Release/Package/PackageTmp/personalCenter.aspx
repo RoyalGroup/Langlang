@@ -247,7 +247,7 @@
 								</div>
 								<div class="pf_item clearfix">
 									<div class="label S_txt2"><span class="W_error">*</span>昵&nbsp;&nbsp;称</div>
-									<div class="con"><input node-type="nickname" action-type="text_copy" action-data="text=请输入昵称" name="nickname" class="W_input " value="<% =curUser.userName%>"></div>
+									<div class="con"><input node-type="nickname" action-type="text_copy" action-data="text=请输入昵称" readonly="true" name="nickname" class="W_input " value="<% =curUser.userName%>"></div>
 									<div class="status" node-type="nickname_tip">
 										<div style="display:none" class="W_tips clearfix">
 											<p class="icon"><span class="icon_succS"></span></p>

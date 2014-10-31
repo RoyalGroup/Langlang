@@ -208,6 +208,8 @@ $(function () {
                         $("div[node-type='base_view']").css("display", "block");
                         $("div[node-type='base']").css("display", "none");
                         $("#baseInfo .editBtn").text("编辑");
+                        $(".saveInfo").find(".icon_succS").removeClass("icon_delS");
+                        $(".saveInfo").find(".txt").text("保存成功");
                         $(".saveInfo").fadeIn(1000).fadeOut(1000);
                     }
                 }
@@ -246,15 +248,21 @@ $(function () {
                                 $("div[node-type='com_view']").css("display", "block");
                                 $("div[node-type='com']").css("display", "none");
                                 $("#comInfo .editBtn").text("编辑");
+                                $(".saveInfo").find(".icon_succS").removeClass("icon_delS");
+                                $(".saveInfo").find(".txt").text("保存成功");
                                 $(".saveInfo").fadeIn(1000).fadeOut(1000);
                             }
                         }
                     });
                 } else {
-                    alert("手机号输入不合法，请重试！")
+                    $(".saveInfo").find(".icon_succS").addClass("icon_delS");
+                    $(".saveInfo").find(".txt").text("保存失败");
+                    $(".saveInfo").fadeIn(1000).fadeOut(1000);
                 }
             } else {
-                alert("QQ号输入不合法，请重试！")
+                $(".saveInfo").find(".icon_succS").addClass("icon_delS");
+                $(".saveInfo").find(".txt").text("保存失败")
+                $(".saveInfo").fadeIn(1000).fadeOut(1000);
             }
         }
     });
@@ -283,6 +291,8 @@ $(function () {
                 success: function (result) {     //回调函数，result，返回值
                     if (result.d == 'True') {
                         $(".con[node-type='school_view']").text(userEdu);
+                        $(".saveInfo").find(".icon_succS").removeClass("icon_delS");
+                        $(".saveInfo").find(".txt").text("保存成功");
                         $(".saveInfo").fadeIn(1000).fadeOut(1000);
                     }
                 }
